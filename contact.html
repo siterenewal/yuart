@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ【YU-ART｜ユーアート】</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'yu-green': '#6ab04c',
+                        'yu-text': '#333333',
+                        'yu-gray': '#f9f9f9',
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Acme"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .contenttitle {
+            text-align: center;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+        .contenttitle .ja {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #6ab04c;
+            margin-bottom: 0.2rem;
+        }
+        .contenttitle .en {
+            display: block;
+            font-family: 'Acme', sans-serif;
+            font-size: 2.5rem;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        /* EFO: フォーカス時の視認性向上 */
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #6ab04c;
+            box-shadow: 0 0 0 2px rgba(106, 176, 76, 0.2);
+            background-color: #fff;
+        }
+        /* 必須項目のラベル */
+        .required-badge {
+            font-size: 10px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 2px;
+            margin-left: 8px;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+        .optional-badge {
+            font-size: 10px;
+            background-color: #95a5a6;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 2px;
+            margin-left: 8px;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body class="bg-white text-yu-text font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 shadow-sm">
+        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center">
+                    <img src="https://via.placeholder.com/150x40/ffffff/6ab04c?text=YU-ART+LOGO" alt="YU-ART" class="h-8 w-auto">
+                </a>
+            </div>
+            
+            <nav class="hidden lg:flex gap-6 text-sm font-bold text-gray-600 items-center">
+                <a href="index.html" class="hover:text-yu-green transition">ホーム</a>
+                <a href="#" class="hover:text-yu-green transition">コンセプト</a>
+                <a href="#" class="hover:text-yu-green transition">施工事例</a>
+                <a href="#" class="hover:text-yu-green transition">完成までの流れ</a>
+                <a href="#" class="hover:text-yu-green transition">会社概要</a>
+                <a href="#" class="hover:text-yu-green transition">採用情報</a>
+                <a href="#" class="hover:text-yu-green transition">コラム</a>
+                <a href="contact.html" class="bg-yu-green text-white px-4 py-2 rounded hover:opacity-90 transition">お問い合わせ</a>
+            </nav>
+
+            <div class="lg:hidden">
+                <button class="text-gray-600 p-2 border border-gray-200 rounded">
+                    <span class="text-xs font-bold block">MENU</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <div class="pt-24 pb-12 bg-yu-gray">
+        <div class="container mx-auto px-4">
+            <div class="contenttitle mb-0">
+                <span class="ja">お問い合わせ</span>
+                <span class="en">Contact</span>
+            </div>
+            <p class="text-center text-sm mt-4 text-gray-600">
+                お庭のリフォーム、新築外構、カーポート設置など、<br class="md:hidden">お気軽にご相談ください。
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Methods -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            
+            <!-- Top Info Grid (2カラム) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 items-stretch">
+                
+                <!-- 左: 施工実績 -->
+                <div class="bg-gray-50 p-8 rounded-sm border border-gray-100 text-center h-full flex flex-col justify-center">
+                    <h3 class="text-xl font-bold mb-6 text-yu-green">
+                        <span class="inline-block border-b-2 border-yu-green pb-1">施工実績のご紹介</span>
+                    </h3>
+                    <div class="mb-6">
+                        <p class="text-gray-700 font-bold leading-relaxed mb-2">
+                            川越エリアを中心に、<br>
+                            多くのお客様のお庭づくりを<br>お手伝いしています。
+                        </p>
+                        <p class="text-xs text-gray-500">実際の施工事例の一部をご覧ください。</p>
+                    </div>
+                    <!-- 実績サムネイル -->
+                    <div class="flex justify-center gap-3">
+                        <div class="w-16 h-16 md:w-20 md:h-20 bg-gray-200 rounded-sm overflow-hidden shadow-sm">
+                            <img src="https://via.placeholder.com/150/e5e7eb/a3a3a3?text=Works+1" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-16 h-16 md:w-20 md:h-20 bg-gray-200 rounded-sm overflow-hidden shadow-sm">
+                            <img src="https://via.placeholder.com/150/e5e7eb/a3a3a3?text=Works+2" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-16 h-16 md:w-20 md:h-20 bg-gray-200 rounded-sm overflow-hidden shadow-sm">
+                            <img src="https://via.placeholder.com/150/e5e7eb/a3a3a3?text=Works+3" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右: 電話相談 -->
+                <div class="border-2 border-yu-green/20 p-8 text-center rounded-sm bg-white shadow-sm hover:shadow-md hover:border-yu-green transition group h-full flex flex-col justify-center">
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-yu-green transition">お電話でのご相談</h3>
+                    <p class="text-sm text-gray-500 mb-6">お急ぎの方や、直接話して相談したい方</p>
+                    <a href="tel:0492997645" class="text-3xl md:text-4xl font-en font-bold text-yu-green hover:opacity-80 transition block mb-4 tracking-wide">
+                        049-299-7645
+                    </a>
+                    <p class="text-xs text-gray-400 font-bold">受付時間：9:00〜18:00（水曜定休）</p>
+                </div>
+
+            </div>
+
+            <!-- Form Area -->
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-xl font-bold mb-6 border-l-4 border-yu-green pl-4">メールフォーム</h3>
+                
+                <!-- YubinBangoライブラリを使用するためのクラス h-adr -->
+                <form action="#" method="POST" class="h-adr space-y-0">
+                    <!-- YubinBango必須: 国名 -->
+                    <span class="p-country-name" style="display:none;">Japan</span>
+
+                    <!-- Group 1: Name & Kana -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 border-t border-gray-100">
+                        <!-- Name -->
+                        <div class="border-b border-gray-100 py-6">
+                            <label for="name" class="block font-bold text-sm mb-2">
+                                お名前 <span class="required-badge">必須</span>
+                            </label>
+                            <input type="text" id="name" name="name" class="w-full bg-gray-50 border border-gray-200 p-3 rounded-sm focus:bg-white transition" placeholder="例）川越 太郎" autocomplete="name" required>
+                        </div>
+                        <!-- Kana -->
+                        <div class="border-b border-gray-100 py-6">
+                            <label for="kana" class="block font-bold text-sm mb-2">
+                                フリガナ <span class="required-badge">必須</span>
+                            </label>
+                            <input type="text" id="kana" name="kana" class="w-full bg-gray-50 border border-gray-200 p-3 rounded-sm focus:bg-white transition" placeholder="例）カワゴエ タロウ" required>
+                        </div>
+                    </div>
+
+                    <!-- Group 2: Contact Info -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8">
+                        <!-- Tel -->
+                        <div class="border-b border-gray-100 py-6">
+                            <label for="tel" class="block font-bold text-sm mb-2">
+                                電話番号 <span class="required-badge">必須</span>
+                            </label>
+                            <input type="tel" id="tel" name="tel" class="w-full bg-gray-50 border border-gray-200 p-3 rounded-sm focus:bg-white transition" placeholder="例）090-0000-0000" autocomplete="tel" required>
+                        </div>
+                        <!-- Email -->
+                        <div class="border-b border-gray-100 py-6">
+                            <label for="email" class="block font-bold text-sm mb-2">
+                                メールアドレス <span class="required-badge">必須</span>
+                            </label>
+                            <input type="email" id="email" name="email" class="w-full bg-gray-50 border border-gray-200 p-3 rounded-sm focus:bg-white transition" placeholder="例）info@example.com" autocomplete="email" required>
+                        </div>
+                    </div>
+
+                    <!-- Group 3: Address -->
+                    <div class="border-b border-gray-100 py-6">
+                        <label class="block font-bold text-sm mb-2">
+                            ご住所 <span class="optional-badge">任意</span>
+                        </label>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm font-bold">〒</span>
+                                <input type="text" class="p-postal-code w-32 bg-gray-50 border border-gray-200 p-3 rounded-sm focus:bg-white transition" placeholder="350-0807" maxlength="8">
+                                <span class="text-xs text-gray-500 ml-2">※郵便番号入力で住所が自動反映されます</span>
+                            </div>
+                            <input type="text" class="p-region p-locality p-street-address p-extended-address w-full bg-gray-50 border border-gray-200 p-3 rounded-sm focus:bg-white transition" placeholder="例）埼玉県川越市吉田163-3">
+                            <p class="text-xs text-gray-400">※施工エリアの確認のため、可能な限りご記入ください。</p>
+                        </div>
+                    </div>
+
+                    <!-- Group 4: Category -->
+                    <div class="border-b border-gray-100 py-6">
+                        <label class="block font-bold text-sm mb-3">
+                            お問い合わせ項目 <span class="required-badge">必須</span>
+                        </label>
+                        <div class="flex flex-wrap gap-x-6 gap-y-3">
+                            <label class="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-50 rounded transition border border-transparent hover:border-gray-100">
+                                <input type="checkbox" name="category" value="新築外構" class="w-4 h-4 text-yu-green focus:ring-yu-green rounded-sm">
+                                <span>新築外構工事</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-50 rounded transition border border-transparent hover:border-gray-100">
+                                <input type="checkbox" name="category" value="お庭リフォーム" class="w-4 h-4 text-yu-green focus:ring-yu-green rounded-sm">
+                                <span>お庭のリフォーム</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-50 rounded transition border border-transparent hover:border-gray-100">
+                                <input type="checkbox" name="category" value="カーポート・駐車場" class="w-4 h-4 text-yu-green focus:ring-yu-green rounded-sm">
+                                <span>カーポート・駐車場</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-50 rounded transition border border-transparent hover:border-gray-100">
+                                <input type="checkbox" name="category" value="その他" class="w-4 h-4 text-yu-green focus:ring-yu-green rounded-sm">
+                                <span>その他</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Group 5: Message -->
+                    <div class="border-b border-gray-100 py-6">
+                        <label for="message" class="block font-bold text-sm mb-2">
+                            お問い合わせ内容 <span class="required-badge">必須</span>
+                        </label>
+                        <textarea id="message" name="message" rows="6" class="w-full bg-gray-50 border border-gray-200 p-3 rounded-sm focus:bg-white transition leading-relaxed" placeholder="ご要望や現在の状況などをご自由にご記入ください。" required></textarea>
+                    </div>
+
+                    <!-- Privacy Policy -->
+                    <div class="py-8 text-center">
+                        <label class="inline-flex items-center justify-center gap-2 cursor-pointer p-4 bg-gray-50 rounded hover:bg-gray-100 transition w-full md:w-auto">
+                            <input type="checkbox" name="privacy" required class="w-5 h-5 text-yu-green focus:ring-yu-green rounded-sm">
+                            <span class="text-sm font-bold text-gray-700">プライバシーポリシーに同意する</span>
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center pb-8">
+                        <button type="submit" class="w-full md:w-2/3 lg:w-1/2 py-4 bg-yu-green text-white font-bold text-lg rounded-sm hover:opacity-90 transition shadow-md flex items-center justify-center gap-2 mx-auto">
+                            <span>入力内容を確認する</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-yu-green text-white py-12 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="border-t border-white/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
+                        <img src="https://via.placeholder.com/150x40/ffffff/6ab04c?text=YU-ART" alt="YU-ART" class="h-6 w-auto bg-white px-1 rounded-sm">
+                    </div>
+                    <p class="text-xs opacity-90">
+                        〒350-0807 埼玉県川越市吉田163-3<br>
+                        TEL : 049-299-7645
+                    </p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="text-white hover:opacity-70">Instagram</a>
+                    <a href="#" class="text-white hover:opacity-70">Facebook</a>
+                    <a href="#" class="text-white hover:opacity-70">Twitter</a>
+                </div>
+            </div>
+            <div class="text-center text-xs opacity-60 mt-8 font-en">
+                Copyright © "YU-ART" All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

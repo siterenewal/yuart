@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>完成までの流れ｜川越市の外構工事・エクステリア専門店【YU-ART ユーアート】</title>
+    <meta name="description" content="川越市のエクステリア専門店ユーアートの完成までの流れ。ヒアリングから工事完了まで8つのステップをご紹介します。現地調査・初回プラン・お見積もりは無料です。">
+    <link rel="canonical" href="https://yuart.jp/flow/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --green:#6ab04c;--green-dark:#5a9a3e;--green-pale:#eef6e8;--green-mist:#f4f9f0;
+            --black:#1a1a1a;
+            --text:#333;--text-light:#777;--text-muted:#aaa;
+            --bg:#faf9f7;--bg-dark:#0a0a0a;
+            --white:#fff;
+            --sidebar-w:260px;
+            --border:rgba(0,0,0,.07);
+            --font-jp:'Shippori Mincho B1',serif;
+            --font-body:'Noto Sans JP',sans-serif;
+            --font-en:'Cormorant Garamond',serif;
+        }
+        html{scroll-behavior:smooth;font-size:16px}
+        body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.9;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+        a{color:inherit;text-decoration:none}
+        img{max-width:100%;height:auto;display:block}
+
+        /* ═══ LOADING ═══ */
+        #loading{position:fixed;inset:0;background:var(--black);z-index:10000;display:flex;justify-content:center;align-items:center;transition:opacity .6s}
+        #loading.loaded{opacity:0;pointer-events:none}
+        #loading img{width:120px;filter:brightness(0) invert(1);animation:pulse 1.5s ease-in-out infinite}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+        /* ═══ MOBILE HEADER ═══ */
+        .m-header{display:none;position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,249,247,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);height:56px;align-items:center;justify-content:space-between;padding:0 16px}
+        .m-header-logo{width:110px}
+        .m-header-logo img{width:100%}
+        .m-toggle{background:none;border:none;cursor:pointer;width:28px;height:28px;position:relative}
+        .m-toggle span{display:block;width:20px;height:1.5px;background:var(--black);position:absolute;left:4px;transition:.3s}
+        .m-toggle span:nth-child(1){top:7px}
+        .m-toggle span:nth-child(2){top:13px}
+        .m-toggle span:nth-child(3){top:19px}
+        .m-toggle.open span:nth-child(1){top:13px;transform:rotate(45deg)}
+        .m-toggle.open span:nth-child(2){opacity:0}
+        .m-toggle.open span:nth-child(3){top:13px;transform:rotate(-45deg)}
+        .m-nav{display:none;position:fixed;top:56px;left:0;right:0;bottom:0;background:var(--black);z-index:999;padding:2rem}
+        .m-nav.open{display:flex;flex-direction:column}
+        .m-nav a{display:block;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:.92rem;font-weight:500;color:#fff}
+        .m-nav a.current{color:var(--green)}
+        .m-nav-phone{margin-top:auto;text-align:center;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.5);font-size:.8rem}
+        .m-nav-phone strong{display:block;font-size:1.2rem;color:#fff;font-family:var(--font-en);margin-top:.2rem}
+
+        /* ═══ SIDEBAR ═══ */
+        .page-wrap{display:flex;min-height:100vh}
+        .sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--sidebar-w);background:var(--white);z-index:100;display:flex;flex-direction:column;padding:2rem 1.5rem;border-right:1px solid var(--border)}
+        .sidebar-logo{width:110px;margin:0 auto 2rem}
+        .sidebar-logo img{width:100%}
+        .sidebar nav a{display:block;font-size:.82rem;font-weight:500;padding:.6rem 0;border-bottom:1px solid var(--border);color:var(--text-light);transition:.2s}
+        .sidebar nav a:hover,.sidebar nav a.current{color:var(--green)}
+        .sidebar-bottom{margin-top:auto}
+        .sidebar-bottom a.sb-cta{display:block;text-align:center;background:var(--black);color:#fff;padding:.65rem;border-radius:4px;font-size:.8rem;font-weight:700;margin-bottom:.8rem;transition:.2s}
+        .sidebar-bottom a.sb-cta:hover{background:var(--green)}
+        .sidebar-phone{font-size:.75rem;color:var(--text-muted);text-align:center}
+        .sidebar-phone strong{display:block;font-size:1rem;color:var(--black);font-family:var(--font-en)}
+        .main{flex:1;margin-left:var(--sidebar-w)}
+
+        /* ═══ HERO ═══ */
+        .hero{position:relative;height:55vh;min-height:360px;overflow:hidden;background:var(--black)}
+        .hero img{width:100%;height:100%;object-fit:cover;opacity:.35}
+        .hero-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+        .hero h2{font-family:var(--font-jp);font-size:clamp(.9rem,1.4vw,1rem);color:rgba(255,255,255,.55);letter-spacing:.25em;font-weight:400}
+        .hero-en{font-family:var(--font-en);font-size:clamp(3rem,7vw,5rem);color:#fff;font-weight:300;letter-spacing:.1em;line-height:1;margin-top:.3rem}
+
+        /* ═══ GREEN BAND (hero下の植栽帯) ═══ */
+        .green-band{
+            background:var(--green-mist);
+            padding:3rem 24px;
+            text-align:center;
+            position:relative;
+            overflow:hidden;
+        }
+        .green-band::before{
+            content:'';position:absolute;top:-40px;left:10%;
+            width:200px;height:200px;
+            background:radial-gradient(circle,rgba(106,176,76,.06) 0%,transparent 70%);
+            pointer-events:none;
+        }
+        .green-band::after{
+            content:'';position:absolute;bottom:-60px;right:8%;
+            width:250px;height:250px;
+            background:radial-gradient(circle,rgba(106,176,76,.05) 0%,transparent 70%);
+            pointer-events:none;
+        }
+        .green-band h2{font-family:var(--font-jp);font-size:clamp(1.1rem,2vw,1.35rem);font-weight:600;color:var(--black);letter-spacing:.04em;line-height:1.8}
+        .green-band p{font-size:.85rem;color:var(--text-light);margin-top:.4rem}
+
+        /* ═══ FLOW STEPS ═══ */
+        .flow-section{padding:0 0 2rem;max-width:780px;margin:0 auto;padding-left:24px;padding-right:24px}
+
+        .step{
+            display:grid;
+            grid-template-columns:56px 1fr;
+            gap:0 20px;
+            padding-bottom:0;
+            position:relative;
+        }
+
+        /* 左の線＋番号 */
+        .step-left{
+            display:flex;flex-direction:column;align-items:center;
+            position:relative;
+        }
+        .step-num{
+            width:40px;height:40px;
+            border-radius:50%;
+            background:var(--white);border:1.5px solid var(--green);
+            display:flex;align-items:center;justify-content:center;
+            font-family:var(--font-en);font-size:.9rem;color:var(--green);
+            font-weight:500;flex-shrink:0;
+            position:relative;z-index:1;
+        }
+        .step-line{
+            flex:1;width:1px;background:var(--green);opacity:.2;
+        }
+
+        /* 右のカード */
+        .step-card{
+            background:var(--white);
+            border-radius:8px;
+            overflow:hidden;
+            margin-bottom:1.5rem;
+            box-shadow:0 1px 8px rgba(0,0,0,.04);
+        }
+        .step-card-img{
+            width:100%;height:180px;
+            object-fit:cover;
+            display:block;
+        }
+        .step-card-body{
+            padding:1.4rem 1.6rem;
+        }
+        .step-card-body .step-en{
+            font-family:var(--font-en);font-size:.7rem;
+            color:var(--green);letter-spacing:.08em;
+            font-weight:400;
+        }
+        .step-card-body h3{
+            font-family:var(--font-jp);font-size:1.05rem;font-weight:600;
+            color:var(--black);letter-spacing:.03em;line-height:1.6;
+            margin-top:.15rem;
+        }
+        .step-card-body p{
+            font-size:.84rem;color:var(--text-light);line-height:1.9;
+            margin-top:.4rem;
+        }
+
+        /* 写真なしステップ(軽いもの) */
+        .step-card.compact{
+            background:var(--white);
+        }
+        .step-card.compact .step-card-body{
+            padding:1.2rem 1.4rem;
+        }
+
+        /* 植栽背景の帯（途中に入れる） */
+        .green-break{
+            grid-column:1/-1;
+            background:var(--green-mist);
+            margin:1rem -24px 1.5rem;
+            padding:2rem 24px;
+            text-align:center;
+            border-radius:0;
+        }
+        .green-break-text{
+            font-family:var(--font-jp);
+            font-size:.88rem;color:var(--green-dark);
+            letter-spacing:.06em;font-weight:500;
+        }
+
+        /* notes */
+        .flow-notes{
+            max-width:780px;margin:1rem auto 0;padding:0 24px 4rem;
+        }
+        .flow-notes-box{
+            background:var(--green-mist);
+            border-radius:8px;
+            padding:1.5rem 2rem;
+        }
+        .flow-notes-box h2{
+            font-size:.82rem;font-weight:700;color:var(--green-dark);
+            letter-spacing:.04em;margin-bottom:.5rem;
+        }
+        .flow-notes-box p{
+            font-size:.78rem;color:var(--text-light);line-height:2;
+        }
+
+        /* ═══ CTA ═══ */
+        .cta{padding:4.5rem 0;background:var(--black);position:relative;overflow:hidden}
+        /* 植栽のシルエット的なオーバーレイ */
+        .cta::before{
+            content:'';position:absolute;bottom:0;left:0;right:0;height:120px;
+            background:linear-gradient(to top,rgba(106,176,76,.04),transparent);
+            pointer-events:none;
+        }
+        .cta-inner{max-width:800px;margin:0 auto;padding:0 24px;text-align:center;position:relative;z-index:1}
+        .cta h2{font-family:var(--font-jp);font-size:clamp(1.1rem,2vw,1.35rem);font-weight:600;color:#fff;letter-spacing:.06em}
+        .cta-sub{font-size:.82rem;color:rgba(255,255,255,.4);margin-top:.3rem;margin-bottom:2rem}
+        .cta-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:8px;overflow:hidden}
+        .cta-card{background:rgba(255,255,255,.02);padding:2rem 1rem;text-align:center;transition:.2s}
+        .cta-card:hover{background:rgba(106,176,76,.06)}
+        .cta-card-label{font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.04em}
+        .cta-card-detail{font-family:var(--font-en);font-size:1.2rem;color:var(--green);font-weight:400;margin-top:.2rem;display:block}
+        .cta-card-small{font-size:.7rem;color:rgba(255,255,255,.3);margin-top:.3rem;display:block}
+        .cta-card-btn{display:inline-block;margin-top:.8rem;font-size:.75rem;color:rgba(255,255,255,.5);border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:1px;transition:.2s}
+        .cta-card:hover .cta-card-btn{color:var(--green);border-color:var(--green)}
+        .cta-sns{display:flex;justify-content:center;gap:.8rem;margin-top:2rem}
+        .cta-sns a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:.2s}
+        .cta-sns a:hover{border-color:var(--green)}
+        .cta-sns a svg{width:15px;height:15px;fill:rgba(255,255,255,.3);transition:.2s}
+        .cta-sns a:hover svg{fill:var(--green)}
+
+        /* ═══ FOOTER ═══ */
+        .footer{background:var(--bg-dark);color:#fff;padding:3.5rem 0 0}
+        .footer-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+        .footer-brand{max-width:300px}
+        .footer-logo{width:120px;margin-bottom:1rem;filter:brightness(0) invert(1)}
+        .footer-info{font-size:.78rem;color:rgba(255,255,255,.35);line-height:2.2}
+        .footer-info strong{color:rgba(255,255,255,.7)}
+        .footer-info a{color:var(--green)}
+        .footer-links{display:flex;gap:2.5rem}
+        .footer-links-col a{display:block;font-size:.78rem;color:rgba(255,255,255,.35);padding:.15rem 0;transition:.2s}
+        .footer-links-col a:hover{color:var(--green)}
+        .footer-copy{max-width:1200px;margin:0 auto;padding:1.2rem 24px;text-align:center;font-size:.68rem;color:rgba(255,255,255,.15)}
+
+        /* PageTop */
+        .pagetop{position:fixed;bottom:80px;right:16px;width:40px;height:40px;background:var(--black);border:1px solid rgba(255,255,255,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;z-index:800;opacity:0;visibility:hidden;transition:.3s;cursor:pointer}
+        .pagetop.show{opacity:1;visibility:visible}
+        .pagetop:hover{background:var(--green);border-color:var(--green)}
+        .pagetop svg{width:16px;height:16px;fill:#fff}
+
+        /* Mobile CTA */
+        .fixed-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--black);padding:.4rem .6rem}
+        .fixed-cta-inner{display:grid;grid-template-columns:1fr 1fr;gap:.3rem}
+        .fixed-cta a{display:flex;align-items:center;justify-content:center;gap:.3rem;padding:.6rem;border-radius:4px;font-size:.8rem;font-weight:700}
+        .fixed-cta a svg{width:15px;height:15px;fill:currentColor}
+        .fixed-cta .fc-tel{background:var(--green);color:#fff}
+        .fixed-cta .fc-mail{background:#fff;color:var(--black)}
+
+        /* ═══ RESPONSIVE ═══ */
+        @media(max-width:1024px){
+            .sidebar{width:220px}:root{--sidebar-w:220px}
+        }
+        @media(max-width:768px){
+            .m-header{display:flex}
+            .sidebar{display:none}
+            .main{margin-left:0;padding-top:56px}
+            .fixed-cta{display:block}
+            .pagetop{bottom:70px}
+            .hero{height:45vh;min-height:280px}
+            .step{grid-template-columns:44px 1fr;gap:0 14px}
+            .step-num{width:34px;height:34px;font-size:.8rem}
+            .step-card-img{height:140px}
+            .step-card-body{padding:1.1rem 1.2rem}
+            .step-card-body h3{font-size:.95rem}
+            .cta{padding:3rem 0}
+            .cta-cards{grid-template-columns:1fr}
+            .footer-inner{flex-direction:column;gap:1.5rem}
+            .footer-links{flex-direction:column;gap:1rem}
+            body{padding-bottom:52px}
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading"><img src="image/logo01.png" alt="YU-ART"></div>
+
+    <!-- MOBILE -->
+    <div class="m-header">
+        <div class="m-header-logo"><a href="/"><img src="image/logo01.png" alt="YU-ART"></a></div>
+        <button class="m-toggle" id="mToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="m-nav" id="mNav">
+        <a href="/">ホーム</a>
+        <a href="/concept.html">コンセプト</a>
+        <a href="/works/">施工事例</a>
+        <a href="/flow/" class="current">完成までの流れ</a>
+        <a href="/company/">会社概要</a>
+        <a href="/recruit/">採用情報</a>
+        <a href="/blog/">コラム</a>
+        <a href="/contact/">お問い合わせ</a>
+        <div class="m-nav-phone">お電話でのお問合せ<strong><a href="tel:049-299-7645" style="color:#fff">049-299-7645</a></strong></div>
+    </nav>
+
+    <div class="page-wrap">
+        <aside class="sidebar">
+            <div class="sidebar-logo"><a href="/"><img src="image/logo01.png" alt="YU-ART"></a></div>
+            <nav>
+                <a href="/">ホーム</a>
+                <a href="/concept.html">コンセプト</a>
+                <a href="/works/">施工事例</a>
+                <a href="/flow/" class="current">完成までの流れ</a>
+                <a href="/company/">会社概要</a>
+                <a href="/recruit/">採用情報</a>
+                <a href="/blog/">コラム</a>
+                <a href="/contact/">お問い合わせ</a>
+            </nav>
+            <div class="sidebar-bottom">
+                <a href="/contact/" class="sb-cta">無料相談・お見積り</a>
+                <div class="sidebar-phone">お電話でのお問合せ<strong><a href="tel:049-299-7645">049-299-7645</a></strong></div>
+            </div>
+        </aside>
+
+        <div class="main">
+
+            <!-- HERO -->
+            <section class="hero">
+                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1600&h=900&fit=crop" alt="植栽のある外構">
+                <div class="hero-inner">
+                    <h2>完成までの流れ</h2>
+                    <div class="hero-en">Flow</div>
+                </div>
+            </section>
+
+            <main>
+
+                <!-- 導入 -->
+                <section class="green-band">
+                    <h2>お問い合わせから完成まで</h2>
+                    <p>現地調査・初回プラン・お見積もりは無料です。<br>ひとつずつ丁寧に、理想の外構を形にしていきます。</p>
+                </section>
+
+                <!-- STEPS -->
+                <section class="flow-section">
+
+                    <!-- 1 -->
+                    <div class="step">
+                        <div class="step-left">
+                            <div class="step-num">1</div>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-card">
+                            <img class="step-card-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&h=360&fit=crop" alt="ヒアリング">
+                            <div class="step-card-body">
+                                <span class="step-en">Hearing</span>
+                                <h3>ヒアリング</h3>
+                                <p>ご計画のご要望やご予算などについてお聞きいたします。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="step">
+                        <div class="step-left">
+                            <div class="step-num">2</div>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-card">
+                            <img class="step-card-img" src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=700&h=360&fit=crop" alt="現況調査">
+                            <div class="step-card-body">
+                                <span class="step-en">Site Survey</span>
+                                <h3>建築地の現況調査</h3>
+                                <p>現況の状況、既存物、道路状況等、プランに影響するものを調査いたします。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="step">
+                        <div class="step-left">
+                            <div class="step-num">3</div>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-card">
+                            <img class="step-card-img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&h=360&fit=crop" alt="プラン提示">
+                            <div class="step-card-body">
+                                <span class="step-en">Proposal</span>
+                                <h3>プランお見積提示</h3>
+                                <p>ヒアリングの要望を踏まえ、プランの提示、お見積もり金額をお伝えします。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="step">
+                        <div class="step-left">
+                            <div class="step-num">4</div>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-card compact">
+                            <div class="step-card-body">
+                                <span class="step-en">Revision</span>
+                                <h3>修正プラン見積提示</h3>
+                                <p>初回プランからの内容を修正し、再度ご提案します。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 途中の植栽帯 -->
+                    <div class="green-break">
+                        <div class="green-break-text">ここまで無料でご対応いたします</div>
+                    </div>
+
+                    <!-- 5 -->
+                    <div class="step">
+                        <div class="step-left">
+                            <div class="step-num">5</div>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-card">
+                            <img class="step-card-img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&h=360&fit=crop" alt="ご契約">
+                            <div class="step-card-body">
+                                <span class="step-en">Contract</span>
+                                <h3>プラン確定・ご契約</h3>
+                                <p>プランと工事代金が確定いたしましたらご契約となります。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6 -->
+                    <div class="step">
+                        <div class="step-left">
+                            <div class="step-num">6</div>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-card">
+                            <img class="step-card-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&h=360&fit=crop" alt="工事着工">
+                            <div class="step-card-body">
+                                <span class="step-en">Construction</span>
+                                <h3>工事着工</h3>
+                                <p>工事日程が決まりましたら着工となります。工事内容、天候により工期が前後する場合がございます。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7 -->
+                    <div class="step">
+                        <div class="step-left">
+                            <div class="step-num">7</div>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-card">
+                            <img class="step-card-img" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&h=360&fit=crop" alt="完了検査">
+                            <div class="step-card-body">
+                                <span class="step-en">Inspection</span>
+                                <h3>工事完了・完了検査</h3>
+                                <p>工事完了後、不具合が無いかお立ち会いいただきます。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8 -->
+                    <div class="step">
+                        <div class="step-left">
+                            <div class="step-num">8</div>
+                            <div class="step-line" style="opacity:0"></div>
+                        </div>
+                        <div class="step-card compact">
+                            <div class="step-card-body">
+                                <span class="step-en">Payment</span>
+                                <h3>工事代金の精算</h3>
+                                <p>完了検査後、工事代金のお支払いをお願いいたします。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- NOTES -->
+                <section class="flow-notes">
+                    <div class="flow-notes-box">
+                        <h2>ご利用にあたって</h2>
+                        <p>
+                            ※現地調査、初回のプラン、お見積もりは無料です。<br>
+                            ※プラン提示3回目以降は設計申込金を頂きます。<br>
+                            　申込金は工事代金に含まれます。契約に至らない場合はご返金致しません。
+                        </p>
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <section class="cta">
+                    <div class="cta-inner">
+                        <h2>ご相談をお考えの方へ</h2>
+                        <p class="cta-sub">お見積り・現地調査は無料です</p>
+                        <div class="cta-cards">
+                            <a class="cta-card" href="tel:049-299-7645">
+                                <div class="cta-card-label">電話をかける</div>
+                                <span class="cta-card-detail">049-299-7645</span>
+                                <span class="cta-card-small">受付 9:00〜17:00（火・水曜定休）</span>
+                            </a>
+                            <a class="cta-card" href="/contact/">
+                                <div class="cta-card-label">お問い合わせ</div>
+                                <span class="cta-card-small">（メールフォーム）</span>
+                                <span class="cta-card-btn">フォームを開く →</span>
+                            </a>
+                            <a class="cta-card" href="https://maps.google.com/?q=埼玉県川越市吉田163-3" target="_blank" rel="noopener">
+                                <div class="cta-card-label">ショップの場所</div>
+                                <span class="cta-card-small">（Google map）</span>
+                                <span class="cta-card-btn">地図を見る →</span>
+                            </a>
+                        </div>
+                        <div class="cta-sns">
+                            <a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                            <a href="https://www.facebook.com/profile.php?id=100027438334423" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                            <a href="https://twitter.com/yuart7645" target="_blank" rel="noopener" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                            <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- FOOTER -->
+            <footer class="footer">
+                <div class="footer-inner">
+                    <div class="footer-brand">
+                        <img src="image/logo01.png" alt="YU-ART" class="footer-logo">
+                        <div class="footer-info">
+                            <strong>株式会社ユーアート</strong><br>
+                            〒350-0807　埼玉県川越市吉田163-3<br>
+                            TEL : <a href="tel:049-299-7645">049-299-7645</a>　FAX : 049-299-7646<br>
+                            MAIL : <a href="mailto:info@yu-art.jp">info@yu-art.jp</a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-links-col">
+                            <a href="/">ホーム</a>
+                            <a href="/concept.html">コンセプト</a>
+                            <a href="/works/">施工事例</a>
+                            <a href="/flow/">完成までの流れ</a>
+                        </div>
+                        <div class="footer-links-col">
+                            <a href="/company/">会社概要</a>
+                            <a href="/recruit/">採用情報</a>
+                            <a href="/blog/">コラム</a>
+                            <a href="/contact/">お問い合わせ</a>
+                        </div>
+                    </div>
+                </div>
+                <p class="footer-copy">Copyright&copy; &quot;YU-ART&quot; All Rights Reserved.</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- Mobile CTA -->
+    <div class="fixed-cta"><div class="fixed-cta-inner">
+        <a href="tel:049-299-7645" class="fc-tel"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>電話で相談</a>
+        <a href="/contact/" class="fc-mail"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
+    </div></div>
+    <button class="pagetop" id="pagetop" aria-label="PageTop"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
+
+    <script>
+        window.addEventListener('load',()=>document.getElementById('loading').classList.add('loaded'));
+        setTimeout(()=>document.getElementById('loading').classList.add('loaded'),3000);
+        const tog=document.getElementById('mToggle'),nav=document.getElementById('mNav');
+        tog.addEventListener('click',()=>{tog.classList.toggle('open');nav.classList.toggle('open');document.body.style.overflow=nav.classList.contains('open')?'hidden':''});
+        nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{tog.classList.remove('open');nav.classList.remove('open');document.body.style.overflow=''}));
+        const pt=document.getElementById('pagetop');
+        window.addEventListener('scroll',()=>pt.classList.toggle('show',scrollY>400));
+        pt.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+    </script>
+</body>
+</html>
