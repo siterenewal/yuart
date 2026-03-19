@@ -88,7 +88,57 @@
         .hero h1{font-size:0;position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
         .hero-overlay{position:absolute;inset:0;z-index:10;display:flex;align-items:center;justify-content:flex-end;padding:0 6% 0 0}
         .hero-content{text-align:right;color:#fff;max-width:560px}
-        .hero-en-label{font-family:var(--font-script);font-size:clamp(1.2rem,2.5vw,2rem);color:rgba(255,255,255,.6);margin-bottom:1rem;display:block}
+
+        /* ===== Handwriting SVG Animation ===== */
+        .hero-en-label-wrap{
+            display:block;
+            margin-bottom:1rem;
+            height:auto;
+            overflow:visible;
+        }
+        .hero-en-svg{
+            display:block;
+            max-width:520px;
+            width:100%;
+            height:auto;
+            margin-left:auto;
+            overflow:visible;
+        }
+        .hero-en-svg text{
+            font-family:'Great Vibes',cursive;
+            font-size:60px;
+            fill:none;
+            stroke:rgba(255,255,255,.85);
+            stroke-width:1.2;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+            stroke-dasharray:2000;
+            stroke-dashoffset:2000;
+        }
+        .hero-en-svg.animate text{
+            animation:drawText 3.5s cubic-bezier(.25,.1,.25,1) forwards;
+        }
+        .hero-en-svg.animate .text-line2{
+            animation:drawText 3.5s cubic-bezier(.25,.1,.25,1) .6s forwards;
+        }
+        @keyframes drawText{
+            0%{
+                stroke-dashoffset:2000;
+                fill:rgba(255,255,255,0);
+            }
+            60%{
+                stroke-dashoffset:0;
+                fill:rgba(255,255,255,0);
+            }
+            100%{
+                stroke-dashoffset:0;
+                fill:rgba(255,255,255,.65);
+                stroke:rgba(255,255,255,.35);
+            }
+        }
+        /* Fallback for old .hero-en-label — hidden now */
+        .hero-en-label{display:none}
+
         .hero-catch{font-family:var(--font-jp);font-size:clamp(2rem,5vw,3.4rem);font-weight:600;letter-spacing:.15em;line-height:1.8}
         .hero-catch .line{display:block}
         .hero-sub{font-size:clamp(.78rem,1.2vw,.9rem);font-weight:300;letter-spacing:.2em;margin-top:1.5rem;color:rgba(255,255,255,.55);line-height:1.8}
@@ -292,6 +342,7 @@
             .hero-wrapper{min-height:100vh;padding-top:60px}
             .hero-overlay{justify-content:center;padding:0 1.5rem}
             .hero-content{text-align:center;max-width:100%}
+            .hero-en-svg{margin:0 auto}
             .hero-divider{margin:1.5rem auto}
             .hero-btn-group{justify-content:center;flex-direction:column;align-items:center}
             .hero-btn{width:100%;max-width:280px;justify-content:center}
@@ -332,6 +383,7 @@
             .blog-grid{grid-template-columns:1fr}
             .insta-grid{grid-template-columns:repeat(2,1fr)}
             .flow-grid{grid-template-columns:1fr}
+            .hero-en-svg text{font-size:42px}
         }
     </style>
 </head>
@@ -406,7 +458,15 @@
             </div>
             <div class="hero-overlay">
                 <div class="hero-content">
-                    <span class="hero-en-label">Exterior &amp; Garden Design</span>
+
+                    <!-- ★ Handwriting SVG Animation ★ -->
+                    <div class="hero-en-label-wrap">
+                        <svg class="hero-en-svg" id="heroEnSvg" viewBox="0 0 520 120" xmlns="http://www.w3.org/2000/svg">
+                            <text class="text-line1" x="50%" y="45" text-anchor="middle">Exterior &amp; Garden</text>
+                            <text class="text-line2" x="50%" y="105" text-anchor="middle">Design</text>
+                        </svg>
+                    </div>
+
                     <p class="hero-catch"><span class="line">暮らしの中に、</span><span class="line">遊びごころを。</span></p>
                     <p class="hero-sub">川越市を中心に、お庭と外構の<br>トータルデザインをご提案します</p>
                     <div class="hero-divider"></div>
@@ -675,19 +735,34 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        /* === Loading === */
         window.addEventListener('load',()=>document.getElementById('loading').classList.add('loaded'));
         setTimeout(()=>document.getElementById('loading').classList.add('loaded'),3000);
+
+        /* === Swiper === */
         new Swiper('.hero-swiper',{loop:true,effect:'fade',fadeEffect:{crossFade:true},autoplay:{delay:5000,disableOnInteraction:false},speed:1500,pagination:{el:'.hero-swiper .swiper-pagination',clickable:true}});
+
+        /* === Mobile Menu === */
         const menuToggle=document.getElementById('menuToggle'),mobileNav=document.getElementById('mobileNav');
         menuToggle.addEventListener('click',()=>{menuToggle.classList.toggle('active');mobileNav.classList.toggle('active');document.body.style.overflow=mobileNav.classList.contains('active')?'hidden':''});
         mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menuToggle.classList.remove('active');mobileNav.classList.remove('active');document.body.style.overflow=''}));
+
+        /* === FAQ Accordion === */
         document.querySelectorAll('.faq-question').forEach(q=>q.addEventListener('click',()=>{const i=q.parentElement,a=i.classList.contains('active');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('active'));if(!a)i.classList.add('active')}));
+
+        /* === Fade-up Observer === */
         const obs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
         document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+        /* === Page Top === */
         const pt=document.getElementById('pagetop');
         window.addEventListener('scroll',()=>pt.classList.toggle('show',window.scrollY>500));
         pt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+        /* === Smooth Scroll === */
         document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const h=a.getAttribute('href');if(!h||h==='#')return;const t=document.querySelector(h);if(t){e.preventDefault();const offset=window.innerWidth<=768?70:20;window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-offset,behavior:'smooth'})}})});
+
+        /* === Sticky Header on scroll past hero === */
         const stickyHeader=document.getElementById('stickyHeader');
         const heroWrapper=document.querySelector('.hero-wrapper');
         if(stickyHeader&&heroWrapper){
@@ -696,6 +771,69 @@
             },{threshold:0});
             stickyObs.observe(heroWrapper);
         }
+
+        /* ===================================================
+           ★ Handwriting Animation for "Exterior & Garden Design"
+           =================================================== */
+        (function(){
+            const svg = document.getElementById('heroEnSvg');
+            if(!svg) return;
+
+            // Wait for font to load, then measure & animate
+            document.fonts.ready.then(function(){
+                const texts = svg.querySelectorAll('text');
+
+                // We need to calculate actual stroke length for each text element.
+                // SVG text doesn't have getComputedTextLength for stroke path,
+                // so we use a generous dasharray value and animate from that.
+                texts.forEach(function(t){
+                    const len = t.getComputedTextLength ? t.getComputedTextLength() : 2000;
+                    // Use 3x length to ensure full coverage of cursive strokes
+                    const dashLen = Math.max(len * 3, 2000);
+                    t.style.strokeDasharray = dashLen;
+                    t.style.strokeDashoffset = dashLen;
+                });
+
+                // Trigger animation after a short delay (let loading screen finish)
+                function startAnimation(){
+                    svg.classList.add('animate');
+                    // Also apply precise dasharray-based animation via JS for reliability
+                    texts.forEach(function(t, i){
+                        const dashLen = parseFloat(t.style.strokeDasharray);
+                        const delay = i * 600; // 600ms stagger between lines
+                        t.style.transition = 'none';
+                        t.style.strokeDashoffset = dashLen;
+                        t.style.fill = 'rgba(255,255,255,0)';
+
+                        // Stroke drawing phase
+                        setTimeout(function(){
+                            t.style.transition = 'stroke-dashoffset 2.8s cubic-bezier(.25,.1,.25,1), fill 1.2s ease ' + '2s';
+                            t.style.strokeDashoffset = '0';
+                            t.style.fill = 'rgba(255,255,255,0.65)';
+                        }, delay + 100);
+                    });
+                }
+
+                // Start after loading screen is done
+                const loading = document.getElementById('loading');
+                if(loading && !loading.classList.contains('loaded')){
+                    // Watch for loaded class
+                    const mo = new MutationObserver(function(mutations){
+                        mutations.forEach(function(m){
+                            if(loading.classList.contains('loaded')){
+                                mo.disconnect();
+                                setTimeout(startAnimation, 400);
+                            }
+                        });
+                    });
+                    mo.observe(loading, {attributes:true, attributeFilter:['class']});
+                    // Fallback
+                    setTimeout(startAnimation, 3500);
+                } else {
+                    setTimeout(startAnimation, 400);
+                }
+            });
+        })();
     </script>
 </body>
 </html>
