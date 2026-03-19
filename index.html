@@ -88,57 +88,13 @@
         .hero h1{font-size:0;position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
         .hero-overlay{position:absolute;inset:0;z-index:10;display:flex;align-items:center;justify-content:flex-end;padding:0 6% 0 0}
         .hero-content{text-align:right;color:#fff;max-width:560px}
-
-        /* ===== Handwriting SVG Animation ===== */
-        .hero-en-label-wrap{
-            display:block;
-            margin-bottom:1rem;
-            height:auto;
-            overflow:visible;
-        }
-        .hero-en-svg{
-            display:block;
-            max-width:520px;
-            width:100%;
-            height:auto;
-            margin-left:auto;
-            overflow:visible;
-        }
-        .hero-en-svg text{
-            font-family:'Great Vibes',cursive;
-            font-size:60px;
-            fill:none;
-            stroke:rgba(255,255,255,.85);
-            stroke-width:1.2;
-            stroke-linecap:round;
-            stroke-linejoin:round;
-            stroke-dasharray:2000;
-            stroke-dashoffset:2000;
-        }
-        .hero-en-svg.animate text{
-            animation:drawText 3.5s cubic-bezier(.25,.1,.25,1) forwards;
-        }
-        .hero-en-svg.animate .text-line2{
-            animation:drawText 3.5s cubic-bezier(.25,.1,.25,1) .6s forwards;
-        }
-        @keyframes drawText{
-            0%{
-                stroke-dashoffset:2000;
-                fill:rgba(255,255,255,0);
-            }
-            60%{
-                stroke-dashoffset:0;
-                fill:rgba(255,255,255,0);
-            }
-            100%{
-                stroke-dashoffset:0;
-                fill:rgba(255,255,255,.65);
-                stroke:rgba(255,255,255,.35);
-            }
-        }
-        /* Fallback for old .hero-en-label — hidden now */
+        .hero-en-label-wrap{display:block;margin-bottom:1rem;height:auto;overflow:visible}
+        .hero-en-svg{display:block;max-width:520px;width:100%;height:auto;margin-left:auto;overflow:visible}
+        .hero-en-svg text{font-family:'Great Vibes',cursive;font-size:60px;fill:none;stroke:rgba(255,255,255,.85);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2000;stroke-dashoffset:2000}
+        .hero-en-svg.animate text{animation:drawText 3.5s cubic-bezier(.25,.1,.25,1) forwards}
+        .hero-en-svg.animate .text-line2{animation:drawText 3.5s cubic-bezier(.25,.1,.25,1) .6s forwards}
+        @keyframes drawText{0%{stroke-dashoffset:2000;fill:rgba(255,255,255,0)}60%{stroke-dashoffset:0;fill:rgba(255,255,255,0)}100%{stroke-dashoffset:0;fill:rgba(255,255,255,.65);stroke:rgba(255,255,255,.35)}}
         .hero-en-label{display:none}
-
         .hero-catch{font-family:var(--font-jp);font-size:clamp(2rem,5vw,3.4rem);font-weight:600;letter-spacing:.15em;line-height:1.8}
         .hero-catch .line{display:block}
         .hero-sub{font-size:clamp(.78rem,1.2vw,.9rem);font-weight:300;letter-spacing:.2em;margin-top:1.5rem;color:rgba(255,255,255,.55);line-height:1.8}
@@ -400,6 +356,7 @@
             <a href="/yuart/archive-constraction.html">施工事例</a>
             <a href="/yuart/flow.html">完成までの流れ</a>
             <a href="/yuart/company.html">会社概要</a>
+            <a href="/yuart/staff.html">スタッフ紹介</a>
             <a href="/yuart/recruit.html">採用情報</a>
             <a href="/yuart/contact.html">お問い合わせ</a>
         </nav>
@@ -423,6 +380,7 @@
         <a href="/yuart/archive-constraction.html">施工事例</a>
         <a href="/yuart/flow.html">完成までの流れ</a>
         <a href="/yuart/company.html">会社概要</a>
+        <a href="/yuart/staff.html">スタッフ紹介</a>
         <a href="/yuart/recruit.html">採用情報</a>
         <a href="/yuart/contact.html">お問い合わせ</a>
         <div class="mobile-nav-phone">お電話でのお問合せ<strong><a href="tel:049-299-7645">049-299-7645</a></strong></div>
@@ -439,6 +397,7 @@
                 <a href="/yuart/archive-constraction.html">施工事例</a>
                 <a href="/yuart/flow.html">完成までの流れ</a>
                 <a href="/yuart/company.html">会社概要</a>
+                <a href="/yuart/staff.html">スタッフ紹介</a>
                 <a href="/yuart/recruit.html">採用情報</a>
                 <a href="/yuart/contact.html">お問い合わせ</a>
             </nav>
@@ -458,15 +417,12 @@
             </div>
             <div class="hero-overlay">
                 <div class="hero-content">
-
-                    <!-- ★ Handwriting SVG Animation ★ -->
                     <div class="hero-en-label-wrap">
                         <svg class="hero-en-svg" id="heroEnSvg" viewBox="0 0 520 120" xmlns="http://www.w3.org/2000/svg">
                             <text class="text-line1" x="50%" y="45" text-anchor="middle">Exterior &amp; Garden</text>
                             <text class="text-line2" x="50%" y="105" text-anchor="middle">Design</text>
                         </svg>
                     </div>
-
                     <p class="hero-catch"><span class="line">暮らしの中に、</span><span class="line">遊びごころを。</span></p>
                     <p class="hero-sub">川越市を中心に、お庭と外構の<br>トータルデザインをご提案します</p>
                     <div class="hero-divider"></div>
@@ -501,38 +457,14 @@
         <div class="container">
             <div class="section-title fade-up"><span class="en">Works</span><span class="ja">施工事例</span></div>
             <div class="works-grid">
-                <a href="/yuart/single-works.html" class="works-card fade-up">
-                    <div class="works-card-img"><img src="top37.jpg" alt="クローズ外構" loading="lazy"></div>
-                    <div class="works-card-body"><div class="works-card-area">川越市</div><h3>防犯を重視したクローズリフォーム</h3></div>
-                </a>
-                <a href="/yuart/single-works.html" class="works-card fade-up">
-                    <div class="works-card-img"><img src="top37.jpg" alt="オープン外構" loading="lazy"></div>
-                    <div class="works-card-body"><div class="works-card-area">鶴ヶ島市</div><h3>カラーバランスの新築外構</h3></div>
-                </a>
-                <a href="/yuart/single-works.html" class="works-card fade-up">
-                    <div class="works-card-img"><img src="top37.jpg" alt="セミクローズ外構" loading="lazy"></div>
-                    <div class="works-card-body"><div class="works-card-area">坂戸市</div><h3>ラグジュアリーガーデン</h3></div>
-                </a>
-                <a href="/yuart/single-works.html" class="works-card fade-up">
-                    <div class="works-card-img"><img src="top37.jpg" alt="モダン外構" loading="lazy"></div>
-                    <div class="works-card-body"><div class="works-card-area">川越市</div><h3>縦格子のモダンエクステリア</h3></div>
-                </a>
-                <a href="/yuart/single-works.html" class="works-card fade-up">
-                    <div class="works-card-img"><img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=600&h=450&fit=crop&q=80" alt="リフォーム" loading="lazy"></div>
-                    <div class="works-card-body"><div class="works-card-area">日高市</div><h3>ホワイトタイルテラス</h3></div>
-                </a>
-                <a href="/yuart/single-works.html" class="works-card fade-up">
-                    <div class="works-card-img"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&h=450&fit=crop&q=80" alt="ナチュラルガーデン" loading="lazy"></div>
-                    <div class="works-card-body"><div class="works-card-area">鶴ヶ島市</div><h3>植栽豊かなナチュラルガーデン</h3></div>
-                </a>
-                <a href="/yuart/single-works.html" class="works-card fade-up">
-                    <div class="works-card-img"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=450&fit=crop&q=80" alt="ライティング" loading="lazy"></div>
-                    <div class="works-card-body"><div class="works-card-area">川越市</div><h3>夜を彩るライティングデザイン</h3></div>
-                </a>
-                <a href="/yuart/single-works.html" class="works-card fade-up">
-                    <div class="works-card-img"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=450&fit=crop&q=80" alt="カーポート" loading="lazy"></div>
-                    <div class="works-card-body"><div class="works-card-area">坂戸市</div><h3>カーテンを一切閉めないリゾートスタイル</h3></div>
-                </a>
+                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="top37.jpg" alt="クローズ外構" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">川越市</div><h3>防犯を重視したクローズリフォーム</h3></div></a>
+                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="top37.jpg" alt="オープン外構" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">鶴ヶ島市</div><h3>カラーバランスの新築外構</h3></div></a>
+                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="top37.jpg" alt="セミクローズ外構" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">坂戸市</div><h3>ラグジュアリーガーデン</h3></div></a>
+                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="top37.jpg" alt="モダン外構" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">川越市</div><h3>縦格子のモダンエクステリア</h3></div></a>
+                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=600&h=450&fit=crop&q=80" alt="リフォーム" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">日高市</div><h3>ホワイトタイルテラス</h3></div></a>
+                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&h=450&fit=crop&q=80" alt="ナチュラルガーデン" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">鶴ヶ島市</div><h3>植栽豊かなナチュラルガーデン</h3></div></a>
+                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=450&fit=crop&q=80" alt="ライティング" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">川越市</div><h3>夜を彩るライティングデザイン</h3></div></a>
+                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=450&fit=crop&q=80" alt="カーポート" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">坂戸市</div><h3>カーテンを一切閉めないリゾートスタイル</h3></div></a>
             </div>
             <div class="btn-more-wrap fade-up"><a href="/yuart/archive-constraction.html" class="btn-more">施工事例をもっと見る<svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a></div>
         </div>
@@ -541,18 +473,9 @@
     <section class="reason" id="reason">
         <div class="container">
             <div class="section-title fade-up"><span class="en">Reason</span><span class="ja">ユーアートが選ばれる理由</span></div>
-            <div class="reason-item fade-up">
-                <div class="reason-item-img"><span class="reason-item-num">01</span><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop&q=80" alt="自社施工"></div>
-                <div class="reason-item-text"><span class="reason-tag">REASON 01</span><h3>自社施工だから実現する<br>「適正価格」と「高品質」</h3><p>外注を挟まず自社の熟練職人が直接施工。中間マージンが発生しないため、ハウスメーカー経由と比べて20〜30%のコストメリットを実現。</p></div>
-            </div>
-            <div class="reason-item reverse fade-up">
-                <div class="reason-item-img"><span class="reason-item-num">02</span><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&h=600&fit=crop&q=80" alt="3Dパース"></div>
-                <div class="reason-item-text"><span class="reason-tag">REASON 02</span><h3>3Dパースで<br>完成イメージを事前確認</h3><p>高品質な3Dパースで、色合いや素材感まで細かくご確認いただけます。パース作成は何度でも無料です。</p></div>
-            </div>
-            <div class="reason-item fade-up">
-                <div class="reason-item-img"><span class="reason-item-num">03</span><img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&h=600&fit=crop&q=80" alt="地域密着"></div>
-                <div class="reason-item-text"><span class="reason-tag">REASON 03</span><h3>川越市に根ざした<br>地域密着のアフターフォロー</h3><p>YKK AP エクステリアスタイル大賞 2年連続受賞、タカショー庭施工例コンテスト ガーデン大賞の実績。</p></div>
-            </div>
+            <div class="reason-item fade-up"><div class="reason-item-img"><span class="reason-item-num">01</span><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop&q=80" alt="自社施工"></div><div class="reason-item-text"><span class="reason-tag">REASON 01</span><h3>自社施工だから実現する<br>「適正価格」と「高品質」</h3><p>外注を挟まず自社の熟練職人が直接施工。中間マージンが発生しないため、ハウスメーカー経由と比べて20〜30%のコストメリットを実現。</p></div></div>
+            <div class="reason-item reverse fade-up"><div class="reason-item-img"><span class="reason-item-num">02</span><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&h=600&fit=crop&q=80" alt="3Dパース"></div><div class="reason-item-text"><span class="reason-tag">REASON 02</span><h3>3Dパースで<br>完成イメージを事前確認</h3><p>高品質な3Dパースで、色合いや素材感まで細かくご確認いただけます。パース作成は何度でも無料です。</p></div></div>
+            <div class="reason-item fade-up"><div class="reason-item-img"><span class="reason-item-num">03</span><img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&h=600&fit=crop&q=80" alt="地域密着"></div><div class="reason-item-text"><span class="reason-tag">REASON 03</span><h3>川越市に根ざした<br>地域密着のアフターフォロー</h3><p>YKK AP エクステリアスタイル大賞 2年連続受賞、タカショー庭施工例コンテスト ガーデン大賞の実績。</p></div></div>
         </div>
     </section>
 
@@ -708,6 +631,7 @@
                         <a href="/yuart/archive-constraction.html">施工事例</a>
                         <a href="/yuart/flow.html">完成までの流れ</a>
                         <a href="/yuart/company.html">会社概要</a>
+                        <a href="/yuart/staff.html">スタッフ紹介</a>
                         <a href="/yuart/recruit.html">採用情報</a>
                         <a href="/yuart/contact.html">お問い合わせ</a>
                     </div>
@@ -772,52 +696,35 @@
             stickyObs.observe(heroWrapper);
         }
 
-        /* ===================================================
-           ★ Handwriting Animation for "Exterior & Garden Design"
-           =================================================== */
+        /* === Handwriting Animation === */
         (function(){
             const svg = document.getElementById('heroEnSvg');
             if(!svg) return;
-
-            // Wait for font to load, then measure & animate
             document.fonts.ready.then(function(){
                 const texts = svg.querySelectorAll('text');
-
-                // We need to calculate actual stroke length for each text element.
-                // SVG text doesn't have getComputedTextLength for stroke path,
-                // so we use a generous dasharray value and animate from that.
                 texts.forEach(function(t){
                     const len = t.getComputedTextLength ? t.getComputedTextLength() : 2000;
-                    // Use 3x length to ensure full coverage of cursive strokes
                     const dashLen = Math.max(len * 3, 2000);
                     t.style.strokeDasharray = dashLen;
                     t.style.strokeDashoffset = dashLen;
                 });
-
-                // Trigger animation after a short delay (let loading screen finish)
                 function startAnimation(){
                     svg.classList.add('animate');
-                    // Also apply precise dasharray-based animation via JS for reliability
                     texts.forEach(function(t, i){
                         const dashLen = parseFloat(t.style.strokeDasharray);
-                        const delay = i * 600; // 600ms stagger between lines
+                        const delay = i * 600;
                         t.style.transition = 'none';
                         t.style.strokeDashoffset = dashLen;
                         t.style.fill = 'rgba(255,255,255,0)';
-
-                        // Stroke drawing phase
                         setTimeout(function(){
-                            t.style.transition = 'stroke-dashoffset 2.8s cubic-bezier(.25,.1,.25,1), fill 1.2s ease ' + '2s';
+                            t.style.transition = 'stroke-dashoffset 2.8s cubic-bezier(.25,.1,.25,1), fill 1.2s ease 2s';
                             t.style.strokeDashoffset = '0';
                             t.style.fill = 'rgba(255,255,255,0.65)';
                         }, delay + 100);
                     });
                 }
-
-                // Start after loading screen is done
                 const loading = document.getElementById('loading');
                 if(loading && !loading.classList.contains('loaded')){
-                    // Watch for loaded class
                     const mo = new MutationObserver(function(mutations){
                         mutations.forEach(function(m){
                             if(loading.classList.contains('loaded')){
@@ -827,7 +734,6 @@
                         });
                     });
                     mo.observe(loading, {attributes:true, attributeFilter:['class']});
-                    // Fallback
                     setTimeout(startAnimation, 3500);
                 } else {
                     setTimeout(startAnimation, 400);
