@@ -15,6 +15,7 @@
   --black:#1a1a1a;
   --white:#fff;
   --bg-gray:#f5f5f3;
+  --bg-dark:#111;
   --text:#333;
   --text-light:#777;
   --shadow:0 4px 24px rgba(0,0,0,.06);
@@ -38,8 +39,8 @@ ul,ol{list-style:none}
 #loading img{width:120px;animation:pulse 1.5s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:.4;transform:scale(.95)}50%{opacity:1;transform:scale(1)}}
 
-/* ===== Header ===== */
-.site-header{
+/* ===== Sticky Header (PC) ===== */
+.sticky-header{
   position:fixed;top:0;left:0;right:0;
   background:rgba(255,255,255,.97);
   backdrop-filter:blur(12px);
@@ -48,32 +49,44 @@ ul,ol{list-style:none}
   padding:0 32px;
   border-bottom:1px solid rgba(0,0,0,.06);
 }
-.header-logo img{height:36px;width:auto}
-.header-nav{display:flex;align-items:center;gap:0}
-.header-nav a{
+.sticky-header .header-logo img{height:36px;width:auto}
+.sticky-header .header-nav{display:flex;align-items:center;gap:0}
+.sticky-header .header-nav a{
   font-size:.8rem;font-weight:700;letter-spacing:.02em;
   padding:0 .9rem;height:64px;display:flex;align-items:center;
   position:relative;color:var(--text);
 }
-.header-nav a::after{
+.sticky-header .header-nav a::after{
   content:'';position:absolute;bottom:0;left:50%;width:0;height:2px;
   background:var(--green);transition:var(--transition);transform:translateX(-50%);
 }
-.header-nav a:hover::after,.header-nav a.current::after{width:60%}
-.header-nav a.current{color:var(--green)}
-.header-right{display:flex;align-items:center;gap:1.2rem}
-.header-tel{font-family:var(--font-en);font-size:1.05rem;font-weight:600;letter-spacing:.04em;color:var(--black)}
-.header-tel small{font-family:var(--font-body);font-size:.65rem;font-weight:400;color:var(--text-light);display:block;line-height:1}
-.header-cta{
+.sticky-header .header-nav a:hover::after,
+.sticky-header .header-nav a.current::after{width:60%}
+.sticky-header .header-nav a.current{color:var(--green)}
+.sticky-header .header-right{display:flex;align-items:center;gap:1.2rem}
+.sticky-header .header-tel{font-family:var(--font-en);font-size:1.05rem;font-weight:600;letter-spacing:.04em;color:var(--black)}
+.sticky-header .header-tel small{font-family:var(--font-body);font-size:.65rem;font-weight:400;color:var(--text-light);display:block;line-height:1}
+.sticky-header .header-cta{
   background:var(--green);color:#fff;
   font-size:.75rem;font-weight:700;
   padding:.55rem 1.4rem;border-radius:0;
   letter-spacing:.06em;
 }
-.header-cta:hover{background:var(--green-dark)}
+.sticky-header .header-cta:hover{background:var(--green-dark)}
 
-/* Mobile menu toggle */
-.menu-toggle{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative;z-index:1100}
+/* ===== Mobile Header ===== */
+.mobile-header{
+  display:none;
+  position:fixed;top:0;left:0;right:0;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(12px);
+  height:56px;z-index:1000;
+  align-items:center;justify-content:space-between;
+  padding:0 16px;
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.mobile-header .header-logo img{height:30px;width:auto}
+.menu-toggle{background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative;z-index:1100}
 .menu-toggle span{display:block;width:100%;height:2px;background:var(--black);position:absolute;left:0;transition:var(--transition)}
 .menu-toggle span:nth-child(1){top:0}
 .menu-toggle span:nth-child(2){top:9px}
@@ -82,9 +95,10 @@ ul,ol{list-style:none}
 .menu-toggle.active span:nth-child(2){opacity:0}
 .menu-toggle.active span:nth-child(3){top:9px;transform:rotate(-45deg)}
 
-/* Mobile nav overlay */
+/* Mobile Nav Overlay */
 .mobile-nav{
-  display:none;position:fixed;inset:0;background:rgba(255,255,255,.98);
+  display:none;position:fixed;inset:0;
+  background:rgba(255,255,255,.98);
   z-index:1050;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;
 }
 .mobile-nav.open{display:flex}
@@ -93,7 +107,7 @@ ul,ol{list-style:none}
 /* ===== Container ===== */
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 
-/* ===== Hero ===== */
+/* ===== Page Hero ===== */
 .page-hero{
   position:relative;height:320px;overflow:hidden;
   margin-top:64px;
@@ -122,13 +136,10 @@ ul,ol{list-style:none}
   position:sticky;top:88px;
   display:flex;flex-direction:column;gap:1.5rem;
 }
-
-/* Works card */
 .side-works{
   background:var(--bg-gray);
   border:1px solid rgba(0,0,0,.08);
-  border-radius:0;
-  overflow:hidden;
+  border-radius:0;overflow:hidden;
 }
 .side-works-header{
   display:flex;align-items:center;justify-content:space-between;
@@ -154,8 +165,7 @@ ul,ol{list-style:none}
 .side-awards{
   background:var(--bg-gray);
   border:1px solid rgba(0,0,0,.08);
-  border-radius:0;
-  overflow:hidden;
+  border-radius:0;overflow:hidden;
 }
 .side-awards-header{padding:1rem 1.2rem .6rem}
 .side-awards-header h3{font-size:.85rem;font-weight:700;color:var(--text)}
@@ -174,13 +184,11 @@ ul,ol{list-style:none}
 .award-name{font-size:.72rem;line-height:1.6;color:var(--text)}
 
 /* --- Right: Form --- */
-.form-section{}
 .form-section-title{
   font-family:var(--font-en);font-size:1.6rem;font-weight:300;
   letter-spacing:.08em;color:var(--black);margin-bottom:.4rem;
 }
 .form-section-sub{font-size:.75rem;color:var(--text-light);margin-bottom:1.5rem}
-
 .form-instruction{
   background:var(--bg-gray);
   border-left:3px solid var(--green);
@@ -191,7 +199,6 @@ ul,ol{list-style:none}
 .form-instruction a{color:var(--green);font-weight:600}
 .form-instruction a:hover{text-decoration:underline}
 
-.form-table{width:100%;border-collapse:collapse}
 .form-row{
   display:grid;
   grid-template-columns:180px 1fr;
@@ -232,9 +239,12 @@ ul,ol{list-style:none}
 }
 .form-control:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(106,176,76,.12)}
 .form-control-half{flex:1}
-select.form-control{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:2rem}
+select.form-control{
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;padding-right:2rem;
+}
 textarea.form-control{min-height:140px;resize:vertical}
-
 .form-hint{font-size:.7rem;color:var(--text-light);margin-top:.2rem}
 
 .checkbox-group{display:flex;flex-wrap:wrap;gap:.5rem}
@@ -243,8 +253,7 @@ textarea.form-control{min-height:140px;resize:vertical}
   font-size:.8rem;cursor:pointer;
   padding:.35rem .7rem;
   border:1px solid rgba(0,0,0,.1);
-  border-radius:0;
-  transition:var(--transition);
+  border-radius:0;transition:var(--transition);
 }
 .checkbox-label:hover{border-color:var(--green);background:rgba(106,176,76,.04)}
 .checkbox-label input[type="checkbox"]{accent-color:var(--green)}
@@ -268,6 +277,21 @@ textarea.form-control{min-height:140px;resize:vertical}
 }
 .btn-submit:hover{background:var(--green-dark);transform:translateY(-1px)}
 
+/* ===== CTA2 Bottom ===== */
+.cta2-bottom{background:var(--green);padding:3.5rem 0;text-align:center;color:#fff}
+.cta2-bottom h2{font-family:var(--font-serif);font-size:1.6rem;font-weight:600;margin-bottom:.6rem}
+.cta2-bottom p{font-size:.85rem;margin-bottom:2rem;opacity:.92}
+.cta2-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta2-buttons a{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.9rem 2.2rem;font-size:.85rem;font-weight:700;
+  border-radius:0;letter-spacing:.04em;transition:var(--transition);
+}
+.cta2-btn-white{background:#fff;color:var(--green)}
+.cta2-btn-white:hover{background:var(--bg-gray)}
+.cta2-btn-outline{border:2px solid #fff;color:#fff;background:transparent}
+.cta2-btn-outline:hover{background:rgba(255,255,255,.15)}
+
 /* ===== Footer ===== */
 .footer{background:var(--black);color:rgba(255,255,255,.7);padding:4rem 0 1.5rem}
 .footer-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;margin-bottom:3rem}
@@ -276,20 +300,14 @@ textarea.form-control{min-height:140px;resize:vertical}
 .footer-nav-title{font-size:.7rem;font-weight:700;color:#fff;margin-bottom:.8rem;letter-spacing:.06em}
 .footer-nav a{display:block;font-size:.72rem;padding:.25rem 0;transition:var(--transition)}
 .footer-nav a:hover{color:var(--green)}
-.footer-copy{text-align:center;font-size:.65rem;border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;color:rgba(255,255,255,.35)}
+.footer-sns{display:flex;gap:1rem;margin-top:1rem}
+.footer-sns a{font-size:.72rem;opacity:.7;transition:var(--transition)}
+.footer-sns a:hover{opacity:1;color:var(--green)}
+.footer-area{text-align:center;font-size:.68rem;color:rgba(255,255,255,.35);padding:1.5rem 0 .5rem;border-top:1px solid rgba(255,255,255,.08);margin-top:1rem}
+.footer-copy{text-align:center;font-size:.65rem;color:rgba(255,255,255,.35);padding-top:.5rem}
 
-/* ===== Page Top ===== */
-.page-top{
-  position:fixed;bottom:24px;right:24px;
-  width:44px;height:44px;background:var(--green);color:#fff;
-  display:flex;align-items:center;justify-content:center;
-  font-size:.8rem;border-radius:0;cursor:pointer;
-  opacity:0;pointer-events:none;transition:var(--transition);z-index:900;
-}
-.page-top.show{opacity:1;pointer-events:auto}
-
-/* ===== Mobile Fixed CTA ===== */
-.fixed-cta-mobile{
+/* ===== Fixed CTA (Mobile) ===== */
+.fixed-cta{
   display:none;position:fixed;bottom:0;left:0;right:0;
   z-index:900;
 }
@@ -301,14 +319,29 @@ textarea.form-control{min-height:140px;resize:vertical}
 .fixed-cta-tel{background:var(--black)}
 .fixed-cta-mail{background:var(--green)}
 
+/* ===== Page Top ===== */
+.pagetop{
+  position:fixed;bottom:80px;right:24px;
+  width:44px;height:44px;background:var(--green);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  border:none;border-radius:0;cursor:pointer;
+  opacity:0;pointer-events:none;transition:var(--transition);z-index:900;
+}
+.pagetop.show{opacity:1;pointer-events:auto}
+.pagetop svg{width:18px;height:18px}
+
+/* ===== Fade-up ===== */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
 /* ===== Responsive ===== */
 @media(max-width:1024px){
-  .header-nav{display:none}
-  .menu-toggle{display:block}
+  .sticky-header{display:none}
+  .mobile-header{display:flex}
+  .page-hero{margin-top:56px}
   .contact-grid{grid-template-columns:300px 1fr;gap:2rem}
 }
 @media(max-width:768px){
-  .site-header{padding:0 16px}
   .contact-grid{grid-template-columns:1fr;gap:2rem}
   .contact-sidebar{position:static;order:2}
   .form-wrapper{order:1}
@@ -317,7 +350,9 @@ textarea.form-control{min-height:140px;resize:vertical}
   .form-input{padding:.3rem .8rem .8rem}
   .page-hero{height:220px}
   .footer-inner{grid-template-columns:1fr}
-  .fixed-cta-mobile{display:block}
+  .cta2-buttons{flex-direction:column;align-items:center}
+  .fixed-cta{display:block}
+  .pagetop{bottom:80px;right:16px}
   body{padding-bottom:56px}
 }
 @media(max-width:480px){
@@ -327,50 +362,53 @@ textarea.form-control{min-height:140px;resize:vertical}
 }
 </style>
 </head>
-<body>
+<body class="page-body">
 
 <!-- Loading -->
 <div id="loading"><img src="logo01.png" alt="YU-ART"></div>
 
-<!-- Header -->
-<header class="site-header">
-  <a href="/" class="header-logo"><img src="logo01.png" alt="YU-ART ユーアート"></a>
+<!-- ===== Sticky Header (PC) ===== -->
+<header class="sticky-header" id="stickyHeader">
+  <a href="/yuart/index.html" class="header-logo"><img src="logo01.png" alt="YU-ART ユーアート"></a>
   <nav class="header-nav">
-    <a href="/">ホーム</a>
-    <a href="/concept.html">コンセプト</a>
-    <a href="/works/">施工事例</a>
-    <a href="/flow/">完成までの流れ</a>
-    <a href="/company/">会社概要</a>
-    <a href="/recruit/">採用情報</a>
-    <a href="/blog/">コラム</a>
-    <a href="/contact/" class="current">お問い合わせ</a>
+    <a href="/yuart/index.html">ホーム</a>
+    <a href="/yuart/concept.html">コンセプト</a>
+    <a href="/yuart/archive-constraction.html">施工事例</a>
+    <a href="/yuart/flow.html">完成までの流れ</a>
+    <a href="/yuart/company.html">会社概要</a>
+    <a href="/yuart/recruit.html">採用情報</a>
+    <a href="/yuart/contact.html" class="current">お問い合わせ</a>
   </nav>
   <div class="header-right">
     <a href="tel:049-299-7645" class="header-tel">
       <small>お電話でのお問い合わせ</small>
       049-299-7645
     </a>
-    <a href="/contact/" class="header-cta">無料相談</a>
+    <a href="/yuart/contact.html" class="header-cta">無料相談</a>
   </div>
+</header>
+
+<!-- ===== Mobile Header ===== -->
+<div class="mobile-header" id="mobileHeader">
+  <a href="/yuart/index.html" class="header-logo"><img src="logo01.png" alt="YU-ART ユーアート"></a>
   <button class="menu-toggle" id="menuToggle" aria-label="メニュー">
     <span></span><span></span><span></span>
   </button>
-</header>
+</div>
 
-<!-- Mobile Nav -->
+<!-- ===== Mobile Nav ===== -->
 <nav class="mobile-nav" id="mobileNav">
-  <a href="/">ホーム</a>
-  <a href="/concept.html">コンセプト</a>
-  <a href="/works/">施工事例</a>
-  <a href="/flow/">完成までの流れ</a>
-  <a href="/company/">会社概要</a>
-  <a href="/recruit/">採用情報</a>
-  <a href="/blog/">コラム</a>
-  <a href="/contact/">お問い合わせ</a>
+  <a href="/yuart/index.html">ホーム</a>
+  <a href="/yuart/concept.html">コンセプト</a>
+  <a href="/yuart/archive-constraction.html">施工事例</a>
+  <a href="/yuart/flow.html">完成までの流れ</a>
+  <a href="/yuart/company.html">会社概要</a>
+  <a href="/yuart/recruit.html">採用情報</a>
+  <a href="/yuart/contact.html">お問い合わせ</a>
   <a href="tel:049-299-7645">TEL: 049-299-7645</a>
 </nav>
 
-<!-- Hero -->
+<!-- ===== Hero ===== -->
 <section class="page-hero">
   <img src="top26.jpg" alt="お問い合わせ">
   <div class="page-hero-overlay">
@@ -379,7 +417,7 @@ textarea.form-control{min-height:140px;resize:vertical}
   </div>
 </section>
 
-<!-- Main Content -->
+<!-- ===== Main Content ===== -->
 <section class="contact-section">
   <div class="container">
     <div class="contact-grid">
@@ -391,24 +429,24 @@ textarea.form-control{min-height:140px;resize:vertical}
         <div class="side-works">
           <div class="side-works-header">
             <h3>最新の施工事例</h3>
-            <a href="/works/">すべて見る →</a>
+            <a href="/yuart/archive-constraction.html">すべて見る →</a>
           </div>
           <div class="side-works-list">
-            <a class="side-works-item" href="/works/01/">
+            <a class="side-works-item" href="/yuart/single-works.html">
               <div class="side-works-thumb"><img src="top32.jpg" alt="施工事例"></div>
               <div class="side-works-info">
                 <span class="works-area">川越市</span>
                 <span class="works-title">ナチュラルモダンの新築外構</span>
               </div>
             </a>
-            <a class="side-works-item" href="/works/02/">
+            <a class="side-works-item" href="/yuart/single-works.html">
               <div class="side-works-thumb"><img src="top37.jpg" alt="施工事例"></div>
               <div class="side-works-info">
                 <span class="works-area">鶴ヶ島市</span>
                 <span class="works-title">緑豊かなガーデンリフォーム</span>
               </div>
             </a>
-            <a class="side-works-item" href="/works/03/">
+            <a class="side-works-item" href="/yuart/single-works.html">
               <div class="side-works-thumb"><img src="top18.jpg" alt="施工事例"></div>
               <div class="side-works-info">
                 <span class="works-area">坂戸市</span>
@@ -525,6 +563,31 @@ textarea.form-control{min-height:140px;resize:vertical}
               </div>
             </div>
 
+            <!-- ★ NEW: 事業種別 (任意) ★ -->
+            <div class="form-row">
+              <div class="form-label">事業種別 <span class="badge-optional">任意</span></div>
+              <div class="form-input">
+                <select name="business_type" class="form-control">
+                  <option value="">下から選んでください</option>
+                  <option value="工務店">工務店</option>
+                  <option value="ハウスメーカー">ハウスメーカー</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- ★ NEW: 検討時期 (任意) ★ -->
+            <div class="form-row">
+              <div class="form-label">検討時期 <span class="badge-optional">任意</span></div>
+              <div class="form-input">
+                <select name="timeline" class="form-control">
+                  <option value="">下から選んでください</option>
+                  <option value="～3ヵ月以内">～3ヵ月以内</option>
+                  <option value="3ヵ月～1年以内">3ヵ月～1年以内</option>
+                  <option value="1年～">1年～</option>
+                </select>
+              </div>
+            </div>
+
             <!-- 施工予定場所 (select) -->
             <div class="form-row">
               <div class="form-label">施工予定場所</div>
@@ -588,7 +651,19 @@ textarea.form-control{min-height:140px;resize:vertical}
   </div>
 </section>
 
-<!-- Footer -->
+<!-- ===== CTA2 Bottom (index.html と同一) ===== -->
+<section class="cta2-bottom">
+  <div class="container">
+    <h2>外構のことなら何でもご相談ください</h2>
+    <p>無料現地調査・3Dパース・お見積りを承っております。まずはお気軽にお問い合わせください。</p>
+    <div class="cta2-buttons">
+      <a href="/yuart/contact.html" class="cta2-btn-white">無料相談はこちら</a>
+      <a href="tel:049-299-7645" class="cta2-btn-outline">TEL 049-299-7645</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer (index.html と同一) ===== -->
 <footer class="footer">
   <div class="container">
     <div class="footer-inner">
@@ -604,38 +679,49 @@ textarea.form-control{min-height:140px;resize:vertical}
       <div>
         <p class="footer-nav-title">ページ</p>
         <nav class="footer-nav">
-          <a href="/">ホーム</a>
-          <a href="/concept.html">コンセプト</a>
-          <a href="/works/">施工事例</a>
-          <a href="/flow/">完成までの流れ</a>
-          <a href="/company/">会社概要</a>
+          <a href="/yuart/index.html">ホーム</a>
+          <a href="/yuart/concept.html">コンセプト</a>
+          <a href="/yuart/archive-constraction.html">施工事例</a>
+          <a href="/yuart/flow.html">完成までの流れ</a>
+          <a href="/yuart/company.html">会社概要</a>
         </nav>
       </div>
       <div>
         <p class="footer-nav-title">その他</p>
         <nav class="footer-nav">
-          <a href="/recruit/">採用情報</a>
-          <a href="/blog/">コラム</a>
-          <a href="/contact/">お問い合わせ</a>
-          <a href="/privacy/">プライバシーポリシー</a>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <a href="/yuart/recruit.html">採用情報</a>
+          <a href="/yuart/contact.html">お問い合わせ</a>
+          <a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=100027438334423" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://twitter.com/yuart7645" target="_blank" rel="noopener">X (Twitter)</a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
         </nav>
+        <div class="footer-sns"></div>
       </div>
     </div>
-    <p class="footer-copy">© YU-ART All Rights Reserved.</p>
+    <div class="footer-area">対応エリア：川越市・鶴ヶ島市・坂戸市・ふじみ野市・富士見市・狭山市・所沢市・日高市・さいたま市 ほか埼玉県全域</div>
+    <p class="footer-copy">© 2025 YU-ART Inc. All Rights Reserved.</p>
   </div>
 </footer>
 
-<!-- Page Top -->
-<div class="page-top" id="pageTop">▲</div>
-
-<!-- Mobile Fixed CTA -->
-<div class="fixed-cta-mobile">
+<!-- ===== Fixed CTA (Mobile) ===== -->
+<div class="fixed-cta">
   <div class="fixed-cta-inner">
-    <a href="tel:049-299-7645" class="fixed-cta-tel">📞 電話する</a>
-    <a href="/contact/" class="fixed-cta-mail">✉ お問い合わせ</a>
+    <a href="tel:049-299-7645" class="fixed-cta-tel">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      電話する
+    </a>
+    <a href="/yuart/contact.html" class="fixed-cta-mail">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+      無料相談
+    </a>
   </div>
 </div>
+
+<!-- ===== Page Top Button ===== -->
+<button class="pagetop" id="pagetop">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
 
 <script>
 /* Loading */
@@ -647,7 +733,7 @@ const nav=document.getElementById('mobileNav');
 toggle.addEventListener('click',()=>{toggle.classList.toggle('active');nav.classList.toggle('open')});
 
 /* Page top */
-const pt=document.getElementById('pageTop');
+const pt=document.getElementById('pagetop');
 window.addEventListener('scroll',()=>{pt.classList.toggle('show',window.scrollY>400)});
 pt.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});
 
@@ -655,6 +741,15 @@ pt.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});
 document.getElementById('locationSelect').addEventListener('change',function(){
   document.getElementById('otherLocationWrap').style.display=this.value==='その他'?'block':'none';
 });
+
+/* Fade-up IntersectionObserver */
+const fadeEls=document.querySelectorAll('.fade-up');
+if(fadeEls.length){
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+  },{threshold:.15});
+  fadeEls.forEach(el=>obs.observe(el));
+}
 </script>
 
 </body>
