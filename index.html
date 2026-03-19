@@ -39,14 +39,10 @@
         .section-title .en{display:block;font-family:var(--font-en);font-size:clamp(2rem,5vw,3.2rem);color:var(--black);line-height:1;letter-spacing:.03em;font-weight:400}
         .section-title .ja{display:block;font-size:.85rem;font-weight:700;color:var(--green);letter-spacing:.15em;margin-top:.5rem}
         .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-
-        /* ===== LOADING ===== */
         #loading{position:fixed;inset:0;background:var(--black);z-index:10000;display:flex;justify-content:center;align-items:center;transition:opacity .6s}
         #loading.loaded{opacity:0;pointer-events:none}
         #loading img{width:120px;filter:brightness(0) invert(1);animation:pulse 1.5s ease-in-out infinite}
         @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-
-        /* ===== MOBILE HEADER ===== */
         .mobile-header{display:none;position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:60px;align-items:center;justify-content:space-between;padding:0 16px}
         .mobile-header-logo{width:120px}.mobile-header-logo img{width:100%;display:block}
         .menu-toggle{background:none;border:none;cursor:pointer;width:32px;height:32px;position:relative;z-index:1001}
@@ -60,8 +56,6 @@
         .mobile-nav .mobile-nav-phone{margin-top:1.5rem;text-align:center;color:rgba(255,255,255,.6);font-size:.82rem}
         .mobile-nav .mobile-nav-phone strong{display:block;font-size:1.3rem;color:#fff;font-family:var(--font-en);margin-top:.3rem}
         .mobile-nav .btn-mobile-cta{display:block;text-align:center;background:var(--green);color:#fff;padding:1rem;border-radius:var(--radius-sm);margin-top:1.5rem;font-weight:700;font-size:.95rem}
-
-        /* ===== STICKY HEADER ===== */
         .sticky-header{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;transform:translateY(-100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
         .sticky-header.show{transform:translateY(0)}
         .sticky-header-logo{width:100px}.sticky-header-logo img{width:100%;display:block}
@@ -74,8 +68,6 @@
         .sticky-header-cta:hover{background:var(--green)}
         .sticky-header-cta svg{width:14px;height:14px;fill:currentColor}
         @media(max-width:768px){.sticky-header{display:none!important}}
-
-        /* ===== HERO ===== */
         .hero-wrapper{position:relative;height:100vh;min-height:600px;display:flex}
         .hero-sidebar{position:absolute;top:0;left:0;bottom:0;width:var(--sidebar-w);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);z-index:100;display:flex;flex-direction:column;padding:2rem 1.5rem;border-right:1px solid rgba(0,0,0,.06)}
         .hero-sidebar .sidebar-logo{width:120px;margin:0 auto 2rem}.hero-sidebar .sidebar-logo img{width:100%}
@@ -113,8 +105,6 @@
         .swiper-pagination{z-index:20!important;bottom:5rem!important}
         .swiper-pagination-bullet{background:#fff!important;opacity:.2;width:8px;height:8px}
         .swiper-pagination-bullet-active{opacity:1;background:var(--green)!important;width:24px;border-radius:4px}
-
-        /* ===== CONCEPT ===== */
         .concept{position:relative;padding:8rem 0;overflow:hidden}
         .concept-bg{position:absolute;inset:0;z-index:0}
         .concept-bg img{width:100%;height:100%;object-fit:cover}
@@ -128,8 +118,6 @@
         .concept-text .concept-name strong{display:block;font-size:1rem;color:rgba(255,255,255,.8);margin-bottom:.2rem}
         .concept-more{margin-top:2rem}
         .concept-deco{position:absolute;right:5%;top:50%;transform:translateY(-50%);font-family:var(--font-script);font-size:clamp(5rem,14vw,12rem);color:rgba(255,255,255,.04);z-index:1;pointer-events:none;line-height:1}
-
-        /* ===== WORKS ===== */
         .works{padding:7rem 0;background:var(--white)}
         .works-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.5rem}
         .works-card{display:block;text-decoration:none;color:inherit;transition:var(--transition)}
@@ -140,8 +128,6 @@
         .works-card-body{padding:.8rem 0 0}
         .works-card-area{font-size:.68rem;color:var(--text-light);font-weight:500;margin-bottom:.25rem}
         .works-card-body h3{font-size:.85rem;font-weight:700;color:var(--black);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-
-        /* ===== REASON ===== */
         .reason{padding:7rem 0;background:var(--bg-gray)}
         .reason-item{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:5rem}
         .reason-item:last-child{margin-bottom:0}
@@ -153,8 +139,6 @@
         .reason-item-text .reason-tag{display:inline-block;background:var(--black);color:#fff;padding:.3rem 1rem;border-radius:4px;font-size:.75rem;font-weight:700;letter-spacing:.1em;margin-bottom:1rem}
         .reason-item-text h3{font-family:var(--font-jp);font-size:clamp(1.2rem,2.5vw,1.5rem);font-weight:600;line-height:1.7;margin-bottom:1rem;color:var(--black);letter-spacing:.05em}
         .reason-item-text p{font-size:.95rem;color:var(--text-light);line-height:2}
-
-        /* ===== CTA ===== */
         .cta-simple{padding:4rem 0;background:var(--green-pale);text-align:center}
         .cta-simple-label{font-size:.82rem;font-weight:700;color:var(--green-dark);letter-spacing:.15em;margin-bottom:1.5rem}
         .cta-simple-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
@@ -165,8 +149,6 @@
         .cta-s-phone .num{font-family:var(--font-en);font-size:1.1rem;letter-spacing:.04em}
         .cta-s-form{background:var(--black);color:#fff}
         .cta-s-form:hover{background:var(--black-soft);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.2)}
-
-        /* ===== PRICE ===== */
         .menu-section{padding:7rem 0;background:var(--white)}
         .price-list{max-width:1000px;margin:2.5rem auto 0;display:flex;flex-direction:column}
         .price-row{display:grid;grid-template-columns:200px 1fr auto;gap:2rem;align-items:center;padding:2rem 0;border-bottom:1px solid rgba(0,0,0,.08)}
@@ -179,8 +161,6 @@
         .price-row-price{font-family:var(--font-en);font-size:1.6rem;font-weight:600;color:var(--green);white-space:nowrap;letter-spacing:.02em;text-align:right}
         .price-row-price small{font-size:.75rem;font-weight:400;color:var(--text-light);display:block;font-family:var(--font-body)}
         .price-note{text-align:center;margin-top:2rem;font-size:.8rem;color:var(--text-light)}
-
-        /* ===== FLOW ===== */
         .flow-section{padding:7rem 0;background:var(--bg-gray)}
         .flow-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative}
         .flow-card{background:var(--white);border-radius:var(--radius);padding:1.6rem 1rem;transition:var(--transition);text-align:center;position:relative;margin-right:12px}
@@ -191,12 +171,8 @@
         .flow-card h3{font-size:.82rem;font-weight:700;margin:.4rem 0;color:var(--black);line-height:1.4}
         .flow-card .free-tag{display:inline-block;background:#e74c3c;color:#fff;padding:.08rem .4rem;border-radius:3px;font-size:.58rem;font-weight:700;vertical-align:middle;margin-left:.15rem}
         .flow-card p{font-size:.72rem;color:var(--text-light);line-height:1.6}
-
-        /* ===== VOICE ===== */
         .voice{padding:7rem 0;background:var(--white)}
         .voice-widget{margin-top:2rem}
-
-        /* ===== BLOG & SNS ===== */
         .blog-sns{padding:7rem 0;background:var(--bg-gray)}
         .blog-sns-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
         .blog-sns-header .section-title{margin-bottom:0}
@@ -225,8 +201,6 @@
         .btn-outline-sm:hover{background:var(--black);color:var(--white)}
         .btn-outline-sm svg{width:14px;height:14px;transition:transform .3s ease}
         .btn-outline-sm:hover svg{transform:translateX(3px)}
-
-        /* ===== COMPANY ===== */
         .company{padding:7rem 0;background:var(--white)}
         .company-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
         .company-map{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg)}
@@ -238,8 +212,6 @@
         .company-table td{color:var(--text-light)}
         .company-table td a{color:var(--green);font-weight:500}
         .company-table td a:hover{text-decoration:underline}
-
-        /* ===== NEWS ===== */
         .news-section{padding:5rem 0;background:var(--bg-gray)}
         .news-section .section-label{margin-bottom:2rem}
         .news-section .section-label .en{font-family:var(--font-en);font-size:1.5rem;color:var(--black);line-height:1;font-weight:400;letter-spacing:.04em}
@@ -253,8 +225,6 @@
         .news-item-tag.tag-award{background:var(--black)}
         .news-item-title{font-size:.85rem;font-weight:600;color:var(--black);flex:1}
         .news-item-arrow{font-size:.75rem;color:var(--text-light)}
-
-        /* ===== FAQ ===== */
         .faq{padding:7rem 0;background:var(--bg-dark);color:#fff}
         .faq .section-title .en{color:#fff}.faq .section-title .ja{color:var(--green)}
         .faq-layout{display:grid;grid-template-columns:340px 1fr;gap:4rem;align-items:start}
@@ -270,8 +240,6 @@
         .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
         .faq-item.active .faq-answer{max-height:300px}
         .faq-answer-inner{padding:0 1.4rem 1.4rem 4rem;font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.9}
-
-        /* ===== CTA2 ===== */
         .cta2-bottom{padding:3.5rem 0;background:var(--green);text-align:center;position:relative;overflow:hidden}
         .cta2-bottom::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:rgba(0,0,0,.06);border-radius:50%}
         .cta2-inner{position:relative;z-index:1}
@@ -281,8 +249,6 @@
         .cta2-btn svg{width:18px;height:18px;fill:currentColor}
         .cta2-btn-dark{background:var(--black);color:#fff}.cta2-btn-dark:hover{background:#000;transform:translateY(-2px)}
         .cta2-btn-white{background:#fff;color:var(--black)}.cta2-btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
-
-        /* ===== FOOTER ===== */
         .footer{background:var(--black);color:#fff;padding:5rem 0 0}
         .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08)}
         .footer-logo{width:160px;margin-bottom:1.5rem;filter:brightness(0) invert(1)}
@@ -293,8 +259,6 @@
         .footer-area-label{font-size:.75rem;font-weight:700;color:var(--green);margin-bottom:.3rem}
         .footer-area p{font-size:.78rem;color:rgba(255,255,255,.4)}
         .footer-copy{text-align:center;font-size:.72rem;color:rgba(255,255,255,.25);padding:1.5rem 0}
-
-        /* ===== FIXED CTA / PAGETOP ===== */
         .fixed-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--black);padding:.5rem .8rem;box-shadow:0 -4px 24px rgba(0,0,0,.3)}
         .fixed-cta-inner{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
         .fixed-cta a{display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.65rem;border-radius:6px;font-size:.82rem;font-weight:700}
@@ -303,18 +267,12 @@
         .pagetop{position:fixed;bottom:90px;right:20px;width:44px;height:44px;background:var(--black);border-radius:8px;display:flex;align-items:center;justify-content:center;z-index:800;opacity:0;visibility:hidden;transition:var(--transition);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;border:none}
         .pagetop.show{opacity:1;visibility:visible}.pagetop:hover{background:var(--green)}
         .pagetop svg{width:18px;height:18px;fill:#fff}
-
-        /* ===== BTN MORE ===== */
         .btn-more-wrap{text-align:center;margin-top:3rem}
         .btn-more{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2.5rem;border:2px solid var(--black);color:var(--black);border-radius:6px;font-size:.85rem;font-weight:700;transition:var(--transition)}
         .btn-more:hover{background:var(--black);color:#fff}
         .btn-more svg{width:16px;height:16px;fill:currentColor}
         .btn-more-green{border-color:var(--green);color:var(--green)}.btn-more-green:hover{background:var(--green);color:#fff}
-
-        /* ===== ANIMATION ===== */
         .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.fade-up.visible{opacity:1;transform:translateY(0)}
-
-        /* ===== RESPONSIVE ===== */
         @media(max-width:1024px){
             .hero-sidebar{width:220px}:root{--sidebar-w:220px}
             .works-grid{grid-template-columns:repeat(3,1fr);gap:1.2rem}
@@ -379,25 +337,23 @@
 </head>
 <body>
 
-    <!-- ===== LOADING ===== -->
     <div id="loading"><img src="logo01.png" alt="YU-ART"></div>
 
-    <!-- ===== STICKY HEADER（スクロール後に表示） ===== -->
+    <!-- ===== STICKY HEADER ===== -->
     <header class="sticky-header" id="stickyHeader">
-        <div class="sticky-header-logo"><a href="/"><img src="logo01.png" alt="YU-ART"></a></div>
+        <div class="sticky-header-logo"><a href="index.html"><img src="logo01.png" alt="YU-ART"></a></div>
         <nav class="sticky-header-nav">
-            <a href="/">ホーム</a>
-            <a href="/concept/">コンセプト</a>
-            <a href="/works/">施工事例</a>
-            <a href="/flow/">完成までの流れ</a>
-            <a href="/company/">会社概要</a>
-            <a href="/recruit/">採用情報</a>
-            <a href="/blog/">コラム</a>
-            <a href="/contact/">お問い合わせ</a>
+            <a href="index.html">ホーム</a>
+            <a href="concept.html">コンセプト</a>
+            <a href="archive-constraction.html">施工事例</a>
+            <a href="flow.html">完成までの流れ</a>
+            <a href="company.html">会社概要</a>
+            <a href="recruit.html">採用情報</a>
+            <a href="contact.html">お問い合わせ</a>
         </nav>
         <div class="sticky-header-right">
             <span class="sticky-header-phone"><a href="tel:049-299-7645">049-299-7645</a></span>
-            <a href="/contact/" class="sticky-header-cta">
+            <a href="contact.html" class="sticky-header-cta">
                 <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 無料相談
             </a>
@@ -406,40 +362,38 @@
 
     <!-- ===== MOBILE HEADER ===== -->
     <div class="mobile-header" id="mobileHeader">
-        <div class="mobile-header-logo"><a href="/"><img src="logo01.png" alt="YU-ART"></a></div>
+        <div class="mobile-header-logo"><a href="index.html"><img src="logo01.png" alt="YU-ART"></a></div>
         <button class="menu-toggle" id="menuToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
     </div>
     <nav class="mobile-nav" id="mobileNav">
-        <a href="/">ホーム</a>
-        <a href="/concept/">コンセプト</a>
-        <a href="/works/">施工事例</a>
-        <a href="/flow/">完成までの流れ</a>
-        <a href="/company/">会社概要</a>
-        <a href="/recruit/">採用情報</a>
-        <a href="/blog/">コラム</a>
-        <a href="/contact/">お問い合わせ</a>
+        <a href="index.html">ホーム</a>
+        <a href="concept.html">コンセプト</a>
+        <a href="archive-constraction.html">施工事例</a>
+        <a href="flow.html">完成までの流れ</a>
+        <a href="company.html">会社概要</a>
+        <a href="recruit.html">採用情報</a>
+        <a href="contact.html">お問い合わせ</a>
         <div class="mobile-nav-phone">お電話でのお問合せ<strong><a href="tel:049-299-7645">049-299-7645</a></strong></div>
-        <a href="/contact/" class="btn-mobile-cta">無料相談・お見積り</a>
+        <a href="contact.html" class="btn-mobile-cta">無料相談・お見積り</a>
     </nav>
 
     <!-- ===== HERO ===== -->
     <div class="hero-wrapper">
         <aside class="hero-sidebar">
-            <div class="sidebar-logo"><a href="/"><img src="logo01.png" alt="YU-ART ユーアート"></a></div>
+            <div class="sidebar-logo"><a href="index.html"><img src="logo01.png" alt="YU-ART ユーアート"></a></div>
             <nav>
-                <a href="/">ホーム</a>
-                <a href="/concept/">コンセプト</a>
-                <a href="/works/">施工事例</a>
-                <a href="/flow/">完成までの流れ</a>
-                <a href="/company/">会社概要</a>
-                <a href="/recruit/">採用情報</a>
-                <a href="/blog/">コラム</a>
-                <a href="/contact/">お問い合わせ</a>
+                <a href="index.html">ホーム</a>
+                <a href="concept.html">コンセプト</a>
+                <a href="archive-constraction.html">施工事例</a>
+                <a href="flow.html">完成までの流れ</a>
+                <a href="company.html">会社概要</a>
+                <a href="recruit.html">採用情報</a>
+                <a href="contact.html">お問い合わせ</a>
             </nav>
-            <div class="sidebar-cta"><a href="/contact/">無料相談・お見積り</a></div>
+            <div class="sidebar-cta"><a href="contact.html">無料相談・お見積り</a></div>
             <div class="sidebar-phone">お電話でのお問合せ<strong><a href="tel:049-299-7645">049-299-7645</a></strong><small>受付時間 9:00〜17:00</small></div>
         </aside>
-        <a href="/contact/" class="hero-side-tab">資料請求・お問合せ</a>
+        <a href="contact.html" class="hero-side-tab">資料請求・お問合せ</a>
         <section class="hero">
             <h1>川越市の外構工事・お庭リフォーム専門店 YU-ART（ユーアート）</h1>
             <div class="swiper hero-swiper">
@@ -457,8 +411,8 @@
                     <p class="hero-sub">川越市を中心に、お庭と外構の<br>トータルデザインをご提案します</p>
                     <div class="hero-divider"></div>
                     <div class="hero-btn-group">
-                        <a href="/contact/" class="hero-btn hero-btn-primary"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談・お見積り</a>
-                        <a href="/works/" class="hero-btn hero-btn-ghost"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>施工事例を見る</a>
+                        <a href="contact.html" class="hero-btn hero-btn-primary"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談・お見積り</a>
+                        <a href="archive-constraction.html" class="hero-btn hero-btn-ghost"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>施工事例を見る</a>
                     </div>
                 </div>
             </div>
@@ -479,7 +433,7 @@
                 <p class="concept-lead">「ユー」は、あなた（YOU）であり、遊（ゆう）であり、優（ゆう）でもあります。お客様一人ひとりの暮らしに寄り添い、庭づくりを通して幸せを届けたい。</p>
                 <p class="concept-lead">大手ハウスメーカーでの営業経験と老舗エクステリア専門店での20年の修行を経て、「手作り感のあるナチュラルなデザインの庭づくり」を目指し、川越の地でユーアートを立ち上げました。</p>
                 <div class="concept-name"><strong>株式会社ユーアート 代表 東野 哲也</strong>埼玉県川越市｜エクステリア＆ガーデン設計施工専門店</div>
-                <div class="concept-more"><a href="/concept/" class="btn-more" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.8)">コンセプトを詳しく見る<svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a></div>
+                <div class="concept-more"><a href="concept.html" class="btn-more" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.8)">コンセプトを詳しく見る<svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a></div>
             </div>
         </div></div>
     </section>
@@ -489,40 +443,40 @@
         <div class="container">
             <div class="section-title fade-up"><span class="en">Works</span><span class="ja">施工事例</span></div>
             <div class="works-grid">
-                <a href="/works/close/" class="works-card fade-up">
+                <a href="single-works.html" class="works-card fade-up">
                     <div class="works-card-img"><img src="top37.jpg" alt="クローズ外構" loading="lazy"></div>
                     <div class="works-card-body"><div class="works-card-area">川越市</div><h3>防犯を重視したクローズリフォーム</h3></div>
                 </a>
-                <a href="/works/open/" class="works-card fade-up">
+                <a href="single-works.html" class="works-card fade-up">
                     <div class="works-card-img"><img src="top37.jpg" alt="オープン外構" loading="lazy"></div>
                     <div class="works-card-body"><div class="works-card-area">鶴ヶ島市</div><h3>カラーバランスの新築外構</h3></div>
                 </a>
-                <a href="/works/semi/" class="works-card fade-up">
+                <a href="single-works.html" class="works-card fade-up">
                     <div class="works-card-img"><img src="top37.jpg" alt="セミクローズ外構" loading="lazy"></div>
                     <div class="works-card-body"><div class="works-card-area">坂戸市</div><h3>ラグジュアリーガーデン</h3></div>
                 </a>
-                <a href="/works/modern/" class="works-card fade-up">
+                <a href="single-works.html" class="works-card fade-up">
                     <div class="works-card-img"><img src="top37.jpg" alt="モダン外構" loading="lazy"></div>
                     <div class="works-card-body"><div class="works-card-area">川越市</div><h3>縦格子のモダンエクステリア</h3></div>
                 </a>
-                <a href="/works/reform/" class="works-card fade-up">
+                <a href="single-works.html" class="works-card fade-up">
                     <div class="works-card-img"><img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=600&h=450&fit=crop&q=80" alt="リフォーム" loading="lazy"></div>
                     <div class="works-card-body"><div class="works-card-area">日高市</div><h3>ホワイトタイルテラス</h3></div>
                 </a>
-                <a href="/works/garden/" class="works-card fade-up">
+                <a href="single-works.html" class="works-card fade-up">
                     <div class="works-card-img"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&h=450&fit=crop&q=80" alt="ナチュラルガーデン" loading="lazy"></div>
                     <div class="works-card-body"><div class="works-card-area">鶴ヶ島市</div><h3>植栽豊かなナチュラルガーデン</h3></div>
                 </a>
-                <a href="/works/night/" class="works-card fade-up">
+                <a href="single-works.html" class="works-card fade-up">
                     <div class="works-card-img"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=450&fit=crop&q=80" alt="ライティング" loading="lazy"></div>
                     <div class="works-card-body"><div class="works-card-area">川越市</div><h3>夜を彩るライティングデザイン</h3></div>
                 </a>
-                <a href="/works/carport/" class="works-card fade-up">
+                <a href="single-works.html" class="works-card fade-up">
                     <div class="works-card-img"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=450&fit=crop&q=80" alt="カーポート" loading="lazy"></div>
                     <div class="works-card-body"><div class="works-card-area">坂戸市</div><h3>カーテンを一切閉めないリゾートスタイル</h3></div>
                 </a>
             </div>
-            <div class="btn-more-wrap fade-up"><a href="/works/" class="btn-more">施工事例をもっと見る<svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a></div>
+            <div class="btn-more-wrap fade-up"><a href="archive-constraction.html" class="btn-more">施工事例をもっと見る<svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a></div>
         </div>
     </section>
 
@@ -551,7 +505,7 @@
             <div class="cta-simple-label">まずは無料相談から｜お見積り・現地調査・3Dパース すべて0円</div>
             <div class="cta-simple-btns">
                 <a href="tel:049-299-7645" class="cta-s-btn cta-s-phone"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>電話をかける <span class="num">049-299-7645</span></a>
-                <a href="/contact/" class="cta-s-btn cta-s-form"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談・お見積り</a>
+                <a href="contact.html" class="cta-s-btn cta-s-form"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談・お見積り</a>
             </div>
         </div>
     </section>
@@ -602,30 +556,28 @@
                 <div class="section-title" style="margin-bottom:0"><span class="en">Blog &amp; SNS</span><span class="ja">ブログ・SNS</span></div>
                 <p class="blog-sns-desc">ユーアートのニュースや日々の事を綴っていきます。</p>
             </div>
-
             <div class="sub-section-head fade-up">
                 <h3 class="sub-section-title">Blog<span class="ja">外構ブログ</span></h3>
-                <a href="/blog/" class="btn-outline-sm">READ MORE<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="#" class="btn-outline-sm">READ MORE<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             </div>
             <div class="blog-grid">
-                <a href="/blog/cost/" class="blog-card fade-up">
+                <a href="#" class="blog-card fade-up">
                     <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=480&h=360&fit=crop&q=80" alt="新築外構の費用相場" loading="lazy"><span class="blog-card-date-overlay">2026.02.20</span></div>
                     <div class="blog-card-body"><h3>【川越市版】新築外構の費用相場と業者の選び方</h3></div>
                 </a>
-                <a href="/blog/parking/" class="blog-card fade-up">
+                <a href="#" class="blog-card fade-up">
                     <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=480&h=360&fit=crop&q=80" alt="駐車場拡張工事" loading="lazy"><span class="blog-card-date-overlay">2026.02.10</span></div>
                     <div class="blog-card-body"><h3>駐車場拡張工事の費用と流れ</h3></div>
                 </a>
-                <a href="/blog/fence/" class="blog-card fade-up">
+                <a href="#" class="blog-card fade-up">
                     <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=480&h=360&fit=crop&q=80" alt="目隠しフェンス" loading="lazy"><span class="blog-card-date-overlay">2026.01.25</span></div>
                     <div class="blog-card-body"><h3>目隠しフェンスの選び方｜人気商品を比較</h3></div>
                 </a>
-                <a href="/blog/turf/" class="blog-card fade-up">
+                <a href="#" class="blog-card fade-up">
                     <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=480&h=360&fit=crop&q=80" alt="人工芝と天然芝" loading="lazy"><span class="blog-card-date-overlay">2026.01.15</span></div>
                     <div class="blog-card-body"><h3>人工芝vs天然芝｜どっちが正解？</h3></div>
                 </a>
             </div>
-
             <div class="sub-section-head fade-up">
                 <h3 class="sub-section-title">
                     <span style="display:inline-flex;align-items:center;gap:.5rem">
@@ -684,15 +636,15 @@
         <div class="container">
             <div class="section-label fade-up"><span class="en">News</span><span class="ja">お知らせ</span></div>
             <div class="news-list fade-up">
-                <a href="/news/spring-campaign/" class="news-item">
+                <a href="#" class="news-item">
                     <span class="news-item-date">2026.02.23</span><span class="news-item-tag">event</span>
                     <span class="news-item-title">春の外構キャンペーン実施中｜3月末まで</span><span class="news-item-arrow">→</span>
                 </a>
-                <a href="/news/lixil-2025/" class="news-item">
+                <a href="#" class="news-item">
                     <span class="news-item-date">2026.01.09</span><span class="news-item-tag tag-award">award</span>
                     <span class="news-item-title">LIXIL EXSIOR施工デザインコンテスト2025にて入選いたしました</span><span class="news-item-arrow">→</span>
                 </a>
-                <a href="/news/year-end/" class="news-item">
+                <a href="#" class="news-item">
                     <span class="news-item-date">2026.01.08</span><span class="news-item-tag">event</span>
                     <span class="news-item-title">年末年始休業のお知らせ（12/28〜1/5）</span><span class="news-item-arrow">→</span>
                 </a>
@@ -720,7 +672,7 @@
         <div class="container"><div class="cta2-inner">
             <h2>外構のことなら何でもご相談ください</h2>
             <div class="cta2-btns">
-                <a href="/contact/" class="cta2-btn cta2-btn-dark"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
+                <a href="contact.html" class="cta2-btn cta2-btn-dark"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
                 <a href="tel:049-299-7645" class="cta2-btn cta2-btn-white"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>049-299-7645</a>
             </div>
         </div></div>
@@ -739,14 +691,13 @@
                 <div>
                     <div class="footer-nav-title">Pages</div>
                     <div class="footer-nav">
-                        <a href="/">ホーム</a>
-                        <a href="/concept/">コンセプト</a>
-                        <a href="/works/">施工事例</a>
-                        <a href="/flow/">完成までの流れ</a>
-                        <a href="/company/">会社概要</a>
-                        <a href="/recruit/">採用情報</a>
-                        <a href="/blog/">コラム</a>
-                        <a href="/contact/">お問い合わせ</a>
+                        <a href="index.html">ホーム</a>
+                        <a href="concept.html">コンセプト</a>
+                        <a href="archive-constraction.html">施工事例</a>
+                        <a href="flow.html">完成までの流れ</a>
+                        <a href="company.html">会社概要</a>
+                        <a href="recruit.html">採用情報</a>
+                        <a href="contact.html">お問い合わせ</a>
                     </div>
                 </div>
                 <div>
@@ -767,41 +718,26 @@
     <!-- ===== FIXED CTA / PAGETOP ===== -->
     <div class="fixed-cta"><div class="fixed-cta-inner">
         <a href="tel:049-299-7645" class="fc-tel"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>電話で相談</a>
-        <a href="/contact/" class="fc-contact"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
+        <a href="contact.html" class="fc-contact"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
     </div></div>
     <button class="pagetop" id="pagetop" aria-label="ページトップへ"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
 
     <!-- ===== SCRIPTS ===== -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // Loading
         window.addEventListener('load',()=>document.getElementById('loading').classList.add('loaded'));
         setTimeout(()=>document.getElementById('loading').classList.add('loaded'),3000);
-
-        // Hero Swiper
         new Swiper('.hero-swiper',{loop:true,effect:'fade',fadeEffect:{crossFade:true},autoplay:{delay:5000,disableOnInteraction:false},speed:1500,pagination:{el:'.hero-swiper .swiper-pagination',clickable:true}});
-
-        // Mobile Menu
         const menuToggle=document.getElementById('menuToggle'),mobileNav=document.getElementById('mobileNav');
         menuToggle.addEventListener('click',()=>{menuToggle.classList.toggle('active');mobileNav.classList.toggle('active');document.body.style.overflow=mobileNav.classList.contains('active')?'hidden':''});
         mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menuToggle.classList.remove('active');mobileNav.classList.remove('active');document.body.style.overflow=''}));
-
-        // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(q=>q.addEventListener('click',()=>{const i=q.parentElement,a=i.classList.contains('active');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('active'));if(!a)i.classList.add('active')}));
-
-        // Fade-up Observer
         const obs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
         document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-
-        // Page Top
         const pt=document.getElementById('pagetop');
         window.addEventListener('scroll',()=>pt.classList.toggle('show',window.scrollY>500));
         pt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
-        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const h=a.getAttribute('href');if(!h||h==='#')return;const t=document.querySelector(h);if(t){e.preventDefault();const offset=window.innerWidth<=768?70:20;window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-offset,behavior:'smooth'})}})});
-
-        // Sticky Header
         const stickyHeader=document.getElementById('stickyHeader');
         const heroWrapper=document.querySelector('.hero-wrapper');
         if(stickyHeader&&heroWrapper){
