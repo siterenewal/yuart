@@ -13,10 +13,10 @@
     <style>
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{
-            --green:#6ab04c;--green-dark:#5a9a3e;--green-light:#e8f5e1;
+            --green:#6ab04c;--green-dark:#5a9a3e;--green-light:#e8f5e1;--green-pale:#f4f9f0;
             --black:#1a1a1a;--black-soft:#2a2a2a;
             --text:#333;--text-light:#666;
-            --bg-gray:#f5f5f3;--bg-dark:#0a0a0a;
+            --bg-gray:#f5f5f3;--bg-dark:#111;
             --white:#fff;
             --sidebar-w:260px;
             --shadow:0 4px 24px rgba(0,0,0,.06);--shadow-lg:0 12px 48px rgba(0,0,0,.12);
@@ -40,6 +40,19 @@
         #loading img{width:120px;filter:brightness(0) invert(1);animation:ldPulse 1.5s ease-in-out infinite}
         @keyframes ldPulse{0%,100%{opacity:1}50%{opacity:.4}}
 
+        /* ═══ STICKY HEADER ═══ */
+        .sticky-header{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;transform:translateY(0);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+        .sticky-header-logo{width:100px}.sticky-header-logo img{width:100%;display:block}
+        .sticky-header-nav{display:flex;align-items:center;gap:1.8rem}
+        .sticky-header-nav a{font-size:.78rem;font-weight:700;color:var(--text);letter-spacing:.04em;transition:var(--transition);white-space:nowrap}
+        .sticky-header-nav a:hover,.sticky-header-nav a.current{color:var(--green)}
+        .sticky-header-right{display:flex;align-items:center;gap:1rem}
+        .sticky-header-phone{font-family:var(--font-en);font-size:.82rem;color:var(--text-light);font-weight:500;letter-spacing:.03em}
+        .sticky-header-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--black);color:#fff;padding:.5rem 1.2rem;border-radius:4px;font-size:.75rem;font-weight:700;transition:var(--transition)}
+        .sticky-header-cta:hover{background:var(--green)}
+        .sticky-header-cta svg{width:14px;height:14px;fill:currentColor}
+        @media(max-width:768px){.sticky-header{display:none!important}}
+
         /* ═══ MOBILE HEADER ═══ */
         .mobile-header{display:none;position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:60px;align-items:center;justify-content:space-between;padding:0 16px}
         .mobile-header-logo{width:120px}
@@ -60,25 +73,11 @@
         .mobile-nav .mobile-nav-phone strong{display:block;font-size:1.3rem;color:#fff;font-family:var(--font-en);margin-top:.3rem}
         .mobile-nav .btn-mobile-cta{display:block;text-align:center;background:var(--green);color:#fff;padding:1rem;border-radius:var(--radius-sm);margin-top:1.5rem;font-weight:700;font-size:.95rem}
 
-        /* ═══ SIDEBAR ═══ */
-        .page-wrapper{display:flex;min-height:100vh}
-        .sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--sidebar-w);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);z-index:100;display:flex;flex-direction:column;padding:2rem 1.5rem;border-right:1px solid rgba(0,0,0,.06)}
-        .sidebar .sidebar-logo{width:120px;margin:0 auto 2rem}
-        .sidebar .sidebar-logo img{width:100%}
-        .sidebar nav a{display:block;font-size:.85rem;font-weight:700;padding:.65rem 0;border-bottom:1px solid rgba(0,0,0,.06);color:var(--text);letter-spacing:.04em;transition:var(--transition)}
-        .sidebar nav a:hover,.sidebar nav a.current{color:var(--green)}
-        .sidebar .sidebar-cta{margin-top:auto}
-        .sidebar .sidebar-cta a{display:block;text-align:center;background:var(--black);color:#fff;padding:.7rem;border-radius:6px;font-size:.82rem;font-weight:700;margin-bottom:.6rem;transition:var(--transition)}
-        .sidebar .sidebar-cta a:hover{background:var(--green)}
-        .sidebar .sidebar-phone{font-size:.78rem;color:var(--text-light);text-align:center;margin-top:.5rem}
-        .sidebar .sidebar-phone strong{display:block;font-size:1.1rem;color:var(--black);font-family:var(--font-en);letter-spacing:.03em}
-        .sidebar .sidebar-phone small{font-size:.68rem;color:var(--text-light)}
-        .side-tab{position:fixed;top:50%;right:0;transform:translateY(-50%);writing-mode:vertical-rl;background:var(--green);color:#fff;padding:1.2rem .6rem;border-radius:6px 0 0 6px;font-size:.8rem;font-weight:700;letter-spacing:.15em;z-index:200;cursor:pointer;transition:var(--transition)}
-        .side-tab:hover{background:var(--green-dark);padding-right:.8rem}
-        .main-content{flex:1;margin-left:var(--sidebar-w)}
+        /* ═══ PAGE BODY ═══ */
+        .page-body{padding-top:60px}
 
         /* ═══ WORKS HERO ═══ */
-        .works-hero{position:relative;height:65vh;min-height:420px;overflow:hidden;background:var(--black)}
+        .works-hero{position:relative;height:55vh;min-height:380px;overflow:hidden;background:var(--black)}
         .works-hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.3) saturate(.8)}
         .works-hero-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:2;padding:0 24px}
         .works-hero-sub{font-family:var(--font-jp);font-size:clamp(.85rem,1.5vw,1rem);color:rgba(255,255,255,.6);letter-spacing:.3em;font-weight:400;margin-bottom:.6rem}
@@ -130,60 +129,30 @@
         .work-card-footer .arrow svg{width:14px;height:14px;fill:var(--text-light);transition:fill .3s}
         .work-card:hover .work-card-footer .arrow svg{fill:#fff}
 
-        /* ═══ CTA CONTACT SECTION ═══ */
-        .cta-contact{padding:5rem 0;background:var(--black);position:relative;overflow:hidden}
-        .cta-contact::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(106,176,76,.08),transparent 70%);pointer-events:none}
-        .cta-contact::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(106,176,76,.05),transparent 70%);pointer-events:none}
-        .cta-contact h2{font-family:var(--font-jp);font-size:clamp(1.3rem,2.5vw,1.7rem);font-weight:700;color:#fff;text-align:center;letter-spacing:.06em;margin-bottom:.5rem}
-        .cta-contact .cta-sub{text-align:center;font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:2.5rem}
-        .cta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;position:relative;z-index:1}
-        .cta-card{
-            background:rgba(255,255,255,.04);
-            border:1px solid rgba(255,255,255,.08);
-            border-radius:var(--radius);padding:2rem 1.5rem;
-            text-align:center;color:#fff;
-            transition:var(--transition);display:block;
-        }
-        .cta-card:hover{background:rgba(106,176,76,.1);border-color:var(--green);transform:translateY(-4px)}
-        .cta-card-icon{width:48px;height:48px;border-radius:50%;background:rgba(106,176,76,.12);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center}
-        .cta-card-icon svg{width:22px;height:22px;fill:var(--green)}
-        .cta-card h3{font-size:1rem;font-weight:700;margin-bottom:.3rem;letter-spacing:.04em}
-        .cta-card p{font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.6}
-        .cta-card .cta-card-detail{display:block;font-family:var(--font-en);font-size:1.4rem;color:var(--green);font-weight:500;margin-top:.5rem;letter-spacing:.03em}
-        .cta-card .cta-card-btn{display:inline-block;margin-top:1rem;background:var(--green);color:#fff;padding:.55rem 2rem;border-radius:6px;font-size:.82rem;font-weight:700;transition:var(--transition)}
-        .cta-card:hover .cta-card-btn{background:var(--green-dark)}
+        /* ═══ CTA2 BOTTOM (index.html と同一) ═══ */
+        .cta2-bottom{padding:3.5rem 0;background:var(--green);text-align:center;position:relative;overflow:hidden}
+        .cta2-bottom::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:rgba(0,0,0,.06);border-radius:50%}
+        .cta2-inner{position:relative;z-index:1}
+        .cta2-inner h2{font-family:var(--font-jp);font-size:clamp(1rem,2vw,1.3rem);font-weight:700;color:#fff;letter-spacing:.05em;margin-bottom:1.5rem}
+        .cta2-btns{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
+        .cta2-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:6px;font-size:.88rem;font-weight:700;transition:var(--transition)}
+        .cta2-btn svg{width:18px;height:18px;fill:currentColor}
+        .cta2-btn-dark{background:var(--black);color:#fff}.cta2-btn-dark:hover{background:#000;transform:translateY(-2px)}
+        .cta2-btn-white{background:#fff;color:var(--black)}.cta2-btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
 
-        .cta-sns{display:flex;justify-content:center;gap:1rem;margin-top:2.5rem;position:relative;z-index:1}
-        .cta-sns a{
-            width:44px;height:44px;border-radius:50%;
-            border:1px solid rgba(255,255,255,.12);
-            display:flex;align-items:center;justify-content:center;
-            transition:var(--transition);
-        }
-        .cta-sns a:hover{background:var(--green);border-color:var(--green)}
-        .cta-sns a svg{width:18px;height:18px;fill:rgba(255,255,255,.5);transition:fill .3s}
-        .cta-sns a:hover svg{fill:#fff}
+        /* ═══ FOOTER (index.html と同一) ═══ */
+        .footer{background:var(--black);color:#fff;padding:5rem 0 0}
+        .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+        .footer-logo{width:160px;margin-bottom:1.5rem;filter:brightness(0) invert(1)}
+        .footer-info{font-size:.82rem;color:rgba(255,255,255,.5);line-height:2}.footer-info strong{color:#fff}
+        .footer-nav-title{font-size:.8rem;font-weight:700;color:var(--green);letter-spacing:.1em;margin-bottom:1rem;text-transform:uppercase}
+        .footer-nav a{display:block;font-size:.82rem;color:rgba(255,255,255,.5);padding:.25rem 0;transition:var(--transition)}.footer-nav a:hover{color:var(--green)}
+        .footer-area{padding:2rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
+        .footer-area-label{font-size:.75rem;font-weight:700;color:var(--green);margin-bottom:.3rem}
+        .footer-area p{font-size:.78rem;color:rgba(255,255,255,.4)}
+        .footer-copy{text-align:center;font-size:.72rem;color:rgba(255,255,255,.25);padding:1.5rem 0}
 
-        /* ═══ FOOTER ═══ */
-        .footer{background:var(--bg-dark);color:#fff;padding:4rem 0 0}
-        .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
-        .footer-brand{max-width:320px}
-        .footer-logo{width:140px;margin-bottom:1.2rem;filter:brightness(0) invert(1)}
-        .footer-info{font-size:.8rem;color:rgba(255,255,255,.4);line-height:2.2}
-        .footer-info strong{color:rgba(255,255,255,.8)}
-        .footer-info a{color:var(--green)}
-        .footer-info a:hover{text-decoration:underline}
-        .footer-nav-group{display:flex;gap:3rem}
-        .footer-nav-col{}
-        .footer-nav-title{font-size:.72rem;font-weight:700;color:var(--green);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem}
-        .footer-nav-col a{display:block;font-size:.8rem;color:rgba(255,255,255,.4);padding:.2rem 0;transition:var(--transition)}
-        .footer-nav-col a:hover{color:var(--green)}
-        .footer-area{padding:1.5rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
-        .footer-area-label{font-size:.72rem;font-weight:700;color:var(--green);margin-bottom:.2rem;letter-spacing:.08em}
-        .footer-area p{font-size:.75rem;color:rgba(255,255,255,.3)}
-        .footer-copy{text-align:center;font-size:.7rem;color:rgba(255,255,255,.2);padding:1.5rem 0}
-
-        /* Fixed Mobile CTA */
+        /* ═══ FIXED MOBILE CTA ═══ */
         .fixed-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--black);padding:.5rem .8rem;box-shadow:0 -4px 24px rgba(0,0,0,.3)}
         .fixed-cta-inner{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
         .fixed-cta a{display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.65rem;border-radius:6px;font-size:.82rem;font-weight:700}
@@ -201,44 +170,62 @@
 
         /* ═══ RESPONSIVE ═══ */
         @media(max-width:1024px){
-            .sidebar{width:220px}:root{--sidebar-w:220px}
             .works-grid{grid-template-columns:repeat(2,1fr)}
-            .cta-grid{grid-template-columns:repeat(3,1fr);gap:1rem}
-            .footer-inner{flex-direction:column;gap:2rem}
+            .footer-grid{grid-template-columns:1fr 1fr}
         }
         @media(max-width:768px){
             .mobile-header{display:flex}
-            .sidebar,.side-tab{display:none}
-            .main-content{margin-left:0;padding-top:60px}
+            .page-body{padding-top:60px}
             .fixed-cta{display:block}
             .pagetop{bottom:75px}
-            .works-hero{height:50vh;min-height:320px}
+            .works-hero{height:45vh;min-height:300px}
             .works-hero-en{font-size:clamp(2.5rem,12vw,4rem)}
             .works-all-section{padding:3.5rem 0 3rem}
             .works-grid{grid-template-columns:repeat(2,1fr);gap:12px}
             .work-card-body{padding:1rem 1rem .8rem}
             .work-card-body h3{font-size:.82rem}
             .work-card-footer{padding:0 1rem 1rem}
-            .cta-grid{grid-template-columns:1fr;gap:.8rem}
-            .cta-contact{padding:3.5rem 0}
+            .cta2-btns{flex-direction:column;align-items:center}
+            .cta2-btn{width:100%;max-width:300px;justify-content:center}
             .footer{padding:3rem 0 0}
-            .footer-nav-group{flex-direction:column;gap:1.5rem}
+            .footer-grid{grid-template-columns:1fr;gap:2rem}
             body{padding-bottom:56px}
         }
         @media(max-width:480px){
-            .works-hero{height:45vh}
+            .works-hero{height:40vh}
             .works-hero-en{font-size:2.2rem}
             .works-grid{grid-template-columns:1fr;gap:14px}
         }
     </style>
 </head>
 
-<body>
-    <div id="loading"><img src="image/logo01.png" alt="YU-ART"></div>
+<body class="page-body">
+    <div id="loading"><img src="logo01.png" alt="YU-ART"></div>
+
+    <!-- ═══ STICKY HEADER (下層ページ用：常時表示) ═══ -->
+    <header class="sticky-header" id="stickyHeader" style="transform:translateY(0)">
+        <div class="sticky-header-logo"><a href="/yuart/index.html"><img src="logo01.png" alt="YU-ART"></a></div>
+        <nav class="sticky-header-nav">
+            <a href="/yuart/index.html">ホーム</a>
+            <a href="/yuart/concept.html">コンセプト</a>
+            <a href="/yuart/archive-constraction.html" class="current">施工事例</a>
+            <a href="/yuart/flow.html">完成までの流れ</a>
+            <a href="/yuart/company.html">会社概要</a>
+            <a href="/yuart/recruit.html">採用情報</a>
+            <a href="/yuart/contact.html">お問い合わせ</a>
+        </nav>
+        <div class="sticky-header-right">
+            <span class="sticky-header-phone"><a href="tel:049-299-7645">049-299-7645</a></span>
+            <a href="/yuart/contact.html" class="sticky-header-cta">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                無料相談
+            </a>
+        </div>
+    </header>
 
     <!-- ═══ MOBILE HEADER ═══ -->
     <div class="mobile-header" id="mobileHeader">
-        <div class="mobile-header-logo"><a href="/yuart/index.html"><img src="image/logo01.png" alt="YU-ART"></a></div>
+        <div class="mobile-header-logo"><a href="/yuart/index.html"><img src="logo01.png" alt="YU-ART"></a></div>
         <button class="menu-toggle" id="menuToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
     </div>
     <nav class="mobile-nav" id="mobileNav">
@@ -254,432 +241,388 @@
         <a href="/yuart/contact.html" class="btn-mobile-cta">無料相談・お見積り</a>
     </nav>
 
-    <div class="page-wrapper">
-
-        <!-- ═══ SIDEBAR ═══ -->
-        <aside class="sidebar">
-            <div class="sidebar-logo"><a href="/yuart/index.html"><img src="image/logo01.png" alt="YU-ART"></a></div>
-            <nav>
-                <a href="/yuart/index.html">ホーム</a>
-                <a href="/yuart/concept.html">コンセプト</a>
-                <a href="/yuart/archive-constraction.html" class="current">施工事例</a>
-                <a href="/yuart/flow.html">完成までの流れ</a>
-                <a href="/yuart/company.html">会社概要</a>
-                <a href="/yuart/recruit.html">採用情報</a>
-                <a href="#">コラム</a>
-                <a href="/yuart/contact.html">お問い合わせ</a>
-            </nav>
-            <div class="sidebar-cta"><a href="/yuart/contact.html">無料相談・お見積り</a></div>
-            <div class="sidebar-phone">お電話でのお問合せ<strong><a href="tel:049-299-7645">049-299-7645</a></strong><small>受付時間 9:00〜17:00</small></div>
-        </aside>
-        <a href="/yuart/contact.html" class="side-tab">資料請求・お問合せ</a>
-
-        <div class="main-content">
-
-            <!-- ═══ WORKS HERO ═══ -->
-            <section class="works-hero">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&h=900&fit=crop" alt="施工事例">
-                <div class="works-hero-overlay">
-                    <h2 class="works-hero-sub">ユーアート ワークス</h2>
-                    <div class="works-hero-en">WORKS</div>
-                    <div class="works-hero-line"></div>
-                </div>
-                <div class="works-hero-scroll">SCROLL</div>
-            </section>
-
-            <main>
-
-                <!-- ═══════════════════════════════════════
-                     施工事例一覧（統合グリッド）
-                     ═══════════════════════════════════════ -->
-                <section class="works-all-section">
-                    <div class="container">
-                        <div class="works-all-header fade-up">
-                            <span class="works-all-en">All Works</span>
-                            <h2>施工事例一覧</h2>
-                            <p>オープン外構・クローズ外構・セミクローズ外構・リフォーム・ガーデン工事など、<br>ユーアートが手がけた外構デザインをご覧いただけます。</p>
-                        </div>
-
-                        <div class="works-grid">
-
-                            <!-- ── 01 オープン外構 / 川越市 ── -->
-                            <a class="work-card fade-up" href="/yuart/single-works.html">
-                                <div class="work-card-img">
-                                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=640&h=480&fit=crop" alt="オープン外構 施工事例">
-                                    <span class="work-card-tag">オープン外構</span>
-                                    <span class="work-card-area">川越市</span>
-                                    <div class="work-card-hover-text"><span>詳しく見る →</span></div>
-                                </div>
-                                <div class="work-card-body">
-                                    <h3>玄関ポーチから続くタイルアプローチ</h3>
-                                    <p>玄関ポーチとの連続性を持たせたタイルアプローチで、住まいの顔を美しく演出。</p>
-                                </div>
-                                <div class="work-card-footer">
-                                    <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
-                                    <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
-                                </div>
-                            </a>
-
-                            <!-- ── 02 オープン外構 / 坂戸市 ── -->
-                            <a class="work-card fade-up" href="/yuart/single-works.html">
-                                <div class="work-card-img">
-                                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=640&h=480&fit=crop" alt="オープン外構 施工事例">
-                                    <span class="work-card-tag">オープン外構</span>
-                                    <span class="work-card-area">坂戸市</span>
-                                    <div class="work-card-hover-text"><span>詳しく見る →</span></div>
-                                </div>
-                                <div class="work-card-body">
-                                    <h3>曲線の可愛い門袖デザイン</h3>
-                                    <p>柔らかい曲線で温かみのあるファサードを実現。植栽との調和が美しい。</p>
-                                </div>
-                                <div class="work-card-footer">
-                                    <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
-                                    <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
-                                </div>
-                            </a>
-
-                            <!-- ── 03 オープン外構 / 日高市 ── -->
-                            <a class="work-card fade-up" href="/yuart/single-works.html">
-                                <div class="work-card-img">
-                                    <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=640&h=480&fit=crop" alt="オープン外構 施工事例">
-                                    <span class="work-card-tag">オープン外構</span>
-                                    <span class="work-card-area">日高市</span>
-                                    <div class="work-card-hover-text"><span>詳しく見る →</span></div>
-                                </div>
-                                <div class="work-card-body">
-                                    <h3>ナチュラルエクステリア</h3>
-                                    <p>天然石と植栽を組み合わせた、自然と調和するオープンスタイル。</p>
-                                </div>
-                                <div class="work-card-footer">
-                                    <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
-                                    <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
-                                </div>
-                            </a>
-
-                            <!-- ── 04 クローズ外構 / 川越市 ── -->
-                            <a class="work-card fade-up" href="/yuart/single-works.html">
-                                <div class="work-card-img">
-                                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=640&h=480&fit=crop" alt="クローズ外構 施工事例">
-                                    <span class="work-card-tag">クローズ外構</span>
-                                    <span class="work-card-area">川越市</span>
-                                    <div class="work-card-hover-text"><span>詳しく見る →</span></div>
-                                </div>
-                                <div class="work-card-body">
-                                    <h3>門袖と浮き床のクローズ外構</h3>
-                                    <p>見せ場の門廻り、車庫の床をデザインしつつクローズ外構で安全性を確保。</p>
-                                </div>
-                                <div class="work-card-footer">
-                                    <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
-                                    <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
-                                </div>
-                            </a>
-
-                            <!-- ── 05 クローズ外構 / 坂戸市 ── -->
-                            <a class="work-card fade-up" href="/yuart/single-works.html">
-                                <div class="work-card-img">
-                                    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=640&h=480&fit=crop" alt="クローズ外構 施工事例">
-                                    <span class="work-card-tag">クローズ外構</span>
-                                    <span class="work-card-area">坂戸市</span>
-                                    <div class="work-card-hover-text"><span>詳しく見る →</span></div>
-                                </div>
-                                <div class="work-card-body">
-                                    <h3>カラーバランスの新築クローズ外構</h3>
-                                    <p>建物の外壁カラーとトータルコーディネートした統一感のあるデザイン。</p>
-                                </div>
-                                <div class="work-card-footer">
-                                    <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
-                                    <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
-                                </div>
-                            </a>
-
-                            <!-- ── 06 クローズ外構 / 鶴ヶ島市 ── -->
-                            <a class="work-card fade-up" href="/yuart/single-works.html">
-                                <div class="work-card-img">
-                                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=640&h=480&fit=crop" alt="クローズ外構 施工事例">
-                                    <span class="work-card-tag">クローズ外構</span>
-                                    <span class="work-card-area">鶴ヶ島市</span>
-                                    <div class="work-card-hover-text"><span>詳しく見る →</span></div>
-                                </div>
-                                <div class="work-card-body">
-                                    <h3>重厚感のある門廻りデザイン</h3>
-                                    <p>タイルと天然石を組み合わせた重厚感のある門廻りで格調高いファサードに。</p>
-                                </div>
-                                <div class="work-card-footer">
-                                    <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
-                                    <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
-                                </div>
-                            </a>
-
-                            <!-- ── 07 セミクローズ外構 / ふじみ野市 ── -->
-                            <a class="work-card fade-up" href="/yuart/single-works.html">
-                                <div class="work-card-img">
-                                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=640&h=480&fit=crop" alt="セミクローズ外構 施工事例">
-                                    <span class="work-card-tag">セミクローズ外構</span>
-                                    <span class="work-card-area">ふじみ野市</span>
-                                    <div class="work-card-hover-text"><span>詳しく見る →</span></div>
-                                </div>
-                                <div class="work-card-body">
-                                    <h3>プライバシーと開放感を両立</h3>
-                                    <p>一部を塀で囲い、残りはオープンにすることで、程よい安心感と開放感を実現。</p>
-                                </div>
-                                <div class="work-card-footer">
-                                    <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
-                                    <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
-                                </div>
-                            </a>
-
-                            <!-- ── 08 セミクローズ外構 / 川越市 ── -->
-                            <a class="work-card fade-up" href="/yuart/single-works.html">
-                                <div class="work-card-img">
-                                    <img src="https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?w=640&h=480&fit=crop" alt="セミクローズ外構 施工事例">
-                                    <span class="work-card-tag">セミクローズ外構</span>
-                                    <span class="work-card-area">川越市</span>
-                                    <div class="work-card-hover-text"><span>詳しく見る →</span></div>
-                                </div>
-                                <div class="work-card-body">
-                                    <h3>植栽とフェンスのセミクローズ外構</h3>
-                                    <p>植栽とデザインフェンスの組み合わせで自然な目隠しを実現。</p>
-                                </div>
-                                <div class="work-card-footer">
-                                    <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
-                                    <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
-                                </div>
-                            </a>
-
-                            <!-- ── 09 セミクローズ外構 / 狭山市 ── -->
-                            <a class="work-card fade-up" href="/yuart/single-works.html">
-                                <div class="work-card-img">
-                                    <img src="https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=640&h=480&fit=crop" alt="セミクローズ外構 施工事例">
-                                    <span class="work-card-tag">セミクローズ外構</span>
-                                    <span class="work-card-area">狭山市</span>
-                                    <div class="work-card-hover-text"><span>詳しく見る →</span></div>
-                                </div>
-                                <div class="work-card-body">
-                                    <h3>モダンスタイルのセミクローズ</h3>
-                                    <p>シンプルモダンなデザインで、暮らしの安心と洗練された印象を両立。</p>
-                                </div>
-                                <div class="work-card-footer">
-                                    <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
-                                    <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
-                                </div>
-                            </a>
-
-                            <!-- ── 10 リフォーム / 川越市 ── -->
-                            <a class="work-card fade-up" href="/yuart/single-works.html">
-                                <div class="work-card-img">
-                                    <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=640&h=480&fit=crop" alt="リフォーム 施工事例">
-                                    <span class="work-card-tag">リフォーム</span>
-                                    <span class="work-card-area">川越市</span>
-                                    <div class="work-card-hover-text"><span>詳しく見る →</span></div>
-                                </div>
-                                <div class="work-card-body">
-                                    <h3>門まわりリフォーム Before→After</h3>
-                                    <p>老朽化した門まわりを一新。明るく安全な玄関アプローチに生まれ変わりました。</p>
-                                </div>
-                                <div class="work-card-footer">
-                                    <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>リフォーム</span>
-                                    <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
-                                </div>
-                            </a>
-
-                            <!-- ── 11 リフォーム / 坂戸市 ── -->
-                            <a class="work-card fade-up" href="/yuart/single-works.html">
-                                <div class="work-card-img">
-                                    <img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=640&h=480&fit=crop" alt="リフォーム 施工事例">
-                                    <span class="work-card-tag">リフォーム</span>
-                                    <span class="work-card-area">坂戸市</span>
-                                    <div class="work-card-hover-text"><span>詳しく見る →</span></div>
-                                </div>
-                                <div class="work-card-body">
-                                    <h3>駐車場拡張リフォーム</h3>
-                                    <p>お庭の一部を駐車スペースに変更。使い勝手を大幅に改善。</p>
-                                </div>
-                                <div class="work-card-footer">
-                                    <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>リフォーム</span>
-                                    <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
-                                </div>
-                            </a>
-
-                            <!-- ── 12 ガーデン工事 / 鶴ヶ島市 ── -->
-                            <a class="work-card fade-up" href="/yuart/single-works.html">
-                                <div class="work-card-img">
-                                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=640&h=480&fit=crop" alt="ガーデン工事 施工事例">
-                                    <span class="work-card-tag">ガーデン工事</span>
-                                    <span class="work-card-area">鶴ヶ島市</span>
-                                    <div class="work-card-hover-text"><span>詳しく見る →</span></div>
-                                </div>
-                                <div class="work-card-body">
-                                    <h3>ウッドデッキのあるガーデン空間</h3>
-                                    <p>リビングから続くウッドデッキで、アウトドアリビングを実現。</p>
-                                </div>
-                                <div class="work-card-footer">
-                                    <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>ガーデン工事</span>
-                                    <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
-                                </div>
-                            </a>
-
-                            <!-- ── 13 リフォーム / 日高市 ── -->
-                            <a class="work-card fade-up" href="/yuart/single-works.html">
-                                <div class="work-card-img">
-                                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=640&h=480&fit=crop" alt="リフォーム 施工事例">
-                                    <span class="work-card-tag">リフォーム</span>
-                                    <span class="work-card-area">日高市</span>
-                                    <div class="work-card-hover-text"><span>詳しく見る →</span></div>
-                                </div>
-                                <div class="work-card-body">
-                                    <h3>カーポート＆アプローチリフォーム</h3>
-                                    <p>カーポート設置とアプローチを同時にリフォーム。統一感のある仕上がりに。</p>
-                                </div>
-                                <div class="work-card-footer">
-                                    <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>リフォーム</span>
-                                    <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
-                                </div>
-                            </a>
-
-                            <!-- ── 14 ガーデン工事 / ふじみ野市 ── -->
-                            <a class="work-card fade-up" href="/yuart/single-works.html">
-                                <div class="work-card-img">
-                                    <img src="https://images.unsplash.com/photo-1600585153490-76fb20a32601?w=640&h=480&fit=crop" alt="ガーデン工事 施工事例">
-                                    <span class="work-card-tag">ガーデン工事</span>
-                                    <span class="work-card-area">ふじみ野市</span>
-                                    <div class="work-card-hover-text"><span>詳しく見る →</span></div>
-                                </div>
-                                <div class="work-card-body">
-                                    <h3>テラス＆植栽のプライベートガーデン</h3>
-                                    <p>タイルテラスと四季を彩る植栽で、お庭をくつろぎの空間に。</p>
-                                </div>
-                                <div class="work-card-footer">
-                                    <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>ガーデン工事</span>
-                                    <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
-                                </div>
-                            </a>
-
-                            <!-- ── 15 オープン外構 / 狭山市 ── -->
-                            <a class="work-card fade-up" href="/yuart/single-works.html">
-                                <div class="work-card-img">
-                                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=640&h=480&fit=crop" alt="オープン外構 施工事例">
-                                    <span class="work-card-tag">オープン外構</span>
-                                    <span class="work-card-area">狭山市</span>
-                                    <div class="work-card-hover-text"><span>詳しく見る →</span></div>
-                                </div>
-                                <div class="work-card-body">
-                                    <h3>芝生と自然石のオープンファサード</h3>
-                                    <p>広い間口を活かした芝生と自然石の組み合わせで、のびやかな外構に。</p>
-                                </div>
-                                <div class="work-card-footer">
-                                    <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
-                                    <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
-                                </div>
-                            </a>
-
-                        </div><!-- /.works-grid -->
-
-                    </div>
-                </section>
-
-            </main>
-
-            <!-- ═══ CTA CONTACT ═══ -->
-            <section class="cta-contact">
-                <div class="container">
-                    <h2>ご相談をお考えの方へ</h2>
-                    <p class="cta-sub">お見積り・現地調査・3Dパース すべて無料。お気軽にお問い合わせください。</p>
-                    <div class="cta-grid">
-                        <a class="cta-card" href="tel:049-299-7645">
-                            <div class="cta-card-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg></div>
-                            <h3>お電話でのご相談</h3>
-                            <p>受付時間 9:00〜17:00（火・水定休）</p>
-                            <span class="cta-card-detail">049-299-7645</span>
-                        </a>
-                        <a class="cta-card" href="/yuart/contact.html">
-                            <div class="cta-card-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
-                            <h3>メールでのご相談</h3>
-                            <p>24時間受付・翌営業日にご返信</p>
-                            <span class="cta-card-btn">お問い合わせフォーム</span>
-                        </a>
-                        <a class="cta-card" href="https://line.me/" target="_blank" rel="noopener">
-                            <div class="cta-card-icon"><svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></div>
-                            <h3>LINEでのご相談</h3>
-                            <p>友だち追加で簡単にご相談可能</p>
-                            <span class="cta-card-btn">LINEで相談する</span>
-                        </a>
-                    </div>
-                    <div class="cta-sns">
-                        <a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-                        <a href="https://www.facebook.com/profile.php?id=100027438334423" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="https://twitter.com/yuart7645" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                        <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ═══ FOOTER ═══ -->
-            <footer class="footer">
-                <div class="container">
-                    <div class="footer-inner">
-                        <div class="footer-brand">
-                            <img src="image/logo01.png" alt="YU-ART" class="footer-logo">
-                            <div class="footer-info">
-                                <strong>株式会社ユーアート</strong><br>
-                                〒350-0807 埼玉県川越市吉田163-3<br>
-                                TEL: <a href="tel:049-299-7645">049-299-7645</a> / FAX: 049-299-7646<br>
-                                営業時間 9:00〜17:00（火・水定休）
-                            </div>
-                        </div>
-                        <div class="footer-nav-group">
-                            <div class="footer-nav-col">
-                                <div class="footer-nav-title">MENU</div>
-                                <a href="/yuart/index.html">ホーム</a>
-                                <a href="/yuart/concept.html">コンセプト</a>
-                                <a href="/yuart/archive-constraction.html">施工事例</a>
-                                <a href="/yuart/flow.html">完成までの流れ</a>
-                            </div>
-                            <div class="footer-nav-col">
-                                <div class="footer-nav-title">ABOUT</div>
-                                <a href="/yuart/company.html">会社概要</a>
-                                <a href="/yuart/recruit.html">採用情報</a>
-                                <a href="#">コラム</a>
-                                <a href="/yuart/contact.html">お問い合わせ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-area">
-                        <div class="footer-area-label">対応エリア</div>
-                        <p>川越市・鶴ヶ島市・坂戸市・日高市・狭山市・ふじみ野市・富士見市・三芳町・所沢市・飯能市ほか埼玉県全域</p>
-                    </div>
-                    <div class="footer-copy">&copy; 2025 YU-ART Inc. All Rights Reserved.</div>
-                </div>
-            </footer>
-
-        </div><!-- /.main-content -->
-    </div><!-- /.page-wrapper -->
-
-    <!-- ═══ FIXED MOBILE CTA ═══ -->
-    <div class="fixed-cta">
-        <div class="fixed-cta-inner">
-            <a href="tel:049-299-7645" class="fc-tel"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>電話する</a>
-            <a href="/yuart/contact.html" class="fc-contact"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>お問い合わせ</a>
+    <!-- ═══ WORKS HERO ═══ -->
+    <section class="works-hero">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&h=900&fit=crop" alt="施工事例">
+        <div class="works-hero-overlay">
+            <h2 class="works-hero-sub">ユーアート ワークス</h2>
+            <div class="works-hero-en">WORKS</div>
+            <div class="works-hero-line"></div>
         </div>
-    </div>
+        <div class="works-hero-scroll">SCROLL</div>
+    </section>
+
+    <main>
+
+        <!-- ═══ 施工事例一覧（統合グリッド） ═══ -->
+        <section class="works-all-section">
+            <div class="container">
+                <div class="works-all-header fade-up">
+                    <span class="works-all-en">All Works</span>
+                    <h2>施工事例一覧</h2>
+                    <p>オープン外構・クローズ外構・セミクローズ外構・リフォーム・ガーデン工事など、<br>ユーアートが手がけた外構デザインをご覧いただけます。</p>
+                </div>
+
+                <div class="works-grid">
+
+                    <!-- 01 オープン外構 / 川越市 -->
+                    <a class="work-card fade-up" href="/yuart/single-works.html">
+                        <div class="work-card-img">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=640&h=480&fit=crop" alt="オープン外構 施工事例">
+                            <span class="work-card-tag">オープン外構</span>
+                            <span class="work-card-area">川越市</span>
+                            <div class="work-card-hover-text"><span>詳しく見る →</span></div>
+                        </div>
+                        <div class="work-card-body">
+                            <h3>玄関ポーチから続くタイルアプローチ</h3>
+                            <p>玄関ポーチとの連続性を持たせたタイルアプローチで、住まいの顔を美しく演出。</p>
+                        </div>
+                        <div class="work-card-footer">
+                            <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
+                            <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
+                        </div>
+                    </a>
+
+                    <!-- 02 オープン外構 / 坂戸市 -->
+                    <a class="work-card fade-up" href="/yuart/single-works.html">
+                        <div class="work-card-img">
+                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=640&h=480&fit=crop" alt="オープン外構 施工事例">
+                            <span class="work-card-tag">オープン外構</span>
+                            <span class="work-card-area">坂戸市</span>
+                            <div class="work-card-hover-text"><span>詳しく見る →</span></div>
+                        </div>
+                        <div class="work-card-body">
+                            <h3>曲線の可愛い門袖デザイン</h3>
+                            <p>柔らかい曲線で温かみのあるファサードを実現。植栽との調和が美しい。</p>
+                        </div>
+                        <div class="work-card-footer">
+                            <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
+                            <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
+                        </div>
+                    </a>
+
+                    <!-- 03 オープン外構 / 日高市 -->
+                    <a class="work-card fade-up" href="/yuart/single-works.html">
+                        <div class="work-card-img">
+                            <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=640&h=480&fit=crop" alt="オープン外構 施工事例">
+                            <span class="work-card-tag">オープン外構</span>
+                            <span class="work-card-area">日高市</span>
+                            <div class="work-card-hover-text"><span>詳しく見る →</span></div>
+                        </div>
+                        <div class="work-card-body">
+                            <h3>ナチュラルエクステリア</h3>
+                            <p>天然石と植栽を組み合わせた、自然と調和するオープンスタイル。</p>
+                        </div>
+                        <div class="work-card-footer">
+                            <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
+                            <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
+                        </div>
+                    </a>
+
+                    <!-- 04 クローズ外構 / 川越市 -->
+                    <a class="work-card fade-up" href="/yuart/single-works.html">
+                        <div class="work-card-img">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=640&h=480&fit=crop" alt="クローズ外構 施工事例">
+                            <span class="work-card-tag">クローズ外構</span>
+                            <span class="work-card-area">川越市</span>
+                            <div class="work-card-hover-text"><span>詳しく見る →</span></div>
+                        </div>
+                        <div class="work-card-body">
+                            <h3>門袖と浮き床のクローズ外構</h3>
+                            <p>見せ場の門廻り、車庫の床をデザインしつつクローズ外構で安全性を確保。</p>
+                        </div>
+                        <div class="work-card-footer">
+                            <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
+                            <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
+                        </div>
+                    </a>
+
+                    <!-- 05 クローズ外構 / 坂戸市 -->
+                    <a class="work-card fade-up" href="/yuart/single-works.html">
+                        <div class="work-card-img">
+                            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=640&h=480&fit=crop" alt="クローズ外構 施工事例">
+                            <span class="work-card-tag">クローズ外構</span>
+                            <span class="work-card-area">坂戸市</span>
+                            <div class="work-card-hover-text"><span>詳しく見る →</span></div>
+                        </div>
+                        <div class="work-card-body">
+                            <h3>カラーバランスの新築クローズ外構</h3>
+                            <p>建物の外壁カラーとトータルコーディネートした統一感のあるデザイン。</p>
+                        </div>
+                        <div class="work-card-footer">
+                            <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
+                            <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
+                        </div>
+                    </a>
+
+                    <!-- 06 クローズ外構 / 鶴ヶ島市 -->
+                    <a class="work-card fade-up" href="/yuart/single-works.html">
+                        <div class="work-card-img">
+                            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=640&h=480&fit=crop" alt="クローズ外構 施工事例">
+                            <span class="work-card-tag">クローズ外構</span>
+                            <span class="work-card-area">鶴ヶ島市</span>
+                            <div class="work-card-hover-text"><span>詳しく見る →</span></div>
+                        </div>
+                        <div class="work-card-body">
+                            <h3>重厚感のある門廻りデザイン</h3>
+                            <p>タイルと天然石を組み合わせた重厚感のある門廻りで格調高いファサードに。</p>
+                        </div>
+                        <div class="work-card-footer">
+                            <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
+                            <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
+                        </div>
+                    </a>
+
+                    <!-- 07 セミクローズ外構 / ふじみ野市 -->
+                    <a class="work-card fade-up" href="/yuart/single-works.html">
+                        <div class="work-card-img">
+                            <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=640&h=480&fit=crop" alt="セミクローズ外構 施工事例">
+                            <span class="work-card-tag">セミクローズ外構</span>
+                            <span class="work-card-area">ふじみ野市</span>
+                            <div class="work-card-hover-text"><span>詳しく見る →</span></div>
+                        </div>
+                        <div class="work-card-body">
+                            <h3>プライバシーと開放感を両立</h3>
+                            <p>一部を塀で囲い、残りはオープンにすることで、程よい安心感と開放感を実現。</p>
+                        </div>
+                        <div class="work-card-footer">
+                            <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
+                            <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
+                        </div>
+                    </a>
+
+                    <!-- 08 セミクローズ外構 / 川越市 -->
+                    <a class="work-card fade-up" href="/yuart/single-works.html">
+                        <div class="work-card-img">
+                            <img src="https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?w=640&h=480&fit=crop" alt="セミクローズ外構 施工事例">
+                            <span class="work-card-tag">セミクローズ外構</span>
+                            <span class="work-card-area">川越市</span>
+                            <div class="work-card-hover-text"><span>詳しく見る →</span></div>
+                        </div>
+                        <div class="work-card-body">
+                            <h3>植栽とフェンスのセミクローズ外構</h3>
+                            <p>植栽とデザインフェンスの組み合わせで自然な目隠しを実現。</p>
+                        </div>
+                        <div class="work-card-footer">
+                            <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
+                            <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
+                        </div>
+                    </a>
+
+                    <!-- 09 セミクローズ外構 / 狭山市 -->
+                    <a class="work-card fade-up" href="/yuart/single-works.html">
+                        <div class="work-card-img">
+                            <img src="https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=640&h=480&fit=crop" alt="セミクローズ外構 施工事例">
+                            <span class="work-card-tag">セミクローズ外構</span>
+                            <span class="work-card-area">狭山市</span>
+                            <div class="work-card-hover-text"><span>詳しく見る →</span></div>
+                        </div>
+                        <div class="work-card-body">
+                            <h3>モダンスタイルのセミクローズ</h3>
+                            <p>シンプルモダンなデザインで、暮らしの安心と洗練された印象を両立。</p>
+                        </div>
+                        <div class="work-card-footer">
+                            <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
+                            <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
+                        </div>
+                    </a>
+
+                    <!-- 10 リフォーム / 川越市 -->
+                    <a class="work-card fade-up" href="/yuart/single-works.html">
+                        <div class="work-card-img">
+                            <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=640&h=480&fit=crop" alt="リフォーム 施工事例">
+                            <span class="work-card-tag">リフォーム</span>
+                            <span class="work-card-area">川越市</span>
+                            <div class="work-card-hover-text"><span>詳しく見る →</span></div>
+                        </div>
+                        <div class="work-card-body">
+                            <h3>門まわりリフォーム Before→After</h3>
+                            <p>老朽化した門まわりを一新。明るく安全な玄関アプローチに生まれ変わりました。</p>
+                        </div>
+                        <div class="work-card-footer">
+                            <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>リフォーム</span>
+                            <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
+                        </div>
+                    </a>
+
+                    <!-- 11 リフォーム / 坂戸市 -->
+                    <a class="work-card fade-up" href="/yuart/single-works.html">
+                        <div class="work-card-img">
+                            <img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=640&h=480&fit=crop" alt="リフォーム 施工事例">
+                            <span class="work-card-tag">リフォーム</span>
+                            <span class="work-card-area">坂戸市</span>
+                            <div class="work-card-hover-text"><span>詳しく見る →</span></div>
+                        </div>
+                        <div class="work-card-body">
+                            <h3>駐車場拡張リフォーム</h3>
+                            <p>お庭の一部を駐車スペースに変更。使い勝手を大幅に改善。</p>
+                        </div>
+                        <div class="work-card-footer">
+                            <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>リフォーム</span>
+                            <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
+                        </div>
+                    </a>
+
+                    <!-- 12 ガーデン工事 / 鶴ヶ島市 -->
+                    <a class="work-card fade-up" href="/yuart/single-works.html">
+                        <div class="work-card-img">
+                            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=640&h=480&fit=crop" alt="ガーデン工事 施工事例">
+                            <span class="work-card-tag">ガーデン工事</span>
+                            <span class="work-card-area">鶴ヶ島市</span>
+                            <div class="work-card-hover-text"><span>詳しく見る →</span></div>
+                        </div>
+                        <div class="work-card-body">
+                            <h3>ウッドデッキのあるガーデン空間</h3>
+                            <p>リビングから続くウッドデッキで、アウトドアリビングを実現。</p>
+                        </div>
+                        <div class="work-card-footer">
+                            <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>ガーデン工事</span>
+                            <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
+                        </div>
+                    </a>
+
+                    <!-- 13 リフォーム / 日高市 -->
+                    <a class="work-card fade-up" href="/yuart/single-works.html">
+                        <div class="work-card-img">
+                            <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=640&h=480&fit=crop" alt="リフォーム 施工事例">
+                            <span class="work-card-tag">リフォーム</span>
+                            <span class="work-card-area">日高市</span>
+                            <div class="work-card-hover-text"><span>詳しく見る →</span></div>
+                        </div>
+                        <div class="work-card-body">
+                            <h3>カーポート＆アプローチリフォーム</h3>
+                            <p>カーポート設置とアプローチを同時にリフォーム。統一感のある仕上がりに。</p>
+                        </div>
+                        <div class="work-card-footer">
+                            <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>リフォーム</span>
+                            <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
+                        </div>
+                    </a>
+
+                    <!-- 14 ガーデン工事 / ふじみ野市 -->
+                    <a class="work-card fade-up" href="/yuart/single-works.html">
+                        <div class="work-card-img">
+                            <img src="https://images.unsplash.com/photo-1600585153490-76fb20a32601?w=640&h=480&fit=crop" alt="ガーデン工事 施工事例">
+                            <span class="work-card-tag">ガーデン工事</span>
+                            <span class="work-card-area">ふじみ野市</span>
+                            <div class="work-card-hover-text"><span>詳しく見る →</span></div>
+                        </div>
+                        <div class="work-card-body">
+                            <h3>テラス＆植栽のプライベートガーデン</h3>
+                            <p>タイルテラスと四季を彩る植栽で、お庭をくつろぎの空間に。</p>
+                        </div>
+                        <div class="work-card-footer">
+                            <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>ガーデン工事</span>
+                            <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
+                        </div>
+                    </a>
+
+                    <!-- 15 オープン外構 / 狭山市 -->
+                    <a class="work-card fade-up" href="/yuart/single-works.html">
+                        <div class="work-card-img">
+                            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=640&h=480&fit=crop" alt="オープン外構 施工事例">
+                            <span class="work-card-tag">オープン外構</span>
+                            <span class="work-card-area">狭山市</span>
+                            <div class="work-card-hover-text"><span>詳しく見る →</span></div>
+                        </div>
+                        <div class="work-card-body">
+                            <h3>芝生と自然石のオープンファサード</h3>
+                            <p>広い間口を活かした芝生と自然石の組み合わせで、のびやかな外構に。</p>
+                        </div>
+                        <div class="work-card-footer">
+                            <span class="label"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>新築外構</span>
+                            <span class="arrow"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
+                        </div>
+                    </a>
+
+                </div><!-- /.works-grid -->
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════════
+         CTA2 BOTTOM（index.html と完全同一）
+         ═══════════════════════════════════════════════ -->
+    <section class="cta2-bottom">
+        <div class="container"><div class="cta2-inner">
+            <h2>外構のことなら何でもご相談ください</h2>
+            <div class="cta2-btns">
+                <a href="/yuart/contact.html" class="cta2-btn cta2-btn-dark"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
+                <a href="tel:049-299-7645" class="cta2-btn cta2-btn-white"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>049-299-7645</a>
+            </div>
+        </div></div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         FOOTER（index.html と完全同一）
+         ═══════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="logo01.png" alt="YU-ART" class="footer-logo">
+                    <div class="footer-info"><strong>株式会社ユーアート</strong><br>〒350-0807 埼玉県川越市吉田163-3<br>TEL: <a href="tel:049-299-7645" style="color:var(--green)">049-299-7645</a><br>FAX: 049-299-7646<br>営業時間: 9:00〜17:00（火・水曜定休）</div>
+                </div>
+                <div>
+                    <div class="footer-nav-title">Pages</div>
+                    <div class="footer-nav">
+                        <a href="/yuart/index.html">ホーム</a>
+                        <a href="/yuart/concept.html">コンセプト</a>
+                        <a href="/yuart/archive-constraction.html">施工事例</a>
+                        <a href="/yuart/flow.html">完成までの流れ</a>
+                        <a href="/yuart/company.html">会社概要</a>
+                        <a href="/yuart/recruit.html">採用情報</a>
+                        <a href="/yuart/contact.html">お問い合わせ</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-nav-title">SNS</div>
+                    <div class="footer-nav">
+                        <a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=100027438334423" target="_blank" rel="noopener">Facebook</a>
+                        <a href="https://twitter.com/yuart7645" target="_blank" rel="noopener">X (Twitter)</a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-area"><div class="footer-area-label">対応エリア</div><p>川越市・鶴ヶ島市・坂戸市・日高市・狭山市・ふじみ野市・富士見市・東松山市 ほか</p></div>
+            <p class="footer-copy">Copyright &copy; YU-ART Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ═══ FIXED MOBILE CTA（index.html と同一） ═══ -->
+    <div class="fixed-cta"><div class="fixed-cta-inner">
+        <a href="tel:049-299-7645" class="fc-tel"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>電話で相談</a>
+        <a href="/yuart/contact.html" class="fc-contact"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
+    </div></div>
 
     <!-- ═══ PAGE TOP ═══ -->
-    <button class="pagetop" id="pagetop" aria-label="ページトップへ"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" transform="rotate(-90 12 12)"/></svg></button>
+    <button class="pagetop" id="pagetop" aria-label="ページトップへ"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
 
     <script>
     document.addEventListener('DOMContentLoaded',function(){
         /* Loading */
         setTimeout(()=>{const ld=document.getElementById('loading');if(ld)ld.classList.add('loaded')},600);
+        window.addEventListener('load',()=>{const ld=document.getElementById('loading');if(ld)ld.classList.add('loaded')});
 
         /* Mobile menu toggle */
         const tog=document.getElementById('menuToggle'),nav=document.getElementById('mobileNav');
-        if(tog&&nav){tog.addEventListener('click',()=>{tog.classList.toggle('active');nav.classList.toggle('active')})}
+        if(tog&&nav){
+            tog.addEventListener('click',()=>{tog.classList.toggle('active');nav.classList.toggle('active');document.body.style.overflow=nav.classList.contains('active')?'hidden':''});
+            nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{tog.classList.remove('active');nav.classList.remove('active');document.body.style.overflow=''}));
+        }
 
         /* Page top */
         const pt=document.getElementById('pagetop');
-        if(pt){window.addEventListener('scroll',()=>{pt.classList.toggle('show',window.scrollY>400)});pt.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})})}
+        if(pt){
+            window.addEventListener('scroll',()=>{pt.classList.toggle('show',window.scrollY>500)});
+            pt.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});
+        }
 
         /* Fade up */
-        const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.15});
+        const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
         document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
     });
     </script>
