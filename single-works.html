@@ -39,48 +39,62 @@ ul{list-style:none}
 #loading img{width:120px;filter:brightness(0) invert(1);animation:pulse 1.5s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
-/* ===== HEADER ===== */
-.site-header{
+/* ===== STICKY HEADER (PC) ===== */
+.sticky-header{
     position:fixed;top:0;left:0;right:0;z-index:1000;
     background:rgba(255,255,255,.97);backdrop-filter:blur(12px);
     border-bottom:1px solid rgba(0,0,0,.06);
     height:64px;display:flex;align-items:center;justify-content:space-between;
     padding:0 2rem;
 }
-.header-logo{width:110px}
-.header-logo img{width:100%;display:block}
-.header-nav{display:flex;align-items:center;gap:0}
-.header-nav a{
+.sticky-header .header-logo{width:110px}
+.sticky-header .header-logo img{width:100%;display:block}
+.sticky-header .header-nav{display:flex;align-items:center;gap:0}
+.sticky-header .header-nav a{
     font-size:.78rem;font-weight:700;color:var(--text);letter-spacing:.04em;
     padding:0 .9rem;height:64px;display:flex;align-items:center;
     position:relative;transition:var(--transition);white-space:nowrap;
 }
-.header-nav a::after{
+.sticky-header .header-nav a::after{
     content:'';position:absolute;bottom:0;left:50%;width:0;height:2px;
     background:var(--green);transition:var(--transition);transform:translateX(-50%);
 }
-.header-nav a:hover::after,.header-nav a.current::after{width:60%}
-.header-nav a.current{color:var(--green)}
-.header-right{display:flex;align-items:center;gap:1rem}
-.header-tel{font-family:var(--font-en);font-size:.95rem;font-weight:600;color:var(--black);letter-spacing:.03em}
-.header-tel small{font-family:var(--font-body);font-size:.6rem;font-weight:400;color:var(--text-light);display:block;line-height:1}
-.header-cta{
+.sticky-header .header-nav a:hover::after,
+.sticky-header .header-nav a.current::after{width:60%}
+.sticky-header .header-nav a.current{color:var(--green)}
+.sticky-header .header-right{display:flex;align-items:center;gap:1rem}
+.sticky-header .header-tel{font-family:var(--font-en);font-size:.95rem;font-weight:600;color:var(--black);letter-spacing:.03em}
+.sticky-header .header-tel small{font-family:var(--font-body);font-size:.6rem;font-weight:400;color:var(--text-light);display:block;line-height:1}
+.sticky-header .header-cta{
     background:var(--black);color:#fff;font-size:.72rem;font-weight:700;
     padding:.5rem 1.2rem;border-radius:4px;letter-spacing:.06em;transition:var(--transition);
     display:inline-flex;align-items:center;gap:.4rem;
 }
-.header-cta:hover{background:var(--green)}
-.header-cta svg{width:14px;height:14px;fill:currentColor}
+.sticky-header .header-cta:hover{background:var(--green)}
+.sticky-header .header-cta svg{width:14px;height:14px;fill:currentColor}
 
-/* Mobile */
-.menu-toggle{display:none;background:none;border:none;cursor:pointer;width:32px;height:24px;position:relative;z-index:1100}
+/* ===== MOBILE HEADER ===== */
+.mobile-header{
+    display:none;position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:rgba(255,255,255,.97);backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(0,0,0,.06);
+    height:60px;align-items:center;justify-content:space-between;padding:0 16px;
+}
+.mobile-header .header-logo{width:110px}
+.mobile-header .header-logo img{width:100%;display:block}
+.menu-toggle{background:none;border:none;cursor:pointer;width:32px;height:24px;position:relative;z-index:1100}
 .menu-toggle span{display:block;width:22px;height:2px;background:var(--black);position:absolute;left:5px;transition:var(--transition)}
 .menu-toggle span:nth-child(1){top:4px}.menu-toggle span:nth-child(2){top:11px}.menu-toggle span:nth-child(3){top:18px}
 .menu-toggle.active span:nth-child(1){top:11px;transform:rotate(45deg)}.menu-toggle.active span:nth-child(2){opacity:0}.menu-toggle.active span:nth-child(3){top:11px;transform:rotate(-45deg)}
-.mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--black);z-index:999;padding:2rem;overflow-y:auto}
+
+/* Mobile Nav Overlay */
+.mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--black);z-index:999;padding:2rem;overflow-y:auto}
 .mobile-nav.active{display:flex;flex-direction:column}
 .mobile-nav a{display:block;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:1rem;font-weight:700;color:#fff}
 .mobile-nav a:hover{color:var(--green)}
+.mobile-nav .mobile-nav-phone{margin-top:1.5rem;text-align:center;color:rgba(255,255,255,.6);font-size:.82rem}
+.mobile-nav .mobile-nav-phone strong{display:block;font-size:1.3rem;color:#fff;font-family:var(--font-en);margin-top:.3rem}
+.mobile-nav .btn-mobile-cta{display:block;text-align:center;background:var(--green);color:#fff;padding:1rem;border-radius:var(--radius-sm);margin-top:1.5rem;font-weight:700;font-size:.95rem}
 
 /* ===== BREADCRUMB ===== */
 .breadcrumb{padding:1rem 0;font-size:.72rem;color:var(--text-light)}
@@ -169,9 +183,6 @@ ul{list-style:none}
 
 /* ===== S3: STORY ===== */
 .story-section{padding:5rem 0;background:var(--white)}
-.story-header{text-align:center;margin-bottom:4rem}
-.story-en{font-family:var(--font-en);font-size:2.2rem;color:var(--black);font-weight:300;letter-spacing:.05em;line-height:1}
-.story-ja{font-size:.75rem;font-weight:700;color:var(--green);letter-spacing:.15em;margin-top:.4rem;display:block}
 .story-block{
     display:grid;grid-template-columns:1fr 1fr;gap:4rem;
     align-items:center;margin-bottom:5rem;
@@ -213,18 +224,12 @@ ul{list-style:none}
     font-size:.82rem;font-weight:700;color:var(--black);
     padding:.9rem 0;width:130px;vertical-align:top;text-align:left;
 }
-.details-table td{
-    font-size:.85rem;color:var(--text-light);padding:.9rem 0;
-}
+.details-table td{font-size:.85rem;color:var(--text-light);padding:.9rem 0}
 .details-before-after{
     background:var(--white);border-radius:var(--radius);
     overflow:hidden;box-shadow:var(--shadow);
 }
-.ba-header{
-    display:flex;
--moz-box-pack:center;justify-content:center;
-    gap:0;background:var(--black);
-}
+.ba-header{display:flex;justify-content:center;gap:0;background:var(--black)}
 .ba-tab{
     flex:1;text-align:center;padding:.7rem;
     font-size:.75rem;font-weight:700;color:rgba(255,255,255,.5);
@@ -244,27 +249,18 @@ ul{list-style:none}
     display:grid;grid-template-columns:200px 1fr;gap:2.5rem;
     align-items:start;max-width:900px;margin:0 auto;
 }
-.staff-photo{
-    width:200px;height:200px;border-radius:50%;overflow:hidden;
-    box-shadow:var(--shadow-lg);
-}
+.staff-photo{width:200px;height:200px;border-radius:50%;overflow:hidden;box-shadow:var(--shadow-lg)}
 .staff-photo img{width:100%;height:100%;object-fit:cover}
 .staff-info{padding-top:.5rem}
-.staff-label{
-    font-size:.65rem;font-weight:700;color:var(--green);
-    letter-spacing:.15em;text-transform:uppercase;margin-bottom:.6rem;
-}
-.staff-name{
-    font-family:var(--font-jp);font-size:1.3rem;font-weight:700;
-    color:var(--black);margin-bottom:.3rem;
-}
+.staff-label{font-size:.65rem;font-weight:700;color:var(--green);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.6rem}
+.staff-name{font-family:var(--font-jp);font-size:1.3rem;font-weight:700;color:var(--black);margin-bottom:.3rem}
 .staff-role{font-size:.75rem;color:var(--text-light);margin-bottom:1.2rem}
 .staff-comment{
     font-size:.9rem;color:var(--text);line-height:2.1;
     position:relative;padding-left:1.5rem;
 }
 .staff-comment::before{
-    content:'"';position:absolute;left:0;top:-.2rem;
+    content:'\201C';position:absolute;left:0;top:-.2rem;
     font-family:var(--font-en);font-size:2.5rem;color:var(--green);
     line-height:1;opacity:.4;
 }
@@ -277,16 +273,13 @@ ul{list-style:none}
     padding:3rem;box-shadow:var(--shadow);position:relative;
 }
 .customer-card::before{
-    content:'"';position:absolute;top:1.5rem;left:2rem;
+    content:'\201C';position:absolute;top:1.5rem;left:2rem;
     font-family:var(--font-script);font-size:6rem;color:var(--green);
     opacity:.12;line-height:1;
 }
 .customer-stars{display:flex;gap:.2rem;margin-bottom:1rem}
 .customer-stars svg{width:18px;height:18px;fill:var(--green)}
-.customer-comment{
-    font-size:.95rem;color:var(--text);line-height:2.2;
-    margin-bottom:1.5rem;
-}
+.customer-comment{font-size:.95rem;color:var(--text);line-height:2.2;margin-bottom:1.5rem}
 .customer-meta{
     display:flex;align-items:center;gap:1rem;
     border-top:1px solid rgba(0,0,0,.06);padding-top:1.5rem;
@@ -302,9 +295,6 @@ ul{list-style:none}
 /* ===== S7: CONTACT FORM ===== */
 .contact-form-section{padding:5rem 0;background:var(--white)}
 .form-wrapper{max-width:900px;margin:0 auto}
-.form-header{text-align:center;margin-bottom:2.5rem}
-.form-en{font-family:var(--font-en);font-size:2.2rem;color:var(--black);font-weight:300;letter-spacing:.05em;line-height:1}
-.form-ja{font-size:.75rem;font-weight:700;color:var(--green);letter-spacing:.15em;margin-top:.4rem;display:block}
 .form-instruction{
     background:var(--bg-gray);border-left:3px solid var(--green);
     padding:1rem 1.2rem;font-size:.8rem;line-height:1.9;
@@ -312,7 +302,6 @@ ul{list-style:none}
 }
 .form-instruction a{color:var(--green);font-weight:600}
 .form-instruction a:hover{text-decoration:underline}
-
 .form-row{
     display:grid;grid-template-columns:180px 1fr;gap:0;
     border-bottom:1px solid rgba(0,0,0,.06);min-height:68px;
@@ -322,19 +311,9 @@ ul{list-style:none}
     padding:1rem .8rem;font-size:.82rem;font-weight:600;
     background:rgba(0,0,0,.02);
 }
-.badge-req{
-    font-size:.58rem;font-weight:700;color:#fff;
-    background:#e74c3c;padding:.15rem .4rem;border-radius:2px;
-    letter-spacing:.04em;
-}
-.badge-opt{
-    font-size:.58rem;font-weight:700;color:var(--text-light);
-    background:rgba(0,0,0,.06);padding:.15rem .4rem;border-radius:2px;
-}
-.form-input{
-    display:flex;flex-direction:column;justify-content:center;
-    padding:.8rem 1rem;gap:.5rem;
-}
+.badge-req{font-size:.58rem;font-weight:700;color:#fff;background:#e74c3c;padding:.15rem .4rem;border-radius:2px;letter-spacing:.04em}
+.badge-opt{font-size:.58rem;font-weight:700;color:var(--text-light);background:rgba(0,0,0,.06);padding:.15rem .4rem;border-radius:2px}
+.form-input{display:flex;flex-direction:column;justify-content:center;padding:.8rem 1rem;gap:.5rem}
 .form-input-row{display:flex;gap:.5rem;align-items:center}
 .form-input-row .input-hint{font-size:.72rem;color:var(--text-light);flex-shrink:0;width:28px}
 .form-control{
@@ -355,24 +334,18 @@ textarea.form-control{min-height:140px;resize:vertical}
 .checkbox-label{
     display:flex;align-items:center;gap:.4rem;
     font-size:.8rem;cursor:pointer;padding:.35rem .7rem;
-    border:1px solid rgba(0,0,0,.1);border-radius:0;
-    transition:var(--transition);
+    border:1px solid rgba(0,0,0,.1);border-radius:0;transition:var(--transition);
 }
 .checkbox-label:hover{border-color:var(--green);background:rgba(106,176,76,.04)}
 .checkbox-label input[type="checkbox"]{accent-color:var(--green)}
 .radio-group{display:flex;flex-wrap:wrap;gap:.6rem}
 .radio-label{display:flex;align-items:center;gap:.4rem;font-size:.8rem;cursor:pointer}
 .radio-label input[type="radio"]{accent-color:var(--green)}
-
-.form-submit{
-    display:flex;flex-direction:column;align-items:center;
-    gap:1rem;margin-top:2rem;padding-top:1.5rem;
-}
+.form-submit{display:flex;flex-direction:column;align-items:center;gap:1rem;margin-top:2rem;padding-top:1.5rem}
 .btn-submit{
     background:var(--green);color:#fff;border:none;
     font-size:.9rem;font-weight:700;letter-spacing:.08em;
-    padding:1rem 3.5rem;border-radius:0;cursor:pointer;
-    transition:var(--transition);
+    padding:1rem 3.5rem;border-radius:0;cursor:pointer;transition:var(--transition);
 }
 .btn-submit:hover{background:var(--green-dark);transform:translateY(-1px)}
 
@@ -388,16 +361,16 @@ textarea.form-control{min-height:140px;resize:vertical}
 .related-card-area{font-size:.65rem;color:var(--text-light)}
 .related-card-body h3{font-size:.82rem;font-weight:700;color:var(--black);line-height:1.5}
 
-/* ===== CTA BANNER ===== */
-.cta-banner{padding:3.5rem 0;background:var(--green);text-align:center;position:relative;overflow:hidden}
-.cta-banner::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:rgba(0,0,0,.06);border-radius:50%}
-.cta-banner-inner{position:relative;z-index:1}
-.cta-banner h2{font-family:var(--font-jp);font-size:clamp(1rem,2vw,1.3rem);font-weight:700;color:#fff;letter-spacing:.05em;margin-bottom:1.5rem}
-.cta-btns{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
-.cta-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:6px;font-size:.88rem;font-weight:700;transition:var(--transition)}
-.cta-btn svg{width:18px;height:18px;fill:currentColor}
-.cta-btn-dark{background:var(--black);color:#fff}.cta-btn-dark:hover{background:#000;transform:translateY(-2px)}
-.cta-btn-white{background:#fff;color:var(--black)}.cta-btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+/* ===== CTA2 BOTTOM ===== */
+.cta2-bottom{padding:3.5rem 0;background:var(--green);text-align:center;position:relative;overflow:hidden}
+.cta2-bottom::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:rgba(0,0,0,.06);border-radius:50%}
+.cta2-inner{position:relative;z-index:1}
+.cta2-inner h2{font-family:var(--font-jp);font-size:clamp(1rem,2vw,1.3rem);font-weight:700;color:#fff;letter-spacing:.05em;margin-bottom:1.5rem}
+.cta2-btns{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
+.cta2-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:6px;font-size:.88rem;font-weight:700;transition:var(--transition)}
+.cta2-btn svg{width:18px;height:18px;fill:currentColor}
+.cta2-btn-dark{background:var(--black);color:#fff}.cta2-btn-dark:hover{background:#000;transform:translateY(-2px)}
+.cta2-btn-white{background:#fff;color:var(--black)}.cta2-btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
 
 /* ===== SECTION TITLE SHARED ===== */
 .sec-header{text-align:center;margin-bottom:3rem}
@@ -418,7 +391,7 @@ textarea.form-control{min-height:140px;resize:vertical}
 
 /* ===== PAGETOP ===== */
 .pagetop{
-    position:fixed;bottom:24px;right:24px;width:44px;height:44px;
+    position:fixed;bottom:90px;right:20px;width:44px;height:44px;
     background:var(--black);border-radius:8px;display:flex;align-items:center;justify-content:center;
     z-index:800;opacity:0;visibility:hidden;transition:var(--transition);
     box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;border:none;
@@ -440,15 +413,16 @@ textarea.form-control{min-height:140px;resize:vertical}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
-    .header-nav{display:none}.menu-toggle{display:block}
+    .sticky-header .header-nav{display:none}
+    .sticky-header .menu-toggle-pc{display:block}
     .gallery-thumbs{grid-template-columns:repeat(4,1fr)}
     .story-block{gap:2.5rem}
     .details-grid{grid-template-columns:1fr}
     .related-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
-    .site-header{padding:0 16px;height:60px}
-    .header-tel{display:none}
+    .sticky-header{display:none}
+    .mobile-header{display:flex}
     .works-hero{height:320px;margin-top:60px}
     .works-hero-overlay{padding:2rem 1.5rem}
     .works-hero h1{font-size:1.4rem}
@@ -472,11 +446,11 @@ textarea.form-control{min-height:140px;resize:vertical}
     .related-section{padding:3.5rem 0}
     .related-grid{grid-template-columns:1fr 1fr;gap:1rem}
     .footer{padding:3rem 0 0}.footer-grid{grid-template-columns:1fr;gap:2rem}
-    .cta-btns{flex-direction:column;align-items:center}
-    .cta-btn{width:100%;max-width:300px;justify-content:center}
+    .cta2-btns{flex-direction:column;align-items:center}
+    .cta2-btn{width:100%;max-width:300px;justify-content:center}
     .fixed-cta{display:block}
     body{padding-bottom:56px}
-    .pagetop{bottom:75px}
+    .pagetop{bottom:80px;right:16px}
 }
 @media(max-width:480px){
     .works-hero{height:260px}
@@ -492,42 +466,47 @@ textarea.form-control{min-height:140px;resize:vertical}
 <!-- Loading -->
 <div id="loading"><img src="logo01.png" alt="YU-ART"></div>
 
-<!-- ===== HEADER ===== -->
-<header class="site-header">
-    <a href="/" class="header-logo"><img src="logo01.png" alt="YU-ART ユーアート"></a>
+<!-- ===== STICKY HEADER (PC) ===== -->
+<header class="sticky-header" id="stickyHeader">
+    <a href="/yuart/index.html" class="header-logo"><img src="logo01.png" alt="YU-ART ユーアート"></a>
     <nav class="header-nav">
-        <a href="/">ホーム</a>
-        <a href="/concept/">コンセプト</a>
-        <a href="/works/" class="current">施工事例</a>
-        <a href="/flow/">完成までの流れ</a>
-        <a href="/company/">会社概要</a>
-        <a href="/recruit/">採用情報</a>
-        <a href="/blog/">コラム</a>
-        <a href="/contact/">お問い合わせ</a>
+        <a href="/yuart/index.html">ホーム</a>
+        <a href="/yuart/concept.html">コンセプト</a>
+        <a href="/yuart/archive-constraction.html" class="current">施工事例</a>
+        <a href="/yuart/flow.html">完成までの流れ</a>
+        <a href="/yuart/company.html">会社概要</a>
+        <a href="/yuart/recruit.html">採用情報</a>
+        <a href="/yuart/contact.html">お問い合わせ</a>
     </nav>
     <div class="header-right">
         <a href="tel:049-299-7645" class="header-tel">
             <small>お電話でのお問い合わせ</small>
             049-299-7645
         </a>
-        <a href="/contact/" class="header-cta">
+        <a href="/yuart/contact.html" class="header-cta">
             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             無料相談
         </a>
     </div>
-    <button class="menu-toggle" id="menuToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
 </header>
 
-<!-- Mobile Nav -->
+<!-- ===== MOBILE HEADER ===== -->
+<div class="mobile-header" id="mobileHeader">
+    <a href="/yuart/index.html" class="header-logo"><img src="logo01.png" alt="YU-ART ユーアート"></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+</div>
+
+<!-- ===== MOBILE NAV ===== -->
 <nav class="mobile-nav" id="mobileNav">
-    <a href="/">ホーム</a>
-    <a href="/concept/">コンセプト</a>
-    <a href="/works/">施工事例</a>
-    <a href="/flow/">完成までの流れ</a>
-    <a href="/company/">会社概要</a>
-    <a href="/recruit/">採用情報</a>
-    <a href="/blog/">コラム</a>
-    <a href="/contact/">お問い合わせ</a>
+    <a href="/yuart/index.html">ホーム</a>
+    <a href="/yuart/concept.html">コンセプト</a>
+    <a href="/yuart/archive-constraction.html">施工事例</a>
+    <a href="/yuart/flow.html">完成までの流れ</a>
+    <a href="/yuart/company.html">会社概要</a>
+    <a href="/yuart/recruit.html">採用情報</a>
+    <a href="/yuart/contact.html">お問い合わせ</a>
+    <div class="mobile-nav-phone">お電話でのお問合せ<strong><a href="tel:049-299-7645">049-299-7645</a></strong></div>
+    <a href="/yuart/contact.html" class="btn-mobile-cta">無料相談・お見積り</a>
 </nav>
 
 <!-- ============================================================
@@ -562,8 +541,8 @@ textarea.form-control{min-height:140px;resize:vertical}
 <!-- Breadcrumb -->
 <div class="container">
     <nav class="breadcrumb">
-        <a href="/">ホーム</a><span>›</span>
-        <a href="/works/">施工事例</a><span>›</span>
+        <a href="/yuart/index.html">ホーム</a><span>›</span>
+        <a href="/yuart/archive-constraction.html">施工事例</a><span>›</span>
         ナチュラルモダンの新築外構
     </nav>
 </div>
@@ -810,6 +789,31 @@ textarea.form-control{min-height:140px;resize:vertical}
                     </div>
                 </div>
 
+                <!-- ★ 事業種別 (任意) ★ -->
+                <div class="form-row">
+                    <div class="form-label">事業種別 <span class="badge-opt">任意</span></div>
+                    <div class="form-input">
+                        <select name="business_type" class="form-control">
+                            <option value="">下から選んでください</option>
+                            <option value="工務店">工務店</option>
+                            <option value="ハウスメーカー">ハウスメーカー</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- ★ 検討時期 (任意) ★ -->
+                <div class="form-row">
+                    <div class="form-label">検討時期 <span class="badge-opt">任意</span></div>
+                    <div class="form-input">
+                        <select name="timeline" class="form-control">
+                            <option value="">下から選んでください</option>
+                            <option value="～3ヵ月以内">～3ヵ月以内</option>
+                            <option value="3ヵ月～1年以内">3ヵ月～1年以内</option>
+                            <option value="1年～">1年～</option>
+                        </select>
+                    </div>
+                </div>
+
                 <!-- 施工予定場所 -->
                 <div class="form-row">
                     <div class="form-label">施工予定場所</div>
@@ -880,21 +884,21 @@ textarea.form-control{min-height:140px;resize:vertical}
             <span class="sec-ja">関連する施工事例</span>
         </div>
         <div class="related-grid fade-up">
-            <a href="/works/02/" class="related-card">
+            <a href="/yuart/single-works.html" class="related-card">
                 <div class="related-card-img"><img src="top32.jpg" alt="施工事例" loading="lazy"></div>
                 <div class="related-card-body">
                     <div class="related-card-area">鶴ヶ島市 K様邸</div>
                     <h3>緑豊かなガーデンリフォーム</h3>
                 </div>
             </a>
-            <a href="/works/03/" class="related-card">
+            <a href="/yuart/single-works.html" class="related-card">
                 <div class="related-card-img"><img src="top18.jpg" alt="施工事例" loading="lazy"></div>
                 <div class="related-card-body">
                     <div class="related-card-area">坂戸市 M様邸</div>
                     <h3>ライティングが映えるファサード</h3>
                 </div>
             </a>
-            <a href="/works/04/" class="related-card">
+            <a href="/yuart/single-works.html" class="related-card">
                 <div class="related-card-img"><img src="top26.jpg" alt="施工事例" loading="lazy"></div>
                 <div class="related-card-body">
                     <div class="related-card-area">川越市 T様邸</div>
@@ -905,17 +909,17 @@ textarea.form-control{min-height:140px;resize:vertical}
     </div>
 </section>
 
-<!-- CTA BANNER -->
-<section class="cta-banner">
+<!-- ===== CTA2 BOTTOM (index.html と同一) ===== -->
+<section class="cta2-bottom">
     <div class="container">
-        <div class="cta-banner-inner">
+        <div class="cta2-inner">
             <h2>外構のことなら何でもご相談ください</h2>
-            <div class="cta-btns">
-                <a href="/contact/" class="cta-btn cta-btn-dark">
+            <div class="cta2-btns">
+                <a href="/yuart/contact.html" class="cta2-btn cta2-btn-dark">
                     <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                     無料相談
                 </a>
-                <a href="tel:049-299-7645" class="cta-btn cta-btn-white">
+                <a href="tel:049-299-7645" class="cta2-btn cta2-btn-white">
                     <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                     049-299-7645
                 </a>
@@ -924,7 +928,7 @@ textarea.form-control{min-height:140px;resize:vertical}
     </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- ===== FOOTER (index.html と同一) ===== -->
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">
@@ -941,10 +945,13 @@ textarea.form-control{min-height:140px;resize:vertical}
             <div>
                 <div class="footer-nav-title">Pages</div>
                 <div class="footer-nav">
-                    <a href="/">ホーム</a><a href="/concept/">コンセプト</a>
-                    <a href="/works/">施工事例</a><a href="/flow/">完成までの流れ</a>
-                    <a href="/company/">会社概要</a><a href="/recruit/">採用情報</a>
-                    <a href="/blog/">コラム</a><a href="/contact/">お問い合わせ</a>
+                    <a href="/yuart/index.html">ホーム</a>
+                    <a href="/yuart/concept.html">コンセプト</a>
+                    <a href="/yuart/archive-constraction.html">施工事例</a>
+                    <a href="/yuart/flow.html">完成までの流れ</a>
+                    <a href="/yuart/company.html">会社概要</a>
+                    <a href="/yuart/recruit.html">採用情報</a>
+                    <a href="/yuart/contact.html">お問い合わせ</a>
                 </div>
             </div>
             <div>
@@ -953,6 +960,7 @@ textarea.form-control{min-height:140px;resize:vertical}
                     <a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener">Instagram</a>
                     <a href="https://www.facebook.com/profile.php?id=100027438334423" target="_blank" rel="noopener">Facebook</a>
                     <a href="https://twitter.com/yuart7645" target="_blank" rel="noopener">X (Twitter)</a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
                 </div>
             </div>
         </div>
@@ -960,23 +968,23 @@ textarea.form-control{min-height:140px;resize:vertical}
             <div class="footer-area-label">対応エリア</div>
             <p>川越市・鶴ヶ島市・坂戸市・日高市・狭山市・ふじみ野市・富士見市・東松山市 ほか</p>
         </div>
-        <p class="footer-copy">Copyright &copy; YU-ART Inc. All Rights Reserved.</p>
+        <p class="footer-copy">Copyright &copy; 2025 YU-ART Inc. All Rights Reserved.</p>
     </div>
 </footer>
 
-<!-- Page Top -->
+<!-- ===== Page Top ===== -->
 <button class="pagetop" id="pagetop" aria-label="ページトップへ">
     <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
 </button>
 
-<!-- Mobile Fixed CTA -->
+<!-- ===== Mobile Fixed CTA ===== -->
 <div class="fixed-cta">
     <div class="fixed-cta-inner">
         <a href="tel:049-299-7645" class="fc-tel">
             <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             電話で相談
         </a>
-        <a href="/contact/" class="fc-contact">
+        <a href="/yuart/contact.html" class="fc-contact">
             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             無料相談
         </a>
