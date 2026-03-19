@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>東野 哲也｜スタッフ紹介｜YU-ART（ユーアート）</title>
+<meta name="description" content="株式会社ユーアート 代表取締役 東野 哲也のプロフィールページです。エクステリア・ガーデンデザインのプロとして、お客様の理想の外構を実現します。">
+<link rel="icon" href="/yuart/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS Variables ===== */
+:root {
+  --color-primary: #2d5a27;
+  --color-primary-dark: #1e3d1a;
+  --color-accent: #8fb573;
+  --color-text: #333;
+  --color-text-light: #666;
+  --color-text-muted: #999;
+  --color-bg: #fafaf7;
+  --color-bg-warm: #f5f3ee;
+  --color-white: #fff;
+  --color-border: #e0ddd5;
+  --color-border-light: #eae7e0;
+  --font-sans: 'Noto Sans JP', sans-serif;
+  --font-serif: 'Noto Serif JP', serif;
+  --font-display: 'Cormorant Garamond', serif;
+  --max-width: 1200px;
+  --header-height: 72px;
+  --transition: 0.3s ease;
+}
+
+/* ===== Reset ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-sans);color:var(--color-text);background:var(--color-bg);line-height:1.8;font-size:15px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{cursor:pointer;border:none;background:none;font:inherit}
+
+/* ===== Loading ===== */
+#loading{position:fixed;inset:0;background:var(--color-white);z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease,visibility .6s ease}
+#loading.loaded{opacity:0;visibility:hidden;pointer-events:none}
+#loading::after{content:'';width:36px;height:36px;border:3px solid var(--color-border);border-top-color:var(--color-primary);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ===== PC Header ===== */
+.sticky-header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:rgba(255,255,255,.97);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--color-border-light);z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+.header-logo a{display:flex;align-items:center;gap:12px}
+.header-logo img{height:40px;width:auto}
+.header-logo .logo-text{font-family:var(--font-display);font-size:13px;letter-spacing:2px;color:var(--color-primary-dark);text-transform:uppercase}
+.header-nav{display:flex;align-items:center;gap:0}
+.header-nav a{position:relative;padding:8px 18px;font-family:var(--font-display);font-size:13px;letter-spacing:1.5px;color:var(--color-text-light);text-transform:uppercase;transition:color var(--transition)}
+.header-nav a::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:1px;background:var(--color-primary);transition:width var(--transition),left var(--transition)}
+.header-nav a:hover{color:var(--color-primary)}
+.header-nav a:hover::after{width:70%;left:15%}
+.header-nav a.current{color:var(--color-primary)}
+.header-nav a.current::after{width:70%;left:15%}
+
+/* ===== Mobile Header ===== */
+.mobile-header{display:none;position:fixed;top:0;left:0;right:0;height:60px;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--color-border-light);z-index:1000;align-items:center;justify-content:space-between;padding:0 16px}
+.mobile-header .logo-mob a{display:flex;align-items:center;gap:8px}
+.mobile-header .logo-mob img{height:32px;width:auto}
+.mobile-header .logo-mob .logo-text{font-family:var(--font-display);font-size:11px;letter-spacing:1.5px;color:var(--color-primary-dark)}
+.menu-toggle{width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+.menu-toggle svg{width:22px;height:22px;stroke:var(--color-text);stroke-width:1.5}
+.mobile-nav{position:fixed;inset:0;background:rgba(255,255,255,.98);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
+.mobile-nav.open{opacity:1;visibility:visible}
+.mobile-nav a{font-family:var(--font-display);font-size:16px;letter-spacing:2px;text-transform:uppercase;color:var(--color-text);transition:color var(--transition)}
+.mobile-nav a.current{color:var(--color-primary)}
+.mobile-nav .close-btn{position:absolute;top:16px;right:16px;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+.mobile-nav .close-btn svg{width:22px;height:22px;stroke:var(--color-text);stroke-width:1.5}
+
+/* ===== Hero ===== */
+.page-hero{position:relative;height:340px;margin-top:var(--header-height);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,.45) 100%)}
+.page-hero-content{position:relative;z-index:2;text-align:center;color:var(--color-white)}
+.page-hero-content .hero-en{font-family:var(--font-display);font-size:48px;font-weight:300;letter-spacing:4px;margin-bottom:8px}
+.page-hero-content .hero-ja{font-family:var(--font-serif);font-size:14px;letter-spacing:3px;font-weight:300;opacity:.85}
+
+/* ===== Breadcrumb ===== */
+.breadcrumb{max-width:var(--max-width);margin:0 auto;padding:16px 40px;font-size:12px;color:var(--color-text-muted)}
+.breadcrumb a{color:var(--color-text-muted);transition:color var(--transition)}
+.breadcrumb a:hover{color:var(--color-primary)}
+.breadcrumb span{margin:0 6px;opacity:.5}
+
+/* ===== Staff Detail Layout ===== */
+.staff-detail-section{max-width:960px;margin:0 auto;padding:60px 40px 80px}
+
+/* --- Top Profile Block --- */
+.staff-profile-top{display:grid;grid-template-columns:320px 1fr;gap:48px;align-items:start;margin-bottom:60px}
+.staff-photo-wrap{position:relative}
+.staff-photo-main{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px;filter:grayscale(10%)}
+.staff-photo-deco{position:absolute;bottom:-12px;right:-12px;width:60%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;border:4px solid var(--color-bg);box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.staff-info-wrap{padding-top:8px}
+.staff-role{font-family:var(--font-sans);font-size:12px;letter-spacing:2px;color:var(--color-accent);text-transform:uppercase;font-weight:500;margin-bottom:8px}
+.staff-name-ja{font-family:var(--font-serif);font-size:32px;font-weight:500;letter-spacing:3px;margin-bottom:4px;color:var(--color-text)}
+.staff-name-en{font-family:var(--font-display);font-size:14px;letter-spacing:3px;color:var(--color-text-muted);font-weight:300;margin-bottom:24px}
+.staff-catchphrase{position:relative;font-family:var(--font-serif);font-size:20px;font-weight:400;line-height:2;color:var(--color-primary-dark);padding-left:20px;margin-bottom:28px;letter-spacing:1px}
+.staff-catchphrase::before{content:'';position:absolute;left:0;top:4px;bottom:4px;width:3px;background:linear-gradient(180deg,var(--color-accent),var(--color-primary));border-radius:2px}
+.staff-qualifications{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.staff-qualifications .badge{display:inline-block;font-size:11px;padding:4px 12px;border:1px solid var(--color-border);border-radius:20px;color:var(--color-text-light);background:var(--color-white);letter-spacing:.5px}
+
+/* --- Profile Table --- */
+.staff-profile-table{width:100%;border-collapse:collapse;margin-bottom:48px}
+.staff-profile-table th,
+.staff-profile-table td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--color-border-light);font-size:14px;line-height:1.8}
+.staff-profile-table th{width:120px;font-weight:500;color:var(--color-text);font-family:var(--font-serif);letter-spacing:1px;background:rgba(143,181,115,.06);vertical-align:top}
+.staff-profile-table td{color:var(--color-text-light)}
+
+/* --- Message Section --- */
+.staff-message{margin-bottom:60px}
+.staff-message-heading{font-family:var(--font-serif);font-size:22px;font-weight:400;letter-spacing:2px;color:var(--color-text);margin-bottom:8px}
+.staff-message-heading-en{font-family:var(--font-display);font-size:12px;letter-spacing:3px;color:var(--color-text-muted);margin-bottom:28px}
+.staff-message-body{font-size:15px;line-height:2.2;color:var(--color-text-light)}
+.staff-message-body p{margin-bottom:20px}
+.staff-message-body p:last-child{margin-bottom:0}
+
+/* --- Sub Photos --- */
+.staff-sub-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:60px}
+.staff-sub-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+
+/* --- Back Link --- */
+.staff-back{text-align:center;margin-bottom:0}
+.staff-back a{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:14px;letter-spacing:2px;color:var(--color-text-light);padding:12px 32px;border:1px solid var(--color-border);border-radius:4px;transition:all var(--transition)}
+.staff-back a:hover{border-color:var(--color-primary);color:var(--color-primary);background:rgba(45,90,39,.03)}
+.staff-back a svg{width:16px;height:16px;stroke:currentColor;stroke-width:1.5;fill:none}
+
+/* ===== CTA2 ===== */
+.cta2{background:var(--color-primary);padding:72px 40px;text-align:center}
+.cta2 h2{font-family:var(--font-serif);font-size:26px;font-weight:400;letter-spacing:3px;color:var(--color-white);margin-bottom:12px}
+.cta2 p{font-size:14px;color:rgba(255,255,255,.75);margin-bottom:36px;letter-spacing:1px}
+.cta2-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.cta2-buttons a{display:inline-flex;align-items:center;justify-content:center;min-width:240px;padding:16px 36px;font-size:14px;letter-spacing:2px;border-radius:4px;transition:all var(--transition)}
+.cta2-buttons .btn-dark{background:rgba(0,0,0,.3);color:var(--color-white);border:1px solid rgba(255,255,255,.2)}
+.cta2-buttons .btn-dark:hover{background:rgba(0,0,0,.5)}
+.cta2-buttons .btn-light{background:var(--color-white);color:var(--color-primary-dark);border:1px solid var(--color-white)}
+.cta2-buttons .btn-light:hover{background:rgba(255,255,255,.9)}
+
+/* ===== Footer ===== */
+.site-footer{background:#1a1a1a;color:rgba(255,255,255,.6);padding:60px 40px 0}
+.footer-inner{max-width:var(--max-width);margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-company .footer-logo{height:36px;width:auto;margin-bottom:16px;filter:brightness(0) invert(1);opacity:.8}
+.footer-company p{font-size:12px;line-height:2;letter-spacing:.5px}
+.footer-links h4,.footer-other h4{font-family:var(--font-display);font-size:12px;letter-spacing:3px;color:rgba(255,255,255,.4);text-transform:uppercase;margin-bottom:16px}
+.footer-links a,.footer-other a{display:block;font-size:13px;padding:4px 0;transition:color var(--transition)}
+.footer-links a:hover,.footer-other a:hover{color:var(--color-white)}
+.footer-sns{display:flex;gap:16px;margin-top:16px}
+.footer-sns a{width:36px;height:36px;border:1px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all var(--transition)}
+.footer-sns a:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.05)}
+.footer-sns a svg{width:16px;height:16px;fill:rgba(255,255,255,.5)}
+.footer-area{max-width:var(--max-width);margin:0 auto;padding:24px 0;font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.5px}
+.footer-bottom{text-align:center;padding:24px 0;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:1px}
+
+/* ===== Page Top ===== */
+.pagetop{position:fixed;bottom:90px;right:24px;width:44px;height:44px;background:rgba(255,255,255,.9);border:1px solid var(--color-border);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all var(--transition);z-index:900;box-shadow:0 2px 8px rgba(0,0,0,.06);cursor:pointer}
+.pagetop.visible{opacity:1;visibility:visible}
+.pagetop:hover{background:var(--color-white);box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.pagetop svg{width:18px;height:18px;stroke:var(--color-text);stroke-width:1.5;fill:none}
+
+/* ===== Fixed Mobile CTA ===== */
+.fixed-mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--color-white);border-top:1px solid var(--color-border-light);padding:8px 12px}
+.fixed-mobile-cta-inner{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fixed-mobile-cta a{display:flex;align-items:center;justify-content:center;gap:6px;padding:12px;border-radius:4px;font-size:12px;letter-spacing:1px;font-weight:500}
+.fixed-mobile-cta .btn-tel{background:var(--color-bg-warm);color:var(--color-text)}
+.fixed-mobile-cta .btn-contact{background:var(--color-primary);color:var(--color-white)}
+.fixed-mobile-cta a svg{width:16px;height:16px}
+
+/* ===== Fade Up ===== */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* ===== Responsive ===== */
+@media(max-width:959px){
+  .sticky-header{display:none}
+  .mobile-header{display:flex}
+  .page-hero{height:260px;margin-top:60px}
+  .page-hero-content .hero-en{font-size:34px}
+  .breadcrumb{padding:12px 20px}
+  .staff-detail-section{padding:40px 20px 60px}
+  .staff-profile-top{grid-template-columns:1fr;gap:32px}
+  .staff-photo-wrap{max-width:320px;margin:0 auto}
+  .staff-info-wrap{padding-top:0}
+  .staff-name-ja{font-size:26px}
+  .staff-catchphrase{font-size:17px;line-height:1.9}
+  .staff-profile-table th{width:100px;padding:12px 14px;font-size:13px}
+  .staff-profile-table td{padding:12px 14px;font-size:13px}
+  .staff-message-heading{font-size:19px}
+  .staff-sub-photos{grid-template-columns:1fr;gap:12px}
+  .cta2{padding:56px 20px}
+  .cta2 h2{font-size:21px}
+  .cta2-buttons a{min-width:200px;padding:14px 28px;font-size:13px}
+  .site-footer{padding:48px 20px 0}
+  .footer-inner{grid-template-columns:1fr;gap:32px}
+  .pagetop{bottom:80px;right:16px;width:40px;height:40px}
+  .fixed-mobile-cta{display:block}
+}
+@media(max-width:600px){
+  .page-hero{height:220px}
+  .page-hero-content .hero-en{font-size:28px}
+  .staff-photo-deco{width:50%;bottom:-8px;right:-8px}
+  .staff-name-ja{font-size:22px}
+  .staff-catchphrase{font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<!-- Loading -->
+<div id="loading"></div>
+
+<!-- PC Header -->
+<header class="sticky-header">
+  <div class="header-logo">
+    <a href="/yuart/index.html">
+      <img src="/yuart/logo01.png" alt="YU-ART">
+      <span class="logo-text">YU-ART</span>
+    </a>
+  </div>
+  <nav class="header-nav">
+    <a href="/yuart/index.html">Home</a>
+    <a href="/yuart/concept.html">Concept</a>
+    <a href="/yuart/archive-constraction.html">Works</a>
+    <a href="/yuart/flow.html">Flow</a>
+    <a href="/yuart/company.html">Company</a>
+    <a href="/yuart/staff.html" class="current">Staff</a>
+    <a href="/yuart/recruit.html">Recruit</a>
+    <a href="/yuart/contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Mobile Header -->
+<header class="mobile-header">
+  <div class="logo-mob">
+    <a href="/yuart/index.html">
+      <img src="/yuart/logo01.png" alt="YU-ART">
+      <span class="logo-text">YU-ART</span>
+    </a>
+  </div>
+  <button class="menu-toggle" aria-label="メニューを開く">
+    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+  </button>
+</header>
+<nav class="mobile-nav">
+  <button class="close-btn" aria-label="メニューを閉じる">
+    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+  </button>
+  <a href="/yuart/index.html">Home</a>
+  <a href="/yuart/concept.html">Concept</a>
+  <a href="/yuart/archive-constraction.html">Works</a>
+  <a href="/yuart/flow.html">Flow</a>
+  <a href="/yuart/company.html">Company</a>
+  <a href="/yuart/staff.html" class="current">Staff</a>
+  <a href="/yuart/recruit.html">Recruit</a>
+  <a href="/yuart/contact.html">Contact</a>
+</nav>
+
+<!-- Hero -->
+<section class="page-hero">
+  <img src="/yuart/top18.jpg" alt="スタッフ紹介">
+  <div class="page-hero-content">
+    <div class="hero-en">Staff</div>
+    <div class="hero-ja">スタッフ紹介</div>
+  </div>
+</section>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <a href="/yuart/index.html">ホーム</a><span>›</span>
+  <a href="/yuart/staff.html">スタッフ紹介</a><span>›</span>
+  東野 哲也
+</div>
+
+<!-- Staff Detail -->
+<section class="staff-detail-section">
+
+  <!-- Profile Top -->
+  <div class="staff-profile-top fade-up">
+    <div class="staff-photo-wrap">
+      <img class="staff-photo-main" src="https://yuart.jp/wp/wp-content/uploads/2025/12/_代表取締役_東野jpg-e1768791580126.jpg" alt="東野 哲也">
+      <img class="staff-photo-deco" src="https://yuart.jp/wp/wp-content/uploads/2025/12/29.png" alt="東野 哲也 — 施工風景">
+    </div>
+    <div class="staff-info-wrap">
+      <div class="staff-role">代表取締役 ／ Representative Director</div>
+      <h1 class="staff-name-ja">東野 哲也</h1>
+      <div class="staff-name-en">Tetsuya Higashino</div>
+      <div class="staff-catchphrase">
+        お庭と外構で<br>暮らしをもっと豊かに。<br>一つひとつ丁寧に、<br>想いをかたちにします。
+      </div>
+      <div class="staff-qualifications">
+        <span class="badge">エクステリアプランナー1級</span>
+        <span class="badge">2級建築士</span>
+        <span class="badge">2級土木施工管理技士</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile Table -->
+  <table class="staff-profile-table fade-up">
+    <tr>
+      <th>役職</th>
+      <td>代表取締役</td>
+    </tr>
+    <tr>
+      <th>資格</th>
+      <td>エクステリアプランナー1級 ／ 2級建築士 ／ 2級土木施工管理技士</td>
+    </tr>
+    <tr>
+      <th>趣味</th>
+      <td>庭めぐり、アウトドア、ドライブ</td>
+    </tr>
+    <tr>
+      <th>性格</th>
+      <td>穏やかで几帳面。お客様の声に耳を傾け、細部までこだわるタイプ。</td>
+    </tr>
+    <tr>
+      <th>好きな植物</th>
+      <td>オリーブ、シマトネリコ</td>
+    </tr>
+  </table>
+
+  <!-- Message -->
+  <div class="staff-message fade-up">
+    <h2 class="staff-message-heading">ごあいさつ</h2>
+    <div class="staff-message-heading-en">Message</div>
+    <div class="staff-message-body">
+      <p>
+        この度は、ユーアートのホームページをご覧いただきありがとうございます。代表取締役の東野 哲也です。
+      </p>
+      <p>
+        私たちは、埼玉県川越市を拠点に、新築外構からお庭のリフォームまで、お客様の「こうしたい」という想いをひとつひとつかたちにするお手伝いをしています。家の外まわりは、毎日目にし、毎日通る大切な空間。だからこそ、使いやすさはもちろん、住まう方の暮らしがもっと豊かに、もっと楽しくなるようなデザインを心がけています。
+      </p>
+      <p>
+        お打ち合わせではお客様の声にじっくりと耳を傾け、ライフスタイルやご家族構成、将来の暮らし方まで見据えたご提案をさせていただきます。施工は自社管理で丁寧に行い、お引渡し後も長くお付き合いできる関係を大切にしています。
+      </p>
+      <p>
+        外構やお庭のことで少しでも気になることがございましたら、どうぞお気軽にご相談ください。皆さまとお会いできることを楽しみにしております。
+      </p>
+    </div>
+  </div>
+
+  <!-- Sub Photos -->
+  <div class="staff-sub-photos fade-up">
+    <img src="https://yuart.jp/wp/wp-content/uploads/2025/12/29.png" alt="施工の様子">
+    <img src="https://yuart.jp/wp/wp-content/uploads/2025/12/30.png" alt="お客様とのお打ち合わせ">
+  </div>
+
+  <!-- Back -->
+  <div class="staff-back fade-up">
+    <a href="/yuart/staff.html">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      スタッフ一覧に戻る
+    </a>
+  </div>
+
+</section>
+
+<!-- CTA2 -->
+<section class="cta2">
+  <h2>外構のことなら何でもご相談ください</h2>
+  <p>新築外構・リフォーム・お庭づくり、お気軽にお問い合わせください</p>
+  <div class="cta2-buttons">
+    <a href="/yuart/contact.html" class="btn-light">無料相談・お見積り</a>
+    <a href="tel:049-299-7645" class="btn-dark">TEL 049-299-7645</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-company">
+      <img src="/yuart/logo01.png" alt="YU-ART" class="footer-logo">
+      <p>株式会社ユーアート<br>〒350-0807 埼玉県川越市吉田163-3<br>TEL : 049-299-7645<br>FAX : 049-299-7646<br>営業時間 10:00〜18:00（水曜定休）</p>
+    </div>
+    <div class="footer-links">
+      <h4>Pages</h4>
+      <a href="/yuart/index.html">ホーム</a>
+      <a href="/yuart/concept.html">コンセプト</a>
+      <a href="/yuart/archive-constraction.html">施工事例</a>
+      <a href="/yuart/flow.html">ご依頼の流れ</a>
+      <a href="/yuart/company.html">会社概要</a>
+      <a href="/yuart/staff.html">スタッフ紹介</a>
+      <a href="/yuart/recruit.html">採用情報</a>
+      <a href="/yuart/contact.html">お問い合わせ</a>
+    </div>
+    <div class="footer-other">
+      <h4>Other</h4>
+      <a href="mailto:info@yu-art.jp">info@yu-art.jp</a>
+      <div class="footer-sns">
+        <a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100027438334423" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://twitter.com/yuart7645" target="_blank" rel="noopener" aria-label="Twitter">
+          <svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-area">対応エリア：川越市、鶴ヶ島市、坂戸市、ふじみ野市、富士見市、狭山市、所沢市、日高市、さいたま市 ほか埼玉県全域</div>
+  <div class="footer-bottom">© 2025 YU-ART Inc.</div>
+</footer>
+
+<!-- Page Top -->
+<div class="pagetop" id="pagetop">
+  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</div>
+
+<!-- Fixed Mobile CTA -->
+<div class="fixed-mobile-cta">
+  <div class="fixed-mobile-cta-inner">
+    <a href="tel:049-299-7645" class="btn-tel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      電話する
+    </a>
+    <a href="/yuart/contact.html" class="btn-contact">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      無料相談
+    </a>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script>
+// Loading screen
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    document.getElementById('loading').classList.add('loaded');
+  }, 400);
+});
+
+// Mobile menu toggle
+(function(){
+  var toggle = document.querySelector('.menu-toggle');
+  var nav = document.querySelector('.mobile-nav');
+  var close = document.querySelector('.mobile-nav .close-btn');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){ nav.classList.add('open'); });
+    close.addEventListener('click', function(){ nav.classList.remove('open'); });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ nav.classList.remove('open'); });
+    });
+  }
+})();
+
+// Page top button
+(function(){
+  var btn = document.getElementById('pagetop');
+  if(!btn) return;
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 400){
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+  btn.addEventListener('click', function(){
+    window.scrollTo({ top:0, behavior:'smooth' });
+  });
+})();
+
+// Fade-up observer
+(function(){
+  var els = document.querySelectorAll('.fade-up');
+  if(!els.length) return;
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold:0.15, rootMargin:'0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+})();
+</script>
+</body>
+</html>
