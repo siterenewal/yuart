@@ -1,309 +1,661 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせ【YU-ART｜ユーアート】</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'yu-green': '#6ab04c',
-                        'yu-text': '#333333',
-                        'yu-gray': '#f9f9f9',
-                    },
-                    fontFamily: {
-                        sans: ['"Noto Sans JP"', 'sans-serif'],
-                        en: ['"Acme"', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .contenttitle {
-            text-align: center;
-            margin-bottom: 2rem;
-            line-height: 1.2;
-        }
-        .contenttitle .ja {
-            display: block;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #6ab04c;
-            margin-bottom: 0.2rem;
-        }
-        .contenttitle .en {
-            display: block;
-            font-family: 'Acme', sans-serif;
-            font-size: 2.5rem;
-            color: #333;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        /* EFO: フォーカス時の視認性向上 */
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: #6ab04c;
-            box-shadow: 0 0 0 2px rgba(106, 176, 76, 0.2);
-            background-color: #fff;
-        }
-        /* 必須項目のラベル */
-        .required-badge {
-            font-size: 10px;
-            background-color: #e74c3c;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 2px;
-            margin-left: 8px;
-            vertical-align: middle;
-            white-space: nowrap;
-        }
-        .optional-badge {
-            font-size: 10px;
-            background-color: #95a5a6;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 2px;
-            margin-left: 8px;
-            vertical-align: middle;
-            white-space: nowrap;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>お問い合わせ｜川越市の外構工事・エクステリア専門店【YU-ART ユーアート】</title>
+<meta name="description" content="YU-ART（ユーアート）へのお問い合わせ。お庭のリフォーム、新築外構、カーポート設置など、お気軽にご相談ください。">
+<link rel="canonical" href="https://yuart.jp/contact.html">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Variables ===== */
+:root{
+  --green:#6ab04c;
+  --green-dark:#4e8c39;
+  --black:#1a1a1a;
+  --white:#fff;
+  --bg-gray:#f5f5f3;
+  --text:#333;
+  --text-light:#777;
+  --shadow:0 4px 24px rgba(0,0,0,.06);
+  --radius:0;
+  --transition:.3s;
+  --font-body:'Noto Sans JP',sans-serif;
+  --font-serif:'Shippori Mincho B1',serif;
+  --font-en:'Cormorant Garamond',serif;
+}
+
+/* ===== Reset ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);color:var(--text);background:var(--white);line-height:1.8;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none;transition:var(--transition)}
+ul,ol{list-style:none}
+
+/* ===== Loading ===== */
+#loading{position:fixed;inset:0;background:var(--white);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s}
+#loading.hide{opacity:0;pointer-events:none}
+#loading img{width:120px;animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.4;transform:scale(.95)}50%{opacity:1;transform:scale(1)}}
+
+/* ===== Header ===== */
+.site-header{
+  position:fixed;top:0;left:0;right:0;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(12px);
+  height:64px;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 32px;
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.header-logo img{height:36px;width:auto}
+.header-nav{display:flex;align-items:center;gap:0}
+.header-nav a{
+  font-size:.8rem;font-weight:700;letter-spacing:.02em;
+  padding:0 .9rem;height:64px;display:flex;align-items:center;
+  position:relative;color:var(--text);
+}
+.header-nav a::after{
+  content:'';position:absolute;bottom:0;left:50%;width:0;height:2px;
+  background:var(--green);transition:var(--transition);transform:translateX(-50%);
+}
+.header-nav a:hover::after,.header-nav a.current::after{width:60%}
+.header-nav a.current{color:var(--green)}
+.header-right{display:flex;align-items:center;gap:1.2rem}
+.header-tel{font-family:var(--font-en);font-size:1.05rem;font-weight:600;letter-spacing:.04em;color:var(--black)}
+.header-tel small{font-family:var(--font-body);font-size:.65rem;font-weight:400;color:var(--text-light);display:block;line-height:1}
+.header-cta{
+  background:var(--green);color:#fff;
+  font-size:.75rem;font-weight:700;
+  padding:.55rem 1.4rem;border-radius:0;
+  letter-spacing:.06em;
+}
+.header-cta:hover{background:var(--green-dark)}
+
+/* Mobile menu toggle */
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative;z-index:1100}
+.menu-toggle span{display:block;width:100%;height:2px;background:var(--black);position:absolute;left:0;transition:var(--transition)}
+.menu-toggle span:nth-child(1){top:0}
+.menu-toggle span:nth-child(2){top:9px}
+.menu-toggle span:nth-child(3){top:18px}
+.menu-toggle.active span:nth-child(1){top:9px;transform:rotate(45deg)}
+.menu-toggle.active span:nth-child(2){opacity:0}
+.menu-toggle.active span:nth-child(3){top:9px;transform:rotate(-45deg)}
+
+/* Mobile nav overlay */
+.mobile-nav{
+  display:none;position:fixed;inset:0;background:rgba(255,255,255,.98);
+  z-index:1050;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;
+}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-size:1.1rem;font-weight:700;padding:.6rem 0}
+
+/* ===== Container ===== */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ===== Hero ===== */
+.page-hero{
+  position:relative;height:320px;overflow:hidden;
+  margin-top:64px;
+}
+.page-hero img{width:100%;height:100%;object-fit:cover}
+.page-hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(26,26,26,.6),rgba(26,26,26,.3));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:#fff;text-align:center;
+}
+.page-hero-en{font-family:var(--font-en);font-size:3.2rem;font-weight:300;letter-spacing:.08em;line-height:1}
+.page-hero-ja{font-size:.85rem;font-weight:400;margin-top:.6rem;letter-spacing:.12em}
+
+/* ===== Contact Layout (2 col) ===== */
+.contact-section{padding:4rem 0 5rem}
+.contact-grid{
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:3rem;
+  align-items:start;
+}
+
+/* --- Left Sidebar --- */
+.contact-sidebar{
+  position:sticky;top:88px;
+  display:flex;flex-direction:column;gap:1.5rem;
+}
+
+/* Works card */
+.side-works{
+  background:var(--bg-gray);
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:0;
+  overflow:hidden;
+}
+.side-works-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.2rem .8rem;
+}
+.side-works-header h3{font-size:.85rem;font-weight:700}
+.side-works-header a{font-size:.7rem;color:var(--green);font-weight:600}
+.side-works-header a:hover{text-decoration:underline}
+.side-works-list{display:flex;flex-direction:column}
+.side-works-item{
+  display:flex;gap:.8rem;padding:.8rem 1.2rem;
+  border-top:1px solid rgba(0,0,0,.06);
+  transition:var(--transition);
+}
+.side-works-item:hover{background:rgba(0,0,0,.03)}
+.side-works-thumb{width:80px;height:60px;overflow:hidden;flex-shrink:0}
+.side-works-thumb img{width:100%;height:100%;object-fit:cover}
+.side-works-info{display:flex;flex-direction:column;justify-content:center;gap:.2rem}
+.works-area{font-size:.65rem;color:var(--text-light);font-weight:500}
+.works-title{font-size:.78rem;font-weight:600;line-height:1.5}
+
+/* Awards card */
+.side-awards{
+  background:var(--bg-gray);
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:0;
+  overflow:hidden;
+}
+.side-awards-header{padding:1rem 1.2rem .6rem}
+.side-awards-header h3{font-size:.85rem;font-weight:700;color:var(--text)}
+.side-awards-header .awards-period{font-size:.65rem;color:var(--text-light)}
+.awards-list{padding:0 1.2rem 1.2rem}
+.award-row{
+  display:flex;gap:.8rem;align-items:baseline;
+  padding:.55rem 0;
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.award-row:last-child{border-bottom:none}
+.award-year{
+  font-family:var(--font-en);font-size:.85rem;font-weight:600;
+  color:var(--green);flex-shrink:0;width:40px;
+}
+.award-name{font-size:.72rem;line-height:1.6;color:var(--text)}
+
+/* --- Right: Form --- */
+.form-section{}
+.form-section-title{
+  font-family:var(--font-en);font-size:1.6rem;font-weight:300;
+  letter-spacing:.08em;color:var(--black);margin-bottom:.4rem;
+}
+.form-section-sub{font-size:.75rem;color:var(--text-light);margin-bottom:1.5rem}
+
+.form-instruction{
+  background:var(--bg-gray);
+  border-left:3px solid var(--green);
+  padding:1rem 1.2rem;
+  font-size:.8rem;line-height:1.9;color:var(--text);
+  margin-bottom:2rem;
+}
+.form-instruction a{color:var(--green);font-weight:600}
+.form-instruction a:hover{text-decoration:underline}
+
+.form-table{width:100%;border-collapse:collapse}
+.form-row{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:0;
+  border-bottom:1px solid rgba(0,0,0,.06);
+  min-height:68px;
+}
+.form-label{
+  display:flex;align-items:center;gap:.5rem;
+  padding:1rem .8rem;
+  font-size:.82rem;font-weight:600;
+  background:rgba(0,0,0,.02);
+}
+.badge-required{
+  font-size:.6rem;font-weight:700;color:#fff;
+  background:#e74c3c;padding:.15rem .4rem;
+  border-radius:0;letter-spacing:.04em;
+}
+.badge-optional{
+  font-size:.6rem;font-weight:700;color:var(--text-light);
+  background:rgba(0,0,0,.06);padding:.15rem .4rem;
+  border-radius:0;
+}
+.form-input{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:.8rem 1rem;gap:.5rem;
+}
+.form-input-row{display:flex;gap:.5rem;align-items:center}
+.form-input-row .input-label{font-size:.75rem;color:var(--text-light);flex-shrink:0;width:24px}
+
+.form-control{
+  width:100%;padding:.7rem .9rem;
+  background:var(--white);
+  border:1px solid rgba(0,0,0,.15);
+  border-radius:0;
+  font-size:.85rem;font-family:var(--font-body);
+  transition:var(--transition);
+}
+.form-control:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(106,176,76,.12)}
+.form-control-half{flex:1}
+select.form-control{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:2rem}
+textarea.form-control{min-height:140px;resize:vertical}
+
+.form-hint{font-size:.7rem;color:var(--text-light);margin-top:.2rem}
+
+.checkbox-group{display:flex;flex-wrap:wrap;gap:.5rem}
+.checkbox-label{
+  display:flex;align-items:center;gap:.4rem;
+  font-size:.8rem;cursor:pointer;
+  padding:.35rem .7rem;
+  border:1px solid rgba(0,0,0,.1);
+  border-radius:0;
+  transition:var(--transition);
+}
+.checkbox-label:hover{border-color:var(--green);background:rgba(106,176,76,.04)}
+.checkbox-label input[type="checkbox"]{accent-color:var(--green)}
+
+.radio-group{display:flex;flex-wrap:wrap;gap:.6rem}
+.radio-label{
+  display:flex;align-items:center;gap:.4rem;
+  font-size:.8rem;cursor:pointer;
+}
+.radio-label input[type="radio"]{accent-color:var(--green)}
+
+.form-submit-area{
+  display:flex;flex-direction:column;align-items:center;
+  gap:1rem;margin-top:2rem;padding-top:1.5rem;
+}
+.btn-submit{
+  background:var(--green);color:#fff;border:none;
+  font-size:.9rem;font-weight:700;letter-spacing:.08em;
+  padding:1rem 3.5rem;border-radius:0;cursor:pointer;
+  transition:var(--transition);
+}
+.btn-submit:hover{background:var(--green-dark);transform:translateY(-1px)}
+
+/* ===== Footer ===== */
+.footer{background:var(--black);color:rgba(255,255,255,.7);padding:4rem 0 1.5rem}
+.footer-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;margin-bottom:3rem}
+.footer-logo img{height:32px;filter:brightness(0) invert(1);margin-bottom:1rem}
+.footer-info p{font-size:.72rem;line-height:2}
+.footer-nav-title{font-size:.7rem;font-weight:700;color:#fff;margin-bottom:.8rem;letter-spacing:.06em}
+.footer-nav a{display:block;font-size:.72rem;padding:.25rem 0;transition:var(--transition)}
+.footer-nav a:hover{color:var(--green)}
+.footer-copy{text-align:center;font-size:.65rem;border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;color:rgba(255,255,255,.35)}
+
+/* ===== Page Top ===== */
+.page-top{
+  position:fixed;bottom:24px;right:24px;
+  width:44px;height:44px;background:var(--green);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;border-radius:0;cursor:pointer;
+  opacity:0;pointer-events:none;transition:var(--transition);z-index:900;
+}
+.page-top.show{opacity:1;pointer-events:auto}
+
+/* ===== Mobile Fixed CTA ===== */
+.fixed-cta-mobile{
+  display:none;position:fixed;bottom:0;left:0;right:0;
+  z-index:900;
+}
+.fixed-cta-inner{display:flex;height:56px}
+.fixed-cta-tel,.fixed-cta-mail{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  gap:.4rem;font-size:.8rem;font-weight:700;color:#fff;
+}
+.fixed-cta-tel{background:var(--black)}
+.fixed-cta-mail{background:var(--green)}
+
+/* ===== Responsive ===== */
+@media(max-width:1024px){
+  .header-nav{display:none}
+  .menu-toggle{display:block}
+  .contact-grid{grid-template-columns:300px 1fr;gap:2rem}
+}
+@media(max-width:768px){
+  .site-header{padding:0 16px}
+  .contact-grid{grid-template-columns:1fr;gap:2rem}
+  .contact-sidebar{position:static;order:2}
+  .form-wrapper{order:1}
+  .form-row{grid-template-columns:1fr;min-height:auto}
+  .form-label{padding:.7rem .8rem .2rem;background:transparent}
+  .form-input{padding:.3rem .8rem .8rem}
+  .page-hero{height:220px}
+  .footer-inner{grid-template-columns:1fr}
+  .fixed-cta-mobile{display:block}
+  body{padding-bottom:56px}
+}
+@media(max-width:480px){
+  .form-input-row{flex-direction:column;align-items:stretch}
+  .form-input-row .input-label{width:auto}
+  .checkbox-group{flex-direction:column}
+}
+</style>
 </head>
-<body class="bg-white text-yu-text font-sans antialiased flex flex-col min-h-screen">
+<body>
 
-    <!-- Header -->
-    <header class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 shadow-sm">
-        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <a href="index.html" class="flex items-center">
-                    <img src="https://via.placeholder.com/150x40/ffffff/6ab04c?text=YU-ART+LOGO" alt="YU-ART" class="h-8 w-auto">
-                </a>
-            </div>
-            
-            <nav class="hidden lg:flex gap-6 text-sm font-bold text-gray-600 items-center">
-                <a href="index.html" class="hover:text-yu-green transition">ホーム</a>
-                <a href="#" class="hover:text-yu-green transition">コンセプト</a>
-                <a href="#" class="hover:text-yu-green transition">施工事例</a>
-                <a href="#" class="hover:text-yu-green transition">完成までの流れ</a>
-                <a href="#" class="hover:text-yu-green transition">会社概要</a>
-                <a href="#" class="hover:text-yu-green transition">採用情報</a>
-                <a href="#" class="hover:text-yu-green transition">コラム</a>
-                <a href="contact.html" class="bg-yu-green text-white px-4 py-2 rounded hover:opacity-90 transition">お問い合わせ</a>
-            </nav>
+<!-- Loading -->
+<div id="loading"><img src="logo01.png" alt="YU-ART"></div>
 
-            <div class="lg:hidden">
-                <button class="text-gray-600 p-2 border border-gray-200 rounded">
-                    <span class="text-xs font-bold block">MENU</span>
-                </button>
-            </div>
+<!-- Header -->
+<header class="site-header">
+  <a href="/" class="header-logo"><img src="logo01.png" alt="YU-ART ユーアート"></a>
+  <nav class="header-nav">
+    <a href="/">ホーム</a>
+    <a href="/concept.html">コンセプト</a>
+    <a href="/works/">施工事例</a>
+    <a href="/flow/">完成までの流れ</a>
+    <a href="/company/">会社概要</a>
+    <a href="/recruit/">採用情報</a>
+    <a href="/blog/">コラム</a>
+    <a href="/contact/" class="current">お問い合わせ</a>
+  </nav>
+  <div class="header-right">
+    <a href="tel:049-299-7645" class="header-tel">
+      <small>お電話でのお問い合わせ</small>
+      049-299-7645
+    </a>
+    <a href="/contact/" class="header-cta">無料相談</a>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobileNav">
+  <a href="/">ホーム</a>
+  <a href="/concept.html">コンセプト</a>
+  <a href="/works/">施工事例</a>
+  <a href="/flow/">完成までの流れ</a>
+  <a href="/company/">会社概要</a>
+  <a href="/recruit/">採用情報</a>
+  <a href="/blog/">コラム</a>
+  <a href="/contact/">お問い合わせ</a>
+  <a href="tel:049-299-7645">TEL: 049-299-7645</a>
+</nav>
+
+<!-- Hero -->
+<section class="page-hero">
+  <img src="top26.jpg" alt="お問い合わせ">
+  <div class="page-hero-overlay">
+    <span class="page-hero-en">Contact</span>
+    <span class="page-hero-ja">お問い合わせ</span>
+  </div>
+</section>
+
+<!-- Main Content -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- ===== Left Sidebar ===== -->
+      <aside class="contact-sidebar">
+
+        <!-- Works -->
+        <div class="side-works">
+          <div class="side-works-header">
+            <h3>最新の施工事例</h3>
+            <a href="/works/">すべて見る →</a>
+          </div>
+          <div class="side-works-list">
+            <a class="side-works-item" href="/works/01/">
+              <div class="side-works-thumb"><img src="top32.jpg" alt="施工事例"></div>
+              <div class="side-works-info">
+                <span class="works-area">川越市</span>
+                <span class="works-title">ナチュラルモダンの新築外構</span>
+              </div>
+            </a>
+            <a class="side-works-item" href="/works/02/">
+              <div class="side-works-thumb"><img src="top37.jpg" alt="施工事例"></div>
+              <div class="side-works-info">
+                <span class="works-area">鶴ヶ島市</span>
+                <span class="works-title">緑豊かなガーデンリフォーム</span>
+              </div>
+            </a>
+            <a class="side-works-item" href="/works/03/">
+              <div class="side-works-thumb"><img src="top18.jpg" alt="施工事例"></div>
+              <div class="side-works-info">
+                <span class="works-area">坂戸市</span>
+                <span class="works-title">ライティングが映えるファサード</span>
+              </div>
+            </a>
+          </div>
         </div>
-    </header>
 
-    <!-- Page Title -->
-    <div class="pt-24 pb-12 bg-yu-gray">
-        <div class="container mx-auto px-4">
-            <div class="contenttitle mb-0">
-                <span class="ja">お問い合わせ</span>
-                <span class="en">Contact</span>
+        <!-- Awards -->
+        <div class="side-awards">
+          <div class="side-awards-header">
+            <h3>受賞歴</h3>
+            <span class="awards-period">2019 – 2025</span>
+          </div>
+          <div class="awards-list">
+            <div class="award-row">
+              <span class="award-year">2025</span>
+              <span class="award-name">LIXIL エクシオール施工コンテスト ファサード部門 入選</span>
             </div>
-            <p class="text-center text-sm mt-4 text-gray-600">
-                お庭のリフォーム、新築外構、カーポート設置など、<br class="md:hidden">お気軽にご相談ください。
-            </p>
+            <div class="award-row">
+              <span class="award-year">2024</span>
+              <span class="award-name">LIXIL エクシオール施工コンテスト ガーデン部門 金賞</span>
+            </div>
+            <div class="award-row">
+              <span class="award-year">2023</span>
+              <span class="award-name">タカショー 庭空間施工例コンテスト ライティング部門 優秀賞</span>
+            </div>
+            <div class="award-row">
+              <span class="award-year">2022</span>
+              <span class="award-name">LIXIL エクシオール施工コンテスト エクステリア部門 入選</span>
+            </div>
+            <div class="award-row">
+              <span class="award-year">2021</span>
+              <span class="award-name">YKK AP エクステリア スタイル大賞 ファサード部門 入賞</span>
+            </div>
+            <div class="award-row">
+              <span class="award-year">2020</span>
+              <span class="award-name">三協アルミ エクステリア施工コンテスト 入選</span>
+            </div>
+            <div class="award-row">
+              <span class="award-year">2019</span>
+              <span class="award-name">LIXIL エクシオール施工コンテスト 新築外構部門 入選</span>
+            </div>
+          </div>
         </div>
+
+      </aside>
+
+      <!-- ===== Right: Form ===== -->
+      <div class="form-wrapper">
+        <div class="form-section">
+          <h2 class="form-section-title">Mail Form</h2>
+          <p class="form-section-sub">メールフォーム</p>
+
+          <!-- Instruction text -->
+          <div class="form-instruction">
+            下記のフォームをご入力後、「送信」ボタンを押してください。<br>
+            送信後3日以上、弊所から返信等がない場合は、お手数ですが、お電話または<a href="mailto:info@yu-art.jp">info@yu-art.jp</a>までご連絡ください。
+          </div>
+
+          <form id="contactForm" action="#" method="POST">
+
+            <!-- お名前 -->
+            <div class="form-row">
+              <div class="form-label">お名前 <span class="badge-required">必須</span></div>
+              <div class="form-input">
+                <div class="form-input-row">
+                  <span class="input-label">姓</span>
+                  <input type="text" name="last_name" class="form-control form-control-half" placeholder="姓" required>
+                  <span class="input-label">名</span>
+                  <input type="text" name="first_name" class="form-control form-control-half" placeholder="名" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- フリガナ -->
+            <div class="form-row">
+              <div class="form-label">フリガナ <span class="badge-required">必須</span></div>
+              <div class="form-input">
+                <div class="form-input-row">
+                  <span class="input-label">セイ</span>
+                  <input type="text" name="last_kana" class="form-control form-control-half" placeholder="セイ" required>
+                  <span class="input-label">メイ</span>
+                  <input type="text" name="first_kana" class="form-control form-control-half" placeholder="メイ" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- 電話番号 -->
+            <div class="form-row">
+              <div class="form-label">電話番号 <span class="badge-required">必須</span></div>
+              <div class="form-input">
+                <input type="tel" name="tel" class="form-control" placeholder="電話番号を入力してください" required>
+              </div>
+            </div>
+
+            <!-- メールアドレス -->
+            <div class="form-row">
+              <div class="form-label">メールアドレス <span class="badge-required">必須</span></div>
+              <div class="form-input">
+                <input type="email" name="email" class="form-control" placeholder="メールアドレスを入力してください" required>
+              </div>
+            </div>
+
+            <!-- ご依頼内容 -->
+            <div class="form-row">
+              <div class="form-label">ご依頼内容</div>
+              <div class="form-input">
+                <div class="radio-group">
+                  <label class="radio-label"><input type="radio" name="request_type" value="新築外構"> 新築外構</label>
+                  <label class="radio-label"><input type="radio" name="request_type" value="リフォーム"> リフォーム</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- 施工予定場所 (select) -->
+            <div class="form-row">
+              <div class="form-label">施工予定場所</div>
+              <div class="form-input">
+                <select name="location" class="form-control" id="locationSelect">
+                  <option value="">下から選んでください</option>
+                  <option value="川越市">川越市</option>
+                  <option value="鶴ヶ島市">鶴ヶ島市</option>
+                  <option value="坂戸市">坂戸市</option>
+                  <option value="ふじみ野市">ふじみ野市</option>
+                  <option value="富士見市">富士見市</option>
+                  <option value="狭山市">狭山市</option>
+                  <option value="所沢市">所沢市</option>
+                  <option value="日高市">日高市</option>
+                  <option value="さいたま市">さいたま市</option>
+                  <option value="その他">その他</option>
+                </select>
+                <div id="otherLocationWrap" style="display:none;margin-top:.5rem">
+                  <input type="text" name="location_other" class="form-control" placeholder="施工予定場所が「その他」の場合はこちらにご記入ください">
+                </div>
+              </div>
+            </div>
+
+            <!-- 問い合わせ内容 -->
+            <div class="form-row">
+              <div class="form-label">問い合わせ内容 <span class="badge-required">必須</span></div>
+              <div class="form-input">
+                <textarea name="message" class="form-control" placeholder="問い合わせ内容を入力してください" required></textarea>
+              </div>
+            </div>
+
+            <!-- ユーアートを知ったきっかけ -->
+            <div class="form-row">
+              <div class="form-label">ユーアートを知ったきっかけ <span class="badge-optional">複数選択可</span></div>
+              <div class="form-input">
+                <div class="checkbox-group">
+                  <label class="checkbox-label"><input type="checkbox" name="source" value="ホームページ"> ホームページ</label>
+                  <label class="checkbox-label"><input type="checkbox" name="source" value="検索サイト"> 検索サイト</label>
+                  <label class="checkbox-label"><input type="checkbox" name="source" value="通りがかり"> 通りがかり</label>
+                  <label class="checkbox-label"><input type="checkbox" name="source" value="新聞折り込み"> 新聞折り込み</label>
+                  <label class="checkbox-label"><input type="checkbox" name="source" value="ポスティングチラシ"> ポスティングチラシ</label>
+                  <label class="checkbox-label"><input type="checkbox" name="source" value="知人からの紹介"> 知人からの紹介</label>
+                  <label class="checkbox-label"><input type="checkbox" name="source" value="Facebook"> Facebook</label>
+                  <label class="checkbox-label"><input type="checkbox" name="source" value="Instagram"> Instagram</label>
+                  <label class="checkbox-label"><input type="checkbox" name="source" value="Twitter"> Twitter</label>
+                  <label class="checkbox-label"><input type="checkbox" name="source" value="その他"> その他</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="form-submit-area">
+              <button type="submit" class="btn-submit">内容を送信</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
     </div>
+  </div>
+</section>
 
-    <!-- Contact Methods -->
-    <section class="py-12 bg-white">
-        <div class="container mx-auto px-4 max-w-5xl">
-            
-            <!-- Top Info Grid (2カラム) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 items-stretch">
-                
-                <!-- 左: 施工実績 -->
-                <div class="bg-gray-50 p-8 rounded-sm border border-gray-100 text-center h-full flex flex-col justify-center">
-                    <h3 class="text-xl font-bold mb-6 text-yu-green">
-                        <span class="inline-block border-b-2 border-yu-green pb-1">施工実績のご紹介</span>
-                    </h3>
-                    <div class="mb-6">
-                        <p class="text-gray-700 font-bold leading-relaxed mb-2">
-                            川越エリアを中心に、<br>
-                            多くのお客様のお庭づくりを<br>お手伝いしています。
-                        </p>
-                        <p class="text-xs text-gray-500">実際の施工事例の一部をご覧ください。</p>
-                    </div>
-                    <!-- 実績サムネイル -->
-                    <div class="flex justify-center gap-3">
-                        <div class="w-16 h-16 md:w-20 md:h-20 bg-gray-200 rounded-sm overflow-hidden shadow-sm">
-                            <img src="https://via.placeholder.com/150/e5e7eb/a3a3a3?text=Works+1" class="w-full h-full object-cover">
-                        </div>
-                        <div class="w-16 h-16 md:w-20 md:h-20 bg-gray-200 rounded-sm overflow-hidden shadow-sm">
-                            <img src="https://via.placeholder.com/150/e5e7eb/a3a3a3?text=Works+2" class="w-full h-full object-cover">
-                        </div>
-                        <div class="w-16 h-16 md:w-20 md:h-20 bg-gray-200 rounded-sm overflow-hidden shadow-sm">
-                            <img src="https://via.placeholder.com/150/e5e7eb/a3a3a3?text=Works+3" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 右: 電話相談 -->
-                <div class="border-2 border-yu-green/20 p-8 text-center rounded-sm bg-white shadow-sm hover:shadow-md hover:border-yu-green transition group h-full flex flex-col justify-center">
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-yu-green transition">お電話でのご相談</h3>
-                    <p class="text-sm text-gray-500 mb-6">お急ぎの方や、直接話して相談したい方</p>
-                    <a href="tel:0492997645" class="text-3xl md:text-4xl font-en font-bold text-yu-green hover:opacity-80 transition block mb-4 tracking-wide">
-                        049-299-7645
-                    </a>
-                    <p class="text-xs text-gray-400 font-bold">受付時間：9:00〜18:00（水曜定休）</p>
-                </div>
-
-            </div>
-
-            <!-- Form Area -->
-            <div class="max-w-4xl mx-auto">
-                <h3 class="text-xl font-bold mb-6 border-l-4 border-yu-green pl-4">メールフォーム</h3>
-                
-                <!-- YubinBangoライブラリを使用するためのクラス h-adr -->
-                <form action="#" method="POST" class="h-adr space-y-0">
-                    <!-- YubinBango必須: 国名 -->
-                    <span class="p-country-name" style="display:none;">Japan</span>
-
-                    <!-- Group 1: Name & Kana -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 border-t border-gray-100">
-                        <!-- Name -->
-                        <div class="border-b border-gray-100 py-6">
-                            <label for="name" class="block font-bold text-sm mb-2">
-                                お名前 <span class="required-badge">必須</span>
-                            </label>
-                            <input type="text" id="name" name="name" class="w-full bg-gray-50 border border-gray-200 p-3 rounded-sm focus:bg-white transition" placeholder="例）川越 太郎" autocomplete="name" required>
-                        </div>
-                        <!-- Kana -->
-                        <div class="border-b border-gray-100 py-6">
-                            <label for="kana" class="block font-bold text-sm mb-2">
-                                フリガナ <span class="required-badge">必須</span>
-                            </label>
-                            <input type="text" id="kana" name="kana" class="w-full bg-gray-50 border border-gray-200 p-3 rounded-sm focus:bg-white transition" placeholder="例）カワゴエ タロウ" required>
-                        </div>
-                    </div>
-
-                    <!-- Group 2: Contact Info -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8">
-                        <!-- Tel -->
-                        <div class="border-b border-gray-100 py-6">
-                            <label for="tel" class="block font-bold text-sm mb-2">
-                                電話番号 <span class="required-badge">必須</span>
-                            </label>
-                            <input type="tel" id="tel" name="tel" class="w-full bg-gray-50 border border-gray-200 p-3 rounded-sm focus:bg-white transition" placeholder="例）090-0000-0000" autocomplete="tel" required>
-                        </div>
-                        <!-- Email -->
-                        <div class="border-b border-gray-100 py-6">
-                            <label for="email" class="block font-bold text-sm mb-2">
-                                メールアドレス <span class="required-badge">必須</span>
-                            </label>
-                            <input type="email" id="email" name="email" class="w-full bg-gray-50 border border-gray-200 p-3 rounded-sm focus:bg-white transition" placeholder="例）info@example.com" autocomplete="email" required>
-                        </div>
-                    </div>
-
-                    <!-- Group 3: Address -->
-                    <div class="border-b border-gray-100 py-6">
-                        <label class="block font-bold text-sm mb-2">
-                            ご住所 <span class="optional-badge">任意</span>
-                        </label>
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-2">
-                                <span class="text-sm font-bold">〒</span>
-                                <input type="text" class="p-postal-code w-32 bg-gray-50 border border-gray-200 p-3 rounded-sm focus:bg-white transition" placeholder="350-0807" maxlength="8">
-                                <span class="text-xs text-gray-500 ml-2">※郵便番号入力で住所が自動反映されます</span>
-                            </div>
-                            <input type="text" class="p-region p-locality p-street-address p-extended-address w-full bg-gray-50 border border-gray-200 p-3 rounded-sm focus:bg-white transition" placeholder="例）埼玉県川越市吉田163-3">
-                            <p class="text-xs text-gray-400">※施工エリアの確認のため、可能な限りご記入ください。</p>
-                        </div>
-                    </div>
-
-                    <!-- Group 4: Category -->
-                    <div class="border-b border-gray-100 py-6">
-                        <label class="block font-bold text-sm mb-3">
-                            お問い合わせ項目 <span class="required-badge">必須</span>
-                        </label>
-                        <div class="flex flex-wrap gap-x-6 gap-y-3">
-                            <label class="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-50 rounded transition border border-transparent hover:border-gray-100">
-                                <input type="checkbox" name="category" value="新築外構" class="w-4 h-4 text-yu-green focus:ring-yu-green rounded-sm">
-                                <span>新築外構工事</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-50 rounded transition border border-transparent hover:border-gray-100">
-                                <input type="checkbox" name="category" value="お庭リフォーム" class="w-4 h-4 text-yu-green focus:ring-yu-green rounded-sm">
-                                <span>お庭のリフォーム</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-50 rounded transition border border-transparent hover:border-gray-100">
-                                <input type="checkbox" name="category" value="カーポート・駐車場" class="w-4 h-4 text-yu-green focus:ring-yu-green rounded-sm">
-                                <span>カーポート・駐車場</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-50 rounded transition border border-transparent hover:border-gray-100">
-                                <input type="checkbox" name="category" value="その他" class="w-4 h-4 text-yu-green focus:ring-yu-green rounded-sm">
-                                <span>その他</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Group 5: Message -->
-                    <div class="border-b border-gray-100 py-6">
-                        <label for="message" class="block font-bold text-sm mb-2">
-                            お問い合わせ内容 <span class="required-badge">必須</span>
-                        </label>
-                        <textarea id="message" name="message" rows="6" class="w-full bg-gray-50 border border-gray-200 p-3 rounded-sm focus:bg-white transition leading-relaxed" placeholder="ご要望や現在の状況などをご自由にご記入ください。" required></textarea>
-                    </div>
-
-                    <!-- Privacy Policy -->
-                    <div class="py-8 text-center">
-                        <label class="inline-flex items-center justify-center gap-2 cursor-pointer p-4 bg-gray-50 rounded hover:bg-gray-100 transition w-full md:w-auto">
-                            <input type="checkbox" name="privacy" required class="w-5 h-5 text-yu-green focus:ring-yu-green rounded-sm">
-                            <span class="text-sm font-bold text-gray-700">プライバシーポリシーに同意する</span>
-                        </label>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="text-center pb-8">
-                        <button type="submit" class="w-full md:w-2/3 lg:w-1/2 py-4 bg-yu-green text-white font-bold text-lg rounded-sm hover:opacity-90 transition shadow-md flex items-center justify-center gap-2 mx-auto">
-                            <span>入力内容を確認する</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </button>
-                    </div>
-
-                </form>
-            </div>
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo"><img src="logo01.png" alt="YU-ART"></div>
+        <div class="footer-info">
+          <p>株式会社ユーアート</p>
+          <p>〒350-0807 埼玉県川越市吉田163-3</p>
+          <p>TEL: <a href="tel:049-299-7645">049-299-7645</a></p>
+          <p>営業時間: 10:00–18:00（水曜定休）</p>
         </div>
-    </section>
+      </div>
+      <div>
+        <p class="footer-nav-title">ページ</p>
+        <nav class="footer-nav">
+          <a href="/">ホーム</a>
+          <a href="/concept.html">コンセプト</a>
+          <a href="/works/">施工事例</a>
+          <a href="/flow/">完成までの流れ</a>
+          <a href="/company/">会社概要</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-nav-title">その他</p>
+        <nav class="footer-nav">
+          <a href="/recruit/">採用情報</a>
+          <a href="/blog/">コラム</a>
+          <a href="/contact/">お問い合わせ</a>
+          <a href="/privacy/">プライバシーポリシー</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        </nav>
+      </div>
+    </div>
+    <p class="footer-copy">© YU-ART All Rights Reserved.</p>
+  </div>
+</footer>
 
-    <!-- Footer -->
-    <footer class="bg-yu-green text-white py-12 mt-auto">
-        <div class="container mx-auto px-4">
-            <div class="border-t border-white/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="text-center md:text-left">
-                    <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
-                        <img src="https://via.placeholder.com/150x40/ffffff/6ab04c?text=YU-ART" alt="YU-ART" class="h-6 w-auto bg-white px-1 rounded-sm">
-                    </div>
-                    <p class="text-xs opacity-90">
-                        〒350-0807 埼玉県川越市吉田163-3<br>
-                        TEL : 049-299-7645
-                    </p>
-                </div>
-                <div class="flex gap-4">
-                    <a href="#" class="text-white hover:opacity-70">Instagram</a>
-                    <a href="#" class="text-white hover:opacity-70">Facebook</a>
-                    <a href="#" class="text-white hover:opacity-70">Twitter</a>
-                </div>
-            </div>
-            <div class="text-center text-xs opacity-60 mt-8 font-en">
-                Copyright © "YU-ART" All Rights Reserved.
-            </div>
-        </div>
-    </footer>
+<!-- Page Top -->
+<div class="page-top" id="pageTop">▲</div>
+
+<!-- Mobile Fixed CTA -->
+<div class="fixed-cta-mobile">
+  <div class="fixed-cta-inner">
+    <a href="tel:049-299-7645" class="fixed-cta-tel">📞 電話する</a>
+    <a href="/contact/" class="fixed-cta-mail">✉ お問い合わせ</a>
+  </div>
+</div>
+
+<script>
+/* Loading */
+window.addEventListener('load',()=>{document.getElementById('loading').classList.add('hide')});
+
+/* Mobile menu */
+const toggle=document.getElementById('menuToggle');
+const nav=document.getElementById('mobileNav');
+toggle.addEventListener('click',()=>{toggle.classList.toggle('active');nav.classList.toggle('open')});
+
+/* Page top */
+const pt=document.getElementById('pageTop');
+window.addEventListener('scroll',()=>{pt.classList.toggle('show',window.scrollY>400)});
+pt.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});
+
+/* Show/hide other location field */
+document.getElementById('locationSelect').addEventListener('change',function(){
+  document.getElementById('otherLocationWrap').style.display=this.value==='その他'?'block':'none';
+});
+</script>
 
 </body>
 </html>

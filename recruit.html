@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>採用情報｜川越市の外構工事・エクステリア専門店【YU-ART ユーアート】</title>
+<meta name="description" content="YU-ART（ユーアート）の採用情報。エクステリアプランナー・施工スタッフを募集。未経験OK、充実の福利厚生。川越市で一緒に庭づくりの仕事をしませんか。">
+<link rel="canonical" href="https://yuart.jp/recruit.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+    --green:#6ab04c;--green-dark:#5a9a3e;--green-light:#e8f5e1;--green-pale:#f4f9f0;
+    --black:#1a1a1a;--black-soft:#2a2a2a;
+    --text:#333;--text-light:#666;
+    --bg-gray:#f5f5f3;--bg-dark:#111;
+    --white:#fff;
+    --shadow:0 4px 24px rgba(0,0,0,.06);--shadow-lg:0 12px 48px rgba(0,0,0,.12);
+    --radius:12px;--radius-sm:8px;
+    --transition:.3s cubic-bezier(.4,0,.2,1);
+    --font-script:'Great Vibes',cursive;
+    --font-jp:'Shippori Mincho B1',serif;
+    --font-body:'Noto Sans JP',sans-serif;
+    --font-en:'Cormorant Garamond',serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);color:var(--text);background:var(--white);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none;transition:var(--transition)}
+img{max-width:100%;height:auto;display:block}
+ul{list-style:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ===== LOADING ===== */
+#loading{position:fixed;inset:0;background:var(--black);z-index:10000;display:flex;justify-content:center;align-items:center;transition:opacity .6s}
+#loading.loaded{opacity:0;pointer-events:none}
+#loading img{width:120px;filter:brightness(0) invert(1);animation:ldPulse 1.5s ease-in-out infinite}
+@keyframes ldPulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ===== HEADER ===== */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem}
+.header-logo{width:110px}.header-logo img{width:100%;display:block}
+.header-nav{display:flex;align-items:center}
+.header-nav a{font-size:.78rem;font-weight:700;color:var(--text);letter-spacing:.04em;padding:0 .9rem;height:64px;display:flex;align-items:center;position:relative;transition:var(--transition);white-space:nowrap}
+.header-nav a::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:2px;background:var(--green);transition:var(--transition);transform:translateX(-50%)}
+.header-nav a:hover::after,.header-nav a.current::after{width:60%}
+.header-nav a.current{color:var(--green)}
+.header-right{display:flex;align-items:center;gap:1rem}
+.header-tel{font-family:var(--font-en);font-size:.95rem;font-weight:600;color:var(--black);letter-spacing:.03em}
+.header-tel small{font-family:var(--font-body);font-size:.6rem;font-weight:400;color:var(--text-light);display:block;line-height:1}
+.header-cta{background:var(--black);color:#fff;font-size:.72rem;font-weight:700;padding:.5rem 1.2rem;border-radius:4px;letter-spacing:.06em;transition:var(--transition);display:inline-flex;align-items:center;gap:.4rem}
+.header-cta:hover{background:var(--green)}
+.header-cta svg{width:14px;height:14px;fill:currentColor}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;width:32px;height:24px;position:relative;z-index:1100}
+.menu-toggle span{display:block;width:22px;height:2px;background:var(--black);position:absolute;left:5px;transition:var(--transition)}
+.menu-toggle span:nth-child(1){top:4px}.menu-toggle span:nth-child(2){top:11px}.menu-toggle span:nth-child(3){top:18px}
+.menu-toggle.active span:nth-child(1){top:11px;transform:rotate(45deg)}.menu-toggle.active span:nth-child(2){opacity:0}.menu-toggle.active span:nth-child(3){top:11px;transform:rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--black);z-index:999;padding:2rem;overflow-y:auto}
+.mobile-nav.active{display:flex;flex-direction:column}
+.mobile-nav a{display:block;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:1rem;font-weight:700;color:#fff}
+.mobile-nav a:hover{color:var(--green)}
+
+/* ===== PAGE HERO ===== */
+.page-hero{position:relative;height:520px;overflow:hidden;margin-top:64px}
+.page-hero-bg{position:absolute;inset:0}
+.page-hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.3)}
+.page-hero-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:2;padding:0 24px}
+.page-hero-deco{font-family:var(--font-script);font-size:clamp(3rem,8vw,6rem);color:rgba(255,255,255,.05);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;z-index:1;pointer-events:none}
+.page-hero-en{font-family:var(--font-en);font-size:clamp(2.8rem,6vw,4.5rem);color:#fff;font-weight:300;letter-spacing:.08em;line-height:1}
+.page-hero-ja{font-size:.85rem;font-weight:600;color:var(--green);letter-spacing:.2em;margin-top:.8rem}
+.page-hero-catch{font-family:var(--font-jp);font-size:clamp(1.2rem,2.5vw,1.7rem);color:#fff;font-weight:700;letter-spacing:.1em;line-height:1.8;margin-top:2rem;max-width:500px}
+
+/* ===== BREADCRUMB ===== */
+.breadcrumb{padding:1rem 0;font-size:.72rem;color:var(--text-light)}
+.breadcrumb a{color:var(--text-light)}.breadcrumb a:hover{color:var(--green)}
+.breadcrumb span{margin:0 .4rem;opacity:.4}
+
+/* ===== SEC HEADER ===== */
+.sec-header{text-align:center;margin-bottom:3rem}
+.sec-en{font-family:var(--font-en);font-size:2.2rem;color:var(--black);font-weight:300;letter-spacing:.05em;line-height:1}
+.sec-ja{font-size:.75rem;font-weight:700;color:var(--green);letter-spacing:.15em;margin-top:.4rem;display:block}
+
+/* ===== MESSAGE ===== */
+.message{padding:6rem 0;background:var(--white)}
+.message-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.message-text{}
+.message-catch{font-family:var(--font-jp);font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;color:var(--black);line-height:2;letter-spacing:.08em;margin-bottom:1.5rem}
+.message-lead{font-size:.9rem;color:var(--text-light);line-height:2.2;margin-bottom:1rem}
+.message-sign{font-size:.82rem;color:var(--text-light);border-top:1px solid rgba(0,0,0,.08);padding-top:1rem;margin-top:1.5rem}
+.message-sign strong{display:block;font-family:var(--font-jp);font-size:1rem;color:var(--black);margin-top:.2rem}
+.message-img{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg)}
+.message-img img{width:100%;aspect-ratio:3/4;object-fit:cover}
+
+/* ===== NUMBERS ===== */
+.numbers{padding:5rem 0;background:var(--bg-dark);color:#fff;overflow:hidden;position:relative}
+.numbers::before{content:'Numbers';font-family:var(--font-en);font-size:clamp(4rem,12vw,9rem);color:rgba(255,255,255,.02);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
+.numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative;z-index:1}
+.number-card{text-align:center}
+.number-card-value{font-family:var(--font-en);font-size:3rem;font-weight:300;color:var(--green);line-height:1;letter-spacing:.02em}
+.number-card-value span{font-size:1.2rem}
+.number-card-label{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:.5rem;letter-spacing:.08em}
+
+/* ===== POSITIONS ===== */
+.positions{padding:6rem 0;background:var(--bg-gray)}
+.positions-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:3rem}
+.position-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:var(--transition)}
+.position-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.position-card-img{height:220px;overflow:hidden}
+.position-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.position-card:hover .position-card-img img{transform:scale(1.05)}
+.position-card-body{padding:2rem}
+.position-card-tag{display:inline-block;font-size:.6rem;font-weight:700;color:#fff;background:var(--green);padding:.2rem .7rem;border-radius:2px;letter-spacing:.08em;margin-bottom:.8rem}
+.position-card-body h3{font-family:var(--font-jp);font-size:1.2rem;font-weight:700;color:var(--black);letter-spacing:.04em;margin-bottom:.8rem}
+.position-card-body p{font-size:.85rem;color:var(--text-light);line-height:1.9}
+.position-card-points{margin-top:1.2rem;display:flex;flex-wrap:wrap;gap:.4rem}
+.position-point{font-size:.68rem;font-weight:600;color:var(--green-dark);background:var(--green-pale);padding:.3rem .7rem;border-radius:50px}
+
+/* ===== REQUIREMENTS TABLE ===== */
+.requirements{padding:6rem 0;background:var(--white)}
+.req-table-wrap{max-width:900px;margin:0 auto}
+.req-table{width:100%;border-collapse:collapse}
+.req-table tr{border-bottom:1px solid rgba(0,0,0,.06)}
+.req-table th{font-size:.82rem;font-weight:700;color:var(--black);padding:1.2rem 1.5rem 1.2rem 0;width:150px;vertical-align:top;text-align:left;white-space:nowrap;background:rgba(0,0,0,.01)}
+.req-table td{font-size:.85rem;color:var(--text-light);padding:1.2rem 0;line-height:1.9}
+.req-table td strong{color:var(--black);font-weight:600}
+
+/* ===== WORKPLACE ===== */
+.workplace{padding:6rem 0;background:var(--bg-gray)}
+.workplace-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}
+.workplace-item{position:relative;border-radius:var(--radius-sm);overflow:hidden;aspect-ratio:4/3}
+.workplace-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.workplace-item:hover img{transform:scale(1.05)}
+.workplace-item-caption{
+    position:absolute;bottom:0;left:0;right:0;
+    background:linear-gradient(transparent,rgba(0,0,0,.6));
+    padding:.8rem 1rem .6rem;
+    font-size:.75rem;color:#fff;font-weight:500;
+}
+
+/* ===== BENEFITS ===== */
+.benefits{padding:6rem 0;background:var(--white)}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.benefit-card{background:var(--bg-gray);border-radius:var(--radius);padding:2rem;text-align:center;transition:var(--transition)}
+.benefit-card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.benefit-icon{width:56px;height:56px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;box-shadow:var(--shadow)}
+.benefit-icon svg{width:24px;height:24px;fill:var(--green)}
+.benefit-card h3{font-size:.92rem;font-weight:700;color:var(--black);margin-bottom:.5rem}
+.benefit-card p{font-size:.8rem;color:var(--text-light);line-height:1.8}
+
+/* ===== APPLY CTA ===== */
+.apply-cta{padding:5rem 0;background:var(--bg-dark);text-align:center;position:relative;overflow:hidden}
+.apply-cta::before{content:'Join Us';font-family:var(--font-script);font-size:clamp(4rem,12vw,8rem);color:rgba(255,255,255,.03);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
+.apply-cta-inner{position:relative;z-index:1}
+.apply-cta h2{font-family:var(--font-jp);font-size:clamp(1.1rem,2.2vw,1.5rem);font-weight:700;color:#fff;letter-spacing:.06em;margin-bottom:.8rem}
+.apply-cta p{font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:2rem;line-height:1.8}
+.apply-btns{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
+.apply-btn{display:inline-flex;align-items:center;gap:.5rem;padding:1rem 2.5rem;border-radius:6px;font-size:.9rem;font-weight:700;transition:var(--transition)}
+.apply-btn svg{width:18px;height:18px;fill:currentColor}
+.apply-btn-green{background:var(--green);color:#fff}.apply-btn-green:hover{background:var(--green-dark);transform:translateY(-2px)}
+.apply-btn-ghost{border:1px solid rgba(255,255,255,.2);color:#fff;background:transparent}.apply-btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4)}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--black);color:#fff;padding:5rem 0 0}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-logo{width:160px;margin-bottom:1.5rem;filter:brightness(0) invert(1)}
+.footer-info{font-size:.82rem;color:rgba(255,255,255,.5);line-height:2}.footer-info strong{color:#fff}
+.footer-nav-title{font-size:.8rem;font-weight:700;color:var(--green);letter-spacing:.1em;margin-bottom:1rem;text-transform:uppercase}
+.footer-nav a{display:block;font-size:.82rem;color:rgba(255,255,255,.5);padding:.25rem 0;transition:var(--transition)}.footer-nav a:hover{color:var(--green)}
+.footer-area{padding:2rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-area-label{font-size:.75rem;font-weight:700;color:var(--green);margin-bottom:.3rem}
+.footer-area p{font-size:.78rem;color:rgba(255,255,255,.4)}
+.footer-copy{text-align:center;font-size:.72rem;color:rgba(255,255,255,.25);padding:1.5rem 0}
+
+/* ===== PAGETOP / FIXED ===== */
+.pagetop{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--black);border-radius:8px;display:flex;align-items:center;justify-content:center;z-index:800;opacity:0;visibility:hidden;transition:var(--transition);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;border:none}
+.pagetop.show{opacity:1;visibility:visible}.pagetop:hover{background:var(--green)}
+.pagetop svg{width:18px;height:18px;fill:#fff}
+.fixed-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--black);padding:.5rem .8rem;box-shadow:0 -4px 24px rgba(0,0,0,.3)}
+.fixed-cta-inner{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+.fixed-cta a{display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.65rem;border-radius:6px;font-size:.82rem;font-weight:700}
+.fixed-cta a svg{width:16px;height:16px;fill:currentColor}
+.fixed-cta .fc-tel{background:var(--green);color:#fff}
+.fixed-cta .fc-contact{background:#fff;color:var(--black)}
+
+/* ===== ANIMATION ===== */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+    .header-nav{display:none}.menu-toggle{display:block}
+    .numbers-grid{grid-template-columns:repeat(2,1fr)}
+    .benefits-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+    .site-header{padding:0 16px;height:60px}
+    .header-tel{display:none}
+    .page-hero{height:420px;margin-top:60px}
+    .message{padding:4rem 0}
+    .message-inner{grid-template-columns:1fr;gap:2rem}
+    .numbers{padding:3.5rem 0}
+    .numbers-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+    .positions{padding:4rem 0}
+    .positions-grid{grid-template-columns:1fr}
+    .requirements{padding:4rem 0}
+    .req-table th{display:block;width:100%;padding:.8rem 0 .2rem;background:transparent}
+    .req-table td{display:block;padding:.2rem 0 .8rem}
+    .workplace{padding:4rem 0}
+    .workplace-grid{grid-template-columns:1fr 1fr;gap:.8rem}
+    .benefits{padding:4rem 0}
+    .benefits-grid{grid-template-columns:1fr}
+    .apply-cta{padding:3.5rem 0}
+    .apply-btns{flex-direction:column;align-items:center}
+    .apply-btn{width:100%;max-width:300px;justify-content:center}
+    .footer{padding:3rem 0 0}.footer-grid{grid-template-columns:1fr;gap:2rem}
+    .fixed-cta{display:block}
+    body{padding-bottom:56px}
+    .pagetop{bottom:75px}
+}
+@media(max-width:480px){
+    .page-hero{height:360px}
+    .workplace-grid{grid-template-columns:1fr}
+    .number-card-value{font-size:2.2rem}
+}
+</style>
+</head>
+<body>
+
+<div id="loading"><img src="logo01.png" alt="YU-ART"></div>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+    <a href="/" class="header-logo"><img src="logo01.png" alt="YU-ART ユーアート"></a>
+    <nav class="header-nav">
+        <a href="/">ホーム</a><a href="/concept/">コンセプト</a><a href="/works/">施工事例</a>
+        <a href="/flow.html">完成までの流れ</a><a href="/company/">会社概要</a>
+        <a href="/recruit.html" class="current">採用情報</a><a href="/blog/">コラム</a><a href="/contact/">お問い合わせ</a>
+    </nav>
+    <div class="header-right">
+        <a href="tel:049-299-7645" class="header-tel"><small>お電話でのお問い合わせ</small>049-299-7645</a>
+        <a href="/contact/" class="header-cta"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+</header>
+<nav class="mobile-nav" id="mobileNav">
+    <a href="/">ホーム</a><a href="/concept/">コンセプト</a><a href="/works/">施工事例</a>
+    <a href="/flow.html">完成までの流れ</a><a href="/company/">会社概要</a><a href="/recruit.html">採用情報</a>
+    <a href="/blog/">コラム</a><a href="/contact/">お問い合わせ</a>
+</nav>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+    <div class="page-hero-bg"><img src="top37.jpg" alt="採用情報"></div>
+    <div class="page-hero-deco">Join Our Team</div>
+    <div class="page-hero-content">
+        <h1 class="page-hero-en">Recruit</h1>
+        <p class="page-hero-ja">採 用 情 報</p>
+        <p class="page-hero-catch">庭づくりを通して、<br>人々の暮らしに喜びを届ける仲間を。</p>
+    </div>
+</section>
+
+<div class="container"><nav class="breadcrumb"><a href="/">ホーム</a><span>›</span>採用情報</nav></div>
+
+<!-- ===== MESSAGE ===== -->
+<section class="message" id="message">
+    <div class="container">
+        <div class="message-inner fade-up">
+            <div class="message-text">
+                <p class="message-catch">一つとして同じ庭はない。<br>だから、面白い。</p>
+                <p class="message-lead">ユーアートは、川越市を拠点にエクステリア・ガーデンの設計施工を手掛ける専門店です。お客様一人ひとりの暮らしに寄り添い、世界にひとつだけの庭をつくっています。</p>
+                <p class="message-lead">大手メーカーのコンテストで複数回受賞するなど、デザイン力には自信があります。しかし、私たちが一番大切にしているのは「お客様の喜ぶ顔」。その想いを共有できる仲間を探しています。</p>
+                <p class="message-lead">未経験でも大丈夫。庭づくりへの興味と、人に喜ばれる仕事がしたいという気持ちがあれば、しっかり育てます。</p>
+                <div class="message-sign">
+                    株式会社ユーアート 代表取締役
+                    <strong>東野 哲也</strong>
+                </div>
+            </div>
+            <div class="message-img"><img src="top26.jpg" alt="スタッフの様子"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== NUMBERS ===== -->
+<section class="numbers">
+    <div class="container">
+        <div class="numbers-grid fade-up">
+            <div class="number-card">
+                <div class="number-card-value">7<span>名</span></div>
+                <div class="number-card-label">社員数</div>
+            </div>
+            <div class="number-card">
+                <div class="number-card-value">36<span>歳</span></div>
+                <div class="number-card-label">平均年齢</div>
+            </div>
+            <div class="number-card">
+                <div class="number-card-value">150<span>+</span></div>
+                <div class="number-card-label">年間施工件数</div>
+            </div>
+            <div class="number-card">
+                <div class="number-card-value">7<span>年</span></div>
+                <div class="number-card-label">連続コンテスト受賞</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== POSITIONS ===== -->
+<section class="positions" id="positions">
+    <div class="container">
+        <div class="sec-header fade-up">
+            <span class="sec-en">Positions</span>
+            <span class="sec-ja">募集職種</span>
+        </div>
+        <div class="positions-grid fade-up">
+            <div class="position-card">
+                <div class="position-card-img"><img src="top32.jpg" alt="エクステリアプランナー" loading="lazy"></div>
+                <div class="position-card-body">
+                    <span class="position-card-tag">正社員</span>
+                    <h3>エクステリアプランナー</h3>
+                    <p>来店いただいたお客様へのエクステリアのご案内から始まり、知識が身についたら設計・図面作成・プレゼンテーションもお任せします。工事の進行管理や現場確認なども行います。初めてでもしっかり指導いたします。</p>
+                    <div class="position-card-points">
+                        <span class="position-point">未経験OK</span>
+                        <span class="position-point">設計スキル</span>
+                        <span class="position-point">3Dパース</span>
+                        <span class="position-point">お客様対応</span>
+                    </div>
+                </div>
+            </div>
+            <div class="position-card">
+                <div class="position-card-img"><img src="top18.jpg" alt="施工スタッフ" loading="lazy"></div>
+                <div class="position-card-body">
+                    <span class="position-card-tag">正社員</span>
+                    <h3>施工スタッフ</h3>
+                    <p>主に新築住宅の庭まわりのエクステリアの施工を行います。ブロック積み、フェンス設置、土間コンクリート、植栽工事など幅広い技術を身につけることができます。</p>
+                    <div class="position-card-points">
+                        <span class="position-point">未経験OK</span>
+                        <span class="position-point">技術習得</span>
+                        <span class="position-point">資格取得支援</span>
+                        <span class="position-point">チーム施工</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== REQUIREMENTS ===== -->
+<section class="requirements" id="requirements">
+    <div class="container">
+        <div class="sec-header fade-up">
+            <span class="sec-en">Requirements</span>
+            <span class="sec-ja">募集要項</span>
+        </div>
+        <div class="req-table-wrap fade-up">
+            <table class="req-table">
+                <tr><th>雇用形態</th><td><strong>正社員</strong>（エクステリアプランナー・施工スタッフ共通）</td></tr>
+                <tr><th>労働時間</th><td>エクステリアプランナー：8:30〜17:00 又は 9:00〜17:30<br>施工スタッフ：8:00〜17:00</td></tr>
+                <tr><th>勤務地</th><td><strong>本社</strong>：埼玉県川越市吉田163-3<br>転勤なし・マイカー通勤OK・駐車場あり<br>東武東上線「鶴ヶ島駅」から徒歩10分</td></tr>
+                <tr><th>給与</th><td><strong>月給 20万円〜25万円</strong><br>※経験や能力等を考慮し、当社規程により決定<br>※試用期間3ヶ月あり（同条件）</td></tr>
+                <tr><th>昇給・賞与</th><td>昇給：年1回<br>賞与：年2回</td></tr>
+                <tr><th>諸手当</th><td>通勤手当（上限月2万円）・残業手当</td></tr>
+                <tr><th>休日・休暇</th><td>週休2日制（水曜＋ほか）・有給休暇<br>※そのほか会社カレンダーに応じます</td></tr>
+                <tr><th>福利厚生</th><td>各種社会保険完備・定年後再雇用制度・退職金制度・社員保養施設あり</td></tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WORKPLACE ===== -->
+<section class="workplace">
+    <div class="container">
+        <div class="sec-header fade-up">
+            <span class="sec-en">Workplace</span>
+            <span class="sec-ja">職場の様子</span>
+        </div>
+        <div class="workplace-grid fade-up">
+            <div class="workplace-item"><img src="top18.jpg" alt="店舗外観" loading="lazy"><span class="workplace-item-caption">川越市の自社店舗</span></div>
+            <div class="workplace-item"><img src="top32.jpg" alt="打ち合わせ" loading="lazy"><span class="workplace-item-caption">お客様との打ち合わせ</span></div>
+            <div class="workplace-item"><img src="top26.jpg" alt="施工現場" loading="lazy"><span class="workplace-item-caption">チームでの施工作業</span></div>
+            <div class="workplace-item"><img src="top37.jpg" alt="完成物件" loading="lazy"><span class="workplace-item-caption">完成した外構デザイン</span></div>
+            <div class="workplace-item"><img src="top32.jpg" alt="素材展示" loading="lazy"><span class="workplace-item-caption">素材サンプルの展示</span></div>
+            <div class="workplace-item"><img src="top26.jpg" alt="設計作業" loading="lazy"><span class="workplace-item-caption">3Dパースの設計作業</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== BENEFITS ===== -->
+<section class="benefits" id="benefits">
+    <div class="container">
+        <div class="sec-header fade-up">
+            <span class="sec-en">Benefits</span>
+            <span class="sec-ja">ユーアートで働く魅力</span>
+        </div>
+        <div class="benefits-grid fade-up">
+            <div class="benefit-card">
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg></div>
+                <h3>未経験から一人前に</h3>
+                <p>20年以上の経験を持つ代表が直接指導。設計から施工まで、エクステリアのプロフェッショナルを育てます。</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg></div>
+                <h3>コンテスト受賞の実績</h3>
+                <p>LIXIL・YKK AP・タカショーなど大手メーカー主催のコンテストで7年連続受賞。高いレベルの仕事に携われます。</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+                <h3>少人数のチーム</h3>
+                <p>7名の少数精鋭チーム。風通しがよく、一人ひとりの意見が尊重される環境です。</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                <h3>転勤なし・地元密着</h3>
+                <p>川越市の自社店舗が勤務地。転勤なし、マイカー通勤OK、駐車場完備で通いやすい環境です。</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+                <h3>安定の待遇</h3>
+                <p>社会保険完備、賞与年2回、退職金制度あり。長く安心して働ける待遇をご用意しています。</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                <h3>お客様の笑顔がやりがい</h3>
+                <p>完成した庭を見てお客様が喜ぶ瞬間が最高のやりがい。「毎日帰るのが楽しみ」の声に支えられています。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== APPLY CTA ===== -->
+<section class="apply-cta">
+    <div class="container">
+        <div class="apply-cta-inner fade-up">
+            <h2>一緒に、庭づくりの仕事をしませんか？</h2>
+            <p>ご応募・ご質問はお電話またはメールフォームよりお気軽にどうぞ。<br>まずは職場見学だけでも歓迎いたします。</p>
+            <div class="apply-btns">
+                <a href="/contact/" class="apply-btn apply-btn-green">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    応募・お問い合わせ
+                </a>
+                <a href="tel:049-299-7645" class="apply-btn apply-btn-ghost">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    049-299-7645
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div><img src="logo01.png" alt="YU-ART" class="footer-logo"><div class="footer-info"><strong>株式会社ユーアート</strong><br>〒350-0807 埼玉県川越市吉田163-3<br>TEL: <a href="tel:049-299-7645" style="color:var(--green)">049-299-7645</a><br>FAX: 049-299-7646<br>営業時間: 9:00〜17:00（火・水曜定休）</div></div>
+            <div><div class="footer-nav-title">Pages</div><div class="footer-nav"><a href="/">ホーム</a><a href="/concept/">コンセプト</a><a href="/works/">施工事例</a><a href="/flow.html">完成までの流れ</a><a href="/company/">会社概要</a><a href="/recruit.html">採用情報</a><a href="/blog/">コラム</a><a href="/contact/">お問い合わせ</a></div></div>
+            <div><div class="footer-nav-title">SNS</div><div class="footer-nav"><a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/profile.php?id=100027438334423" target="_blank" rel="noopener">Facebook</a><a href="https://twitter.com/yuart7645" target="_blank" rel="noopener">X (Twitter)</a></div></div>
+        </div>
+        <div class="footer-area"><div class="footer-area-label">対応エリア</div><p>川越市・鶴ヶ島市・坂戸市・日高市・狭山市・ふじみ野市・富士見市・東松山市 ほか</p></div>
+        <p class="footer-copy">Copyright &copy; YU-ART Inc. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<button class="pagetop" id="pagetop" aria-label="ページトップへ"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
+<div class="fixed-cta"><div class="fixed-cta-inner">
+    <a href="tel:049-299-7645" class="fc-tel"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>電話で相談</a>
+    <a href="/contact/" class="fc-contact"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
+</div></div>
+
+<script>
+window.addEventListener('load',()=>document.getElementById('loading').classList.add('loaded'));
+setTimeout(()=>document.getElementById('loading').classList.add('loaded'),3000);
+const menuToggle=document.getElementById('menuToggle'),mobileNav=document.getElementById('mobileNav');
+menuToggle.addEventListener('click',()=>{menuToggle.classList.toggle('active');mobileNav.classList.toggle('active');document.body.style.overflow=mobileNav.classList.contains('active')?'hidden':''});
+mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menuToggle.classList.remove('active');mobileNav.classList.remove('active');document.body.style.overflow=''}));
+const obs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+const pt=document.getElementById('pagetop');
+window.addEventListener('scroll',()=>pt.classList.toggle('show',window.scrollY>500));
+pt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+
+</body>
+</html>
