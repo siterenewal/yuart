@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>コンセプト｜川越市の外構工事・エクステリア専門店【YU-ART ユーアート】</title>
     <meta name="description" content="YU-ART（ユーアート）のコンセプト。「庭が人を変え、人が暮らしを変える。」川越市を中心にエクステリア・外構工事を通じて、暮らしの中に遊び心を届けます。">
-    <link rel="canonical" href="https://yuart.jp/yuart/concept.html">
+    <link rel="canonical" href="https://siterenewal.github.io/yuart/concept.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,8 @@
         @keyframes ldPulse{0%,100%{opacity:1}50%{opacity:.4}}
 
         /* STICKY HEADER */
-        .sticky-header{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem}
+        .sticky-header{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;transform:translateY(-100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+        .sticky-header.show{transform:translateY(0)}
         .sticky-header-logo{width:100px}.sticky-header-logo img{width:100%;display:block}
         .sticky-header-nav{display:flex;align-items:center;gap:1.8rem}
         .sticky-header-nav a{font-size:.78rem;font-weight:700;color:var(--text);letter-spacing:.04em;transition:var(--transition);white-space:nowrap}
@@ -79,7 +80,7 @@
         .mobile-nav .btn-mobile-cta{display:block;text-align:center;background:var(--green);color:#fff;padding:1rem;border-radius:var(--radius-sm);margin-top:1.5rem;font-weight:700;font-size:.95rem}
 
         /* MAIN CONTENT */
-        .main-content{margin-top:60px}
+        .main-content{margin-top:0}
 
         /* 1. CONCEPT HERO */
         .concept-hero{position:relative;height:70vh;min-height:450px;overflow:hidden;background:var(--black)}
@@ -307,21 +308,21 @@
 
     <!-- ===== STICKY HEADER ===== -->
     <header class="sticky-header" id="stickyHeader">
-        <div class="sticky-header-logo"><a href="/yuart/index.html"><img src="logo01.png" alt="YU-ART"></a></div>
+        <div class="sticky-header-logo"><a href="https://siterenewal.github.io/yuart/index.html"><img src="logo01.png" alt="YU-ART"></a></div>
         <nav class="sticky-header-nav">
-            <a href="/yuart/index.html">ホーム</a>
-            <a href="/yuart/concept.html" class="current">コンセプト</a>
-            <a href="/yuart/archive-constraction.html">施工事例</a>
-            <a href="/yuart/flow.html">完成までの流れ</a>
-            <a href="/yuart/company.html">会社概要</a>
-            <a href="/yuart/staff.html">スタッフ紹介</a>
-            <a href="/yuart/column.html">コラム</a>
-            <a href="/yuart/recruit.html">採用情報</a>
-            <a href="/yuart/contact.html">お問い合わせ</a>
+            <a href="https://siterenewal.github.io/yuart/index.html">ホーム</a>
+            <a href="https://siterenewal.github.io/yuart/concept.html" class="current">コンセプト</a>
+            <a href="https://siterenewal.github.io/yuart/archive-constraction.html">施工事例</a>
+            <a href="https://siterenewal.github.io/yuart/flow.html">完成までの流れ</a>
+            <a href="https://siterenewal.github.io/yuart/company.html">会社概要</a>
+            <a href="https://siterenewal.github.io/yuart/staff.html">スタッフ紹介</a>
+            <a href="https://siterenewal.github.io/yuart/column.html">コラム</a>
+            <a href="https://siterenewal.github.io/yuart/recruit.html">採用情報</a>
+            <a href="https://siterenewal.github.io/yuart/contact.html">お問い合わせ</a>
         </nav>
         <div class="sticky-header-right">
             <span class="sticky-header-phone"><a href="tel:049-299-7645">049-299-7645</a></span>
-            <a href="/yuart/contact.html" class="sticky-header-cta">
+            <a href="https://siterenewal.github.io/yuart/contact.html" class="sticky-header-cta">
                 <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 無料相談
             </a>
@@ -330,27 +331,27 @@
 
     <!-- ===== MOBILE HEADER ===== -->
     <div class="mobile-header" id="mobileHeader">
-        <div class="mobile-header-logo"><a href="/yuart/index.html"><img src="logo01.png" alt="YU-ART"></a></div>
+        <div class="mobile-header-logo"><a href="https://siterenewal.github.io/yuart/index.html"><img src="logo01.png" alt="YU-ART"></a></div>
         <button class="menu-toggle" id="menuToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
     </div>
     <nav class="mobile-nav" id="mobileNav">
-        <a href="/yuart/index.html">ホーム</a>
-        <a href="/yuart/concept.html">コンセプト</a>
-        <a href="/yuart/archive-constraction.html">施工事例</a>
-        <a href="/yuart/flow.html">完成までの流れ</a>
-        <a href="/yuart/company.html">会社概要</a>
-        <a href="/yuart/staff.html">スタッフ紹介</a>
-        <a href="/yuart/column.html">コラム</a>
-        <a href="/yuart/recruit.html">採用情報</a>
-        <a href="/yuart/contact.html">お問い合わせ</a>
+        <a href="https://siterenewal.github.io/yuart/index.html">ホーム</a>
+        <a href="https://siterenewal.github.io/yuart/concept.html">コンセプト</a>
+        <a href="https://siterenewal.github.io/yuart/archive-constraction.html">施工事例</a>
+        <a href="https://siterenewal.github.io/yuart/flow.html">完成までの流れ</a>
+        <a href="https://siterenewal.github.io/yuart/company.html">会社概要</a>
+        <a href="https://siterenewal.github.io/yuart/staff.html">スタッフ紹介</a>
+        <a href="https://siterenewal.github.io/yuart/column.html">コラム</a>
+        <a href="https://siterenewal.github.io/yuart/recruit.html">採用情報</a>
+        <a href="https://siterenewal.github.io/yuart/contact.html">お問い合わせ</a>
         <div class="mobile-nav-phone">お電話でのお問合せ<strong><a href="tel:049-299-7645">049-299-7645</a></strong></div>
-        <a href="/yuart/contact.html" class="btn-mobile-cta">無料相談・お見積り</a>
+        <a href="https://siterenewal.github.io/yuart/contact.html" class="btn-mobile-cta">無料相談・お見積り</a>
     </nav>
 
     <div class="main-content">
 
         <!-- 1. HERO -->
-        <section class="concept-hero">
+        <section class="concept-hero" id="conceptHero">
             <img src="top26.jpg" alt="YU-ART 外構デザイン コンセプトイメージ">
             <div class="concept-hero-overlay">
                 <div class="concept-hero-en">Concept</div>
@@ -472,7 +473,7 @@
             <div class="container"><div class="cta-inner">
                 <div class="cta-text"><h2>まずは無料相談から</h2><p>お見積り・現地調査・3Dパース すべて0円。お気軽にどうぞ。</p></div>
                 <div class="cta-buttons">
-                    <a href="/yuart/contact.html" class="cta-btn cta-btn-dark"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
+                    <a href="https://siterenewal.github.io/yuart/contact.html" class="cta-btn cta-btn-dark"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
                     <a href="tel:049-299-7645" class="cta-btn cta-btn-white"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>049-299-7645</a>
                 </div>
             </div></div>
@@ -486,20 +487,20 @@
                 <div class="footer-grid">
                     <div>
                         <img src="logo01.png" alt="YU-ART" class="footer-logo">
-                        <div class="footer-info"><strong>株式会社ユーアート</strong><br>〒350-0807 埼玉県川越市吉田163-3<br>TEL: <a href="tel:049-299-7645" style="color:var(--green)">049-299-7645</a><br>FAX: 049-299-7646<br>営業時間: 9:00〜17:00<br><small style="font-size:.75rem;opacity:.7">※ 営業日はNewsまたはお電話にてご確認ください</small></div>
+                        <div class="footer-info"><strong>株式会社ユーアート</strong><br>〒350-0807 埼玉県川越市吉田163-3<br>TEL: <a href="tel:049-299-7645" style="color:var(--green)">049-299-7645</a><br>FAX: 049-299-7646<br>営業時間: 9:00〜17:00（火・水曜定休）</div>
                     </div>
                     <div>
                         <div class="footer-nav-title">Pages</div>
                         <div class="footer-nav">
-                            <a href="/yuart/index.html">ホーム</a>
-                            <a href="/yuart/concept.html">コンセプト</a>
-                            <a href="/yuart/archive-constraction.html">施工事例</a>
-                            <a href="/yuart/flow.html">完成までの流れ</a>
-                            <a href="/yuart/company.html">会社概要</a>
-                            <a href="/yuart/staff.html">スタッフ紹介</a>
-                            <a href="/yuart/column.html">コラム</a>
-                            <a href="/yuart/recruit.html">採用情報</a>
-                            <a href="/yuart/contact.html">お問い合わせ</a>
+                            <a href="https://siterenewal.github.io/yuart/index.html">ホーム</a>
+                            <a href="https://siterenewal.github.io/yuart/concept.html">コンセプト</a>
+                            <a href="https://siterenewal.github.io/yuart/archive-constraction.html">施工事例</a>
+                            <a href="https://siterenewal.github.io/yuart/flow.html">完成までの流れ</a>
+                            <a href="https://siterenewal.github.io/yuart/company.html">会社概要</a>
+                            <a href="https://siterenewal.github.io/yuart/staff.html">スタッフ紹介</a>
+                            <a href="https://siterenewal.github.io/yuart/column.html">コラム</a>
+                            <a href="https://siterenewal.github.io/yuart/recruit.html">採用情報</a>
+                            <a href="https://siterenewal.github.io/yuart/contact.html">お問い合わせ</a>
                         </div>
                     </div>
                     <div>
@@ -530,7 +531,7 @@
     <!-- Fixed Mobile CTA -->
     <div class="fixed-cta"><div class="fixed-cta-inner">
         <a href="tel:049-299-7645" class="fc-tel"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>電話で相談</a>
-        <a href="/yuart/contact.html" class="fc-contact"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
+        <a href="https://siterenewal.github.io/yuart/contact.html" class="fc-contact"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
     </div></div>
     <button class="pagetop" id="pagetop" aria-label="ページトップへ"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
 
@@ -618,6 +619,16 @@
             const t=document.querySelector(h);
             if(t){e.preventDefault();const offset=window.innerWidth<=768?70:20;window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-offset,behavior:'smooth'})}
         })});
+
+        // Sticky Header — show after scrolling past concept hero
+        const stickyHeader=document.getElementById('stickyHeader');
+        const conceptHero=document.getElementById('conceptHero');
+        if(stickyHeader&&conceptHero){
+            const stickyObs=new IntersectionObserver(([e])=>{
+                stickyHeader.classList.toggle('show',!e.isIntersecting);
+            },{threshold:0});
+            stickyObs.observe(conceptHero);
+        }
     </script>
 </body>
 </html>
