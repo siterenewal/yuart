@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>川越市の外構工事・エクステリア専門店【YU-ART ユーアート】鶴ヶ島市・坂戸市・日高市｜自社施工×3Dパース無料提案</title>
-    <meta name="description" content="川越市を中心に鶴ヶ島市・坂戸市・日高市で外構工事・庭リフォームを行うエクステリア専門店ユーアート。自社施工だから中間マージンなしの適正価格。3Dパース無料提案で完成イメージが見える安心設計。">
-    <link rel="canonical" href="https://yuart.jp/">
+    <title>コンセプト｜川越市の外構工事・エクステリア専門店【YU-ART ユーアート】</title>
+    <meta name="description" content="YU-ART（ユーアート）のコンセプト。「庭が人を変え、人が暮らしを変える。」川越市を中心にエクステリア・外構工事を通じて、暮らしの中に遊び心を届けます。">
+    <link rel="canonical" href="https://yuart.jp/yuart/concept.html">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+
     <style>
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{
-            --green:#6ab04c;--green-dark:#5a9a3e;--green-light:#e8f5e1;--green-pale:#f4f9f0;
+            --green:#6ab04c;--green-dark:#5a9a3e;--green-light:#e8f5e1;
             --black:#1a1a1a;--black-soft:#2a2a2a;
             --text:#333;--text-light:#666;
-            --bg-gray:#f5f5f3;--bg-dark:#111;
+            --bg-gray:#f5f5f3;--bg-dark:#0a0a0a;
             --white:#fff;
-            --sidebar-w:260px;
             --shadow:0 4px 24px rgba(0,0,0,.06);--shadow-lg:0 12px 48px rgba(0,0,0,.12);
             --radius:12px;--radius-sm:8px;
             --transition:.3s cubic-bezier(.4,0,.2,1);
@@ -34,21 +33,44 @@
         img{max-width:100%;height:auto;display:block}
         ul{list-style:none}
         .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
         .section-title{margin-bottom:3rem}
         .section-title.center{text-align:center}
         .section-title .en{display:block;font-family:var(--font-en);font-size:clamp(2rem,5vw,3.2rem);color:var(--black);line-height:1;letter-spacing:.03em;font-weight:400}
         .section-title .ja{display:block;font-size:.85rem;font-weight:700;color:var(--green);letter-spacing:.15em;margin-top:.5rem}
-        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+        /* Loading */
         #loading{position:fixed;inset:0;background:var(--black);z-index:10000;display:flex;justify-content:center;align-items:center;transition:opacity .6s}
         #loading.loaded{opacity:0;pointer-events:none}
-        #loading img{width:120px;filter:brightness(0) invert(1);animation:pulse 1.5s ease-in-out infinite}
-        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+        #loading img{width:120px;filter:brightness(0) invert(1);animation:ldPulse 1.5s ease-in-out infinite}
+        @keyframes ldPulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+        /* STICKY HEADER — same as top page: hidden by default, slides in on scroll */
+        .sticky-header{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;transform:translateY(-100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+        .sticky-header.show{transform:translateY(0)}
+        .sticky-header-logo{width:100px}.sticky-header-logo img{width:100%;display:block}
+        .sticky-header-nav{display:flex;align-items:center;gap:1.8rem}
+        .sticky-header-nav a{font-size:.78rem;font-weight:700;color:var(--text);letter-spacing:.04em;transition:var(--transition);white-space:nowrap}
+        .sticky-header-nav a:hover,.sticky-header-nav a.current{color:var(--green)}
+        .sticky-header-right{display:flex;align-items:center;gap:1rem}
+        .sticky-header-phone{font-family:var(--font-en);font-size:.82rem;color:var(--text-light);font-weight:500;letter-spacing:.03em}
+        .sticky-header-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--black);color:#fff;padding:.5rem 1.2rem;border-radius:4px;font-size:.75rem;font-weight:700;transition:var(--transition)}
+        .sticky-header-cta:hover{background:var(--green)}
+        .sticky-header-cta svg{width:14px;height:14px;fill:currentColor}
+        @media(max-width:768px){.sticky-header{display:none!important}}
+
+        /* MOBILE HEADER */
         .mobile-header{display:none;position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:60px;align-items:center;justify-content:space-between;padding:0 16px}
-        .mobile-header-logo{width:120px}.mobile-header-logo img{width:100%;display:block}
+        .mobile-header-logo{width:120px}
+        .mobile-header-logo img{width:100%;display:block}
         .menu-toggle{background:none;border:none;cursor:pointer;width:32px;height:32px;position:relative;z-index:1001}
         .menu-toggle span{display:block;width:22px;height:2px;background:var(--black);position:absolute;left:5px;transition:var(--transition)}
-        .menu-toggle span:nth-child(1){top:8px}.menu-toggle span:nth-child(2){top:15px}.menu-toggle span:nth-child(3){top:22px}
-        .menu-toggle.active span:nth-child(1){top:15px;transform:rotate(45deg)}.menu-toggle.active span:nth-child(2){opacity:0}.menu-toggle.active span:nth-child(3){top:15px;transform:rotate(-45deg)}
+        .menu-toggle span:nth-child(1){top:8px}
+        .menu-toggle span:nth-child(2){top:15px}
+        .menu-toggle span:nth-child(3){top:22px}
+        .menu-toggle.active span:nth-child(1){top:15px;transform:rotate(45deg)}
+        .menu-toggle.active span:nth-child(2){opacity:0}
+        .menu-toggle.active span:nth-child(3){top:15px;transform:rotate(-45deg)}
         .mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--black);z-index:999;padding:2rem;overflow-y:auto}
         .mobile-nav.active{display:flex;flex-direction:column}
         .mobile-nav a{display:block;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:1rem;font-weight:700;color:#fff;letter-spacing:.04em}
@@ -56,303 +78,240 @@
         .mobile-nav .mobile-nav-phone{margin-top:1.5rem;text-align:center;color:rgba(255,255,255,.6);font-size:.82rem}
         .mobile-nav .mobile-nav-phone strong{display:block;font-size:1.3rem;color:#fff;font-family:var(--font-en);margin-top:.3rem}
         .mobile-nav .btn-mobile-cta{display:block;text-align:center;background:var(--green);color:#fff;padding:1rem;border-radius:var(--radius-sm);margin-top:1.5rem;font-weight:700;font-size:.95rem}
-        .sticky-header{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;transform:translateY(-100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
-        .sticky-header.show{transform:translateY(0)}
-        .sticky-header-logo{width:100px}.sticky-header-logo img{width:100%;display:block}
-        .sticky-header-nav{display:flex;align-items:center;gap:1.8rem}
-        .sticky-header-nav a{font-size:.78rem;font-weight:700;color:var(--text);letter-spacing:.04em;transition:var(--transition);white-space:nowrap}
-        .sticky-header-nav a:hover{color:var(--green)}
-        .sticky-header-right{display:flex;align-items:center;gap:1rem}
-        .sticky-header-phone{font-family:var(--font-en);font-size:.82rem;color:var(--text-light);font-weight:500;letter-spacing:.03em}
-        .sticky-header-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--black);color:#fff;padding:.5rem 1.2rem;border-radius:4px;font-size:.75rem;font-weight:700;transition:var(--transition)}
-        .sticky-header-cta:hover{background:var(--green)}
-        .sticky-header-cta svg{width:14px;height:14px;fill:currentColor}
-        @media(max-width:768px){.sticky-header{display:none!important}}
-        .hero-wrapper{position:relative;height:100vh;min-height:600px;display:flex}
-        .hero-sidebar{position:absolute;top:0;left:0;bottom:0;width:var(--sidebar-w);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);z-index:100;display:flex;flex-direction:column;padding:2rem 1.5rem;border-right:1px solid rgba(0,0,0,.06)}
-        .hero-sidebar .sidebar-logo{width:120px;margin:0 auto 2rem}.hero-sidebar .sidebar-logo img{width:100%}
-        .hero-sidebar nav a{display:block;font-size:.85rem;font-weight:700;padding:.65rem 0;border-bottom:1px solid rgba(0,0,0,.06);color:var(--text);letter-spacing:.04em;transition:var(--transition)}
-        .hero-sidebar nav a:hover{color:var(--green)}
-        .hero-sidebar .sidebar-cta{margin-top:auto}
-        .hero-sidebar .sidebar-cta a{display:block;text-align:center;background:var(--black);color:#fff;padding:.7rem;border-radius:6px;font-size:.82rem;font-weight:700;margin-bottom:.6rem;transition:var(--transition)}
-        .hero-sidebar .sidebar-cta a:hover{background:var(--green)}
-        .hero-sidebar .sidebar-phone{font-size:.78rem;color:var(--text-light);text-align:center;margin-top:.5rem}
-        .hero-sidebar .sidebar-phone strong{display:block;font-size:1.1rem;color:var(--black);font-family:var(--font-en);letter-spacing:.03em}
-        .hero-sidebar .sidebar-phone small{font-size:.68rem;color:var(--text-light)}
-        .hero-side-tab{position:fixed;top:50%;right:0;transform:translateY(-50%);writing-mode:vertical-rl;background:var(--green);color:#fff;padding:1.2rem .6rem;border-radius:6px 0 0 6px;font-size:.8rem;font-weight:700;letter-spacing:.15em;z-index:200;cursor:pointer;transition:var(--transition)}
-        .hero-side-tab:hover{background:var(--green-dark);padding-right:.8rem}
-        .hero{flex:1;position:relative;overflow:hidden;margin-left:var(--sidebar-w);background:var(--black)}
-        .hero .swiper{width:100%;height:100%}
-        .hero .swiper-slide img{width:100%;height:100%;object-fit:cover;filter:brightness(.55);transition:transform 6s ease}
-        .hero .swiper-slide-active img{transform:scale(1.05)}
-        .hero h1{font-size:0;position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
-        .hero-overlay{position:absolute;inset:0;z-index:10;display:flex;align-items:center;justify-content:flex-end;padding:0 6% 0 0}
-        .hero-content{text-align:right;color:#fff;max-width:560px}
-        .hero-en-label-wrap{display:block;margin-bottom:1rem;height:auto;overflow:visible}
-        .hero-en-svg{display:block;max-width:520px;width:100%;height:auto;margin-left:auto;overflow:visible}
-        .hero-en-svg text{font-family:'Great Vibes',cursive;font-size:60px;fill:none;stroke:rgba(255,255,255,.85);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2000;stroke-dashoffset:2000}
-        .hero-en-svg.animate text{animation:drawText 3.5s cubic-bezier(.25,.1,.25,1) forwards}
-        .hero-en-svg.animate .text-line2{animation:drawText 3.5s cubic-bezier(.25,.1,.25,1) .6s forwards}
-        @keyframes drawText{0%{stroke-dashoffset:2000;fill:rgba(255,255,255,0)}60%{stroke-dashoffset:0;fill:rgba(255,255,255,0)}100%{stroke-dashoffset:0;fill:rgba(255,255,255,.65);stroke:rgba(255,255,255,.35)}}
-        .hero-en-label{display:none}
-        .hero-catch{font-family:var(--font-jp);font-size:clamp(2rem,5vw,3.4rem);font-weight:600;letter-spacing:.15em;line-height:1.8}
-        .hero-catch .line{display:block}
-        .hero-sub{font-size:clamp(.78rem,1.2vw,.9rem);font-weight:300;letter-spacing:.2em;margin-top:1.5rem;color:rgba(255,255,255,.55);line-height:1.8}
-        .hero-divider{width:60px;height:1px;background:rgba(255,255,255,.2);margin:2rem 0 2rem auto}
-        .hero-btn-group{display:flex;gap:1rem;justify-content:flex-end;flex-wrap:wrap}
-        .hero-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2.2rem;border-radius:2px;font-size:.85rem;font-weight:700;letter-spacing:.06em;transition:var(--transition)}
-        .hero-btn svg{width:16px;height:16px;fill:currentColor}
-        .hero-btn-primary{background:var(--white);color:var(--black)}.hero-btn-primary:hover{background:var(--green);color:#fff}
-        .hero-btn-ghost{border:1px solid rgba(255,255,255,.3);color:#fff;background:transparent}.hero-btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
-        .hero-scroll{position:absolute;bottom:2.5rem;right:6%;z-index:20;text-align:center}
-        .hero-scroll span{font-family:var(--font-en);font-size:.68rem;letter-spacing:.2em;color:rgba(255,255,255,.3);display:block;margin-bottom:.6rem}
-        .hero-scroll::after{content:'';display:block;width:1px;height:32px;background:rgba(255,255,255,.2);margin:0 auto;animation:scrollLine 2s ease infinite}
-        @keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-        .swiper-pagination{z-index:20!important;bottom:5rem!important}
-        .swiper-pagination-bullet{background:#fff!important;opacity:.2;width:8px;height:8px}
-        .swiper-pagination-bullet-active{opacity:1;background:var(--green)!important;width:24px;border-radius:4px}
-        .concept{position:relative;padding:8rem 0;overflow:hidden}
-        .concept-bg{position:absolute;inset:0;z-index:0}
-        .concept-bg img{width:100%;height:100%;object-fit:cover}
-        .concept-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,26,26,.8) 0%,rgba(26,26,26,.55) 50%,rgba(26,26,26,.75) 100%)}
-        .concept .container{position:relative;z-index:1}
-        .concept-inner{max-width:680px}
-        .concept .section-title .en{color:rgba(255,255,255,.85)}.concept .section-title .ja{color:var(--green)}
-        .concept-text h2{font-family:var(--font-jp);font-size:clamp(1.3rem,2.8vw,1.8rem);font-weight:700;line-height:1.9;color:#fff;letter-spacing:.08em;margin-bottom:1.8rem}
-        .concept-text .concept-lead{font-size:.95rem;color:rgba(255,255,255,.7);line-height:2.2;margin-bottom:1.2rem}
-        .concept-text .concept-name{font-size:.85rem;color:rgba(255,255,255,.45);border-top:1px solid rgba(255,255,255,.12);padding-top:1.5rem;margin-top:2rem}
-        .concept-text .concept-name strong{display:block;font-size:1rem;color:rgba(255,255,255,.8);margin-bottom:.2rem}
-        .concept-more{margin-top:2rem}
-        .concept-deco{position:absolute;right:5%;top:50%;transform:translateY(-50%);font-family:var(--font-script);font-size:clamp(5rem,14vw,12rem);color:rgba(255,255,255,.04);z-index:1;pointer-events:none;line-height:1}
-        .works{padding:7rem 0;background:var(--white)}
-        .works-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.5rem}
-        .works-card{display:block;text-decoration:none;color:inherit;transition:var(--transition)}
-        .works-card:hover{transform:translateY(-3px)}
-        .works-card-img{aspect-ratio:4/3;overflow:hidden;border-radius:var(--radius-sm)}
-        .works-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
-        .works-card:hover .works-card-img img{transform:scale(1.05)}
-        .works-card-body{padding:.8rem 0 0}
-        .works-card-area{font-size:.68rem;color:var(--text-light);font-weight:500;margin-bottom:.25rem}
-        .works-card-body h3{font-size:.85rem;font-weight:700;color:var(--black);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-        .reason{padding:7rem 0;background:var(--bg-gray)}
-        .reason-item{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:5rem}
-        .reason-item:last-child{margin-bottom:0}
-        .reason-item.reverse .reason-item-img{order:2}.reason-item.reverse .reason-item-text{order:1}
-        .reason-item-img{position:relative}
-        .reason-item-img img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow-lg)}
-        .reason-item-num{position:absolute;top:-20px;left:-10px;font-family:var(--font-en);font-size:6rem;color:var(--black);opacity:.08;line-height:1;z-index:0;font-weight:400}
-        .reason-item.reverse .reason-item-num{left:auto;right:-10px}
-        .reason-item-text .reason-tag{display:inline-block;background:var(--black);color:#fff;padding:.3rem 1rem;border-radius:4px;font-size:.75rem;font-weight:700;letter-spacing:.1em;margin-bottom:1rem}
-        .reason-item-text h3{font-family:var(--font-jp);font-size:clamp(1.2rem,2.5vw,1.5rem);font-weight:600;line-height:1.7;margin-bottom:1rem;color:var(--black);letter-spacing:.05em}
-        .reason-item-text p{font-size:.95rem;color:var(--text-light);line-height:2}
-        .cta-simple{padding:4rem 0;background:var(--green-pale);text-align:center}
-        .cta-simple-label{font-size:.82rem;font-weight:700;color:var(--green-dark);letter-spacing:.15em;margin-bottom:1.5rem}
-        .cta-simple-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
-        .cta-s-btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 2.8rem;border-radius:50px;font-size:.9rem;font-weight:700;transition:var(--transition)}
-        .cta-s-btn svg{width:18px;height:18px;fill:currentColor}
-        .cta-s-phone{background:var(--green);color:#fff;box-shadow:0 4px 16px rgba(106,176,76,.3)}
-        .cta-s-phone:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 6px 24px rgba(106,176,76,.4)}
-        .cta-s-phone .num{font-family:var(--font-en);font-size:1.1rem;letter-spacing:.04em}
-        .cta-s-form{background:var(--black);color:#fff}
-        .cta-s-form:hover{background:var(--black-soft);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.2)}
-        .menu-section{padding:7rem 0;background:var(--white)}
-        .price-list{max-width:1000px;margin:2.5rem auto 0;display:flex;flex-direction:column}
-        .price-row{display:grid;grid-template-columns:200px 1fr auto;gap:2rem;align-items:center;padding:2rem 0;border-bottom:1px solid rgba(0,0,0,.08)}
-        .price-row:first-child{border-top:1px solid rgba(0,0,0,.08)}
-        .price-row-img{width:200px;height:130px;border-radius:var(--radius-sm);overflow:hidden;flex-shrink:0}
-        .price-row-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-        .price-row:hover .price-row-img img{transform:scale(1.05)}
-        .price-row-text h3{font-family:var(--font-jp);font-size:1.05rem;font-weight:600;color:var(--black);margin-bottom:.3rem;letter-spacing:.04em}
-        .price-row-text p{font-size:.82rem;color:var(--text-light);line-height:1.7}
-        .price-row-price{font-family:var(--font-en);font-size:1.6rem;font-weight:600;color:var(--green);white-space:nowrap;letter-spacing:.02em;text-align:right}
-        .price-row-price small{font-size:.75rem;font-weight:400;color:var(--text-light);display:block;font-family:var(--font-body)}
-        .price-note{text-align:center;margin-top:2rem;font-size:.8rem;color:var(--text-light)}
-        .flow-section{padding:7rem 0;background:var(--bg-gray)}
-        .flow-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative}
-        .flow-card{background:var(--white);border-radius:var(--radius);padding:1.6rem 1rem;transition:var(--transition);text-align:center;position:relative;margin-right:12px}
-        .flow-card:last-child{margin-right:0}
-        .flow-card:hover{box-shadow:var(--shadow)}
-        .flow-card:not(:last-child)::after{content:'';position:absolute;top:50%;right:-8px;transform:translateY(-50%);width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:8px solid var(--green);z-index:2}
-        .flow-card-num{font-family:var(--font-en);font-size:2rem;color:var(--green);line-height:1;opacity:.3;font-weight:400}
-        .flow-card h3{font-size:.82rem;font-weight:700;margin:.4rem 0;color:var(--black);line-height:1.4}
-        .flow-card .free-tag{display:inline-block;background:#e74c3c;color:#fff;padding:.08rem .4rem;border-radius:3px;font-size:.58rem;font-weight:700;vertical-align:middle;margin-left:.15rem}
-        .flow-card p{font-size:.72rem;color:var(--text-light);line-height:1.6}
-        .voice{padding:7rem 0;background:var(--white)}
-        .voice-widget{margin-top:2rem}
-        .blog-sns{padding:7rem 0;background:var(--bg-gray)}
-        .blog-sns-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
-        .blog-sns-header .section-title{margin-bottom:0}
-        .blog-sns-desc{font-size:.88rem;color:var(--text-light);line-height:1.8;max-width:480px}
-        .sub-section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.8rem}
-        .sub-section-title{font-family:var(--font-en);font-size:1.4rem;font-weight:400;color:var(--black);letter-spacing:.04em;line-height:1}
-        .sub-section-title .ja{font-size:.65rem;font-weight:700;color:var(--green);display:block;margin-top:.3rem;letter-spacing:.12em;font-family:var(--font-body)}
-        .blog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-bottom:4rem}
-        .blog-card{border-radius:var(--radius-sm);overflow:hidden;transition:var(--transition);border:1px solid rgba(0,0,0,.06);text-decoration:none;color:inherit;background:var(--white)}
-        .blog-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
-        .blog-card-img{position:relative;aspect-ratio:4/3;overflow:hidden}
-        .blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-        .blog-card:hover .blog-card-img img{transform:scale(1.05)}
-        .blog-card-date-overlay{position:absolute;bottom:0;left:0;background:rgba(0,0,0,.6);color:#fff;font-family:var(--font-en);font-size:.68rem;padding:.25rem .6rem;font-weight:500}
-        .blog-card-body{padding:.7rem .9rem .9rem}
-        .blog-card-body h3{font-size:.82rem;font-weight:700;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:var(--black)}
-        .insta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
-        .insta-card{position:relative;border-radius:var(--radius-sm);overflow:hidden;aspect-ratio:4/3;text-decoration:none;color:inherit}
-        .insta-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-        .insta-card:hover img{transform:scale(1.05)}
-        .insta-card-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.65) 100%);opacity:0;transition:opacity .3s ease;display:flex;flex-direction:column;justify-content:flex-end;padding:.8rem}
-        .insta-card:hover .insta-card-overlay{opacity:1}
-        .insta-card-caption{font-size:.68rem;color:#fff;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-        .insta-card-date{font-family:var(--font-en);font-size:.58rem;color:rgba(255,255,255,.7);margin-top:.25rem}
-        .btn-outline-sm{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.6rem;border:1px solid var(--black);border-radius:50px;font-size:.72rem;font-weight:600;color:var(--black);text-decoration:none;transition:var(--transition)}
-        .btn-outline-sm:hover{background:var(--black);color:var(--white)}
-        .btn-outline-sm svg{width:14px;height:14px;transition:transform .3s ease}
-        .btn-outline-sm:hover svg{transform:translateX(3px)}
-        .company{padding:7rem 0;background:var(--white)}
-        .company-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-        .company-map{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg)}
-        .company-map iframe{width:100%;height:400px;display:block;border:0}
-        .company-info{padding-top:.5rem}
-        .company-table{width:100%;border-collapse:collapse;margin-top:1.5rem}
-        .company-table th,.company-table td{padding:.9rem 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:.88rem;text-align:left;vertical-align:top}
-        .company-table th{font-weight:700;color:var(--black);width:120px;white-space:nowrap;padding-right:1.5rem}
-        .company-table td{color:var(--text-light)}
-        .company-table td a{color:var(--green);font-weight:500}
-        .company-table td a:hover{text-decoration:underline}
-        .news-section{padding:5rem 0;background:var(--bg-gray)}
-        .news-section .section-label{margin-bottom:2rem}
-        .news-section .section-label .en{font-family:var(--font-en);font-size:1.5rem;color:var(--black);line-height:1;font-weight:400;letter-spacing:.04em}
-        .news-section .section-label .ja{font-size:.65rem;font-weight:700;color:var(--green);letter-spacing:.15em;margin-top:.3rem;display:block}
-        .news-list{display:flex;flex-direction:column;gap:0}
-        .news-item{display:flex;align-items:center;gap:1.2rem;padding:1rem 0;border-bottom:1px solid rgba(0,0,0,.08);transition:var(--transition);text-decoration:none;color:inherit}
-        .news-item:first-child{border-top:1px solid rgba(0,0,0,.08)}
-        .news-item:hover{background:rgba(0,0,0,.02);padding-left:.5rem}
-        .news-item-date{font-family:var(--font-en);font-size:.82rem;font-weight:600;color:var(--black);min-width:100px}
-        .news-item-tag{font-size:.6rem;font-weight:700;color:#fff;background:var(--green);padding:.15rem .6rem;border-radius:2px;min-width:60px;text-align:center}
-        .news-item-tag.tag-award{background:var(--black)}
-        .news-item-title{font-size:.85rem;font-weight:600;color:var(--black);flex:1}
-        .news-item-arrow{font-size:.75rem;color:var(--text-light)}
-        .faq{padding:7rem 0;background:var(--bg-dark);color:#fff}
-        .faq .section-title .en{color:#fff}.faq .section-title .ja{color:var(--green)}
-        .faq-layout{display:grid;grid-template-columns:340px 1fr;gap:4rem;align-items:start}
-        .faq-item{background:rgba(255,255,255,.06);border-radius:var(--radius);margin-bottom:.8rem;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.08)}
-        .faq-question{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.4rem;cursor:pointer;font-weight:700;font-size:.92rem;transition:var(--transition);user-select:none;color:rgba(255,255,255,.9)}
-        .faq-question:hover{color:var(--green)}
-        .faq-q-icon{width:30px;height:30px;background:var(--green);color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-en);font-size:.9rem;flex-shrink:0;font-weight:600}
-        .faq-toggle{margin-left:auto;width:20px;height:20px;position:relative;flex-shrink:0}
-        .faq-toggle::before,.faq-toggle::after{content:'';position:absolute;background:rgba(255,255,255,.5);transition:var(--transition)}
-        .faq-toggle::before{width:12px;height:2px;top:50%;left:50%;transform:translate(-50%,-50%)}
-        .faq-toggle::after{width:2px;height:12px;top:50%;left:50%;transform:translate(-50%,-50%)}
-        .faq-item.active .faq-toggle::after{transform:translate(-50%,-50%) rotate(90deg)}
-        .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
-        .faq-item.active .faq-answer{max-height:300px}
-        .faq-answer-inner{padding:0 1.4rem 1.4rem 4rem;font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.9}
-        .cta2-bottom{padding:3.5rem 0;background:var(--green);text-align:center;position:relative;overflow:hidden}
-        .cta2-bottom::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:rgba(0,0,0,.06);border-radius:50%}
-        .cta2-inner{position:relative;z-index:1}
-        .cta2-inner h2{font-family:var(--font-jp);font-size:clamp(1rem,2vw,1.3rem);font-weight:700;color:#fff;letter-spacing:.05em;margin-bottom:1.5rem}
-        .cta2-btns{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
-        .cta2-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:6px;font-size:.88rem;font-weight:700;transition:var(--transition)}
-        .cta2-btn svg{width:18px;height:18px;fill:currentColor}
-        .cta2-btn-dark{background:var(--black);color:#fff}.cta2-btn-dark:hover{background:#000;transform:translateY(-2px)}
-        .cta2-btn-white{background:#fff;color:var(--black)}.cta2-btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+
+        /* MAIN CONTENT */
+        .main-content{margin-top:0}
+
+        /* 1. CONCEPT HERO */
+        .concept-hero{position:relative;height:70vh;min-height:450px;overflow:hidden;background:var(--black)}
+        .concept-hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.4)}
+        .concept-hero-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:2;padding:0 24px}
+        .concept-hero-en{font-family:var(--font-en);font-size:clamp(3rem,7vw,5rem);color:#fff;font-weight:400;letter-spacing:.06em;line-height:1}
+        .concept-hero-ja{font-size:.9rem;font-weight:700;color:var(--green);letter-spacing:.2em;margin-top:.8rem}
+        .concept-hero-line{width:40px;height:1px;background:rgba(255,255,255,.3);margin:2rem auto 0}
+
+        /* 2. PHILOSOPHY */
+        .philosophy{padding:0;background:var(--white)}
+        .phil-block{display:grid;grid-template-columns:1fr 1fr;min-height:70vh}
+        .phil-block-text{display:flex;align-items:center;justify-content:center;padding:5rem 4rem}
+        .phil-block-text-inner{max-width:480px}
+        .phil-block-text blockquote{
+            font-family:var(--font-jp);
+            font-size:clamp(1.2rem,2.5vw,1.65rem);
+            font-weight:600;line-height:2.4;
+            color:var(--black);letter-spacing:.1em;
+            position:relative;padding-left:2rem;
+            border-left:3px solid var(--green);
+        }
+        .phil-block-img{position:relative;overflow:hidden}
+        .phil-block-img img{width:100%;height:100%;object-fit:cover;transition:transform 8s ease}
+        .phil-block-img.in-view img{transform:scale(1.06)}
+        .phil-block.reverse .phil-block-img{order:-1}
+
+        /* 3. COMPANY */
+        .company-section{padding:7rem 0;color:#fff;position:relative;overflow:hidden}
+        .company-bg{position:absolute;inset:0;z-index:0}
+        .company-bg img{width:100%;height:100%;object-fit:cover}
+        .company-bg::after{
+            content:'';position:absolute;inset:0;
+            background:linear-gradient(135deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.72) 50%,rgba(10,10,10,.82) 100%);
+        }
+        .company-inner{
+            display:grid;grid-template-columns:auto 1fr;
+            gap:3rem;align-items:center;
+            max-width:900px;margin:0 auto;position:relative;z-index:2;
+        }
+        .company-logo-simple{width:140px}
+        .company-logo-simple img{width:100%;filter:brightness(0) invert(1)}
+        .company-text h2{
+            font-family:var(--font-jp);
+            font-size:clamp(1.2rem,2.5vw,1.5rem);
+            font-weight:600;line-height:1.8;
+            margin-bottom:1rem;color:#fff;letter-spacing:.05em;
+        }
+        .company-text p{font-size:.92rem;color:rgba(255,255,255,.65);line-height:2.1}
+        .company-section .section-title .en{color:#fff}
+        .company-section .section-title .ja{color:var(--green)}
+
+        /* 4. OUR SHOP — Bento Grid */
+        .shop-section{padding:7rem 0;background:var(--bg-gray)}
+        .bento-grid{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            grid-template-rows:auto;
+            gap:12px;margin-top:2.5rem;
+        }
+        .bento-item:nth-child(1){grid-column:1 / 3;grid-row:1 / 3}
+        .bento-item:nth-child(2){grid-column:3 / 4;grid-row:1 / 2}
+        .bento-item:nth-child(3){grid-column:4 / 5;grid-row:1 / 2}
+        .bento-item:nth-child(4){grid-column:3 / 5;grid-row:2 / 3}
+        .bento-item:nth-child(5){grid-column:1 / 2;grid-row:3 / 4}
+        .bento-item:nth-child(6){grid-column:2 / 4;grid-row:3 / 4}
+        .bento-item:nth-child(7){grid-column:4 / 5;grid-row:3 / 4}
+
+        .bento-item{
+            position:relative;overflow:hidden;
+            border-radius:var(--radius);cursor:pointer;min-height:180px;
+        }
+        .bento-item:nth-child(1){min-height:380px}
+        .bento-item img{
+            width:100%;height:100%;object-fit:cover;
+            transition:transform .6s ease,filter .5s ease;filter:brightness(.9);
+        }
+        .bento-item:hover img{transform:scale(1.05);filter:brightness(1)}
+        .bento-item::after{
+            content:'';position:absolute;inset:0;
+            background:linear-gradient(to top,rgba(0,0,0,.45) 0%,transparent 60%);
+            opacity:0;transition:opacity .4s;pointer-events:none;
+        }
+        .bento-item:hover::after{opacity:1}
+        .bento-caption{
+            position:absolute;bottom:0;left:0;right:0;
+            padding:16px 18px;color:#fff;
+            font-size:.78rem;font-weight:500;letter-spacing:.04em;
+            transform:translateY(8px);opacity:0;
+            transition:transform .4s ease,opacity .4s ease;z-index:2;
+        }
+        .bento-item:hover .bento-caption{transform:translateY(0);opacity:1}
+
+        .shop-intro{max-width:800px;margin:3.5rem auto 0;text-align:center}
+        .shop-intro h3{font-family:var(--font-jp);font-size:clamp(1.1rem,2.5vw,1.4rem);font-weight:600;color:var(--black);line-height:1.8;margin-bottom:1rem;letter-spacing:.06em}
+        .shop-intro p{font-size:.92rem;color:var(--text-light);line-height:2.1}
+
+        /* LIGHTBOX */
+        .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s;padding:40px}
+        .lightbox.active{opacity:1;visibility:visible}
+        .lightbox img{max-width:90vw;max-height:85vh;border-radius:var(--radius-sm);box-shadow:0 20px 60px rgba(0,0,0,.5);transform:scale(.92);transition:transform .4s ease}
+        .lightbox.active img{transform:scale(1)}
+        .lightbox-close{position:absolute;top:20px;right:24px;width:44px;height:44px;background:none;border:none;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center}
+        .lightbox-close svg{width:28px;height:28px;fill:#fff;opacity:.6;transition:opacity .3s}
+        .lightbox-close:hover svg{opacity:1}
+        .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;background:rgba(255,255,255,.1);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+        .lightbox-nav:hover{background:rgba(255,255,255,.2)}
+        .lightbox-nav svg{width:24px;height:24px;fill:#fff}
+        .lightbox-prev{left:20px}
+        .lightbox-next{right:20px}
+        .lightbox-counter{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-family:var(--font-en);font-size:.9rem;color:rgba(255,255,255,.5);letter-spacing:.1em}
+
+        /* CTA */
+        .cta-banner{padding:5rem 0;background:var(--green);position:relative;overflow:hidden}
+        .cta-banner::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:rgba(0,0,0,.06);border-radius:50%}
+        .cta-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;position:relative;z-index:1;flex-wrap:wrap}
+        .cta-text h2{font-family:var(--font-jp);font-size:clamp(1.2rem,2.8vw,1.7rem);font-weight:700;color:#fff;letter-spacing:.05em}
+        .cta-text p{font-size:.9rem;color:rgba(255,255,255,.85);margin-top:.3rem}
+        .cta-buttons{display:flex;gap:.8rem;flex-wrap:wrap}
+        .cta-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2rem;border-radius:6px;font-size:.9rem;font-weight:700;transition:var(--transition)}
+        .cta-btn svg{width:18px;height:18px;fill:currentColor}
+        .cta-btn-dark{background:var(--black);color:#fff}.cta-btn-dark:hover{background:#000;transform:translateY(-2px)}
+        .cta-btn-white{background:#fff;color:var(--black)}.cta-btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+
+        /* FOOTER — identical to top page */
         .footer{background:var(--black);color:#fff;padding:5rem 0 0}
         .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08)}
         .footer-logo{width:160px;margin-bottom:1.5rem;filter:brightness(0) invert(1)}
-        .footer-info{font-size:.82rem;color:rgba(255,255,255,.5);line-height:2}.footer-info strong{color:#fff}
+        .footer-info{font-size:.82rem;color:rgba(255,255,255,.5);line-height:2}
+        .footer-info strong{color:#fff}
         .footer-nav-title{font-size:.8rem;font-weight:700;color:var(--green);letter-spacing:.1em;margin-bottom:1rem;text-transform:uppercase}
-        .footer-nav a{display:block;font-size:.82rem;color:rgba(255,255,255,.5);padding:.25rem 0;transition:var(--transition)}.footer-nav a:hover{color:var(--green)}
+        .footer-nav a{display:block;font-size:.82rem;color:rgba(255,255,255,.5);padding:.25rem 0;transition:var(--transition)}
+        .footer-nav a:hover{color:var(--green)}
         .footer-area{padding:2rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
         .footer-area-label{font-size:.75rem;font-weight:700;color:var(--green);margin-bottom:.3rem}
         .footer-area p{font-size:.78rem;color:rgba(255,255,255,.4)}
         .footer-copy{text-align:center;font-size:.72rem;color:rgba(255,255,255,.25);padding:1.5rem 0}
+
+        /* Fixed CTA */
         .fixed-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--black);padding:.5rem .8rem;box-shadow:0 -4px 24px rgba(0,0,0,.3)}
         .fixed-cta-inner{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
         .fixed-cta a{display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.65rem;border-radius:6px;font-size:.82rem;font-weight:700}
         .fixed-cta a svg{width:16px;height:16px;fill:currentColor}
-        .fixed-cta .fc-tel{background:var(--green);color:#fff}.fixed-cta .fc-contact{background:#fff;color:var(--black)}
+        .fixed-cta .fc-tel{background:var(--green);color:#fff}
+        .fixed-cta .fc-contact{background:#fff;color:var(--black)}
         .pagetop{position:fixed;bottom:90px;right:20px;width:44px;height:44px;background:var(--black);border-radius:8px;display:flex;align-items:center;justify-content:center;z-index:800;opacity:0;visibility:hidden;transition:var(--transition);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;border:none}
-        .pagetop.show{opacity:1;visibility:visible}.pagetop:hover{background:var(--green)}
+        .pagetop.show{opacity:1;visibility:visible}
+        .pagetop:hover{background:var(--green)}
         .pagetop svg{width:18px;height:18px;fill:#fff}
-        .btn-more-wrap{text-align:center;margin-top:3rem}
-        .btn-more{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2.5rem;border:2px solid var(--black);color:var(--black);border-radius:6px;font-size:.85rem;font-weight:700;transition:var(--transition)}
-        .btn-more:hover{background:var(--black);color:#fff}
-        .btn-more svg{width:16px;height:16px;fill:currentColor}
-        .btn-more-green{border-color:var(--green);color:var(--green)}.btn-more-green:hover{background:var(--green);color:#fff}
-        .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.fade-up.visible{opacity:1;transform:translateY(0)}
+
+        /* Animations */
+        .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+        .fade-up.visible{opacity:1;transform:translateY(0)}
+        .fade-left{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+        .fade-left.visible{opacity:1;transform:translateX(0)}
+        .fade-right{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+        .fade-right.visible{opacity:1;transform:translateX(0)}
+
+        /* RESPONSIVE */
         @media(max-width:1024px){
-            .hero-sidebar{width:220px}:root{--sidebar-w:220px}
-            .works-grid{grid-template-columns:repeat(3,1fr);gap:1.2rem}
-            .blog-grid{grid-template-columns:repeat(2,1fr)}
-            .insta-grid{grid-template-columns:repeat(2,1fr)}
-            .faq-layout{grid-template-columns:1fr}
+            .bento-grid{grid-template-columns:repeat(3,1fr)}
+            .bento-item:nth-child(1){grid-column:1 / 3;grid-row:1 / 3}
+            .bento-item:nth-child(2){grid-column:3 / 4;grid-row:1 / 2}
+            .bento-item:nth-child(3){grid-column:3 / 4;grid-row:2 / 3}
+            .bento-item:nth-child(4){grid-column:1 / 2;grid-row:3 / 4}
+            .bento-item:nth-child(5){grid-column:2 / 3;grid-row:3 / 4}
+            .bento-item:nth-child(6){grid-column:3 / 4;grid-row:3 / 4}
+            .bento-item:nth-child(7){grid-column:1 / 4;grid-row:4 / 5;min-height:200px}
+            .company-inner{gap:2.5rem}
             .footer-grid{grid-template-columns:1fr 1fr}
-            .flow-grid{grid-template-columns:repeat(3,1fr);gap:12px}
-            .flow-card{margin-right:0}.flow-card:not(:last-child)::after{display:none}
-            .price-row{grid-template-columns:160px 1fr auto}.price-row-img{width:160px;height:110px}
-            .company-inner{grid-template-columns:1fr;gap:2rem}
+            .phil-block-text{padding:4rem 3rem}
         }
         @media(max-width:768px){
             .mobile-header{display:flex}
-            .hero-sidebar,.hero-side-tab{display:none}
-            .hero{margin-left:0}
-            .hero-wrapper{min-height:100vh;padding-top:60px}
-            .hero-overlay{justify-content:center;padding:0 1.5rem}
-            .hero-content{text-align:center;max-width:100%}
-            .hero-en-svg{margin:0 auto}
-            .hero-divider{margin:1.5rem auto}
-            .hero-btn-group{justify-content:center;flex-direction:column;align-items:center}
-            .hero-btn{width:100%;max-width:280px;justify-content:center}
-            .hero-scroll{right:50%;transform:translateX(50%)}
-            .hero-catch{font-size:clamp(1.6rem,7vw,2.4rem);letter-spacing:.1em}
-            .fixed-cta{display:block}.pagetop{bottom:75px}
-            .concept{padding:5rem 0}
-            .works{padding:5rem 0}
-            .works-grid{grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
-            .reason{padding:5rem 0}
-            .reason-item{grid-template-columns:1fr;gap:1.5rem;margin-bottom:3rem}
-            .reason-item.reverse .reason-item-img,.reason-item.reverse .reason-item-text{order:0}
-            .reason-item-num{font-size:4rem;top:-12px;left:-4px}
-            .menu-section{padding:5rem 0}
-            .price-row{grid-template-columns:1fr;gap:.8rem;padding:1.5rem 0}
-            .price-row-img{width:100%;height:180px}.price-row-price{text-align:left;font-size:1.4rem}
-            .flow-section{padding:5rem 0}
-            .flow-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-            .blog-sns{padding:5rem 0}
-            .blog-sns-header{flex-direction:column}
-            .blog-grid{grid-template-columns:repeat(2,1fr);gap:.8rem;margin-bottom:3rem}
-            .insta-grid{grid-template-columns:repeat(2,1fr);gap:.8rem}
-            .news-section{padding:3.5rem 0}
-            .news-item{flex-wrap:wrap;gap:.3rem .8rem}
-            .news-item-title{flex-basis:100%;margin-top:.2rem}
-            .faq{padding:5rem 0}
-            .company{padding:5rem 0}.company-inner{grid-template-columns:1fr;gap:2rem}
-            .company-map iframe{height:280px}
-            .cta-simple-btns,.cta2-btns{flex-direction:column;align-items:center}
-            .cta2-btn{width:100%;max-width:300px;justify-content:center}
-            .footer{padding:3rem 0 0}.footer-grid{grid-template-columns:1fr;gap:2rem}
+            .main-content{margin-top:60px}
+            .fixed-cta{display:block}
+            .pagetop{bottom:75px}
+
+            .concept-hero{height:55vh;min-height:350px}
+            .concept-hero-en{font-size:clamp(2.2rem,10vw,3.5rem)}
+
+            .phil-block{grid-template-columns:1fr;min-height:auto}
+            .phil-block-text{padding:3.5rem 1.5rem}
+            .phil-block-img{height:50vw;min-height:250px}
+            .phil-block.reverse .phil-block-img{order:0}
+
+            .company-section{padding:5rem 0}
+            .company-inner{grid-template-columns:1fr;gap:2rem;text-align:center}
+            .company-logo-simple{margin:0 auto}
+
+            .shop-section{padding:5rem 0}
+            .bento-grid{grid-template-columns:repeat(2,1fr)}
+            .bento-item:nth-child(1){grid-column:1 / 3;grid-row:1 / 2;min-height:250px}
+            .bento-item:nth-child(2){grid-column:1 / 2;grid-row:2 / 3}
+            .bento-item:nth-child(3){grid-column:2 / 3;grid-row:2 / 3}
+            .bento-item:nth-child(4){grid-column:1 / 3;grid-row:3 / 4}
+            .bento-item:nth-child(5){grid-column:1 / 2;grid-row:4 / 5}
+            .bento-item:nth-child(6){grid-column:2 / 3;grid-row:4 / 5}
+            .bento-item:nth-child(7){grid-column:1 / 3;grid-row:5 / 6;min-height:180px}
+            .bento-item{min-height:160px}
+
+            .cta-inner{flex-direction:column;text-align:center}
+            .cta-buttons{justify-content:center;width:100%}
+            .cta-btn{width:100%;justify-content:center}
+            .footer{padding:3rem 0 0}
+            .footer-grid{grid-template-columns:1fr;gap:2rem}
+            .lightbox-prev{left:8px}
+            .lightbox-next{right:8px}
             body{padding-bottom:56px}
         }
         @media(max-width:480px){
-            .hero-catch{font-size:clamp(1.4rem,6.5vw,2rem)}
-            .works-grid{grid-template-columns:repeat(2,1fr);gap:.8rem}
-            .works-card-body h3{font-size:.78rem}
-            .blog-grid{grid-template-columns:1fr}
-            .insta-grid{grid-template-columns:repeat(2,1fr)}
-            .flow-grid{grid-template-columns:1fr}
-            .hero-en-svg text{font-size:42px}
+            .concept-hero{height:50vh}
+            .concept-hero-en{font-size:2rem}
+            .phil-block-text blockquote{font-size:1.05rem;line-height:2.2;padding-left:1.2rem}
+            .bento-grid{grid-template-columns:1fr}
+            .bento-item:nth-child(n){grid-column:auto;grid-row:auto;min-height:200px}
+            .bento-item:nth-child(1){min-height:280px}
+            .cta-buttons{flex-direction:column;align-items:stretch}
         }
     </style>
 </head>
-<body>
 
+<body>
     <div id="loading"><img src="logo01.png" alt="YU-ART"></div>
 
-    <!-- ===== STICKY HEADER ===== -->
+    <!-- ===== STICKY HEADER (top page と同一 / スクロールで出現) ===== -->
     <header class="sticky-header" id="stickyHeader">
         <div class="sticky-header-logo"><a href="/yuart/index.html"><img src="logo01.png" alt="YU-ART"></a></div>
         <nav class="sticky-header-nav">
             <a href="/yuart/index.html">ホーム</a>
-            <a href="/yuart/concept.html">コンセプト</a>
+            <a href="/yuart/concept.html" class="current">コンセプト</a>
             <a href="/yuart/archive-constraction.html">施工事例</a>
             <a href="/yuart/flow.html">完成までの流れ</a>
             <a href="/yuart/company.html">会社概要</a>
@@ -370,7 +329,7 @@
         </div>
     </header>
 
-    <!-- ===== MOBILE HEADER ===== -->
+    <!-- ===== MOBILE HEADER (top page と同一) ===== -->
     <div class="mobile-header" id="mobileHeader">
         <div class="mobile-header-logo"><a href="/yuart/index.html"><img src="logo01.png" alt="YU-ART"></a></div>
         <button class="menu-toggle" id="menuToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
@@ -389,361 +348,287 @@
         <a href="/yuart/contact.html" class="btn-mobile-cta">無料相談・お見積り</a>
     </nav>
 
-    <!-- ===== HERO ===== -->
-    <div class="hero-wrapper">
-        <aside class="hero-sidebar">
-    <div class="sidebar-logo"><a href="/yuart/index.html"><img src="logo01.png" alt="YU-ART ユーアート"></a></div>
-    <nav>
-        <a href="/yuart/index.html">ホーム</a>
-        <a href="/yuart/concept.html">コンセプト</a>
-        <a href="/yuart/archive-constraction.html">施工事例</a>
-        <a href="/yuart/flow.html">完成までの流れ</a>
-        <a href="/yuart/company.html">会社概要</a>
-        <a href="/yuart/staff.html">スタッフ紹介</a>
-        <a href="/yuart/column.html">コラム</a>
-        <a href="/yuart/recruit.html">採用情報</a>
-        <a href="/yuart/contact.html">お問い合わせ</a>
-    </nav>
-    <div class="sidebar-cta"><a href="/yuart/contact.html">無料相談・お見積り</a></div>
-    <div class="sidebar-phone">お電話でのお問合せ<strong><a href="tel:049-299-7645">049-299-7645</a></strong><small>受付時間 9:00〜17:00</small></div>
-</aside>
-        <a href="/yuart/contact.html" class="hero-side-tab">資料請求・お問合せ</a>
-        <section class="hero">
-            <h1>川越市の外構工事・お庭リフォーム専門店 YU-ART（ユーアート）</h1>
-            <div class="swiper hero-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="top37.jpg" alt="モダン住宅外観"></div>
-                    <div class="swiper-slide"><img src="top26.jpg" alt="住宅エクステリア"></div>
-                    <div class="swiper-slide"><img src="top32.jpg" alt="外構デザイン"></div>
-                </div>
-                <div class="swiper-pagination"></div>
+    <div class="main-content">
+
+        <!-- 1. HERO -->
+        <section class="concept-hero" id="conceptHero">
+            <img src="top26.jpg" alt="YU-ART 外構デザイン コンセプトイメージ">
+            <div class="concept-hero-overlay">
+                <div class="concept-hero-en">Concept</div>
+                <div class="concept-hero-ja">私たちの想い</div>
+                <div class="concept-hero-line"></div>
             </div>
-            <div class="hero-overlay">
-                <div class="hero-content">
-                    <div class="hero-en-label-wrap">
-                        <svg class="hero-en-svg" id="heroEnSvg" viewBox="0 0 520 120" xmlns="http://www.w3.org/2000/svg">
-                            <text class="text-line1" x="50%" y="45" text-anchor="middle">Exterior &amp; Garden</text>
-                            <text class="text-line2" x="50%" y="105" text-anchor="middle">Design</text>
-                        </svg>
-                    </div>
-                    <p class="hero-catch"><span class="line">暮らしの中に、</span><span class="line">遊びごころを。</span></p>
-                    <p class="hero-sub">川越市を中心に、お庭と外構の<br>トータルデザインをご提案します</p>
-                    <div class="hero-divider"></div>
-                    <div class="hero-btn-group">
-                        <a href="/yuart/contact.html" class="hero-btn hero-btn-primary"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談・お見積り</a>
-                        <a href="/yuart/archive-constraction.html" class="hero-btn hero-btn-ghost"><svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>施工事例を見る</a>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-scroll"><span>Scroll</span></div>
         </section>
+
+        <main>
+
+        <!-- 2. PHILOSOPHY -->
+        <section class="philosophy">
+            <div class="phil-block">
+                <div class="phil-block-text">
+                    <div class="phil-block-text-inner fade-left">
+                        <blockquote>
+                            庭が人を変え、<br>
+                            人が暮らしを変える。<br><br>
+                            暮らしが街並みを変え、<br>
+                            いつしかその街並みは<br>
+                            住まう人々に<br>
+                            大きな財産となる。
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="phil-block-img fade-right">
+                    <img src="top32.jpg" alt="美しい住宅と庭">
+                </div>
+            </div>
+
+            <div class="phil-block reverse">
+                <div class="phil-block-text">
+                    <div class="phil-block-text-inner fade-right">
+                        <blockquote>
+                            我々は<br>
+                            地域あるいは社会貢献をもって<br>
+                            その役割を果たし、<br>
+                            それを存在意義とする。
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="phil-block-img fade-left">
+                    <img src="top37.jpg" alt="緑豊かな外構">
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. COMPANY -->
+        <section class="company-section" id="companySection">
+            <div class="company-bg">
+                <img src="top18.jpg" alt="外構施工イメージ">
+            </div>
+
+            <div class="container">
+                <div class="company-inner">
+                    <div class="company-logo-simple fade-left">
+                        <img src="logo01.png" alt="YU-ART ロゴマーク">
+                    </div>
+                    <div class="company-text fade-right">
+                        <div class="section-title" style="margin-bottom:1.5rem">
+                            <span class="en">Company</span>
+                            <span class="ja">会社に込めた想い</span>
+                        </div>
+                        <h2>あなたのために、<br>暮らしの中に遊び心を。</h2>
+                        <p>会社名「ユーアート」のユーには、お客様一人ひとりの「あなた（YOU）」のために、暮らしの中に「遊（ゆう）」び心を届け、「優（ゆう）」しさあふれるデザインをお届けしたいという想いが込められています。大手ハウスメーカーでの営業経験と老舗エクステリア専門店での20年の修行を経て、「手作り感のあるナチュラルなデザインの庭づくり」を目指し、川越の地でユーアートを立ち上げました。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. OUR SHOP — Bento Grid -->
+        <section class="shop-section">
+            <div class="container">
+                <div class="section-title center fade-up">
+                    <span class="en">Our Shop</span>
+                    <span class="ja">ショップのご紹介</span>
+                </div>
+
+                <div class="bento-grid" id="gallery">
+                    <div class="bento-item fade-up" data-index="0">
+                        <img src="top18.jpg" alt="ショップ外観">
+                        <span class="bento-caption">グリーンに囲まれた明るい店内</span>
+                    </div>
+                    <div class="bento-item fade-up" data-index="1">
+                        <img src="top37.jpg" alt="植物と外構素材">
+                        <span class="bento-caption">季節の植物を取り揃え</span>
+                    </div>
+                    <div class="bento-item fade-up" data-index="2">
+                        <img src="top32.jpg" alt="ナチュラル外構サンプル">
+                        <span class="bento-caption">ナチュラルテイストの素材サンプル</span>
+                    </div>
+                    <div class="bento-item fade-up" data-index="3">
+                        <img src="top26.jpg" alt="外構デザイン展示">
+                        <span class="bento-caption">お気に入りのデザインが見つかる</span>
+                    </div>
+                    <div class="bento-item fade-up" data-index="4">
+                        <img src="top32.jpg" alt="打ち合わせスペース">
+                        <span class="bento-caption">ゆったり相談できるスペース</span>
+                    </div>
+                    <div class="bento-item fade-up" data-index="5">
+                        <img src="top18.jpg" alt="エクステリア素材展示">
+                        <span class="bento-caption">実際の素材に触れて確かめる</span>
+                    </div>
+                    <div class="bento-item fade-up" data-index="6">
+                        <img src="top37.jpg" alt="施工後の外構">
+                        <span class="bento-caption">私たちがつくる外構の一例</span>
+                    </div>
+                </div>
+
+                <div class="shop-intro fade-up">
+                    <h3>グリーンに囲まれた空間で、<br>じっくりとお庭のプランニングを。</h3>
+                    <p>ユーアートのショップには、実際に使用する素材や植栽のサンプルを豊富にご用意しています。カタログだけでは分からない質感や色合いを手に取って確かめながら、理想の外構プランを一緒に考えましょう。お子様連れでも安心してご来店いただけます。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-banner">
+            <div class="container"><div class="cta-inner">
+                <div class="cta-text"><h2>まずは無料相談から</h2><p>お見積り・現地調査・3Dパース すべて0円。お気軽にどうぞ。</p></div>
+                <div class="cta-buttons">
+                    <a href="/yuart/contact.html" class="cta-btn cta-btn-dark"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
+                    <a href="tel:049-299-7645" class="cta-btn cta-btn-white"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>049-299-7645</a>
+                </div>
+            </div></div>
+        </section>
+
+        </main>
+
+        <!-- ===== FOOTER (top page と同一) ===== -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <img src="logo01.png" alt="YU-ART" class="footer-logo">
+                        <div class="footer-info"><strong>株式会社ユーアート</strong><br>〒350-0807 埼玉県川越市吉田163-3<br>TEL: <a href="tel:049-299-7645" style="color:var(--green)">049-299-7645</a><br>FAX: 049-299-7646<br>営業時間: 9:00〜17:00（火・水曜定休）</div>
+                    </div>
+                    <div>
+                        <div class="footer-nav-title">Pages</div>
+                        <div class="footer-nav">
+                            <a href="/yuart/index.html">ホーム</a>
+                            <a href="/yuart/concept.html">コンセプト</a>
+                            <a href="/yuart/archive-constraction.html">施工事例</a>
+                            <a href="/yuart/flow.html">完成までの流れ</a>
+                            <a href="/yuart/company.html">会社概要</a>
+                            <a href="/yuart/staff.html">スタッフ紹介</a>
+                            <a href="/yuart/column.html">コラム</a>
+                            <a href="/yuart/recruit.html">採用情報</a>
+                            <a href="/yuart/contact.html">お問い合わせ</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="footer-nav-title">SNS</div>
+                        <div class="footer-nav">
+                            <a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener">Instagram</a>
+                            <a href="https://www.facebook.com/profile.php?id=100027438334423" target="_blank" rel="noopener">Facebook</a>
+                            <a href="https://twitter.com/yuart7645" target="_blank" rel="noopener">X (Twitter)</a>
+                            <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-area"><div class="footer-area-label">対応エリア</div><p>川越市・鶴ヶ島市・坂戸市・日高市・狭山市・ふじみ野市・富士見市・東松山市 ほか</p></div>
+                <p class="footer-copy">Copyright &copy; YU-ART Inc. All Rights Reserved.</p>
+            </div>
+        </footer>
     </div>
 
-<main>
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lbClose" aria-label="閉じる"><svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+        <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="前へ"><svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg></button>
+        <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="次へ"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></button>
+        <img id="lbImg" src="" alt="">
+        <div class="lightbox-counter" id="lbCounter"></div>
+    </div>
 
-    <section class="concept" id="concept">
-        <div class="concept-bg"><img src="top18.jpg" alt="コンセプト背景"></div>
-        <div class="concept-deco">Concept</div>
-        <div class="container"><div class="concept-inner fade-up">
-            <div class="section-title"><span class="en">Concept</span><span class="ja">私たちの想い</span></div>
-            <div class="concept-text">
-                <h2>あなたのために、<br>暮らしの中に遊び心を。</h2>
-                <p class="concept-lead">「ユー」は、あなた（YOU）であり、遊（ゆう）であり、優（ゆう）でもあります。お客様一人ひとりの暮らしに寄り添い、庭づくりを通して幸せを届けたい。</p>
-                <p class="concept-lead">大手ハウスメーカーでの営業経験と老舗エクステリア専門店での20年の修行を経て、「手作り感のあるナチュラルなデザインの庭づくり」を目指し、川越の地でユーアートを立ち上げました。</p>
-                <div class="concept-name"><strong>株式会社ユーアート 代表 東野 哲也</strong>埼玉県川越市｜エクステリア＆ガーデン設計施工専門店</div>
-                <div class="concept-more"><a href="/yuart/concept.html" class="btn-more" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.8)">コンセプトを詳しく見る<svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a></div>
-            </div>
-        </div></div>
-    </section>
-
-    <section class="works" id="works">
-        <div class="container">
-            <div class="section-title fade-up"><span class="en">Works</span><span class="ja">施工事例</span></div>
-            <div class="works-grid">
-                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="top37.jpg" alt="クローズ外構" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">川越市</div><h3>防犯を重視したクローズリフォーム</h3></div></a>
-                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="top37.jpg" alt="オープン外構" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">鶴ヶ島市</div><h3>カラーバランスの新築外構</h3></div></a>
-                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="top37.jpg" alt="セミクローズ外構" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">坂戸市</div><h3>ラグジュアリーガーデン</h3></div></a>
-                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="top37.jpg" alt="モダン外構" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">川越市</div><h3>縦格子のモダンエクステリア</h3></div></a>
-                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=600&h=450&fit=crop&q=80" alt="リフォーム" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">日高市</div><h3>ホワイトタイルテラス</h3></div></a>
-                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&h=450&fit=crop&q=80" alt="ナチュラルガーデン" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">鶴ヶ島市</div><h3>植栽豊かなナチュラルガーデン</h3></div></a>
-                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=450&fit=crop&q=80" alt="ライティング" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">川越市</div><h3>夜を彩るライティングデザイン</h3></div></a>
-                <a href="/yuart/single-works.html" class="works-card fade-up"><div class="works-card-img"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=450&fit=crop&q=80" alt="カーポート" loading="lazy"></div><div class="works-card-body"><div class="works-card-area">坂戸市</div><h3>カーテンを一切閉めないリゾートスタイル</h3></div></a>
-            </div>
-            <div class="btn-more-wrap fade-up"><a href="/yuart/archive-constraction.html" class="btn-more">施工事例をもっと見る<svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a></div>
-        </div>
-    </section>
-
-    <section class="reason" id="reason">
-        <div class="container">
-            <div class="section-title fade-up"><span class="en">Reason</span><span class="ja">ユーアートが選ばれる理由</span></div>
-            <div class="reason-item fade-up"><div class="reason-item-img"><span class="reason-item-num">01</span><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop&q=80" alt="自社施工"></div><div class="reason-item-text"><span class="reason-tag">REASON 01</span><h3>自社施工だから実現する<br>「適正価格」と「高品質」</h3><p>外注を挟まず自社の熟練職人が直接施工。中間マージンが発生しないため、ハウスメーカー経由と比べて20〜30%のコストメリットを実現。</p></div></div>
-            <div class="reason-item reverse fade-up"><div class="reason-item-img"><span class="reason-item-num">02</span><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&h=600&fit=crop&q=80" alt="3Dパース"></div><div class="reason-item-text"><span class="reason-tag">REASON 02</span><h3>3Dパースで<br>完成イメージを事前確認</h3><p>高品質な3Dパースで、色合いや素材感まで細かくご確認いただけます。パース作成は何度でも無料です。</p></div></div>
-            <div class="reason-item fade-up"><div class="reason-item-img"><span class="reason-item-num">03</span><img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&h=600&fit=crop&q=80" alt="地域密着"></div><div class="reason-item-text"><span class="reason-tag">REASON 03</span><h3>川越市に根ざした<br>地域密着のアフターフォロー</h3><p>YKK AP エクステリアスタイル大賞 2年連続受賞、タカショー庭施工例コンテスト ガーデン大賞の実績。</p></div></div>
-        </div>
-    </section>
-
-    <section class="cta-simple">
-        <div class="container">
-            <div class="cta-simple-label">まずは無料相談から｜お見積り・現地調査・3Dパース すべて0円</div>
-            <div class="cta-simple-btns">
-                <a href="tel:049-299-7645" class="cta-s-btn cta-s-phone"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>電話をかける <span class="num">049-299-7645</span></a>
-                <a href="/yuart/contact.html" class="cta-s-btn cta-s-form"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談・お見積り</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="menu-section" id="menu">
-        <div class="container">
-            <div class="section-title center fade-up"><span class="en">Price</span><span class="ja">施工料金の目安</span></div>
-            <div class="price-list">
-                <div class="price-row fade-up"><div class="price-row-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=260&fit=crop&q=80" alt="オープン外構"></div><div class="price-row-text"><h3>オープン外構</h3><p>敷地を高い塀などで囲わない、開放的なエクステリアです。</p></div><div class="price-row-price">¥1,200,000〜<small>税込</small></div></div>
-                <div class="price-row fade-up"><div class="price-row-img"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=260&fit=crop&q=80" alt="クローズ外構"></div><div class="price-row-text"><h3>クローズ外構</h3><p>防犯性やプライバシーにより配慮したエクステリアです。</p></div><div class="price-row-price">¥1,800,000〜<small>税込</small></div></div>
-                <div class="price-row fade-up"><div class="price-row-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=260&fit=crop&q=80" alt="セミクローズ外構"></div><div class="price-row-text"><h3>セミクローズ外構</h3><p>開放感とプライバシーのバランスを取ります。</p></div><div class="price-row-price">¥1,500,000〜<small>税込</small></div></div>
-                <div class="price-row fade-up"><div class="price-row-img"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&h=260&fit=crop&q=80" alt="リフォーム"></div><div class="price-row-text"><h3>リフォーム</h3><p>既存の外構をリニューアル。Before/Afterでご紹介。</p></div><div class="price-row-price">¥500,000〜<small>税込</small></div></div>
-                <div class="price-row fade-up"><div class="price-row-img"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=400&h=260&fit=crop&q=80" alt="エクステリアアイテム"></div><div class="price-row-text"><h3>エクステリアアイテム</h3><p>ガレージや庭など、部位ごとの工事にも対応。</p></div><div class="price-row-price">¥300,000〜<small>税込</small></div></div>
-            </div>
-            <p class="price-note">※ 上記は参考価格です。敷地面積・仕様により変動します。まずはお気軽にお見積りください。</p>
-        </div>
-    </section>
-
-    <section class="flow-section" id="flow">
-        <div class="container">
-            <div class="section-title fade-up"><span class="en">Flow</span><span class="ja">完成までの流れ</span></div>
-            <div class="flow-grid">
-                <div class="flow-card fade-up"><div class="flow-card-num">01</div><h3>お問い合わせ<span class="free-tag">無料</span></h3><p>お電話・メール・LINEから</p></div>
-                <div class="flow-card fade-up"><div class="flow-card-num">02</div><h3>現地調査<span class="free-tag">無料</span></h3><p>敷地確認・ヒアリング</p></div>
-                <div class="flow-card fade-up"><div class="flow-card-num">03</div><h3>3Dパース提案<span class="free-tag">無料</span></h3><p>完成イメージをリアルに</p></div>
-                <div class="flow-card fade-up"><div class="flow-card-num">04</div><h3>ご契約</h3><p>プラン確定・日程調整</p></div>
-                <div class="flow-card fade-up"><div class="flow-card-num">05</div><h3>着工・施工</h3><p>自社職人が丁寧に施工</p></div>
-                <div class="flow-card fade-up"><div class="flow-card-num">06</div><h3>完成・引渡し</h3><p>アフターフォロー継続</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="voice" id="voice">
-        <div class="container">
-            <div class="section-title fade-up"><span class="en">Voice</span><span class="ja">お客様の声</span></div>
-            <div class="voice-widget fade-up"><div class="elfsight-app-lazy" data-elfsight-app-lazy data-app-id="YOUR-ELFSIGHT-REVIEWS-APP-ID"></div></div>
-            <div class="btn-more-wrap fade-up" style="margin-top:2rem"><a href="https://www.google.com/maps/place/%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E3%83%A6%E3%83%BC%E3%82%A2%E3%83%BC%E3%83%88/" target="_blank" rel="noopener" class="btn-more btn-more-green">Google口コミをすべて見る<svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a></div>
-        </div>
-    </section>
-
-    <section class="blog-sns" id="blog">
-        <div class="container">
-            <div class="blog-sns-header fade-up">
-                <div class="section-title" style="margin-bottom:0"><span class="en">Blog &amp; SNS</span><span class="ja">ブログ・SNS</span></div>
-                <p class="blog-sns-desc">ユーアートのニュースや日々の事を綴っていきます。</p>
-            </div>
-            <div class="sub-section-head fade-up">
-                <h3 class="sub-section-title">Blog<span class="ja">外構ブログ</span></h3>
-                <a href="#" class="btn-outline-sm">READ MORE<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="blog-grid">
-                <a href="#" class="blog-card fade-up"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=480&h=360&fit=crop&q=80" alt="新築外構の費用相場" loading="lazy"><span class="blog-card-date-overlay">2026.02.20</span></div><div class="blog-card-body"><h3>【川越市版】新築外構の費用相場と業者の選び方</h3></div></a>
-                <a href="#" class="blog-card fade-up"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=480&h=360&fit=crop&q=80" alt="駐車場拡張工事" loading="lazy"><span class="blog-card-date-overlay">2026.02.10</span></div><div class="blog-card-body"><h3>駐車場拡張工事の費用と流れ</h3></div></a>
-                <a href="#" class="blog-card fade-up"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=480&h=360&fit=crop&q=80" alt="目隠しフェンス" loading="lazy"><span class="blog-card-date-overlay">2026.01.25</span></div><div class="blog-card-body"><h3>目隠しフェンスの選び方｜人気商品を比較</h3></div></a>
-                <a href="#" class="blog-card fade-up"><div class="blog-card-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=480&h=360&fit=crop&q=80" alt="人工芝と天然芝" loading="lazy"><span class="blog-card-date-overlay">2026.01.15</span></div><div class="blog-card-body"><h3>人工芝vs天然芝｜どっちが正解？</h3></div></a>
-            </div>
-            <div class="sub-section-head fade-up">
-                <h3 class="sub-section-title">
-                    <span style="display:inline-flex;align-items:center;gap:.5rem">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="var(--black)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C16.67.014 16.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                        Instagram
-                    </span>
-                    <span class="ja">@yuart_garden</span>
-                </h3>
-                <a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener" class="btn-outline-sm">フォローする<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="insta-grid fade-up">
-                <a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener" class="insta-card"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=300&fit=crop&q=80" alt="Instagram投稿" loading="lazy"><div class="insta-card-overlay"><span class="insta-card-caption">ナチュラルガーデンの植栽工事が完了しました。</span><span class="insta-card-date">2026.03.05</span></div></a>
-                <a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener" class="insta-card"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&h=300&fit=crop&q=80" alt="Instagram投稿" loading="lazy"><div class="insta-card-overlay"><span class="insta-card-caption">モダンファサードの照明テスト。夜の顔が完成。</span><span class="insta-card-date">2026.02.28</span></div></a>
-                <a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener" class="insta-card"><img src="https://images.unsplash.com/photo-1600573472556-e636c2acda9e?w=400&h=300&fit=crop&q=80" alt="Instagram投稿" loading="lazy"><div class="insta-card-overlay"><span class="insta-card-caption">タイルデッキの施工途中をレポート。</span><span class="insta-card-date">2026.02.20</span></div></a>
-                <a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener" class="insta-card"><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=400&h=300&fit=crop&q=80" alt="Instagram投稿" loading="lazy"><div class="insta-card-overlay"><span class="insta-card-caption">カーポート設置完了。雨の日もストレスフリー。</span><span class="insta-card-date">2026.02.15</span></div></a>
-            </div>
-        </div>
-    </section>
-
-    <section class="company" id="company">
-        <div class="container">
-            <div class="section-title fade-up"><span class="en">Company</span><span class="ja">会社概要</span></div>
-            <div class="company-inner fade-up">
-                <div class="company-map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6461.091718613993!2d139.423909!3d35.9336146!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018d75d0cf5232b%3A0xbf331bc2078f075f!2z5qCq5byP5Lya56S-IOODpuODvOOCouODvOODiA!5e0!3m2!1sja!2sjp!4v1773040081703!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-                <div class="company-info">
-                    <table class="company-table">
-                        <tr><th>社名</th><td>株式会社ユーアート</td></tr>
-                        <tr><th>所在地</th><td>〒350-0807<br>埼玉県川越市吉田163-3</td></tr>
-                        <tr><th>電話番号</th><td><a href="tel:049-299-7645">049-299-7645</a></td></tr>
-                        <tr><th>FAX</th><td>049-299-7646</td></tr>
-                        <tr><th>営業時間</th><td>9:00〜17:00</td></tr>
-                        <tr><th>定休日</th><td>火曜・水曜</td></tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="news-section" id="news">
-        <div class="container">
-            <div class="section-label fade-up"><span class="en">News</span><span class="ja">お知らせ</span></div>
-            <div class="news-list fade-up">
-                <a href="#" class="news-item"><span class="news-item-date">2026.02.23</span><span class="news-item-tag">event</span><span class="news-item-title">春の外構キャンペーン実施中｜3月末まで</span><span class="news-item-arrow">→</span></a>
-                <a href="#" class="news-item"><span class="news-item-date">2026.01.09</span><span class="news-item-tag tag-award">award</span><span class="news-item-title">LIXIL EXSIOR施工デザインコンテスト2025にて入選いたしました</span><span class="news-item-arrow">→</span></a>
-                <a href="#" class="news-item"><span class="news-item-date">2026.01.08</span><span class="news-item-tag">event</span><span class="news-item-title">年末年始休業のお知らせ（12/28〜1/5）</span><span class="news-item-arrow">→</span></a>
-            </div>
-        </div>
-    </section>
-
-    <section class="faq" id="faq">
-        <div class="container"><div class="faq-layout">
-            <div class="section-title fade-up" style="margin-bottom:0;position:sticky;top:100px"><span class="en">FAQ</span><span class="ja">よくあるご質問</span></div>
-            <div>
-                <div class="faq-item fade-up"><div class="faq-question"><span class="faq-q-icon">Q</span><span>現地調査や見積りは本当に無料ですか？</span><span class="faq-toggle"></span></div><div class="faq-answer"><div class="faq-answer-inner">はい、現地調査・お見積り・3Dパース提案はすべて無料です。</div></div></div>
-                <div class="faq-item fade-up"><div class="faq-question"><span class="faq-q-icon">Q</span><span>川越市以外も対応していますか？</span><span class="faq-toggle"></span></div><div class="faq-answer"><div class="faq-answer-inner">鶴ヶ島市・坂戸市・日高市・狭山市・ふじみ野市など広く対応しております。</div></div></div>
-                <div class="faq-item fade-up"><div class="faq-question"><span class="faq-q-icon">Q</span><span>工事期間中、車は使えますか？</span><span class="faq-toggle"></span></div><div class="faq-answer"><div class="faq-answer-inner">駐車場工事の場合は一時的にお車の移動をお願いすることがありますが、事前にご案内します。</div></div></div>
-                <div class="faq-item fade-up"><div class="faq-question"><span class="faq-q-icon">Q</span><span>ハウスメーカーの外構と何が違いますか？</span><span class="faq-toggle"></span></div><div class="faq-answer"><div class="faq-answer-inner">自社施工のため中間マージンなし。同等以上の品質を適正価格で実現します。</div></div></div>
-                <div class="faq-item fade-up"><div class="faq-question"><span class="faq-q-icon">Q</span><span>施工後の保証はありますか？</span><span class="faq-toggle"></span></div><div class="faq-answer"><div class="faq-answer-inner">地域密着のアフターフォロー体制で末永くサポートします。</div></div></div>
-                <div class="faq-item fade-up"><div class="faq-question"><span class="faq-q-icon">Q</span><span>予算が限られていますが相談できますか？</span><span class="faq-toggle"></span></div><div class="faq-answer"><div class="faq-answer-inner">もちろんです。段階的な施工も可能ですのでお気軽にご相談ください。</div></div></div>
-            </div>
-        </div></div>
-    </section>
-
-    <section class="cta2-bottom">
-        <div class="container"><div class="cta2-inner">
-            <h2>外構のことなら何でもご相談ください</h2>
-            <div class="cta2-btns">
-                <a href="/yuart/contact.html" class="cta2-btn cta2-btn-dark"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
-                <a href="tel:049-299-7645" class="cta2-btn cta2-btn-white"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>049-299-7645</a>
-            </div>
-        </div></div>
-    </section>
-
-</main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <img src="logo01.png" alt="YU-ART" class="footer-logo">
-                    <div class="footer-info"><strong>株式会社ユーアート</strong><br>〒350-0807 埼玉県川越市吉田163-3<br>TEL: <a href="tel:049-299-7645" style="color:var(--green)">049-299-7645</a><br>FAX: 049-299-7646<br>営業時間: 9:00〜17:00（火・水曜定休）</div>
-                </div>
-                <div>
-                    <div class="footer-nav-title">Pages</div>
-                    <div class="footer-nav">
-                        <a href="/yuart/index.html">ホーム</a>
-                        <a href="/yuart/concept.html">コンセプト</a>
-                        <a href="/yuart/archive-constraction.html">施工事例</a>
-                        <a href="/yuart/flow.html">完成までの流れ</a>
-                        <a href="/yuart/company.html">会社概要</a>
-                        <a href="/yuart/staff.html">スタッフ紹介</a>
-                        <a href="/yuart/column.html">コラム</a> 
-                        <a href="/yuart/recruit.html">採用情報</a>
-                        <a href="/yuart/contact.html">お問い合わせ</a>
-                    </div>
-                </div>
-                <div>
-                    <div class="footer-nav-title">SNS</div>
-                    <div class="footer-nav">
-                        <a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener">Instagram</a>
-                        <a href="https://www.facebook.com/profile.php?id=100027438334423" target="_blank" rel="noopener">Facebook</a>
-                        <a href="https://twitter.com/yuart7645" target="_blank" rel="noopener">X (Twitter)</a>
-                        <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-area"><div class="footer-area-label">対応エリア</div><p>川越市・鶴ヶ島市・坂戸市・日高市・狭山市・ふじみ野市・富士見市・東松山市 ほか</p></div>
-            <p class="footer-copy">Copyright &copy; YU-ART Inc. All Rights Reserved.</p>
-        </div>
-    </footer>
-
+    <!-- Fixed Mobile CTA (top page と同一) -->
     <div class="fixed-cta"><div class="fixed-cta-inner">
         <a href="tel:049-299-7645" class="fc-tel"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>電話で相談</a>
         <a href="/yuart/contact.html" class="fc-contact"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
     </div></div>
     <button class="pagetop" id="pagetop" aria-label="ページトップへ"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        /* === Loading === */
+        // Loading
         window.addEventListener('load',()=>document.getElementById('loading').classList.add('loaded'));
         setTimeout(()=>document.getElementById('loading').classList.add('loaded'),3000);
 
-        /* === Swiper === */
-        new Swiper('.hero-swiper',{loop:true,effect:'fade',fadeEffect:{crossFade:true},autoplay:{delay:5000,disableOnInteraction:false},speed:1500,pagination:{el:'.hero-swiper .swiper-pagination',clickable:true}});
-
-        /* === Mobile Menu === */
+        // Mobile Menu
         const menuToggle=document.getElementById('menuToggle'),mobileNav=document.getElementById('mobileNav');
-        menuToggle.addEventListener('click',()=>{menuToggle.classList.toggle('active');mobileNav.classList.toggle('active');document.body.style.overflow=mobileNav.classList.contains('active')?'hidden':''});
-        mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menuToggle.classList.remove('active');mobileNav.classList.remove('active');document.body.style.overflow=''}));
+        menuToggle.addEventListener('click',()=>{
+            menuToggle.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            document.body.style.overflow=mobileNav.classList.contains('active')?'hidden':'';
+        });
+        mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+            menuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            document.body.style.overflow='';
+        }));
 
-        /* === FAQ Accordion === */
-        document.querySelectorAll('.faq-question').forEach(q=>q.addEventListener('click',()=>{const i=q.parentElement,a=i.classList.contains('active');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('active'));if(!a)i.classList.add('active')}));
+        // Scroll Animations
+        const obs=new IntersectionObserver(e=>e.forEach(en=>{
+            if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}
+        }),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+        document.querySelectorAll('.fade-up,.fade-left,.fade-right').forEach(el=>obs.observe(el));
 
-        /* === Fade-up Observer === */
-        const obs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-        document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+        // Phil-block image slow zoom on scroll
+        const imgObs=new IntersectionObserver(entries=>{
+            entries.forEach(en=>{
+                if(en.isIntersecting){en.target.classList.add('in-view');imgObs.unobserve(en.target)}
+            });
+        },{threshold:.2});
+        document.querySelectorAll('.phil-block-img').forEach(el=>imgObs.observe(el));
 
-        /* === Page Top === */
+        // Page Top
         const pt=document.getElementById('pagetop');
         window.addEventListener('scroll',()=>pt.classList.toggle('show',window.scrollY>500));
         pt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-        /* === Smooth Scroll === */
-        document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const h=a.getAttribute('href');if(!h||h==='#')return;const t=document.querySelector(h);if(t){e.preventDefault();const offset=window.innerWidth<=768?70:20;window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-offset,behavior:'smooth'})}})});
+        // LIGHTBOX
+        const lightbox=document.getElementById('lightbox');
+        const lbImg=document.getElementById('lbImg');
+        const lbCounter=document.getElementById('lbCounter');
+        const galleryItems=document.querySelectorAll('.bento-item');
+        const images=[];
+        let currentIdx=0;
 
-        /* === Sticky Header on scroll past hero === */
+        galleryItems.forEach((item,i)=>{
+            const img=item.querySelector('img');
+            images.push(img.src);
+            item.addEventListener('click',()=>openLightbox(i));
+        });
+
+        function openLightbox(idx){
+            currentIdx=idx;
+            lbImg.src=images[currentIdx];
+            lbCounter.textContent=(currentIdx+1)+' / '+images.length;
+            lightbox.classList.add('active');
+            document.body.style.overflow='hidden';
+        }
+        function closeLightbox(){
+            lightbox.classList.remove('active');
+            document.body.style.overflow='';
+        }
+        function navigate(dir){
+            currentIdx=(currentIdx+dir+images.length)%images.length;
+            lbImg.src=images[currentIdx];
+            lbCounter.textContent=(currentIdx+1)+' / '+images.length;
+        }
+        document.getElementById('lbClose').addEventListener('click',closeLightbox);
+        document.getElementById('lbPrev').addEventListener('click',()=>navigate(-1));
+        document.getElementById('lbNext').addEventListener('click',()=>navigate(1));
+        lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox()});
+        document.addEventListener('keydown',e=>{
+            if(!lightbox.classList.contains('active'))return;
+            if(e.key==='Escape')closeLightbox();
+            if(e.key==='ArrowLeft')navigate(-1);
+            if(e.key==='ArrowRight')navigate(1);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{
+            const h=a.getAttribute('href');if(!h||h==='#')return;
+            const t=document.querySelector(h);
+            if(t){e.preventDefault();const offset=window.innerWidth<=768?70:20;window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-offset,behavior:'smooth'})}
+        })});
+
+        // Sticky Header — show after scrolling past concept hero (same behavior as top page)
         const stickyHeader=document.getElementById('stickyHeader');
-        const heroWrapper=document.querySelector('.hero-wrapper');
-        if(stickyHeader&&heroWrapper){
+        const conceptHero=document.getElementById('conceptHero');
+        if(stickyHeader&&conceptHero){
             const stickyObs=new IntersectionObserver(([e])=>{
                 stickyHeader.classList.toggle('show',!e.isIntersecting);
             },{threshold:0});
-            stickyObs.observe(heroWrapper);
+            stickyObs.observe(conceptHero);
         }
-
-        /* === Handwriting Animation === */
-        (function(){
-            const svg = document.getElementById('heroEnSvg');
-            if(!svg) return;
-            document.fonts.ready.then(function(){
-                const texts = svg.querySelectorAll('text');
-                texts.forEach(function(t){
-                    const len = t.getComputedTextLength ? t.getComputedTextLength() : 2000;
-                    const dashLen = Math.max(len * 3, 2000);
-                    t.style.strokeDasharray = dashLen;
-                    t.style.strokeDashoffset = dashLen;
-                });
-                function startAnimation(){
-                    svg.classList.add('animate');
-                    texts.forEach(function(t, i){
-                        const dashLen = parseFloat(t.style.strokeDasharray);
-                        const delay = i * 600;
-                        t.style.transition = 'none';
-                        t.style.strokeDashoffset = dashLen;
-                        t.style.fill = 'rgba(255,255,255,0)';
-                        setTimeout(function(){
-                            t.style.transition = 'stroke-dashoffset 2.8s cubic-bezier(.25,.1,.25,1), fill 1.2s ease 2s';
-                            t.style.strokeDashoffset = '0';
-                            t.style.fill = 'rgba(255,255,255,0.65)';
-                        }, delay + 100);
-                    });
-                }
-                const loading = document.getElementById('loading');
-                if(loading && !loading.classList.contains('loaded')){
-                    const mo = new MutationObserver(function(mutations){
-                        mutations.forEach(function(m){
-                            if(loading.classList.contains('loaded')){
-                                mo.disconnect();
-                                setTimeout(startAnimation, 400);
-                            }
-                        });
-                    });
-                    mo.observe(loading, {attributes:true, attributeFilter:['class']});
-                    setTimeout(startAnimation, 3500);
-                } else {
-                    setTimeout(startAnimation, 400);
-                }
-            });
-        })();
     </script>
 </body>
 </html>
