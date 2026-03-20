@@ -655,15 +655,6 @@
             const t=document.querySelector(h);
             if(t){e.preventDefault();const offset=window.innerWidth<=768?70:20;window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-offset,behavior:'smooth'})}
         })});
-        /* === Sticky Header on scroll past hero === */
-const stickyHeader=document.getElementById('stickyHeader');
-const conceptHero=document.querySelector('.concept-hero');
-if(stickyHeader&&conceptHero){
-    const stickyObs=new IntersectionObserver(([e])=>{
-        stickyHeader.classList.toggle('show',!e.isIntersecting);
-    },{threshold:0});
-    stickyObs.observe(conceptHero);
-}
     </script>
 </body>
 </html>
