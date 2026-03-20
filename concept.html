@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コンセプト｜川越市の外構工事・エクステリア専門店【YU-ART ユーアート】</title>
+    <meta name="description" content="YU-ART（ユーアート）のコンセプト。「庭が人を変え、人が暮らしを変える。」川越市を中心にエクステリア・外構工事を通じて、暮らしの中に遊び心を届けます。">
+    <link rel="canonical" href="https://yuart.jp/concept.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --green:#6ab04c;--green-dark:#5a9a3e;--green-light:#e8f5e1;
+            --black:#1a1a1a;--black-soft:#2a2a2a;
+            --text:#333;--text-light:#666;
+            --bg-gray:#f5f5f3;--bg-dark:#0a0a0a;
+            --white:#fff;
+            --sidebar-w:260px;
+            --shadow:0 4px 24px rgba(0,0,0,.06);--shadow-lg:0 12px 48px rgba(0,0,0,.12);
+            --radius:12px;--radius-sm:8px;
+            --transition:.3s cubic-bezier(.4,0,.2,1);
+            --font-script:'Great Vibes',cursive;
+            --font-jp:'Shippori Mincho B1',serif;
+            --font-body:'Noto Sans JP',sans-serif;
+            --font-en:'Cormorant Garamond',serif;
+        }
+        html{scroll-behavior:smooth;font-size:16px}
+        body{font-family:var(--font-body);color:var(--text);background:var(--white);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+        a{color:inherit;text-decoration:none;transition:var(--transition)}
+        img{max-width:100%;height:auto;display:block}
+        ul{list-style:none}
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+        .section-title{margin-bottom:3rem}
+        .section-title.center{text-align:center}
+        .section-title .en{display:block;font-family:var(--font-en);font-size:clamp(2rem,5vw,3.2rem);color:var(--black);line-height:1;letter-spacing:.03em;font-weight:400}
+        .section-title .ja{display:block;font-size:.85rem;font-weight:700;color:var(--green);letter-spacing:.15em;margin-top:.5rem}
+
+        /* Loading */
+        #loading{position:fixed;inset:0;background:var(--black);z-index:10000;display:flex;justify-content:center;align-items:center;transition:opacity .6s}
+        #loading.loaded{opacity:0;pointer-events:none}
+        #loading img{width:120px;filter:brightness(0) invert(1);animation:ldPulse 1.5s ease-in-out infinite}
+        @keyframes ldPulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+        /* ═══ MOBILE HEADER ═══ */
+        .mobile-header{display:none;position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:60px;align-items:center;justify-content:space-between;padding:0 16px}
+        .mobile-header-logo{width:120px}
+        .mobile-header-logo img{width:100%;display:block}
+        .menu-toggle{background:none;border:none;cursor:pointer;width:32px;height:32px;position:relative;z-index:1001}
+        .menu-toggle span{display:block;width:22px;height:2px;background:var(--black);position:absolute;left:5px;transition:var(--transition)}
+        .menu-toggle span:nth-child(1){top:8px}
+        .menu-toggle span:nth-child(2){top:15px}
+        .menu-toggle span:nth-child(3){top:22px}
+        .menu-toggle.active span:nth-child(1){top:15px;transform:rotate(45deg)}
+        .menu-toggle.active span:nth-child(2){opacity:0}
+        .menu-toggle.active span:nth-child(3){top:15px;transform:rotate(-45deg)}
+        .mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--black);z-index:999;padding:2rem;overflow-y:auto}
+        .mobile-nav.active{display:flex;flex-direction:column}
+        .mobile-nav a{display:block;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:1rem;font-weight:700;color:#fff;letter-spacing:.04em}
+        .mobile-nav a:hover{color:var(--green)}
+        .mobile-nav .mobile-nav-phone{margin-top:1.5rem;text-align:center;color:rgba(255,255,255,.6);font-size:.82rem}
+        .mobile-nav .mobile-nav-phone strong{display:block;font-size:1.3rem;color:#fff;font-family:var(--font-en);margin-top:.3rem}
+        .mobile-nav .btn-mobile-cta{display:block;text-align:center;background:var(--green);color:#fff;padding:1rem;border-radius:var(--radius-sm);margin-top:1.5rem;font-weight:700;font-size:.95rem}
+
+        /* ═══ SIDEBAR ═══ */
+        .page-wrapper{display:flex;min-height:100vh}
+        .sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--sidebar-w);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);z-index:100;display:flex;flex-direction:column;padding:2rem 1.5rem;border-right:1px solid rgba(0,0,0,.06)}
+        .sidebar .sidebar-logo{width:120px;margin:0 auto 2rem}
+        .sidebar .sidebar-logo img{width:100%}
+        .sidebar nav a{display:block;font-size:.85rem;font-weight:700;padding:.65rem 0;border-bottom:1px solid rgba(0,0,0,.06);color:var(--text);letter-spacing:.04em;transition:var(--transition)}
+        .sidebar nav a:hover,.sidebar nav a.current{color:var(--green)}
+        .sidebar .sidebar-cta{margin-top:auto}
+        .sidebar .sidebar-cta a{display:block;text-align:center;background:var(--black);color:#fff;padding:.7rem;border-radius:6px;font-size:.82rem;font-weight:700;margin-bottom:.6rem;transition:var(--transition)}
+        .sidebar .sidebar-cta a:hover{background:var(--green)}
+        .sidebar .sidebar-phone{font-size:.78rem;color:var(--text-light);text-align:center;margin-top:.5rem}
+        .sidebar .sidebar-phone strong{display:block;font-size:1.1rem;color:var(--black);font-family:var(--font-en);letter-spacing:.03em}
+        .sidebar .sidebar-phone small{font-size:.68rem;color:var(--text-light)}
+        .side-tab{position:fixed;top:50%;right:0;transform:translateY(-50%);writing-mode:vertical-rl;background:var(--green);color:#fff;padding:1.2rem .6rem;border-radius:6px 0 0 6px;font-size:.8rem;font-weight:700;letter-spacing:.15em;z-index:200;cursor:pointer;transition:var(--transition)}
+        .side-tab:hover{background:var(--green-dark);padding-right:.8rem}
+        .main-content{flex:1;margin-left:var(--sidebar-w)}
+
+        /* ═══════════════════════════════════════
+           1. CONCEPT HERO
+           ═══════════════════════════════════════ */
+        .concept-hero{position:relative;height:70vh;min-height:450px;overflow:hidden;background:var(--black)}
+        .concept-hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.4)}
+        .concept-hero-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:2;padding:0 24px}
+        .concept-hero-en{font-family:var(--font-en);font-size:clamp(3rem,7vw,5rem);color:#fff;font-weight:400;letter-spacing:.06em;line-height:1}
+        .concept-hero-ja{font-size:.9rem;font-weight:700;color:var(--green);letter-spacing:.2em;margin-top:.8rem}
+        .concept-hero-line{width:40px;height:1px;background:rgba(255,255,255,.3);margin:2rem auto 0}
+
+        /* ═══════════════════════════════════════
+           2. PHILOSOPHY — 交互2カラム
+           ═══════════════════════════════════════ */
+        .philosophy{padding:0;background:var(--white)}
+        .phil-block{display:grid;grid-template-columns:1fr 1fr;min-height:70vh}
+        .phil-block-text{display:flex;align-items:center;justify-content:center;padding:5rem 4rem}
+        .phil-block-text-inner{max-width:480px}
+        .phil-block-text blockquote{
+            font-family:var(--font-jp);
+            font-size:clamp(1.2rem,2.5vw,1.65rem);
+            font-weight:600;line-height:2.4;
+            color:var(--black);letter-spacing:.1em;
+            position:relative;padding-left:2rem;
+            border-left:3px solid var(--green);
+        }
+        .phil-block-img{position:relative;overflow:hidden}
+        .phil-block-img img{width:100%;height:100%;object-fit:cover;transition:transform 8s ease}
+        .phil-block-img.in-view img{transform:scale(1.06)}
+        .phil-block.reverse .phil-block-img{order:-1}
+
+        /* ═══════════════════════════════════════
+           3. COMPANY — 背景画像 + オーバーレイ
+           ═══════════════════════════════════════ */
+        .company-section{padding:7rem 0;color:#fff;position:relative;overflow:hidden}
+        .company-bg{position:absolute;inset:0;z-index:0}
+        .company-bg img{width:100%;height:100%;object-fit:cover}
+        .company-bg::after{
+            content:'';position:absolute;inset:0;
+            background:linear-gradient(135deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.72) 50%,rgba(10,10,10,.82) 100%);
+        }
+        .company-inner{
+            display:grid;grid-template-columns:auto 1fr;
+            gap:3rem;align-items:center;
+            max-width:900px;margin:0 auto;position:relative;z-index:2;
+        }
+        .company-logo-simple{width:140px}
+        .company-logo-simple img{width:100%;filter:brightness(0) invert(1)}
+        .company-text h2{
+            font-family:var(--font-jp);
+            font-size:clamp(1.2rem,2.5vw,1.5rem);
+            font-weight:600;line-height:1.8;
+            margin-bottom:1rem;color:#fff;letter-spacing:.05em;
+        }
+        .company-text p{font-size:.92rem;color:rgba(255,255,255,.65);line-height:2.1}
+        .company-section .section-title .en{color:#fff}
+        .company-section .section-title .ja{color:var(--green)}
+
+        /* ═══════════════════════════════════════
+           4. OUR SHOP — Bento Grid
+           ═══════════════════════════════════════ */
+        .shop-section{padding:7rem 0;background:var(--bg-gray)}
+        .bento-grid{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            grid-template-rows:auto;
+            gap:12px;margin-top:2.5rem;
+        }
+        .bento-item:nth-child(1){grid-column:1 / 3;grid-row:1 / 3}
+        .bento-item:nth-child(2){grid-column:3 / 4;grid-row:1 / 2}
+        .bento-item:nth-child(3){grid-column:4 / 5;grid-row:1 / 2}
+        .bento-item:nth-child(4){grid-column:3 / 5;grid-row:2 / 3}
+        .bento-item:nth-child(5){grid-column:1 / 2;grid-row:3 / 4}
+        .bento-item:nth-child(6){grid-column:2 / 4;grid-row:3 / 4}
+        .bento-item:nth-child(7){grid-column:4 / 5;grid-row:3 / 4}
+
+        .bento-item{
+            position:relative;overflow:hidden;
+            border-radius:var(--radius);cursor:pointer;min-height:180px;
+        }
+        .bento-item:nth-child(1){min-height:380px}
+        .bento-item img{
+            width:100%;height:100%;object-fit:cover;
+            transition:transform .6s ease,filter .5s ease;filter:brightness(.9);
+        }
+        .bento-item:hover img{transform:scale(1.05);filter:brightness(1)}
+        .bento-item::after{
+            content:'';position:absolute;inset:0;
+            background:linear-gradient(to top,rgba(0,0,0,.45) 0%,transparent 60%);
+            opacity:0;transition:opacity .4s;pointer-events:none;
+        }
+        .bento-item:hover::after{opacity:1}
+        .bento-caption{
+            position:absolute;bottom:0;left:0;right:0;
+            padding:16px 18px;color:#fff;
+            font-size:.78rem;font-weight:500;letter-spacing:.04em;
+            transform:translateY(8px);opacity:0;
+            transition:transform .4s ease,opacity .4s ease;z-index:2;
+        }
+        .bento-item:hover .bento-caption{transform:translateY(0);opacity:1}
+
+        .shop-intro{max-width:800px;margin:3.5rem auto 0;text-align:center}
+        .shop-intro h3{font-family:var(--font-jp);font-size:clamp(1.1rem,2.5vw,1.4rem);font-weight:600;color:var(--black);line-height:1.8;margin-bottom:1rem;letter-spacing:.06em}
+        .shop-intro p{font-size:.92rem;color:var(--text-light);line-height:2.1}
+
+        /* LIGHTBOX */
+        .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s;padding:40px}
+        .lightbox.active{opacity:1;visibility:visible}
+        .lightbox img{max-width:90vw;max-height:85vh;border-radius:var(--radius-sm);box-shadow:0 20px 60px rgba(0,0,0,.5);transform:scale(.92);transition:transform .4s ease}
+        .lightbox.active img{transform:scale(1)}
+        .lightbox-close{position:absolute;top:20px;right:24px;width:44px;height:44px;background:none;border:none;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center}
+        .lightbox-close svg{width:28px;height:28px;fill:#fff;opacity:.6;transition:opacity .3s}
+        .lightbox-close:hover svg{opacity:1}
+        .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;background:rgba(255,255,255,.1);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+        .lightbox-nav:hover{background:rgba(255,255,255,.2)}
+        .lightbox-nav svg{width:24px;height:24px;fill:#fff}
+        .lightbox-prev{left:20px}
+        .lightbox-next{right:20px}
+        .lightbox-counter{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-family:var(--font-en);font-size:.9rem;color:rgba(255,255,255,.5);letter-spacing:.1em}
+
+        /* CTA */
+        .cta-banner{padding:5rem 0;background:var(--green);position:relative;overflow:hidden}
+        .cta-banner::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:rgba(0,0,0,.06);border-radius:50%}
+        .cta-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;position:relative;z-index:1;flex-wrap:wrap}
+        .cta-text h2{font-family:var(--font-jp);font-size:clamp(1.2rem,2.8vw,1.7rem);font-weight:700;color:#fff;letter-spacing:.05em}
+        .cta-text p{font-size:.9rem;color:rgba(255,255,255,.85);margin-top:.3rem}
+        .cta-buttons{display:flex;gap:.8rem;flex-wrap:wrap}
+        .cta-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2rem;border-radius:6px;font-size:.9rem;font-weight:700;transition:var(--transition)}
+        .cta-btn svg{width:18px;height:18px;fill:currentColor}
+        .cta-btn-dark{background:var(--black);color:#fff}.cta-btn-dark:hover{background:#000;transform:translateY(-2px)}
+        .cta-btn-white{background:#fff;color:var(--black)}.cta-btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+
+        /* FOOTER */
+        .footer{background:var(--black);color:#fff;padding:5rem 0 0}
+        .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+        .footer-logo{width:160px;margin-bottom:1.5rem;filter:brightness(0) invert(1)}
+        .footer-info{font-size:.82rem;color:rgba(255,255,255,.5);line-height:2}
+        .footer-info strong{color:#fff}
+        .footer-nav-title{font-size:.8rem;font-weight:700;color:var(--green);letter-spacing:.1em;margin-bottom:1rem;text-transform:uppercase}
+        .footer-nav a{display:block;font-size:.82rem;color:rgba(255,255,255,.5);padding:.25rem 0;transition:var(--transition)}
+        .footer-nav a:hover{color:var(--green)}
+        .footer-area{padding:2rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
+        .footer-area-label{font-size:.75rem;font-weight:700;color:var(--green);margin-bottom:.3rem}
+        .footer-area p{font-size:.78rem;color:rgba(255,255,255,.4)}
+        .footer-copy{text-align:center;font-size:.72rem;color:rgba(255,255,255,.25);padding:1.5rem 0}
+
+        /* Fixed CTA */
+        .fixed-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--black);padding:.5rem .8rem;box-shadow:0 -4px 24px rgba(0,0,0,.3)}
+        .fixed-cta-inner{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+        .fixed-cta a{display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.65rem;border-radius:6px;font-size:.82rem;font-weight:700}
+        .fixed-cta a svg{width:16px;height:16px;fill:currentColor}
+        .fixed-cta .fc-tel{background:var(--green);color:#fff}
+        .fixed-cta .fc-contact{background:#fff;color:var(--black)}
+        .pagetop{position:fixed;bottom:90px;right:20px;width:44px;height:44px;background:var(--black);border-radius:8px;display:flex;align-items:center;justify-content:center;z-index:800;opacity:0;visibility:hidden;transition:var(--transition);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;border:none}
+        .pagetop.show{opacity:1;visibility:visible}
+        .pagetop:hover{background:var(--green)}
+        .pagetop svg{width:18px;height:18px;fill:#fff}
+
+        /* Animations */
+        .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+        .fade-up.visible{opacity:1;transform:translateY(0)}
+        .fade-left{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+        .fade-left.visible{opacity:1;transform:translateX(0)}
+        .fade-right{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+        .fade-right.visible{opacity:1;transform:translateX(0)}
+
+        /* ═══ RESPONSIVE ═══ */
+        @media(max-width:1024px){
+            .sidebar{width:220px}:root{--sidebar-w:220px}
+            .bento-grid{grid-template-columns:repeat(3,1fr)}
+            .bento-item:nth-child(1){grid-column:1 / 3;grid-row:1 / 3}
+            .bento-item:nth-child(2){grid-column:3 / 4;grid-row:1 / 2}
+            .bento-item:nth-child(3){grid-column:3 / 4;grid-row:2 / 3}
+            .bento-item:nth-child(4){grid-column:1 / 2;grid-row:3 / 4}
+            .bento-item:nth-child(5){grid-column:2 / 3;grid-row:3 / 4}
+            .bento-item:nth-child(6){grid-column:3 / 4;grid-row:3 / 4}
+            .bento-item:nth-child(7){grid-column:1 / 4;grid-row:4 / 5;min-height:200px}
+            .company-inner{gap:2.5rem}
+            .footer-grid{grid-template-columns:1fr 1fr}
+            .phil-block-text{padding:4rem 3rem}
+        }
+        @media(max-width:768px){
+            .mobile-header{display:flex}
+            .sidebar,.side-tab{display:none}
+            .main-content{margin-left:0;padding-top:60px}
+            .fixed-cta{display:block}
+            .pagetop{bottom:75px}
+
+            .concept-hero{height:55vh;min-height:350px}
+            .concept-hero-en{font-size:clamp(2.2rem,10vw,3.5rem)}
+
+            .phil-block{grid-template-columns:1fr;min-height:auto}
+            .phil-block-text{padding:3.5rem 1.5rem}
+            .phil-block-img{height:50vw;min-height:250px}
+            .phil-block.reverse .phil-block-img{order:0}
+
+            .company-section{padding:5rem 0}
+            .company-inner{grid-template-columns:1fr;gap:2rem;text-align:center}
+            .company-logo-simple{margin:0 auto}
+
+            .shop-section{padding:5rem 0}
+            .bento-grid{grid-template-columns:repeat(2,1fr)}
+            .bento-item:nth-child(1){grid-column:1 / 3;grid-row:1 / 2;min-height:250px}
+            .bento-item:nth-child(2){grid-column:1 / 2;grid-row:2 / 3}
+            .bento-item:nth-child(3){grid-column:2 / 3;grid-row:2 / 3}
+            .bento-item:nth-child(4){grid-column:1 / 3;grid-row:3 / 4}
+            .bento-item:nth-child(5){grid-column:1 / 2;grid-row:4 / 5}
+            .bento-item:nth-child(6){grid-column:2 / 3;grid-row:4 / 5}
+            .bento-item:nth-child(7){grid-column:1 / 3;grid-row:5 / 6;min-height:180px}
+            .bento-item{min-height:160px}
+
+            .cta-inner{flex-direction:column;text-align:center}
+            .cta-buttons{justify-content:center;width:100%}
+            .cta-btn{width:100%;justify-content:center}
+            .footer{padding:3rem 0 0}
+            .footer-grid{grid-template-columns:1fr;gap:2rem}
+            .lightbox-prev{left:8px}
+            .lightbox-next{right:8px}
+            body{padding-bottom:56px}
+        }
+        @media(max-width:480px){
+            .concept-hero{height:50vh}
+            .concept-hero-en{font-size:2rem}
+            .phil-block-text blockquote{font-size:1.05rem;line-height:2.2;padding-left:1.2rem}
+            .bento-grid{grid-template-columns:1fr}
+            .bento-item:nth-child(n){grid-column:auto;grid-row:auto;min-height:200px}
+            .bento-item:nth-child(1){min-height:280px}
+            .cta-buttons{flex-direction:column;align-items:stretch}
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading"><img src="logo01.png" alt="YU-ART"></div>
+
+    <!-- MOBILE HEADER -->
+    <div class="mobile-header" id="mobileHeader">
+        <div class="mobile-header-logo"><a href="/"><img src="logo01.png" alt="YU-ART"></a></div>
+        <button class="menu-toggle" id="menuToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="/">ホーム</a>
+        <a href="/concept.html" style="color:var(--green)">コンセプト</a>
+        <a href="/works/">施工事例</a>
+        <a href="/flow/">完成までの流れ</a>
+        <a href="/company/">会社概要</a>
+        <a href="/recruit/">採用情報</a>
+        <a href="/blog/">コラム</a>
+        <a href="/contact/">お問い合わせ</a>
+        <div class="mobile-nav-phone">お電話でのお問合せ<strong><a href="tel:049-299-7645">049-299-7645</a></strong></div>
+        <a href="/contact/" class="btn-mobile-cta">無料相談・お見積り</a>
+    </nav>
+
+    <div class="page-wrapper">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-logo"><a href="/"><img src="logo01.png" alt="YU-ART ユーアート"></a></div>
+            <nav>
+                <a href="/">ホーム</a>
+                <a href="/concept.html" class="current">コンセプト</a>
+                <a href="/works/">施工事例</a>
+                <a href="/flow/">完成までの流れ</a>
+                <a href="/company/">会社概要</a>
+                <a href="/recruit/">採用情報</a>
+                <a href="/blog/">コラム</a>
+                <a href="/contact/">お問い合わせ</a>
+            </nav>
+            <div class="sidebar-cta"><a href="/contact/">無料相談・お見積り</a></div>
+            <div class="sidebar-phone">お電話でのお問合せ<strong><a href="tel:049-299-7645">049-299-7645</a></strong><small>受付時間 9:00〜17:00</small></div>
+        </aside>
+        <a href="/contact/" class="side-tab">資料請求・お問合せ</a>
+
+        <div class="main-content">
+
+            <!-- ══════ 1. HERO ══════ -->
+            <section class="concept-hero">
+                <img src="top26.jpg" alt="YU-ART 外構デザイン コンセプトイメージ">
+                <div class="concept-hero-overlay">
+                    <div class="concept-hero-en">Concept</div>
+                    <div class="concept-hero-ja">私たちの想い</div>
+                    <div class="concept-hero-line"></div>
+                </div>
+            </section>
+
+            <main>
+
+            <!-- ══════ 2. PHILOSOPHY ══════ -->
+            <section class="philosophy">
+                <div class="phil-block">
+                    <div class="phil-block-text">
+                        <div class="phil-block-text-inner fade-left">
+                            <blockquote>
+                                庭が人を変え、<br>
+                                人が暮らしを変える。<br><br>
+                                暮らしが街並みを変え、<br>
+                                いつしかその街並みは<br>
+                                住まう人々に<br>
+                                大きな財産となる。
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="phil-block-img fade-right">
+                        <img src="top32.jpg" alt="美しい住宅と庭">
+                    </div>
+                </div>
+
+                <div class="phil-block reverse">
+                    <div class="phil-block-text">
+                        <div class="phil-block-text-inner fade-right">
+                            <blockquote>
+                                我々は<br>
+                                地域あるいは社会貢献をもって<br>
+                                その役割を果たし、<br>
+                                それを存在意義とする。
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="phil-block-img fade-left">
+                        <img src="top37.jpg" alt="緑豊かな外構">
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════ 3. COMPANY ══════ -->
+            <section class="company-section" id="companySection">
+                <div class="company-bg">
+                    <img src="top18.jpg" alt="外構施工イメージ">
+                </div>
+
+                <div class="container">
+                    <div class="company-inner">
+                        <div class="company-logo-simple fade-left">
+                            <img src="logo01.png" alt="YU-ART ロゴマーク">
+                        </div>
+                        <div class="company-text fade-right">
+                            <div class="section-title" style="margin-bottom:1.5rem">
+                                <span class="en">Company</span>
+                                <span class="ja">会社に込めた想い</span>
+                            </div>
+                            <h2>あなたのために、<br>暮らしの中に遊び心を。</h2>
+                            <p>会社名「ユーアート」のユーには、お客様一人ひとりの「あなた（YOU）」のために、暮らしの中に「遊（ゆう）」び心を届け、「優（ゆう）」しさあふれるデザインをお届けしたいという想いが込められています。大手ハウスメーカーでの営業経験と老舗エクステリア専門店での20年の修行を経て、「手作り感のあるナチュラルなデザインの庭づくり」を目指し、川越の地でユーアートを立ち上げました。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════ 4. OUR SHOP — Bento Grid ══════ -->
+            <section class="shop-section">
+                <div class="container">
+                    <div class="section-title center fade-up">
+                        <span class="en">Our Shop</span>
+                        <span class="ja">ショップのご紹介</span>
+                    </div>
+
+                    <div class="bento-grid" id="gallery">
+                        <div class="bento-item fade-up" data-index="0">
+                            <img src="top18.jpg" alt="ショップ外観">
+                            <span class="bento-caption">グリーンに囲まれた明るい店内</span>
+                        </div>
+                        <div class="bento-item fade-up" data-index="1">
+                            <img src="top37.jpg" alt="植物と外構素材">
+                            <span class="bento-caption">季節の植物を取り揃え</span>
+                        </div>
+                        <div class="bento-item fade-up" data-index="2">
+                            <img src="top32.jpg" alt="ナチュラル外構サンプル">
+                            <span class="bento-caption">ナチュラルテイストの素材サンプル</span>
+                        </div>
+                        <div class="bento-item fade-up" data-index="3">
+                            <img src="top26.jpg" alt="外構デザイン展示">
+                            <span class="bento-caption">お気に入りのデザインが見つかる</span>
+                        </div>
+                        <div class="bento-item fade-up" data-index="4">
+                            <img src="top32.jpg" alt="打ち合わせスペース">
+                            <span class="bento-caption">ゆったり相談できるスペース</span>
+                        </div>
+                        <div class="bento-item fade-up" data-index="5">
+                            <img src="top18.jpg" alt="エクステリア素材展示">
+                            <span class="bento-caption">実際の素材に触れて確かめる</span>
+                        </div>
+                        <div class="bento-item fade-up" data-index="6">
+                            <img src="top37.jpg" alt="施工後の外構">
+                            <span class="bento-caption">私たちがつくる外構の一例</span>
+                        </div>
+                    </div>
+
+                    <div class="shop-intro fade-up">
+                        <h3>グリーンに囲まれた空間で、<br>じっくりとお庭のプランニングを。</h3>
+                        <p>ユーアートのショップには、実際に使用する素材や植栽のサンプルを豊富にご用意しています。カタログだけでは分からない質感や色合いを手に取って確かめながら、理想の外構プランを一緒に考えましょう。お子様連れでも安心してご来店いただけます。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="cta-banner">
+                <div class="container"><div class="cta-inner">
+                    <div class="cta-text"><h2>まずは無料相談から</h2><p>お見積り・現地調査・3Dパース すべて0円。お気軽にどうぞ。</p></div>
+                    <div class="cta-buttons">
+                        <a href="/contact/" class="cta-btn cta-btn-dark"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
+                        <a href="tel:049-299-7645" class="cta-btn cta-btn-white"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>049-299-7645</a>
+                    </div>
+                </div></div>
+            </section>
+
+            </main>
+
+            <!-- FOOTER -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-grid">
+                        <div><img src="logo01.png" alt="YU-ART" class="footer-logo"><div class="footer-info"><strong>株式会社ユーアート</strong><br>〒350-0807 埼玉県川越市吉田163-3<br>TEL: <a href="tel:049-299-7645" style="color:var(--green)">049-299-7645</a><br>FAX: 049-299-7646<br>営業時間: 9:00〜17:00（火・水曜定休）</div></div>
+                        <div><div class="footer-nav-title">Pages</div><div class="footer-nav"><a href="/">ホーム</a><a href="/concept.html">コンセプト</a><a href="/works/">施工事例</a><a href="/flow/">完成までの流れ</a><a href="/company/">会社概要</a><a href="/voice/">お客様の声</a></div></div>
+                        <div><div class="footer-nav-title">More</div><div class="footer-nav"><a href="/faq/">よくあるご質問</a><a href="/blog/">コラム</a><a href="/recruit/">採用情報</a><a href="/contact/">お問い合わせ</a><a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener">Instagram</a></div></div>
+                    </div>
+                    <div class="footer-area"><div class="footer-area-label">対応エリア</div><p>川越市・鶴ヶ島市・坂戸市・日高市・狭山市・ふじみ野市・富士見市・東松山市 ほか</p></div>
+                    <p class="footer-copy">Copyright &copy; YU-ART Inc. All Rights Reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lbClose" aria-label="閉じる"><svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+        <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="前へ"><svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg></button>
+        <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="次へ"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></button>
+        <img id="lbImg" src="" alt="">
+        <div class="lightbox-counter" id="lbCounter"></div>
+    </div>
+
+    <!-- Fixed Mobile CTA -->
+    <div class="fixed-cta"><div class="fixed-cta-inner">
+        <a href="tel:049-299-7645" class="fc-tel"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>電話で相談</a>
+        <a href="/contact/" class="fc-contact"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
+    </div></div>
+    <button class="pagetop" id="pagetop" aria-label="ページトップへ"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
+
+    <script>
+        // Loading
+        window.addEventListener('load',()=>document.getElementById('loading').classList.add('loaded'));
+        setTimeout(()=>document.getElementById('loading').classList.add('loaded'),3000);
+
+        // Mobile Menu
+        const menuToggle=document.getElementById('menuToggle'),mobileNav=document.getElementById('mobileNav');
+        menuToggle.addEventListener('click',()=>{
+            menuToggle.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            document.body.style.overflow=mobileNav.classList.contains('active')?'hidden':'';
+        });
+        mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+            menuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            document.body.style.overflow='';
+        }));
+
+        // Scroll Animations
+        const obs=new IntersectionObserver(e=>e.forEach(en=>{
+            if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}
+        }),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+        document.querySelectorAll('.fade-up,.fade-left,.fade-right').forEach(el=>obs.observe(el));
+
+        // Phil-block image slow zoom on scroll
+        const imgObs=new IntersectionObserver(entries=>{
+            entries.forEach(en=>{
+                if(en.isIntersecting){en.target.classList.add('in-view');imgObs.unobserve(en.target)}
+            });
+        },{threshold:.2});
+        document.querySelectorAll('.phil-block-img').forEach(el=>imgObs.observe(el));
+
+        // Page Top
+        const pt=document.getElementById('pagetop');
+        window.addEventListener('scroll',()=>pt.classList.toggle('show',window.scrollY>500));
+        pt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+        // ═══ LIGHTBOX ═══
+        const lightbox=document.getElementById('lightbox');
+        const lbImg=document.getElementById('lbImg');
+        const lbCounter=document.getElementById('lbCounter');
+        const galleryItems=document.querySelectorAll('.bento-item');
+        const images=[];
+        let currentIdx=0;
+
+        galleryItems.forEach((item,i)=>{
+            const img=item.querySelector('img');
+            images.push(img.src);
+            item.addEventListener('click',()=>openLightbox(i));
+        });
+
+        function openLightbox(idx){
+            currentIdx=idx;
+            lbImg.src=images[currentIdx];
+            lbCounter.textContent=(currentIdx+1)+' / '+images.length;
+            lightbox.classList.add('active');
+            document.body.style.overflow='hidden';
+        }
+        function closeLightbox(){
+            lightbox.classList.remove('active');
+            document.body.style.overflow='';
+        }
+        function navigate(dir){
+            currentIdx=(currentIdx+dir+images.length)%images.length;
+            lbImg.src=images[currentIdx];
+            lbCounter.textContent=(currentIdx+1)+' / '+images.length;
+        }
+        document.getElementById('lbClose').addEventListener('click',closeLightbox);
+        document.getElementById('lbPrev').addEventListener('click',()=>navigate(-1));
+        document.getElementById('lbNext').addEventListener('click',()=>navigate(1));
+        lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox()});
+        document.addEventListener('keydown',e=>{
+            if(!lightbox.classList.contains('active'))return;
+            if(e.key==='Escape')closeLightbox();
+            if(e.key==='ArrowLeft')navigate(-1);
+            if(e.key==='ArrowRight')navigate(1);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{
+            const h=a.getAttribute('href');if(!h||h==='#')return;
+            const t=document.querySelector(h);
+            if(t){e.preventDefault();const offset=window.innerWidth<=768?70:20;window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-offset,behavior:'smooth'})}
+        })});
+    </script>
+</body>
+</html>
