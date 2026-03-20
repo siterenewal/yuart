@@ -19,7 +19,6 @@
             --text:#333;--text-light:#666;
             --bg-gray:#f5f5f3;--bg-dark:#0a0a0a;
             --white:#fff;
-            --sidebar-w:260px;
             --shadow:0 4px 24px rgba(0,0,0,.06);--shadow-lg:0 12px 48px rgba(0,0,0,.12);
             --radius:12px;--radius-sm:8px;
             --transition:.3s cubic-bezier(.4,0,.2,1);
@@ -46,6 +45,19 @@
         #loading img{width:120px;filter:brightness(0) invert(1);animation:ldPulse 1.5s ease-in-out infinite}
         @keyframes ldPulse{0%,100%{opacity:1}50%{opacity:.4}}
 
+        /* STICKY HEADER */
+        .sticky-header{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem}
+        .sticky-header-logo{width:100px}.sticky-header-logo img{width:100%;display:block}
+        .sticky-header-nav{display:flex;align-items:center;gap:1.8rem}
+        .sticky-header-nav a{font-size:.78rem;font-weight:700;color:var(--text);letter-spacing:.04em;transition:var(--transition);white-space:nowrap}
+        .sticky-header-nav a:hover,.sticky-header-nav a.current{color:var(--green)}
+        .sticky-header-right{display:flex;align-items:center;gap:1rem}
+        .sticky-header-phone{font-family:var(--font-en);font-size:.82rem;color:var(--text-light);font-weight:500;letter-spacing:.03em}
+        .sticky-header-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--black);color:#fff;padding:.5rem 1.2rem;border-radius:4px;font-size:.75rem;font-weight:700;transition:var(--transition)}
+        .sticky-header-cta:hover{background:var(--green)}
+        .sticky-header-cta svg{width:14px;height:14px;fill:currentColor}
+        @media(max-width:768px){.sticky-header{display:none!important}}
+
         /* MOBILE HEADER */
         .mobile-header{display:none;position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:60px;align-items:center;justify-content:space-between;padding:0 16px}
         .mobile-header-logo{width:120px}
@@ -66,22 +78,8 @@
         .mobile-nav .mobile-nav-phone strong{display:block;font-size:1.3rem;color:#fff;font-family:var(--font-en);margin-top:.3rem}
         .mobile-nav .btn-mobile-cta{display:block;text-align:center;background:var(--green);color:#fff;padding:1rem;border-radius:var(--radius-sm);margin-top:1.5rem;font-weight:700;font-size:.95rem}
 
-        /* SIDEBAR */
-        .page-wrapper{display:flex;min-height:100vh}
-        .sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--sidebar-w);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);z-index:100;display:flex;flex-direction:column;padding:2rem 1.5rem;border-right:1px solid rgba(0,0,0,.06)}
-        .sidebar .sidebar-logo{width:120px;margin:0 auto 2rem}
-        .sidebar .sidebar-logo img{width:100%}
-        .sidebar nav a{display:block;font-size:.85rem;font-weight:700;padding:.65rem 0;border-bottom:1px solid rgba(0,0,0,.06);color:var(--text);letter-spacing:.04em;transition:var(--transition)}
-        .sidebar nav a:hover,.sidebar nav a.current{color:var(--green)}
-        .sidebar .sidebar-cta{margin-top:auto}
-        .sidebar .sidebar-cta a{display:block;text-align:center;background:var(--black);color:#fff;padding:.7rem;border-radius:6px;font-size:.82rem;font-weight:700;margin-bottom:.6rem;transition:var(--transition)}
-        .sidebar .sidebar-cta a:hover{background:var(--green)}
-        .sidebar .sidebar-phone{font-size:.78rem;color:var(--text-light);text-align:center;margin-top:.5rem}
-        .sidebar .sidebar-phone strong{display:block;font-size:1.1rem;color:var(--black);font-family:var(--font-en);letter-spacing:.03em}
-        .sidebar .sidebar-phone small{font-size:.68rem;color:var(--text-light)}
-        .side-tab{position:fixed;top:50%;right:0;transform:translateY(-50%);writing-mode:vertical-rl;background:var(--green);color:#fff;padding:1.2rem .6rem;border-radius:6px 0 0 6px;font-size:.8rem;font-weight:700;letter-spacing:.15em;z-index:200;cursor:pointer;transition:var(--transition)}
-        .side-tab:hover{background:var(--green-dark);padding-right:.8rem}
-        .main-content{flex:1;margin-left:var(--sidebar-w)}
+        /* MAIN CONTENT */
+        .main-content{margin-top:60px}
 
         /* 1. CONCEPT HERO */
         .concept-hero{position:relative;height:70vh;min-height:450px;overflow:hidden;background:var(--black)}
@@ -242,7 +240,6 @@
 
         /* RESPONSIVE */
         @media(max-width:1024px){
-            .sidebar{width:220px}:root{--sidebar-w:220px}
             .bento-grid{grid-template-columns:repeat(3,1fr)}
             .bento-item:nth-child(1){grid-column:1 / 3;grid-row:1 / 3}
             .bento-item:nth-child(2){grid-column:3 / 4;grid-row:1 / 2}
@@ -257,8 +254,7 @@
         }
         @media(max-width:768px){
             .mobile-header{display:flex}
-            .sidebar,.side-tab{display:none}
-            .main-content{margin-left:0;padding-top:60px}
+            .main-content{margin-top:60px}
             .fixed-cta{display:block}
             .pagetop{bottom:75px}
 
@@ -303,24 +299,13 @@
             .bento-item:nth-child(1){min-height:280px}
             .cta-buttons{flex-direction:column;align-items:stretch}
         }
-        /* STICKY HEADER */
-.sticky-header{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem}
-.sticky-header-logo{width:100px}.sticky-header-logo img{width:100%;display:block}
-.sticky-header-nav{display:flex;align-items:center;gap:1.8rem}
-.sticky-header-nav a{font-size:.78rem;font-weight:700;color:var(--text);letter-spacing:.04em;transition:var(--transition);white-space:nowrap}
-.sticky-header-nav a:hover,.sticky-header-nav a.current{color:var(--green)}
-.sticky-header-right{display:flex;align-items:center;gap:1rem}
-.sticky-header-phone{font-family:var(--font-en);font-size:.82rem;color:var(--text-light);font-weight:500;letter-spacing:.03em}
-.sticky-header-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--black);color:#fff;padding:.5rem 1.2rem;border-radius:4px;font-size:.75rem;font-weight:700;transition:var(--transition)}
-.sticky-header-cta:hover{background:var(--green)}
-.sticky-header-cta svg{width:14px;height:14px;fill:currentColor}
-@media(max-width:768px){.sticky-header{display:none!important}}
     </style>
 </head>
 
 <body>
     <div id="loading"><img src="logo01.png" alt="YU-ART"></div>
-        <!-- ===== STICKY HEADER ===== -->
+
+    <!-- ===== STICKY HEADER ===== -->
     <header class="sticky-header" id="stickyHeader">
         <div class="sticky-header-logo"><a href="/yuart/index.html"><img src="logo01.png" alt="YU-ART"></a></div>
         <nav class="sticky-header-nav">
@@ -362,176 +347,175 @@
         <a href="/yuart/contact.html" class="btn-mobile-cta">無料相談・お見積り</a>
     </nav>
 
-        <div class="main-content">
+    <div class="main-content">
 
-            <!-- 1. HERO -->
-            <section class="concept-hero">
-                <img src="top26.jpg" alt="YU-ART 外構デザイン コンセプトイメージ">
-                <div class="concept-hero-overlay">
-                    <div class="concept-hero-en">Concept</div>
-                    <div class="concept-hero-ja">私たちの想い</div>
-                    <div class="concept-hero-line"></div>
-                </div>
-            </section>
+        <!-- 1. HERO -->
+        <section class="concept-hero">
+            <img src="top26.jpg" alt="YU-ART 外構デザイン コンセプトイメージ">
+            <div class="concept-hero-overlay">
+                <div class="concept-hero-en">Concept</div>
+                <div class="concept-hero-ja">私たちの想い</div>
+                <div class="concept-hero-line"></div>
+            </div>
+        </section>
 
-            <main>
+        <main>
 
-            <!-- 2. PHILOSOPHY -->
-            <section class="philosophy">
-                <div class="phil-block">
-                    <div class="phil-block-text">
-                        <div class="phil-block-text-inner fade-left">
-                            <blockquote>
-                                庭が人を変え、<br>
-                                人が暮らしを変える。<br><br>
-                                暮らしが街並みを変え、<br>
-                                いつしかその街並みは<br>
-                                住まう人々に<br>
-                                大きな財産となる。
-                            </blockquote>
-                        </div>
-                    </div>
-                    <div class="phil-block-img fade-right">
-                        <img src="top32.jpg" alt="美しい住宅と庭">
+        <!-- 2. PHILOSOPHY -->
+        <section class="philosophy">
+            <div class="phil-block">
+                <div class="phil-block-text">
+                    <div class="phil-block-text-inner fade-left">
+                        <blockquote>
+                            庭が人を変え、<br>
+                            人が暮らしを変える。<br><br>
+                            暮らしが街並みを変え、<br>
+                            いつしかその街並みは<br>
+                            住まう人々に<br>
+                            大きな財産となる。
+                        </blockquote>
                     </div>
                 </div>
+                <div class="phil-block-img fade-right">
+                    <img src="top32.jpg" alt="美しい住宅と庭">
+                </div>
+            </div>
 
-                <div class="phil-block reverse">
-                    <div class="phil-block-text">
-                        <div class="phil-block-text-inner fade-right">
-                            <blockquote>
-                                我々は<br>
-                                地域あるいは社会貢献をもって<br>
-                                その役割を果たし、<br>
-                                それを存在意義とする。
-                            </blockquote>
-                        </div>
-                    </div>
-                    <div class="phil-block-img fade-left">
-                        <img src="top37.jpg" alt="緑豊かな外構">
+            <div class="phil-block reverse">
+                <div class="phil-block-text">
+                    <div class="phil-block-text-inner fade-right">
+                        <blockquote>
+                            我々は<br>
+                            地域あるいは社会貢献をもって<br>
+                            その役割を果たし、<br>
+                            それを存在意義とする。
+                        </blockquote>
                     </div>
                 </div>
-            </section>
-
-            <!-- 3. COMPANY -->
-            <section class="company-section" id="companySection">
-                <div class="company-bg">
-                    <img src="top18.jpg" alt="外構施工イメージ">
+                <div class="phil-block-img fade-left">
+                    <img src="top37.jpg" alt="緑豊かな外構">
                 </div>
+            </div>
+        </section>
 
-                <div class="container">
-                    <div class="company-inner">
-                        <div class="company-logo-simple fade-left">
-                            <img src="logo01.png" alt="YU-ART ロゴマーク">
-                        </div>
-                        <div class="company-text fade-right">
-                            <div class="section-title" style="margin-bottom:1.5rem">
-                                <span class="en">Company</span>
-                                <span class="ja">会社に込めた想い</span>
-                            </div>
-                            <h2>あなたのために、<br>暮らしの中に遊び心を。</h2>
-                            <p>会社名「ユーアート」のユーには、お客様一人ひとりの「あなた（YOU）」のために、暮らしの中に「遊（ゆう）」び心を届け、「優（ゆう）」しさあふれるデザインをお届けしたいという想いが込められています。大手ハウスメーカーでの営業経験と老舗エクステリア専門店での20年の修行を経て、「手作り感のあるナチュラルなデザインの庭づくり」を目指し、川越の地でユーアートを立ち上げました。</p>
-                        </div>
+        <!-- 3. COMPANY -->
+        <section class="company-section" id="companySection">
+            <div class="company-bg">
+                <img src="top18.jpg" alt="外構施工イメージ">
+            </div>
+
+            <div class="container">
+                <div class="company-inner">
+                    <div class="company-logo-simple fade-left">
+                        <img src="logo01.png" alt="YU-ART ロゴマーク">
                     </div>
-                </div>
-            </section>
-
-            <!-- 4. OUR SHOP — Bento Grid -->
-            <section class="shop-section">
-                <div class="container">
-                    <div class="section-title center fade-up">
-                        <span class="en">Our Shop</span>
-                        <span class="ja">ショップのご紹介</span>
-                    </div>
-
-                    <div class="bento-grid" id="gallery">
-                        <div class="bento-item fade-up" data-index="0">
-                            <img src="top18.jpg" alt="ショップ外観">
-                            <span class="bento-caption">グリーンに囲まれた明るい店内</span>
+                    <div class="company-text fade-right">
+                        <div class="section-title" style="margin-bottom:1.5rem">
+                            <span class="en">Company</span>
+                            <span class="ja">会社に込めた想い</span>
                         </div>
-                        <div class="bento-item fade-up" data-index="1">
-                            <img src="top37.jpg" alt="植物と外構素材">
-                            <span class="bento-caption">季節の植物を取り揃え</span>
-                        </div>
-                        <div class="bento-item fade-up" data-index="2">
-                            <img src="top32.jpg" alt="ナチュラル外構サンプル">
-                            <span class="bento-caption">ナチュラルテイストの素材サンプル</span>
-                        </div>
-                        <div class="bento-item fade-up" data-index="3">
-                            <img src="top26.jpg" alt="外構デザイン展示">
-                            <span class="bento-caption">お気に入りのデザインが見つかる</span>
-                        </div>
-                        <div class="bento-item fade-up" data-index="4">
-                            <img src="top32.jpg" alt="打ち合わせスペース">
-                            <span class="bento-caption">ゆったり相談できるスペース</span>
-                        </div>
-                        <div class="bento-item fade-up" data-index="5">
-                            <img src="top18.jpg" alt="エクステリア素材展示">
-                            <span class="bento-caption">実際の素材に触れて確かめる</span>
-                        </div>
-                        <div class="bento-item fade-up" data-index="6">
-                            <img src="top37.jpg" alt="施工後の外構">
-                            <span class="bento-caption">私たちがつくる外構の一例</span>
-                        </div>
-                    </div>
-
-                    <div class="shop-intro fade-up">
-                        <h3>グリーンに囲まれた空間で、<br>じっくりとお庭のプランニングを。</h3>
-                        <p>ユーアートのショップには、実際に使用する素材や植栽のサンプルを豊富にご用意しています。カタログだけでは分からない質感や色合いを手に取って確かめながら、理想の外構プランを一緒に考えましょう。お子様連れでも安心してご来店いただけます。</p>
+                        <h2>あなたのために、<br>暮らしの中に遊び心を。</h2>
+                        <p>会社名「ユーアート」のユーには、お客様一人ひとりの「あなた（YOU）」のために、暮らしの中に「遊（ゆう）」び心を届け、「優（ゆう）」しさあふれるデザインをお届けしたいという想いが込められています。大手ハウスメーカーでの営業経験と老舗エクステリア専門店での20年の修行を経て、「手作り感のあるナチュラルなデザインの庭づくり」を目指し、川越の地でユーアートを立ち上げました。</p>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- CTA -->
-            <section class="cta-banner">
-                <div class="container"><div class="cta-inner">
-                    <div class="cta-text"><h2>まずは無料相談から</h2><p>お見積り・現地調査・3Dパース すべて0円。お気軽にどうぞ。</p></div>
-                    <div class="cta-buttons">
-                        <a href="/yuart/contact.html" class="cta-btn cta-btn-dark"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
-                        <a href="tel:049-299-7645" class="cta-btn cta-btn-white"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>049-299-7645</a>
-                    </div>
-                </div></div>
-            </section>
-
-            </main>
-
-            <!-- ===== FOOTER ===== -->
-            <footer class="footer">
-                <div class="container">
-                    <div class="footer-grid">
-                        <div>
-                            <img src="logo01.png" alt="YU-ART" class="footer-logo">
-                            <div class="footer-info"><strong>株式会社ユーアート</strong><br>〒350-0807 埼玉県川越市吉田163-3<br>TEL: <a href="tel:049-299-7645" style="color:var(--green)">049-299-7645</a><br>FAX: 049-299-7646<br>営業時間: 9:00〜17:00<br><small style="font-size:.75rem;opacity:.7">※ 営業日はNewsまたはお電話にてご確認ください</small></div>
-                        </div>
-                        <div>
-                            <div class="footer-nav-title">Pages</div>
-                            <div class="footer-nav">
-                                <a href="/yuart/index.html">ホーム</a>
-                                <a href="/yuart/concept.html">コンセプト</a>
-                                <a href="/yuart/archive-constraction.html">施工事例</a>
-                                <a href="/yuart/flow.html">完成までの流れ</a>
-                                <a href="/yuart/company.html">会社概要</a>
-                                <a href="/yuart/staff.html">スタッフ紹介</a>
-                                <a href="/yuart/column.html">コラム</a>
-                                <a href="/yuart/recruit.html">採用情報</a>
-                                <a href="/yuart/contact.html">お問い合わせ</a>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="footer-nav-title">SNS</div>
-                            <div class="footer-nav">
-                                <a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener">Instagram</a>
-                                <a href="https://www.facebook.com/profile.php?id=100027438334423" target="_blank" rel="noopener">Facebook</a>
-                                <a href="https://twitter.com/yuart7645" target="_blank" rel="noopener">X (Twitter)</a>
-                                <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-area"><div class="footer-area-label">対応エリア</div><p>川越市・鶴ヶ島市・坂戸市・日高市・狭山市・ふじみ野市・富士見市・東松山市 ほか</p></div>
-                    <p class="footer-copy">Copyright &copy; YU-ART Inc. All Rights Reserved.</p>
+        <!-- 4. OUR SHOP — Bento Grid -->
+        <section class="shop-section">
+            <div class="container">
+                <div class="section-title center fade-up">
+                    <span class="en">Our Shop</span>
+                    <span class="ja">ショップのご紹介</span>
                 </div>
-            </footer>
-        </div>
+
+                <div class="bento-grid" id="gallery">
+                    <div class="bento-item fade-up" data-index="0">
+                        <img src="top18.jpg" alt="ショップ外観">
+                        <span class="bento-caption">グリーンに囲まれた明るい店内</span>
+                    </div>
+                    <div class="bento-item fade-up" data-index="1">
+                        <img src="top37.jpg" alt="植物と外構素材">
+                        <span class="bento-caption">季節の植物を取り揃え</span>
+                    </div>
+                    <div class="bento-item fade-up" data-index="2">
+                        <img src="top32.jpg" alt="ナチュラル外構サンプル">
+                        <span class="bento-caption">ナチュラルテイストの素材サンプル</span>
+                    </div>
+                    <div class="bento-item fade-up" data-index="3">
+                        <img src="top26.jpg" alt="外構デザイン展示">
+                        <span class="bento-caption">お気に入りのデザインが見つかる</span>
+                    </div>
+                    <div class="bento-item fade-up" data-index="4">
+                        <img src="top32.jpg" alt="打ち合わせスペース">
+                        <span class="bento-caption">ゆったり相談できるスペース</span>
+                    </div>
+                    <div class="bento-item fade-up" data-index="5">
+                        <img src="top18.jpg" alt="エクステリア素材展示">
+                        <span class="bento-caption">実際の素材に触れて確かめる</span>
+                    </div>
+                    <div class="bento-item fade-up" data-index="6">
+                        <img src="top37.jpg" alt="施工後の外構">
+                        <span class="bento-caption">私たちがつくる外構の一例</span>
+                    </div>
+                </div>
+
+                <div class="shop-intro fade-up">
+                    <h3>グリーンに囲まれた空間で、<br>じっくりとお庭のプランニングを。</h3>
+                    <p>ユーアートのショップには、実際に使用する素材や植栽のサンプルを豊富にご用意しています。カタログだけでは分からない質感や色合いを手に取って確かめながら、理想の外構プランを一緒に考えましょう。お子様連れでも安心してご来店いただけます。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-banner">
+            <div class="container"><div class="cta-inner">
+                <div class="cta-text"><h2>まずは無料相談から</h2><p>お見積り・現地調査・3Dパース すべて0円。お気軽にどうぞ。</p></div>
+                <div class="cta-buttons">
+                    <a href="/yuart/contact.html" class="cta-btn cta-btn-dark"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談</a>
+                    <a href="tel:049-299-7645" class="cta-btn cta-btn-white"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>049-299-7645</a>
+                </div>
+            </div></div>
+        </section>
+
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <img src="logo01.png" alt="YU-ART" class="footer-logo">
+                        <div class="footer-info"><strong>株式会社ユーアート</strong><br>〒350-0807 埼玉県川越市吉田163-3<br>TEL: <a href="tel:049-299-7645" style="color:var(--green)">049-299-7645</a><br>FAX: 049-299-7646<br>営業時間: 9:00〜17:00<br><small style="font-size:.75rem;opacity:.7">※ 営業日はNewsまたはお電話にてご確認ください</small></div>
+                    </div>
+                    <div>
+                        <div class="footer-nav-title">Pages</div>
+                        <div class="footer-nav">
+                            <a href="/yuart/index.html">ホーム</a>
+                            <a href="/yuart/concept.html">コンセプト</a>
+                            <a href="/yuart/archive-constraction.html">施工事例</a>
+                            <a href="/yuart/flow.html">完成までの流れ</a>
+                            <a href="/yuart/company.html">会社概要</a>
+                            <a href="/yuart/staff.html">スタッフ紹介</a>
+                            <a href="/yuart/column.html">コラム</a>
+                            <a href="/yuart/recruit.html">採用情報</a>
+                            <a href="/yuart/contact.html">お問い合わせ</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="footer-nav-title">SNS</div>
+                        <div class="footer-nav">
+                            <a href="https://www.instagram.com/yuart_garden/" target="_blank" rel="noopener">Instagram</a>
+                            <a href="https://www.facebook.com/profile.php?id=100027438334423" target="_blank" rel="noopener">Facebook</a>
+                            <a href="https://twitter.com/yuart7645" target="_blank" rel="noopener">X (Twitter)</a>
+                            <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-area"><div class="footer-area-label">対応エリア</div><p>川越市・鶴ヶ島市・坂戸市・日高市・狭山市・ふじみ野市・富士見市・東松山市 ほか</p></div>
+                <p class="footer-copy">Copyright &copy; YU-ART Inc. All Rights Reserved.</p>
+            </div>
+        </footer>
     </div>
 
     <!-- LIGHTBOX -->
