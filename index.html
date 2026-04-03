@@ -135,6 +135,8 @@
         .works-card-area{font-size:.68rem;color:var(--text-light);font-weight:500;margin-bottom:.25rem}
         .works-card-body h3{font-size:.85rem;font-weight:700;color:var(--black);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
         .reason{padding:7rem 0;background:var(--bg-gray)}
+        /* [FB修正] サブキャッチコピー用スタイル追加 */
+        .reason-sub-catch{max-width:780px;margin:-.5rem auto 3.5rem;font-size:.92rem;color:var(--text-light);line-height:2;text-align:center}
         .reason-item{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:5rem}
         .reason-item:last-child{margin-bottom:0}
         .reason-item.reverse .reason-item-img{order:2}.reason-item.reverse .reason-item-text{order:1}
@@ -441,11 +443,13 @@
 
 <main>
 
+    <!-- ===== CONCEPT ===== -->
+    <!-- [FB修正] 「私たちの想い」の下に「会社理念」を追加 -->
     <section class="concept" id="concept">
         <div class="concept-bg"><img src="top18.jpg" alt="コンセプト背景"></div>
         <div class="concept-deco">Concept</div>
         <div class="container"><div class="concept-inner fade-up">
-            <div class="section-title"><span class="en">Concept</span><span class="ja">私たちの想い</span></div>
+            <div class="section-title"><span class="en">Concept</span><span class="ja">私たちの想い<br><small style="font-size:.75rem;letter-spacing:.1em;color:rgba(255,255,255,.6);font-weight:500;">会社理念</small></span></div>
             <div class="concept-text">
                 <h2>あなたのために、<br>暮らしの中に遊び心を。</h2>
                 <p class="concept-lead">「ユー」は、あなた（YOU）であり、遊（ゆう）であり、優（ゆう）でもあります。お客様一人ひとりの暮らしに寄り添い、庭づくりを通して幸せを届けたい。</p>
@@ -473,18 +477,33 @@
         </div>
     </section>
 
+    <!-- ===== REASON ===== -->
+    <!-- [FB修正] タイトル変更：「選ばれる理由」→「地域に寄り添うユーアートのこだわり」 -->
+    <!-- [FB修正] サブキャッチコピー追加 -->
+    <!-- [FB修正] 03の説明文変更 -->
+    <!-- [FB修正] 04「キッズスペースの完備」追加（画像は仮placeholder） -->
+    <!-- [FB修正] 01の「コストメリット」→「コストカット」に変更 -->
     <section class="reason" id="reason">
         <div class="container">
-            <div class="section-title fade-up"><span class="en">Reason</span><span class="ja">ユーアートが選ばれる理由</span></div>
-            <div class="reason-item fade-up"><div class="reason-item-img"><span class="reason-item-num">01</span><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop&q=80" alt="自社施工"></div><div class="reason-item-text"><span class="reason-tag">REASON 01</span><h3>自社施工だから実現する<br>「適正価格」と「高品質」</h3><p>外注を挟まず自社の熟練職人が直接施工。中間マージンが発生しないため、ハウスメーカー経由と比べて20〜30%のコストメリットを実現。</p></div></div>
+            <div class="section-title center fade-up"><span class="en">Reason</span><span class="ja">地域に寄り添うユーアートのこだわり</span></div>
+            <p class="reason-sub-catch fade-up">私たちは、地域密着で皆様のよりよい暮らしに貢献することを目指しています。川越市を中心に、埼玉県内で他社では断られがちな小さな工事から承っております。</p>
+
+            <div class="reason-item fade-up"><div class="reason-item-img"><span class="reason-item-num">01</span><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop&q=80" alt="自社施工"></div><div class="reason-item-text"><span class="reason-tag">REASON 01</span><h3>自社施工だから実現する<br>「適正価格」と「高品質」</h3><p>外注を挟まず自社の熟練職人が直接施工。中間マージンが発生しないため、ハウスメーカー経由と比べて20〜30%のコストカットを実現。</p></div></div>
+
             <div class="reason-item reverse fade-up"><div class="reason-item-img"><span class="reason-item-num">02</span><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&h=600&fit=crop&q=80" alt="3Dパース"></div><div class="reason-item-text"><span class="reason-tag">REASON 02</span><h3>3Dパースで<br>完成イメージを事前確認</h3><p>高品質な3Dパースで、色合いや素材感まで細かくご確認いただけます。パース作成は何度でも無料です。</p></div></div>
-            <div class="reason-item fade-up"><div class="reason-item-img"><span class="reason-item-num">03</span><img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&h=600&fit=crop&q=80" alt="地域密着"></div><div class="reason-item-text"><span class="reason-tag">REASON 03</span><h3>川越市に根ざした<br>地域密着のアフターフォロー</h3><p>YKK AP エクステリアスタイル大賞 2年連続受賞、タカショー庭施工例コンテスト ガーデン大賞の実績。</p></div></div>
+
+            <div class="reason-item fade-up"><div class="reason-item-img"><span class="reason-item-num">03</span><img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&h=600&fit=crop&q=80" alt="地域密着"></div><div class="reason-item-text"><span class="reason-tag">REASON 03</span><h3>川越市に根ざした<br>地域密着のアフターフォロー</h3><p>川越市を中心、地域密着で小さな工事から承っております。施工して終わりではなく、アフターフォローまで一貫して迅速かつ丁寧に対応させていただきます。</p></div></div>
+
+            <!-- [FB修正] 04「キッズスペースの完備」を新規追加 -->
+            <div class="reason-item reverse fade-up"><div class="reason-item-img"><span class="reason-item-num">04</span><img src="kids-space.jpg" alt="キッズスペース"></div><div class="reason-item-text"><span class="reason-tag">REASON 04</span><h3>キッズスペースの完備</h3><p>小さなお子様が楽しく過ごせるキッズスペースを完備しています。お子様が目の届く場所で遊んでいる間に、専門スタッフと落ち着いてお打ち合わせが可能です。</p></div></div>
         </div>
     </section>
 
+    <!-- ===== CTA ===== -->
+    <!-- [FB修正] 「すべて0円」の文言を削除 -->
     <section class="cta-simple">
         <div class="container">
-            <div class="cta-simple-label">まずは無料相談から｜お見積り・現地調査・3Dパース すべて0円</div>
+            <div class="cta-simple-label">まずは無料相談から｜お見積り・現地調査・3Dパース</div>
             <div class="cta-simple-btns">
                 <a href="tel:049-299-7645" class="cta-s-btn cta-s-phone"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>電話をかける <span class="num">049-299-7645</span></a>
                 <a href="/yuart/contact.html" class="cta-s-btn cta-s-form"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>無料相談・お見積り</a>
@@ -510,9 +529,10 @@
         <div class="container">
             <div class="section-title fade-up"><span class="en">Flow</span><span class="ja">完成までの流れ</span></div>
             <div class="flow-grid">
-                <div class="flow-card fade-up"><div class="flow-card-num">01</div><h3>お問い合わせ<span class="free-tag">無料</span></h3><p>お電話・メール・LINEから</p></div>
-                <div class="flow-card fade-up"><div class="flow-card-num">02</div><h3>現地調査<span class="free-tag">無料</span></h3><p>敷地確認・ヒアリング</p></div>
-                <div class="flow-card fade-up"><div class="flow-card-num">03</div><h3>3Dパース提案<span class="free-tag">無料</span></h3><p>完成イメージをリアルに</p></div>
+                <!-- [FB修正] free-tagを全て削除（「すべて無料、0円」の文言削除対応） -->
+                <div class="flow-card fade-up"><div class="flow-card-num">01</div><h3>お問い合わせ</h3><p>お電話・メール・LINEから</p></div>
+                <div class="flow-card fade-up"><div class="flow-card-num">02</div><h3>現地調査</h3><p>敷地確認・ヒアリング</p></div>
+                <div class="flow-card fade-up"><div class="flow-card-num">03</div><h3>3Dパース提案</h3><p>完成イメージをリアルに</p></div>
                 <div class="flow-card fade-up"><div class="flow-card-num">04</div><h3>ご契約</h3><p>プラン確定・日程調整</p></div>
                 <div class="flow-card fade-up"><div class="flow-card-num">05</div><h3>着工・施工</h3><p>自社職人が丁寧に施工</p></div>
                 <div class="flow-card fade-up"><div class="flow-card-num">06</div><h3>完成・引渡し</h3><p>アフターフォロー継続</p></div>
